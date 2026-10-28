@@ -1,0 +1,1 @@
+"""Invoice processing application package."""
