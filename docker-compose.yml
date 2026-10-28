@@ -53,7 +53,7 @@ services:
       STORAGE_DIR: /data/storage
     volumes:
       - storage_data:/data/storage
-    command: rq worker --url $${REDIS_URL} parse extract validate index
+    command: sh -c 'rq worker --url "$${REDIS_URL}" parse extract validate index'
     depends_on:
       db:
         condition: service_healthy
