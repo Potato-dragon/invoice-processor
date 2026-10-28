@@ -1,0 +1,60 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: invoice
+      POSTGRES_USER: invoice
+      POSTGRES_PASSWORD: invoice
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U invoice -d invoice"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  api:
+    build: ./backend
+    environment:
+      API_KEY: ${API_KEY:-change-me}
+      DATABASE_URL: postgresql+psycopg://invoice:invoice@db:5432/invoice
+      REDIS_URL: redis://redis:6379/0
+      STORAGE_DIR: /data/storage
+    ports:
+      - "8000:8000"
+    volumes:
+      - storage_data:/data/storage
+    command: sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  worker:
+    build: ./backend
+    environment:
+      API_KEY: ${API_KEY:-change-me}
+      DATABASE_URL: postgresql+psycopg://invoice:invoice@db:5432/invoice
+      REDIS_URL: redis://redis:6379/0
+      STORAGE_DIR: /data/storage
+    volumes:
+      - storage_data:/data/storage
+    command: sh -c "alembic upgrade head && rq worker parse extract validate index"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+  storage_data:
