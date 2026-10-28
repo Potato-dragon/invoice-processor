@@ -48,7 +48,7 @@ services:
       STORAGE_DIR: /data/storage
     volumes:
       - storage_data:/data/storage
-    command: sh -c "alembic upgrade head && rq worker --url $REDIS_URL parse extract validate index"
+    command: sh -c "alembic upgrade head && rq worker --url $${REDIS_URL} parse extract validate index"
     depends_on:
       db:
         condition: service_healthy
