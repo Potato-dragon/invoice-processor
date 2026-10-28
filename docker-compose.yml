@@ -33,6 +33,11 @@ services:
     volumes:
       - storage_data:/data/storage
     command: sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; assert urlopen('http://127.0.0.1:8000/api/health').status == 200"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
     depends_on:
       db:
         condition: service_healthy
@@ -48,11 +53,13 @@ services:
       STORAGE_DIR: /data/storage
     volumes:
       - storage_data:/data/storage
-    command: sh -c "alembic upgrade head && rq worker --url $${REDIS_URL} parse extract validate index"
+    command: rq worker --url $${REDIS_URL} parse extract validate index
     depends_on:
       db:
         condition: service_healthy
       redis:
+        condition: service_healthy
+      api:
         condition: service_healthy
 
 volumes:
