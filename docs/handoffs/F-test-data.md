@@ -28,6 +28,10 @@ A script that generates a labeled invoice dataset with exact ground truth, so ex
 12. **Self-check script** `tools/datagen/verify.py`: confirms every sample has a label, manifest rows are consistent, files open, and prints counts per kind/quality/split/expected_status.
 13. **Placeholder for real documents**: create `data/real/README.md` explaining the human will add 10 to 25 real or public invoices here with hand-written labels in the same format.
 
+## Also in this pass:
+1. Part 1 produced no null fields and no ambiguous-currency docs. Add 6+ invoices with missing optional fields (no customer, no tax) and 4+ with a bare "$". Set expected_status per DECISIONS.md item 11.
+2. Add receipts per DECISIONS.md item 10: 2 layouts (narrow thermal till receipt, and a retail/restaurant one), about 10 docs, some of them scanned. Put one receipt layout in the test split and one in dev, keeping the split disjoint.
+
 ## Acceptance checks
 - One command (documented in `tools/datagen/README.md`) regenerates everything; running twice gives byte-identical labels and manifest.
 - `verify.py` passes and reports at least 80 documents (excluding the large PDF) covering every file type: pdf, jpg, png, tiff, xlsx, xls, csv.

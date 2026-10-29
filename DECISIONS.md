@@ -9,3 +9,5 @@
 7. **Grounding over trust.** Every extracted value carries evidence; values not found in the source are nulled and flagged.
 8. **PyMuPDF (AGPL)** is used for PDF rendering/text; noted in README. `pypdfium2` is the permissive swap.
 9. **Money is Decimal / strings, never float.**
+10. Receipts are treated as invoice-like documents using the same extraction object. Receipt number goes in invoice_number, merchant in supplier_name, customer_name is null unless printed. Marked by layout prefix "receipt_" and notes "doc_type=receipt" in the manifest (no contract change).
+11. Issue severity: missing invoice_number, invoice_date, supplier_name or total = error. Missing customer_name or tax = info. CURRENCY_AMBIGUOUS = error (a human must pick the currency). Any error => NEEDS_REVIEW.
