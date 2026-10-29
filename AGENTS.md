@@ -32,6 +32,11 @@ You are one of several agents building this project in parallel. A human coordin
    - Commit WIP every ~15 minutes and after each task. Quota can end mid-task.
    - Before stopping or when told quota is low: commit, write "Next step:" in your STATUS row.
 
+   ## Quota discipline
+- Don't run `docker compose build/up` yourself. Write code, then list the exact commands the human should run. The human pastes back errors.
+- Don't re-read files you already read. Don't print whole files in chat. Open only the files your brief lists.
+- If a command fails twice, stop and report it instead of retrying.
+
 ```
 REPORT
 Lane / task:
