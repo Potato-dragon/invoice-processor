@@ -1,0 +1,41 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-T029"
+  },
+  "invoice_date": {
+    "value": "2026-03-14"
+  },
+  "supplier_name": {
+    "value": "Orion Precision Optics Ltd"
+  },
+  "customer_name": {
+    "value": "Ironclad Security Infrastructure"
+  },
+  "subtotal": {
+    "value": "566250.00"
+  },
+  "tax": {
+    "value": "56625.00"
+  },
+  "total": {
+    "value": "622875.00"
+  },
+  "currency": {
+    "value": "JPY"
+  },
+  "line_items": [
+    {
+      "description": "Emergency Server Maintenance SLA",
+      "quantity": "4",
+      "unit_price": "135000.00",
+      "amount": "540000.00"
+    },
+    {
+      "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+      "quantity": "1",
+      "unit_price": "26250.00",
+      "amount": "26250.00"
+    }
+  ],
+  "invoice_count": 1
+}

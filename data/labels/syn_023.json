@@ -1,0 +1,47 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-T023"
+  },
+  "invoice_date": {
+    "value": "2026-02-10"
+  },
+  "supplier_name": {
+    "value": "Lumina Sensor Technologies Inc"
+  },
+  "customer_name": {
+    "value": "Falcon Ridge Enterprises LLC"
+  },
+  "subtotal": {
+    "value": "987.50"
+  },
+  "tax": {
+    "value": "91.34"
+  },
+  "total": {
+    "value": "1078.84"
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [
+    {
+      "description": "Gigabit Managed Switch 48-Port",
+      "quantity": "1",
+      "unit_price": "450.00",
+      "amount": "450.00"
+    },
+    {
+      "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+      "quantity": "2",
+      "unit_price": "145.00",
+      "amount": "290.00"
+    },
+    {
+      "description": "High-Performance Thermal Sensor Probe",
+      "quantity": "3",
+      "unit_price": "82.50",
+      "amount": "247.50"
+    }
+  ],
+  "invoice_count": 1
+}

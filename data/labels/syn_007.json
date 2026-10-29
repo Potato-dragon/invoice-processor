@@ -1,0 +1,35 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D007"
+  },
+  "invoice_date": {
+    "value": "2026-02-22"
+  },
+  "supplier_name": {
+    "value": "Datastream Systems GmbH"
+  },
+  "customer_name": {
+    "value": "Evergreen Global Retailers Ltd"
+  },
+  "subtotal": {
+    "value": "11596.00"
+  },
+  "tax": {
+    "value": "2203.24"
+  },
+  "total": {
+    "value": "13799.24"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [
+    {
+      "description": "Industrial Rackmount Server Unit 2U",
+      "quantity": "4",
+      "unit_price": "2899.00",
+      "amount": "11596.00"
+    }
+  ],
+  "invoice_count": 1
+}

@@ -1,1 +1,7 @@
 .env
+tools/datagen/.venv/
+data/samples_large/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/

@@ -1,0 +1,59 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-T030"
+  },
+  "invoice_date": {
+    "value": "2026-05-08"
+  },
+  "supplier_name": {
+    "value": "Orion Precision Optics Ltd"
+  },
+  "customer_name": {
+    "value": null
+  },
+  "subtotal": {
+    "value": "715500.00"
+  },
+  "tax": {
+    "value": "71550.00"
+  },
+  "total": {
+    "value": "787050.00"
+  },
+  "currency": {
+    "value": "JPY"
+  },
+  "line_items": [
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "1",
+      "unit_price": "93000.00",
+      "amount": "93000.00"
+    },
+    {
+      "description": "Express Air Freight Courier Delivery",
+      "quantity": "2",
+      "unit_price": "34500.00",
+      "amount": "69000.00"
+    },
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "3",
+      "unit_price": "102000.00",
+      "amount": "306000.00"
+    },
+    {
+      "description": "Customs Clearing & Import Documentation",
+      "quantity": "4",
+      "unit_price": "51000.00",
+      "amount": "204000.00"
+    },
+    {
+      "description": "Warehouse Staging & Inventory Tagging",
+      "quantity": "1",
+      "unit_price": "43500.00",
+      "amount": "43500.00"
+    }
+  ],
+  "invoice_count": 1
+}

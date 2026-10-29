@@ -1,0 +1,41 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D020"
+  },
+  "invoice_date": {
+    "value": "2026-02-10"
+  },
+  "supplier_name": {
+    "value": "Jupiter Nordic Software Oy"
+  },
+  "customer_name": {
+    "value": "Cobalt Dynamics Group"
+  },
+  "subtotal": {
+    "value": "1990.00"
+  },
+  "tax": {
+    "value": null
+  },
+  "total": {
+    "value": "1990.00"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [
+    {
+      "description": "Database Migration & Optimization",
+      "quantity": "1",
+      "unit_price": "1800.00",
+      "amount": "1800.00"
+    },
+    {
+      "description": "Full-Stack Software Development (hrs)",
+      "quantity": "2",
+      "unit_price": "95.00",
+      "amount": "190.00"
+    }
+  ],
+  "invoice_count": 1
+}

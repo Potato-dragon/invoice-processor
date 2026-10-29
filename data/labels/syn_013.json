@@ -1,0 +1,125 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D013"
+  },
+  "invoice_date": {
+    "value": "2026-03-29"
+  },
+  "supplier_name": {
+    "value": "Greenfield Environmental Engineering"
+  },
+  "customer_name": {
+    "value": "Helios Clean Power Corp"
+  },
+  "subtotal": {
+    "value": "45845.50"
+  },
+  "tax": {
+    "value": "9169.10"
+  },
+  "total": {
+    "value": "55014.60"
+  },
+  "currency": {
+    "value": "GBP"
+  },
+  "line_items": [
+    {
+      "description": "Heavy Duty Timber Pallet (Treated)",
+      "quantity": "2",
+      "unit_price": "28.00",
+      "amount": "56.00"
+    },
+    {
+      "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+      "quantity": "3",
+      "unit_price": "19.50",
+      "amount": "58.50"
+    },
+    {
+      "description": "Annual Enterprise Software License",
+      "quantity": "4",
+      "unit_price": "4999.00",
+      "amount": "19996.00"
+    },
+    {
+      "description": "Monthly Cloud Infrastructure Retainer",
+      "quantity": "5",
+      "unit_price": "750.00",
+      "amount": "3750.00"
+    },
+    {
+      "description": "Emergency Server Maintenance SLA",
+      "quantity": "1",
+      "unit_price": "900.00",
+      "amount": "900.00"
+    },
+    {
+      "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+      "quantity": "2",
+      "unit_price": "175.00",
+      "amount": "350.00"
+    },
+    {
+      "description": "Data Storage Volume Allocation (TB/mo)",
+      "quantity": "3",
+      "unit_price": "45.00",
+      "amount": "135.00"
+    },
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "4",
+      "unit_price": "620.00",
+      "amount": "2480.00"
+    },
+    {
+      "description": "Express Air Freight Courier Delivery",
+      "quantity": "5",
+      "unit_price": "230.00",
+      "amount": "1150.00"
+    },
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "1",
+      "unit_price": "680.00",
+      "amount": "680.00"
+    },
+    {
+      "description": "Customs Clearing & Import Documentation",
+      "quantity": "2",
+      "unit_price": "340.00",
+      "amount": "680.00"
+    },
+    {
+      "description": "Warehouse Staging & Inventory Tagging",
+      "quantity": "3",
+      "unit_price": "290.00",
+      "amount": "870.00"
+    },
+    {
+      "description": "Cloud Architecture Consultation (hrs)",
+      "quantity": "4",
+      "unit_price": "125.00",
+      "amount": "500.00"
+    },
+    {
+      "description": "Enterprise Security Penetration Test",
+      "quantity": "5",
+      "unit_price": "2450.00",
+      "amount": "12250.00"
+    },
+    {
+      "description": "Database Migration & Optimization",
+      "quantity": "1",
+      "unit_price": "1800.00",
+      "amount": "1800.00"
+    },
+    {
+      "description": "Full-Stack Software Development (hrs)",
+      "quantity": "2",
+      "unit_price": "95.00",
+      "amount": "190.00"
+    }
+  ],
+  "invoice_count": 1
+}

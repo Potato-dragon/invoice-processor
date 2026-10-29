@@ -1,0 +1,47 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-T025"
+  },
+  "invoice_date": {
+    "value": "2026-02-22"
+  },
+  "supplier_name": {
+    "value": "Meridian Healthcare Diagnostics"
+  },
+  "customer_name": {
+    "value": "Glacier Ridge Capital Partners"
+  },
+  "subtotal": {
+    "value": "3580.00"
+  },
+  "tax": {
+    "value": "716.00"
+  },
+  "total": {
+    "value": "4296.00"
+  },
+  "currency": {
+    "value": "GBP"
+  },
+  "line_items": [
+    {
+      "description": "Backup Battery UPS Module 1500VA",
+      "quantity": "2",
+      "unit_price": "380.00",
+      "amount": "760.00"
+    },
+    {
+      "description": "Solid State NVMe Drive Enterprise 2TB",
+      "quantity": "3",
+      "unit_price": "220.00",
+      "amount": "660.00"
+    },
+    {
+      "description": "Precision Optical Collimator Lens",
+      "quantity": "4",
+      "unit_price": "540.00",
+      "amount": "2160.00"
+    }
+  ],
+  "invoice_count": 1
+}

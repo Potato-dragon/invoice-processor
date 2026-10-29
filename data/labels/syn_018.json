@@ -1,0 +1,53 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D018"
+  },
+  "invoice_date": {
+    "value": "2026-01-28"
+  },
+  "supplier_name": {
+    "value": "Ironwood Timber & Materials Ltd"
+  },
+  "customer_name": {
+    "value": "Beacon Innovations Inc."
+  },
+  "subtotal": {
+    "value": "11875.00"
+  },
+  "tax": {
+    "value": "1781.25"
+  },
+  "total": {
+    "value": "13656.25"
+  },
+  "currency": {
+    "value": "BDT"
+  },
+  "line_items": [
+    {
+      "description": "Warehouse Staging & Inventory Tagging",
+      "quantity": "5",
+      "unit_price": "290.00",
+      "amount": "1450.00"
+    },
+    {
+      "description": "Cloud Architecture Consultation (hrs)",
+      "quantity": "1",
+      "unit_price": "125.00",
+      "amount": "125.00"
+    },
+    {
+      "description": "Enterprise Security Penetration Test",
+      "quantity": "2",
+      "unit_price": "2450.00",
+      "amount": "4900.00"
+    },
+    {
+      "description": "Database Migration & Optimization",
+      "quantity": "3",
+      "unit_price": "1800.00",
+      "amount": "5400.00"
+    }
+  ],
+  "invoice_count": 1
+}

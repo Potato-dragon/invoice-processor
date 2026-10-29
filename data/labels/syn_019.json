@@ -1,0 +1,53 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D019"
+  },
+  "invoice_date": {
+    "value": "2026-05-08"
+  },
+  "supplier_name": {
+    "value": "Jupiter Nordic Software Oy"
+  },
+  "customer_name": {
+    "value": "Nordic Alpine Holdings AB"
+  },
+  "subtotal": {
+    "value": "4695.00"
+  },
+  "tax": {
+    "value": "1126.80"
+  },
+  "total": {
+    "value": "5821.80"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "5",
+      "unit_price": "680.00",
+      "amount": "3400.00"
+    },
+    {
+      "description": "Customs Clearing & Import Documentation",
+      "quantity": "1",
+      "unit_price": "340.00",
+      "amount": "340.00"
+    },
+    {
+      "description": "Warehouse Staging & Inventory Tagging",
+      "quantity": "2",
+      "unit_price": "290.00",
+      "amount": "580.00"
+    },
+    {
+      "description": "Cloud Architecture Consultation (hrs)",
+      "quantity": "3",
+      "unit_price": "125.00",
+      "amount": "375.00"
+    }
+  ],
+  "invoice_count": 1
+}

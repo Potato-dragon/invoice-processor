@@ -1,0 +1,47 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D005"
+  },
+  "invoice_date": {
+    "value": "2026-02-10"
+  },
+  "supplier_name": {
+    "value": "Crestline Industrial Hardware"
+  },
+  "customer_name": {
+    "value": "Delta Stream Solutions GmbH"
+  },
+  "subtotal": {
+    "value": "23600.00"
+  },
+  "tax": {
+    "value": "1770.00"
+  },
+  "total": {
+    "value": "25370.00"
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [
+    {
+      "description": "API Integration & Webhook Setup",
+      "quantity": "3",
+      "unit_price": "850.00",
+      "amount": "2550.00"
+    },
+    {
+      "description": "Machine Learning Model Tuning Service",
+      "quantity": "4",
+      "unit_price": "3200.00",
+      "amount": "12800.00"
+    },
+    {
+      "description": "Site Reliability Audit & Report",
+      "quantity": "5",
+      "unit_price": "1650.00",
+      "amount": "8250.00"
+    }
+  ],
+  "invoice_count": 1
+}

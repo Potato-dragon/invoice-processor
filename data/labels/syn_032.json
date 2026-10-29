@@ -1,0 +1,53 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-T032"
+  },
+  "invoice_date": {
+    "value": "2026-01-15"
+  },
+  "supplier_name": {
+    "value": "Pacific Crest Supplies Co."
+  },
+  "customer_name": {
+    "value": "Cobalt Dynamics Group"
+  },
+  "subtotal": {
+    "value": "12555.00"
+  },
+  "tax": {
+    "value": "2259.90"
+  },
+  "total": {
+    "value": "14814.90"
+  },
+  "currency": {
+    "value": "INR"
+  },
+  "line_items": [
+    {
+      "description": "Warehouse Staging & Inventory Tagging",
+      "quantity": "2",
+      "unit_price": "290.00",
+      "amount": "580.00"
+    },
+    {
+      "description": "Cloud Architecture Consultation (hrs)",
+      "quantity": "3",
+      "unit_price": "125.00",
+      "amount": "375.00"
+    },
+    {
+      "description": "Enterprise Security Penetration Test",
+      "quantity": "4",
+      "unit_price": "2450.00",
+      "amount": "9800.00"
+    },
+    {
+      "description": "Database Migration & Optimization",
+      "quantity": "1",
+      "unit_price": "1800.00",
+      "amount": "1800.00"
+    }
+  ],
+  "invoice_count": 1
+}

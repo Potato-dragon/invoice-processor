@@ -1,0 +1,35 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D015"
+  },
+  "invoice_date": {
+    "value": "2026-04-12"
+  },
+  "supplier_name": {
+    "value": "Horizon Peak Dynamics Corp"
+  },
+  "customer_name": {
+    "value": "Ironclad Security Infrastructure"
+  },
+  "subtotal": {
+    "value": "2250.00"
+  },
+  "tax": {
+    "value": "191.25"
+  },
+  "total": {
+    "value": "2441.25"
+  },
+  "currency": {
+    "value": "USD"
+  },
+  "line_items": [
+    {
+      "description": "Monthly Cloud Infrastructure Retainer",
+      "quantity": "3",
+      "unit_price": "750.00",
+      "amount": "2250.00"
+    }
+  ],
+  "invoice_count": 1
+}

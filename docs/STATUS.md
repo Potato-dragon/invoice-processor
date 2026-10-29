@@ -2,8 +2,13 @@
 
 | Lane | Owner folder | Brief | Branch | State | Notes |
 |---|---|---|---|---|---|
+<<<<<<< HEAD
 | A | backend/app (core), docker-compose.yml, infra | handoffs/A-backend-skeleton.md | lane-a/skeleton | IN PROGRESS | Tasks 1-5 complete; Next step: implement tasks 6-10 (API, pipeline, tests, README). |
 | F | tools/datagen, data/ | handoffs/F-test-data.md | lane-f/datagen | NOT STARTED | |
+=======
+| A | backend/app (core), docker-compose.yml, infra | handoffs/A-backend-skeleton.md | lane-a/skeleton | NOT STARTED | |
+| F | tools/datagen, data/ | handoffs/F-test-data.md | lane-f/datagen | IN PROGRESS | Tasks 1-3, 10-12 done: 6 layouts, 32 digital PDFs (22 dev, 10 test), labels, manifest, verify.py pass. Next step: Tasks 4-9 (scanned docs, spreadsheets, errors, multi-page PDFs). |
+>>>>>>> lane-f/datagen
 | B | backend/app/parsing | (not written yet) | lane-b/parsing | NOT STARTED | |
 | C | backend/app/extraction | (not written yet) | lane-c/extraction | NOT STARTED | |
 | D | backend/app/validation | (not written yet) | lane-d/validation | NOT STARTED | |

@@ -1,0 +1,53 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-T031"
+  },
+  "invoice_date": {
+    "value": "2026-03-29"
+  },
+  "supplier_name": {
+    "value": "Pacific Crest Supplies Co."
+  },
+  "customer_name": {
+    "value": "Zenith Wholesale & Distribution"
+  },
+  "subtotal": {
+    "value": "3770.00"
+  },
+  "tax": {
+    "value": "678.60"
+  },
+  "total": {
+    "value": "4448.60"
+  },
+  "currency": {
+    "value": "INR"
+  },
+  "line_items": [
+    {
+      "description": "Express Air Freight Courier Delivery",
+      "quantity": "1",
+      "unit_price": "230.00",
+      "amount": "230.00"
+    },
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "2",
+      "unit_price": "680.00",
+      "amount": "1360.00"
+    },
+    {
+      "description": "Customs Clearing & Import Documentation",
+      "quantity": "3",
+      "unit_price": "340.00",
+      "amount": "1020.00"
+    },
+    {
+      "description": "Warehouse Staging & Inventory Tagging",
+      "quantity": "4",
+      "unit_price": "290.00",
+      "amount": "1160.00"
+    }
+  ],
+  "invoice_count": 1
+}

@@ -1,0 +1,125 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D012"
+  },
+  "invoice_date": {
+    "value": "2026-04-25"
+  },
+  "supplier_name": {
+    "value": "Frontline Biotech Labs LLC"
+  },
+  "customer_name": {
+    "value": "Ironclad Security Infrastructure"
+  },
+  "subtotal": {
+    "value": "42883.00"
+  },
+  "tax": {
+    "value": "8576.60"
+  },
+  "total": {
+    "value": "51459.60"
+  },
+  "currency": {
+    "value": "GBP"
+  },
+  "line_items": [
+    {
+      "description": "Annual Enterprise Software License",
+      "quantity": "2",
+      "unit_price": "4999.00",
+      "amount": "9998.00"
+    },
+    {
+      "description": "Monthly Cloud Infrastructure Retainer",
+      "quantity": "3",
+      "unit_price": "750.00",
+      "amount": "2250.00"
+    },
+    {
+      "description": "Emergency Server Maintenance SLA",
+      "quantity": "4",
+      "unit_price": "900.00",
+      "amount": "3600.00"
+    },
+    {
+      "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+      "quantity": "5",
+      "unit_price": "175.00",
+      "amount": "875.00"
+    },
+    {
+      "description": "Data Storage Volume Allocation (TB/mo)",
+      "quantity": "1",
+      "unit_price": "45.00",
+      "amount": "45.00"
+    },
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "2",
+      "unit_price": "620.00",
+      "amount": "1240.00"
+    },
+    {
+      "description": "Express Air Freight Courier Delivery",
+      "quantity": "3",
+      "unit_price": "230.00",
+      "amount": "690.00"
+    },
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "4",
+      "unit_price": "680.00",
+      "amount": "2720.00"
+    },
+    {
+      "description": "Customs Clearing & Import Documentation",
+      "quantity": "5",
+      "unit_price": "340.00",
+      "amount": "1700.00"
+    },
+    {
+      "description": "Warehouse Staging & Inventory Tagging",
+      "quantity": "1",
+      "unit_price": "290.00",
+      "amount": "290.00"
+    },
+    {
+      "description": "Cloud Architecture Consultation (hrs)",
+      "quantity": "2",
+      "unit_price": "125.00",
+      "amount": "250.00"
+    },
+    {
+      "description": "Enterprise Security Penetration Test",
+      "quantity": "3",
+      "unit_price": "2450.00",
+      "amount": "7350.00"
+    },
+    {
+      "description": "Database Migration & Optimization",
+      "quantity": "4",
+      "unit_price": "1800.00",
+      "amount": "7200.00"
+    },
+    {
+      "description": "Full-Stack Software Development (hrs)",
+      "quantity": "5",
+      "unit_price": "95.00",
+      "amount": "475.00"
+    },
+    {
+      "description": "UX/UI Design Sprint Review",
+      "quantity": "1",
+      "unit_price": "1200.00",
+      "amount": "1200.00"
+    },
+    {
+      "description": "DevOps CI/CD Pipeline Automation",
+      "quantity": "2",
+      "unit_price": "1500.00",
+      "amount": "3000.00"
+    }
+  ],
+  "invoice_count": 1
+}
