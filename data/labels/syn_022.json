@@ -1,0 +1,179 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D022"
+  },
+  "invoice_date": {
+    "value": "2026-02-22"
+  },
+  "supplier_name": {
+    "value": "Kestrel Global Freight Solutions"
+  },
+  "customer_name": {
+    "value": "Delta Stream Solutions GmbH"
+  },
+  "subtotal": {
+    "value": "58736.50"
+  },
+  "tax": {
+    "value": "3817.87"
+  },
+  "total": {
+    "value": "62554.37"
+  },
+  "currency": {
+    "value": "USD"
+  },
+  "line_items": [
+    {
+      "description": "DevOps CI/CD Pipeline Automation",
+      "quantity": "2",
+      "unit_price": "1500.00",
+      "amount": "3000.00"
+    },
+    {
+      "description": "API Integration & Webhook Setup",
+      "quantity": "3",
+      "unit_price": "850.00",
+      "amount": "2550.00"
+    },
+    {
+      "description": "Machine Learning Model Tuning Service",
+      "quantity": "4",
+      "unit_price": "3200.00",
+      "amount": "12800.00"
+    },
+    {
+      "description": "Site Reliability Audit & Report",
+      "quantity": "5",
+      "unit_price": "1650.00",
+      "amount": "8250.00"
+    },
+    {
+      "description": "Industrial Rackmount Server Unit 2U",
+      "quantity": "1",
+      "unit_price": "2899.00",
+      "amount": "2899.00"
+    },
+    {
+      "description": "Gigabit Managed Switch 48-Port",
+      "quantity": "2",
+      "unit_price": "450.00",
+      "amount": "900.00"
+    },
+    {
+      "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+      "quantity": "3",
+      "unit_price": "145.00",
+      "amount": "435.00"
+    },
+    {
+      "description": "High-Performance Thermal Sensor Probe",
+      "quantity": "4",
+      "unit_price": "82.50",
+      "amount": "330.00"
+    },
+    {
+      "description": "Fiber Optic Transceiver SFP+ 10G",
+      "quantity": "5",
+      "unit_price": "65.00",
+      "amount": "325.00"
+    },
+    {
+      "description": "Backup Battery UPS Module 1500VA",
+      "quantity": "1",
+      "unit_price": "380.00",
+      "amount": "380.00"
+    },
+    {
+      "description": "Solid State NVMe Drive Enterprise 2TB",
+      "quantity": "2",
+      "unit_price": "220.00",
+      "amount": "440.00"
+    },
+    {
+      "description": "Precision Optical Collimator Lens",
+      "quantity": "3",
+      "unit_price": "540.00",
+      "amount": "1620.00"
+    },
+    {
+      "description": "Hydraulic Flow Meter Digital Sensor",
+      "quantity": "4",
+      "unit_price": "310.00",
+      "amount": "1240.00"
+    },
+    {
+      "description": "Heavy Duty Timber Pallet (Treated)",
+      "quantity": "5",
+      "unit_price": "28.00",
+      "amount": "140.00"
+    },
+    {
+      "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+      "quantity": "1",
+      "unit_price": "19.50",
+      "amount": "19.50"
+    },
+    {
+      "description": "Annual Enterprise Software License",
+      "quantity": "2",
+      "unit_price": "4999.00",
+      "amount": "9998.00"
+    },
+    {
+      "description": "Monthly Cloud Infrastructure Retainer",
+      "quantity": "3",
+      "unit_price": "750.00",
+      "amount": "2250.00"
+    },
+    {
+      "description": "Emergency Server Maintenance SLA",
+      "quantity": "4",
+      "unit_price": "900.00",
+      "amount": "3600.00"
+    },
+    {
+      "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+      "quantity": "5",
+      "unit_price": "175.00",
+      "amount": "875.00"
+    },
+    {
+      "description": "Data Storage Volume Allocation (TB/mo)",
+      "quantity": "1",
+      "unit_price": "45.00",
+      "amount": "45.00"
+    },
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "2",
+      "unit_price": "620.00",
+      "amount": "1240.00"
+    },
+    {
+      "description": "Express Air Freight Courier Delivery",
+      "quantity": "3",
+      "unit_price": "230.00",
+      "amount": "690.00"
+    },
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "4",
+      "unit_price": "680.00",
+      "amount": "2720.00"
+    },
+    {
+      "description": "Customs Clearing & Import Documentation",
+      "quantity": "5",
+      "unit_price": "340.00",
+      "amount": "1700.00"
+    },
+    {
+      "description": "Warehouse Staging & Inventory Tagging",
+      "quantity": "1",
+      "unit_price": "290.00",
+      "amount": "290.00"
+    }
+  ],
+  "invoice_count": 1
+}

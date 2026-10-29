@@ -1,0 +1,101 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D011"
+  },
+  "invoice_date": {
+    "value": "2026-03-14"
+  },
+  "supplier_name": {
+    "value": "Frontline Biotech Labs LLC"
+  },
+  "customer_name": {
+    "value": "Glacier Ridge Capital Partners"
+  },
+  "subtotal": {
+    "value": "13643.50"
+  },
+  "tax": {
+    "value": "2728.70"
+  },
+  "total": {
+    "value": "16372.20"
+  },
+  "currency": {
+    "value": "GBP"
+  },
+  "line_items": [
+    {
+      "description": "Solid State NVMe Drive Enterprise 2TB",
+      "quantity": "1",
+      "unit_price": "220.00",
+      "amount": "220.00"
+    },
+    {
+      "description": "Precision Optical Collimator Lens",
+      "quantity": "2",
+      "unit_price": "540.00",
+      "amount": "1080.00"
+    },
+    {
+      "description": "Hydraulic Flow Meter Digital Sensor",
+      "quantity": "3",
+      "unit_price": "310.00",
+      "amount": "930.00"
+    },
+    {
+      "description": "Heavy Duty Timber Pallet (Treated)",
+      "quantity": "4",
+      "unit_price": "28.00",
+      "amount": "112.00"
+    },
+    {
+      "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+      "quantity": "5",
+      "unit_price": "19.50",
+      "amount": "97.50"
+    },
+    {
+      "description": "Annual Enterprise Software License",
+      "quantity": "1",
+      "unit_price": "4999.00",
+      "amount": "4999.00"
+    },
+    {
+      "description": "Monthly Cloud Infrastructure Retainer",
+      "quantity": "2",
+      "unit_price": "750.00",
+      "amount": "1500.00"
+    },
+    {
+      "description": "Emergency Server Maintenance SLA",
+      "quantity": "3",
+      "unit_price": "900.00",
+      "amount": "2700.00"
+    },
+    {
+      "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+      "quantity": "4",
+      "unit_price": "175.00",
+      "amount": "700.00"
+    },
+    {
+      "description": "Data Storage Volume Allocation (TB/mo)",
+      "quantity": "5",
+      "unit_price": "45.00",
+      "amount": "225.00"
+    },
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "1",
+      "unit_price": "620.00",
+      "amount": "620.00"
+    },
+    {
+      "description": "Express Air Freight Courier Delivery",
+      "quantity": "2",
+      "unit_price": "230.00",
+      "amount": "460.00"
+    }
+  ],
+  "invoice_count": 1
+}

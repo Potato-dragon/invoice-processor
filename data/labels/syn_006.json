@@ -1,0 +1,65 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D006"
+  },
+  "invoice_date": {
+    "value": "2026-03-14"
+  },
+  "supplier_name": {
+    "value": "Crestline Industrial Hardware"
+  },
+  "customer_name": {
+    "value": "Falcon Ridge Enterprises LLC"
+  },
+  "subtotal": {
+    "value": "4637.50"
+  },
+  "tax": {
+    "value": "347.81"
+  },
+  "total": {
+    "value": "4985.31"
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [
+    {
+      "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+      "quantity": "4",
+      "unit_price": "145.00",
+      "amount": "580.00"
+    },
+    {
+      "description": "High-Performance Thermal Sensor Probe",
+      "quantity": "5",
+      "unit_price": "82.50",
+      "amount": "412.50"
+    },
+    {
+      "description": "Fiber Optic Transceiver SFP+ 10G",
+      "quantity": "1",
+      "unit_price": "65.00",
+      "amount": "65.00"
+    },
+    {
+      "description": "Backup Battery UPS Module 1500VA",
+      "quantity": "2",
+      "unit_price": "380.00",
+      "amount": "760.00"
+    },
+    {
+      "description": "Solid State NVMe Drive Enterprise 2TB",
+      "quantity": "3",
+      "unit_price": "220.00",
+      "amount": "660.00"
+    },
+    {
+      "description": "Precision Optical Collimator Lens",
+      "quantity": "4",
+      "unit_price": "540.00",
+      "amount": "2160.00"
+    }
+  ],
+  "invoice_count": 1
+}

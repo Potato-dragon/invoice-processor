@@ -1,0 +1,41 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D016"
+  },
+  "invoice_date": {
+    "value": "2026-01-15"
+  },
+  "supplier_name": {
+    "value": "Horizon Peak Dynamics Corp"
+  },
+  "customer_name": {
+    "value": null
+  },
+  "subtotal": {
+    "value": "4320.00"
+  },
+  "tax": {
+    "value": "367.20"
+  },
+  "total": {
+    "value": "4687.20"
+  },
+  "currency": {
+    "value": "USD"
+  },
+  "line_items": [
+    {
+      "description": "Express Air Freight Courier Delivery",
+      "quantity": "4",
+      "unit_price": "230.00",
+      "amount": "920.00"
+    },
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "5",
+      "unit_price": "680.00",
+      "amount": "3400.00"
+    }
+  ],
+  "invoice_count": 1
+}

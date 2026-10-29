@@ -20,6 +20,10 @@ You are one of several agents building this project in parallel. A human coordin
 
 ## Git
 - Work on your own branch named in your brief. Small, frequent commits with clear messages. Never force-push. Never commit to `main`.
+## Quota discipline
+- Don't run `docker compose build/up` yourself. Write code, then list the exact commands the human should run. The human pastes back errors.
+- Don't re-read files you already read. Don't print whole files in chat. Open only the files your brief lists.
+- If a command fails twice, stop and report it instead of retrying.
 
 ## Done means
 - Every acceptance check in your brief passes, and you ran them.

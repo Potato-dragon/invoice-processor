@@ -1,0 +1,149 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-T024"
+  },
+  "invoice_date": {
+    "value": "2026-03-29"
+  },
+  "supplier_name": {
+    "value": "Lumina Sensor Technologies Inc"
+  },
+  "customer_name": {
+    "value": "Ironclad Security Infrastructure"
+  },
+  "subtotal": {
+    "value": "30961.00"
+  },
+  "tax": {
+    "value": "2863.89"
+  },
+  "total": {
+    "value": "33824.89"
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [
+    {
+      "description": "Fiber Optic Transceiver SFP+ 10G",
+      "quantity": "2",
+      "unit_price": "65.00",
+      "amount": "130.00"
+    },
+    {
+      "description": "Backup Battery UPS Module 1500VA",
+      "quantity": "3",
+      "unit_price": "380.00",
+      "amount": "1140.00"
+    },
+    {
+      "description": "Solid State NVMe Drive Enterprise 2TB",
+      "quantity": "4",
+      "unit_price": "220.00",
+      "amount": "880.00"
+    },
+    {
+      "description": "Precision Optical Collimator Lens",
+      "quantity": "1",
+      "unit_price": "540.00",
+      "amount": "540.00"
+    },
+    {
+      "description": "Hydraulic Flow Meter Digital Sensor",
+      "quantity": "2",
+      "unit_price": "310.00",
+      "amount": "620.00"
+    },
+    {
+      "description": "Heavy Duty Timber Pallet (Treated)",
+      "quantity": "3",
+      "unit_price": "28.00",
+      "amount": "84.00"
+    },
+    {
+      "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+      "quantity": "4",
+      "unit_price": "19.50",
+      "amount": "78.00"
+    },
+    {
+      "description": "Annual Enterprise Software License",
+      "quantity": "1",
+      "unit_price": "4999.00",
+      "amount": "4999.00"
+    },
+    {
+      "description": "Monthly Cloud Infrastructure Retainer",
+      "quantity": "2",
+      "unit_price": "750.00",
+      "amount": "1500.00"
+    },
+    {
+      "description": "Emergency Server Maintenance SLA",
+      "quantity": "3",
+      "unit_price": "900.00",
+      "amount": "2700.00"
+    },
+    {
+      "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+      "quantity": "4",
+      "unit_price": "175.00",
+      "amount": "700.00"
+    },
+    {
+      "description": "Data Storage Volume Allocation (TB/mo)",
+      "quantity": "1",
+      "unit_price": "45.00",
+      "amount": "45.00"
+    },
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "2",
+      "unit_price": "620.00",
+      "amount": "1240.00"
+    },
+    {
+      "description": "Express Air Freight Courier Delivery",
+      "quantity": "3",
+      "unit_price": "230.00",
+      "amount": "690.00"
+    },
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "4",
+      "unit_price": "680.00",
+      "amount": "2720.00"
+    },
+    {
+      "description": "Customs Clearing & Import Documentation",
+      "quantity": "1",
+      "unit_price": "340.00",
+      "amount": "340.00"
+    },
+    {
+      "description": "Warehouse Staging & Inventory Tagging",
+      "quantity": "2",
+      "unit_price": "290.00",
+      "amount": "580.00"
+    },
+    {
+      "description": "Cloud Architecture Consultation (hrs)",
+      "quantity": "3",
+      "unit_price": "125.00",
+      "amount": "375.00"
+    },
+    {
+      "description": "Enterprise Security Penetration Test",
+      "quantity": "4",
+      "unit_price": "2450.00",
+      "amount": "9800.00"
+    },
+    {
+      "description": "Database Migration & Optimization",
+      "quantity": "1",
+      "unit_price": "1800.00",
+      "amount": "1800.00"
+    }
+  ],
+  "invoice_count": 1
+}

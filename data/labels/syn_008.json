@@ -1,0 +1,77 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D008"
+  },
+  "invoice_date": {
+    "value": "2026-03-29"
+  },
+  "supplier_name": {
+    "value": "Datastream Systems GmbH"
+  },
+  "customer_name": {
+    "value": "Glacier Ridge Capital Partners"
+  },
+  "subtotal": {
+    "value": "10838.50"
+  },
+  "tax": {
+    "value": "2059.32"
+  },
+  "total": {
+    "value": "12897.82"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [
+    {
+      "description": "Backup Battery UPS Module 1500VA",
+      "quantity": "5",
+      "unit_price": "380.00",
+      "amount": "1900.00"
+    },
+    {
+      "description": "Solid State NVMe Drive Enterprise 2TB",
+      "quantity": "1",
+      "unit_price": "220.00",
+      "amount": "220.00"
+    },
+    {
+      "description": "Precision Optical Collimator Lens",
+      "quantity": "2",
+      "unit_price": "540.00",
+      "amount": "1080.00"
+    },
+    {
+      "description": "Hydraulic Flow Meter Digital Sensor",
+      "quantity": "3",
+      "unit_price": "310.00",
+      "amount": "930.00"
+    },
+    {
+      "description": "Heavy Duty Timber Pallet (Treated)",
+      "quantity": "4",
+      "unit_price": "28.00",
+      "amount": "112.00"
+    },
+    {
+      "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+      "quantity": "5",
+      "unit_price": "19.50",
+      "amount": "97.50"
+    },
+    {
+      "description": "Annual Enterprise Software License",
+      "quantity": "1",
+      "unit_price": "4999.00",
+      "amount": "4999.00"
+    },
+    {
+      "description": "Monthly Cloud Infrastructure Retainer",
+      "quantity": "2",
+      "unit_price": "750.00",
+      "amount": "1500.00"
+    }
+  ],
+  "invoice_count": 1
+}

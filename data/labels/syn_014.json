@@ -1,0 +1,35 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D014"
+  },
+  "invoice_date": {
+    "value": "2026-05-08"
+  },
+  "supplier_name": {
+    "value": "Greenfield Environmental Engineering"
+  },
+  "customer_name": {
+    "value": "Zenith Wholesale & Distribution"
+  },
+  "subtotal": {
+    "value": "525.00"
+  },
+  "tax": {
+    "value": "105.00"
+  },
+  "total": {
+    "value": "630.00"
+  },
+  "currency": {
+    "value": "GBP"
+  },
+  "line_items": [
+    {
+      "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+      "quantity": "3",
+      "unit_price": "175.00",
+      "amount": "525.00"
+    }
+  ],
+  "invoice_count": 1
+}

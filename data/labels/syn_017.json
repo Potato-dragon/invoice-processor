@@ -1,0 +1,41 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D017"
+  },
+  "invoice_date": {
+    "value": "2026-04-25"
+  },
+  "supplier_name": {
+    "value": "Ironwood Timber & Materials Ltd"
+  },
+  "customer_name": {
+    "value": "Zenith Wholesale & Distribution"
+  },
+  "subtotal": {
+    "value": "3280.00"
+  },
+  "tax": {
+    "value": "492.00"
+  },
+  "total": {
+    "value": "3772.00"
+  },
+  "currency": {
+    "value": "BDT"
+  },
+  "line_items": [
+    {
+      "description": "Data Storage Volume Allocation (TB/mo)",
+      "quantity": "4",
+      "unit_price": "45.00",
+      "amount": "180.00"
+    },
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "5",
+      "unit_price": "620.00",
+      "amount": "3100.00"
+    }
+  ],
+  "invoice_count": 1
+}

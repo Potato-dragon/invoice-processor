@@ -1,0 +1,71 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-T028"
+  },
+  "invoice_date": {
+    "value": "2026-04-25"
+  },
+  "supplier_name": {
+    "value": "NovaStar Robotics SpA"
+  },
+  "customer_name": {
+    "value": "Nordic Alpine Holdings AB"
+  },
+  "subtotal": {
+    "value": "8455.00"
+  },
+  "tax": {
+    "value": "1860.10"
+  },
+  "total": {
+    "value": "10315.10"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [
+    {
+      "description": "Monthly Cloud Infrastructure Retainer",
+      "quantity": "4",
+      "unit_price": "750.00",
+      "amount": "3000.00"
+    },
+    {
+      "description": "Emergency Server Maintenance SLA",
+      "quantity": "1",
+      "unit_price": "900.00",
+      "amount": "900.00"
+    },
+    {
+      "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+      "quantity": "2",
+      "unit_price": "175.00",
+      "amount": "350.00"
+    },
+    {
+      "description": "Data Storage Volume Allocation (TB/mo)",
+      "quantity": "3",
+      "unit_price": "45.00",
+      "amount": "135.00"
+    },
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "4",
+      "unit_price": "620.00",
+      "amount": "2480.00"
+    },
+    {
+      "description": "Express Air Freight Courier Delivery",
+      "quantity": "1",
+      "unit_price": "230.00",
+      "amount": "230.00"
+    },
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "2",
+      "unit_price": "680.00",
+      "amount": "1360.00"
+    }
+  ],
+  "invoice_count": 1
+}

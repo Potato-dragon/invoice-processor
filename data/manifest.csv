@@ -1,0 +1,33 @@
+id,filename,kind,layout,supplier,locale,currency,quality,split,expected_status,expected_error_code,notes
+syn_001,syn_001.pdf,pdf,modern_clean,Apex Pinnacle Solutions Ltd.,en_US,USD,digital,dev,COMPLETED,,Digital PDF modern_clean layout
+syn_002,syn_002.pdf,pdf,classic_corporate,Apex Pinnacle Solutions Ltd.,en_US,USD,digital,dev,COMPLETED,,Digital PDF classic_corporate layout
+syn_003,syn_003.pdf,pdf,compact_slip,BlueWave Cloud Logistics Inc.,en_US,USD,digital,dev,COMPLETED,,Digital PDF compact_slip layout
+syn_004,syn_004.pdf,pdf,bold_banner,BlueWave Cloud Logistics Inc.,en_US,USD,digital,dev,COMPLETED,,Digital PDF bold_banner layout
+syn_005,syn_005.pdf,pdf,modern_clean,Crestline Industrial Hardware,en_US,,digital,dev,COMPLETED,,Ambiguous currency symbol bare $
+syn_006,syn_006.pdf,pdf,classic_corporate,Crestline Industrial Hardware,en_US,,digital,dev,COMPLETED,,Digital PDF classic_corporate layout
+syn_007,syn_007.pdf,pdf,compact_slip,Datastream Systems GmbH,de_DE,EUR,digital,dev,COMPLETED,,Single line item European number formatting
+syn_008,syn_008.pdf,pdf,bold_banner,Datastream Systems GmbH,de_DE,EUR,digital,dev,COMPLETED,,Digital PDF bold_banner layout
+syn_009,syn_009.pdf,pdf,modern_clean,EchoForge Creative Media SAS,fr_FR,EUR,digital,dev,COMPLETED,,Digital PDF modern_clean layout
+syn_010,syn_010.pdf,pdf,classic_corporate,EchoForge Creative Media SAS,fr_FR,EUR,digital,dev,COMPLETED,,Digital PDF classic_corporate layout
+syn_011,syn_011.pdf,pdf,compact_slip,Frontline Biotech Labs LLC,en_GB,GBP,digital,dev,COMPLETED,,Digital PDF compact_slip layout
+syn_012,syn_012.pdf,pdf,bold_banner,Frontline Biotech Labs LLC,en_GB,GBP,digital,dev,COMPLETED,,Digital PDF bold_banner layout
+syn_013,syn_013.pdf,pdf,modern_clean,Greenfield Environmental Engineering,en_GB,GBP,digital,dev,COMPLETED,,Digital PDF modern_clean layout
+syn_014,syn_014.pdf,pdf,classic_corporate,Greenfield Environmental Engineering,en_GB,GBP,digital,dev,COMPLETED,,Digital PDF classic_corporate layout
+syn_015,syn_015.pdf,pdf,compact_slip,Horizon Peak Dynamics Corp,en_US,USD,digital,dev,COMPLETED,,Digital PDF compact_slip layout
+syn_016,syn_016.pdf,pdf,bold_banner,Horizon Peak Dynamics Corp,en_US,USD,digital,dev,COMPLETED,,Digital PDF bold_banner layout
+syn_017,syn_017.pdf,pdf,modern_clean,Ironwood Timber & Materials Ltd,bn_BD,BDT,digital,dev,COMPLETED,,Digital PDF modern_clean layout
+syn_018,syn_018.pdf,pdf,classic_corporate,Ironwood Timber & Materials Ltd,bn_BD,BDT,digital,dev,COMPLETED,,Digital PDF classic_corporate layout
+syn_019,syn_019.pdf,pdf,compact_slip,Jupiter Nordic Software Oy,de_DE,EUR,digital,dev,COMPLETED,,Digital PDF compact_slip layout
+syn_020,syn_020.pdf,pdf,bold_banner,Jupiter Nordic Software Oy,de_DE,EUR,digital,dev,COMPLETED,,Tax exempt / omitted tax
+syn_021,syn_021.pdf,pdf,modern_clean,Kestrel Global Freight Solutions,en_US,USD,digital,dev,COMPLETED,,Digital PDF modern_clean layout
+syn_022,syn_022.pdf,pdf,classic_corporate,Kestrel Global Freight Solutions,en_US,USD,digital,dev,COMPLETED,,Multi-page digital PDF test (25 line items)
+syn_023,syn_023.pdf,pdf,minimalist_sidebar,Lumina Sensor Technologies Inc,en_US,,digital,test,COMPLETED,,Test split ambiguous currency bare $
+syn_024,syn_024.pdf,pdf,international_multilingual,Lumina Sensor Technologies Inc,en_US,,digital,test,COMPLETED,,Test split multi-page invoice (20 line items)
+syn_025,syn_025.pdf,pdf,international_multilingual,Meridian Healthcare Diagnostics,en_GB,GBP,digital,test,COMPLETED,,Test split international_multilingual layout
+syn_026,syn_026.pdf,pdf,minimalist_sidebar,Meridian Healthcare Diagnostics,en_GB,GBP,digital,test,COMPLETED,,Test split minimalist_sidebar layout
+syn_027,syn_027.pdf,pdf,minimalist_sidebar,NovaStar Robotics SpA,de_DE,EUR,digital,test,COMPLETED,,Test split minimalist_sidebar layout
+syn_028,syn_028.pdf,pdf,international_multilingual,NovaStar Robotics SpA,de_DE,EUR,digital,test,COMPLETED,,Test split international_multilingual layout
+syn_029,syn_029.pdf,pdf,international_multilingual,Orion Precision Optics Ltd,en_US,JPY,digital,test,COMPLETED,,Test split JPY currency
+syn_030,syn_030.pdf,pdf,minimalist_sidebar,Orion Precision Optics Ltd,en_US,JPY,digital,test,COMPLETED,,Test split JPY currency
+syn_031,syn_031.pdf,pdf,minimalist_sidebar,Pacific Crest Supplies Co.,hi_IN,INR,digital,test,COMPLETED,,Test split INR currency Indian number formatting
+syn_032,syn_032.pdf,pdf,international_multilingual,Pacific Crest Supplies Co.,hi_IN,INR,digital,test,COMPLETED,,Test split INR currency Indian number formatting

@@ -1,0 +1,41 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D003"
+  },
+  "invoice_date": {
+    "value": "2026-01-28"
+  },
+  "supplier_name": {
+    "value": "BlueWave Cloud Logistics Inc."
+  },
+  "customer_name": {
+    "value": "Cobalt Dynamics Group"
+  },
+  "subtotal": {
+    "value": "3790.00"
+  },
+  "tax": {
+    "value": "312.68"
+  },
+  "total": {
+    "value": "4102.68"
+  },
+  "currency": {
+    "value": "USD"
+  },
+  "line_items": [
+    {
+      "description": "Full-Stack Software Development (hrs)",
+      "quantity": "2",
+      "unit_price": "95.00",
+      "amount": "190.00"
+    },
+    {
+      "description": "UX/UI Design Sprint Review",
+      "quantity": "3",
+      "unit_price": "1200.00",
+      "amount": "3600.00"
+    }
+  ],
+  "invoice_count": 1
+}

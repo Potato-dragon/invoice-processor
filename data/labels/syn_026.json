@@ -1,0 +1,71 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-T026"
+  },
+  "invoice_date": {
+    "value": "2026-04-12"
+  },
+  "supplier_name": {
+    "value": "Meridian Healthcare Diagnostics"
+  },
+  "customer_name": {
+    "value": "Zenith Wholesale & Distribution"
+  },
+  "subtotal": {
+    "value": "17084.50"
+  },
+  "tax": {
+    "value": "3416.90"
+  },
+  "total": {
+    "value": "20501.40"
+  },
+  "currency": {
+    "value": "GBP"
+  },
+  "line_items": [
+    {
+      "description": "Hydraulic Flow Meter Digital Sensor",
+      "quantity": "3",
+      "unit_price": "310.00",
+      "amount": "930.00"
+    },
+    {
+      "description": "Heavy Duty Timber Pallet (Treated)",
+      "quantity": "4",
+      "unit_price": "28.00",
+      "amount": "112.00"
+    },
+    {
+      "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+      "quantity": "1",
+      "unit_price": "19.50",
+      "amount": "19.50"
+    },
+    {
+      "description": "Annual Enterprise Software License",
+      "quantity": "2",
+      "unit_price": "4999.00",
+      "amount": "9998.00"
+    },
+    {
+      "description": "Monthly Cloud Infrastructure Retainer",
+      "quantity": "3",
+      "unit_price": "750.00",
+      "amount": "2250.00"
+    },
+    {
+      "description": "Emergency Server Maintenance SLA",
+      "quantity": "4",
+      "unit_price": "900.00",
+      "amount": "3600.00"
+    },
+    {
+      "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+      "quantity": "1",
+      "unit_price": "175.00",
+      "amount": "175.00"
+    }
+  ],
+  "invoice_count": 1
+}
