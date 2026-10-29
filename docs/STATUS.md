@@ -2,7 +2,7 @@
 
 | Lane | Owner folder | Brief | Branch | State | Notes |
 |---|---|---|---|---|---|
-| A | backend/app (core), docker-compose.yml, infra | handoffs/A-backend-skeleton.md | lane-a/skeleton | NOT STARTED | |
+| A | backend/app (core), docker-compose.yml, infra | handoffs/A-backend-skeleton.md | lane-a/skeleton | IN PROGRESS | Tasks 1-5 complete; Next step: implement tasks 6-10 (API, pipeline, tests, README). |
 | F | tools/datagen, data/ | handoffs/F-test-data.md | lane-f/datagen | NOT STARTED | |
 | B | backend/app/parsing | (not written yet) | lane-b/parsing | NOT STARTED | |
 | C | backend/app/extraction | (not written yet) | lane-c/extraction | NOT STARTED | |
