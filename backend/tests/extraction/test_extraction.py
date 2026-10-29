@@ -549,3 +549,78 @@ class TestExtractionResultValidation:
         # (fake client may fill them in — that's fine, result still validates)
         dumped = result.model_dump()
         assert dumped["invoice_number"]["confidence"] >= 0.0
+
+
+# ---------------------------------------------------------------------------
+# 12. Regression tests for specific bug fixes
+# ---------------------------------------------------------------------------
+
+class TestExtractionRegressions:
+    def test_regression_invoice_number_not_matching_common_words(self):
+        """Invoice number rule must not match words like 'data', 'details', 'number' without digits."""
+        pages = _pages("invoice data and receipt summary and order info\n")
+        result = extract_by_rules(pages)
+        assert result.invoice_number.value is None
+        assert result.invoice_number.confidence == 0.0
+
+        # But valid invoice numbers with qualifiers and digits must match
+        res_valid = extract_by_rules(_pages("Invoice No: INV-456\n"))
+        assert res_valid.invoice_number.value == "INV-456"
+
+        res_fr = extract_by_rules(_pages("Numéro de facture: FR-2026-99\n"))
+        assert res_fr.invoice_number.value == "FR-2026-99"
+
+        res_de = extract_by_rules(_pages("Rechnungsnummer: 10098\n"))
+        assert res_de.invoice_number.value == "10098"
+
+    def test_regression_european_date_with_period_and_labels(self):
+        """Day followed by a period and labels Datum, Date, Fecha, Rechnungsdatum, Date de facture."""
+        # Datum with period day
+        r1 = extract_by_rules(_pages("Datum: 14. März 2026\n"))
+        assert r1.invoice_date.value == "2026-03-14"
+
+        # Rechnungsdatum
+        r2 = extract_by_rules(_pages("Rechnungsdatum: 15.04.2026\n"))
+        assert r2.invoice_date.value == "2026-04-15"
+
+        # Date de facture
+        r3 = extract_by_rules(_pages("Date de facture: 20/05/2026\n"))
+        assert r3.invoice_date.value == "2026-05-20"
+
+        # Fecha
+        r4 = extract_by_rules(_pages("Fecha: 25/12/2025\n"))
+        assert r4.invoice_date.value == "2025-12-25"
+
+        # Date
+        r5 = extract_by_rules(_pages("Date: 2026-08-01\n"))
+        assert r5.invoice_date.value == "2026-08-01"
+
+    def test_regression_supplier_skips_labels_and_colons(self):
+        """Supplier heuristic must skip lines with labels, colon values, digits, headings."""
+        doc = """\
+Rechnungsnummer: RE-2026-055
+Datum: 14. März 2026
+Nettobetrag    1.234,56 EUR
+MwSt             234,17 EUR
+Gesamtbetrag   1.468,73 EUR
+"""
+        result = extract_by_rules(_pages(doc))
+        # Must not be 'Rechnungsnummer: RE-2026-055' or any other label line
+        assert result.supplier_name.value is None
+        assert result.supplier_name.confidence == 0.0
+
+    def test_regression_confidence_rounded_to_two_decimals(self):
+        """Confidence bonus should never yield unrounded floats like 0.9199999999999999."""
+        doc = """\
+Invoice No: INV-100
+Date: 2026-01-01
+Subtotal  $100.00
+Tax        $10.00
+Total     $110.00
+"""
+        result = extract_by_rules(_pages(doc))
+        for field_name in ["subtotal", "tax", "total", "invoice_number", "invoice_date"]:
+            conf = getattr(result, field_name).confidence
+            assert conf == round(conf, 2), f"{field_name} confidence {conf} is not rounded to 2 decimals"
+
+

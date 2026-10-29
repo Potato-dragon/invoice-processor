@@ -38,11 +38,15 @@ def _norm_ws(text: str) -> str:
     return _WS.sub(" ", text).strip()
 
 
+def _round_conf(c: float) -> float:
+    return round(c, 2)
+
+
 def _field(value: Any, confidence: float, evidence: str | None, page: int | None) -> ExtractedField:
     """Build an ExtractedField, coercing to None if confidence is 0."""
     if value is None:
         return ExtractedField(value=None, confidence=0.0, evidence=None, page=None)
-    return ExtractedField(value=value, confidence=confidence, evidence=evidence, page=page)
+    return ExtractedField(value=value, confidence=_round_conf(confidence), evidence=evidence, page=page)
 
 
 def _empty_field() -> ExtractedField:
@@ -53,19 +57,32 @@ def _empty_field() -> ExtractedField:
 # Invoice-number patterns (multi-language)
 # ---------------------------------------------------------------------------
 
+# Common words that should never be returned as an invoice number.
+_INV_NUM_REJECTS = re.compile(
+    r"^(?:data|date|number|no|num|ref|invoice|receipt|bill|order|"
+    r"from|to|page|amount|total|tax|vat|currency|subtotal|net)s?$",
+    re.IGNORECASE,
+)
+
+# Labels that MUST include a qualifier (no, num, #, nr …) or be an
+# unambiguous word like "Rechnungsnummer". "invoice" alone is NOT a label
+# because it appears in headings; it must be followed by no/num/number/#/nr.
 _INV_NUM_LABELS = re.compile(
     r"(?:"
-    r"invoice\s*(?:no|num|number|#|nr)?|"
-    r"inv\.?\s*(?:no|num|#)?|"
-    r"facture\s*(?:no|n[°o]|num)?|"
-    r"rechnung(?:snummer)?|"
-    r"factura\s*(?:no|n[°o]|núm)?|"
-    r"n[°o]\s*(?:de\s*)?facture|"
-    r"bill\s*(?:no|number|#)?|"
-    r"receipt\s*(?:no|number|#)?|"
-    r"order\s*(?:no|number|#)?|"
-    r"ref(?:erence)?\s*(?:no|#)?"
-    r")[:\s#-]*([A-Z0-9][A-Z0-9\-/_. ]{1,30})",
+    r"invoice\s*(?:no|num(?:ber)?|#|nr)\b|"
+    r"inv\.?\s*(?:no|num(?:ber)?|#|nr)\b|"
+    r"facture\s*(?:no|n[°o]|num(?:éro)?)\b|"
+    r"num[ée]ro\s*(?:de\s*)?facture\b|"
+    r"n[°o]\s*(?:de\s*)?facture\b|"
+    r"rechnungsnummer\b|"
+    r"rechnung\s*(?:nr|nummer)\b|"
+    r"factura\s*(?:no|n[°o]|n[úu]m(?:ero)?)\b|"
+    r"n[úu]mero\s*(?:de\s*)?factura\b|"
+    r"bill\s*(?:no|num(?:ber)?|#|nr)\b|"
+    r"receipt\s*(?:no|num(?:ber)?|#|nr)\b|"
+    r"order\s*(?:no|num(?:ber)?|#|nr)\b|"
+    r"ref(?:erence)?\s*(?:no|num(?:ber)?|#|nr)\b"
+    r")[:\s#-]*([A-Z0-9][A-Z0-9\-/_. ]{0,29})",
     re.IGNORECASE,
 )
 
@@ -73,9 +90,13 @@ _INV_NUM_LABELS = re.compile(
 def _extract_invoice_number(pages: list[ParsedPage]) -> ExtractedField:
     for page in pages:
         text = page.text
-        m = _INV_NUM_LABELS.search(text)
-        if m:
-            raw = m.group(1).strip().rstrip(".,;:")
+        for m in _INV_NUM_LABELS.finditer(text):
+            raw = m.group(1).strip().rstrip(".,;: ")
+            # Must contain at least one digit and not be a common word
+            if not re.search(r"\d", raw):
+                continue
+            if _INV_NUM_REJECTS.match(raw):
+                continue
             evidence = _norm_ws(m.group(0))
             return _field(raw, 0.85, evidence, page.page_no)
     return _empty_field()
@@ -86,18 +107,18 @@ def _extract_invoice_number(pages: list[ParsedPage]) -> ExtractedField:
 # ---------------------------------------------------------------------------
 
 _DATE_LABELS = re.compile(
-    r"(?:"
+    r"\b(?:"
     r"invoice\s*date|date\s*of\s*invoice|"
-    r"date|datum|fecha|date\s*d['\u2019]?(?:emission|facture)|"
-    r"issued?\s*(?:on|date)?|"
-    r"bill(?:ing)?\s*date|"
-    r"receipt\s*date"
-    r")[:\s]*"
+    r"rechnungsdatum|date\s*de\s*facture|date\s*d['\u2019]?(?:emission|facture)|"
+    r"bill(?:ing)?\s*date|receipt\s*date|issued?\s*(?:on|date)?|"
+    # Simple labels last so the multi-word ones above take priority
+    r"datum|fecha|date"
+    r")\b[:\s]*"
     r"("
-    r"\d{4}[-/.]\d{1,2}[-/.]\d{1,2}|"   # ISO
-    r"\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4}|"  # dd/mm/yy or mm/dd
-    r"\d{1,2}[\s.]\w+[\s.,]+\d{2,4}|"    # 14 March 2026
-    r"\w+\s+\d{1,2}[,\s]+\d{4}"           # March 14, 2026
+    r"\d{4}[-/.]\d{1,2}[-/.]\d{1,2}|"       # ISO: 2026-03-14
+    r"\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4}|"      # dd/mm/yy or mm/dd/yyyy
+    r"\d{1,2}(?:\.|\s)+\w+[\s.,]+\d{2,4}|"   # 14. März 2026, 14 March 2026, 14.März 2026
+    r"\w+\s+\d{1,2}[,\s]+\d{4}"              # March 14, 2026
     r")",
     re.IGNORECASE,
 )
@@ -106,7 +127,7 @@ _DATE_STANDALONE = re.compile(
     r"\b("
     r"\d{4}[-/.]\d{1,2}[-/.]\d{1,2}|"
     r"\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4}|"
-    r"\d{1,2}[\s.]\w{3,10}[\s.,]+\d{4}|"
+    r"\d{1,2}(?:\.|\s)+\w{3,10}[\s.,]+\d{4}|"   # 14. März 2026 or 14 March 2026
     r"\w{3,10}\s+\d{1,2}[,\s]+\d{4}"
     r")\b",
     re.IGNORECASE,
@@ -117,8 +138,7 @@ def _extract_invoice_date(pages: list[ParsedPage]) -> ExtractedField:
     # Search all pages for a labelled date
     for page in pages:
         text = page.text
-        m = _DATE_LABELS.search(text)
-        if m:
+        for m in _DATE_LABELS.finditer(text):
             raw_date = m.group(1).strip()
             dr: DateResult = parse_date(raw_date, text)
             if dr.iso_date:
@@ -129,8 +149,7 @@ def _extract_invoice_date(pages: list[ParsedPage]) -> ExtractedField:
     # Fallback: any date-like token in first page
     for page in pages[:2]:
         text = page.text
-        m = _DATE_STANDALONE.search(text)
-        if m:
+        for m in _DATE_STANDALONE.finditer(text):
             raw_date = m.group(1).strip()
             dr = parse_date(raw_date, text)
             if dr.iso_date:
@@ -223,6 +242,36 @@ _COMPANY_SUFFIXES = re.compile(
     re.IGNORECASE,
 )
 
+# Lines that must be skipped when heuristically picking the supplier name.
+_LINE_IS_LABEL = re.compile(
+    r"(?:"
+    r"invoice|receipt|bill|tax\s*invoice|facture|rechnung|factura|"
+    r"(?:invoice|receipt|bill|ref|order|rechnungs?)\s*(?:no|num(?:ber)?|#|nr)|"
+    r"rechnungsnummer|"
+    r"datum|date|fecha|issued|from\b|sold\s*to|bill(?:ed)?\s*to|ship(?:ped)?\s*to|"
+    r"subtotal|total|tax|vat|gst|tva|mwst|ust|netto|nettobetrag|gesamtbetrag|montant|importe|"
+    r"item|description|qty|quantity|amount|unit\s*price|price"
+    r")",
+    re.IGNORECASE,
+)
+_LINE_HAS_COLON_VALUE = re.compile(r".+:\s*\S")   # "Label: value"
+_LINE_MOSTLY_DIGITS = re.compile(r"^[\d\s\-/.,+()]+$")
+
+
+def _is_bad_supplier_line(line: str) -> bool:
+    """Return True if this line must not be used as the supplier name."""
+    if _LINE_IS_LABEL.search(line):
+        return True
+    if _LINE_HAS_COLON_VALUE.search(line):
+        return True
+    if _LINE_MOSTLY_DIGITS.match(line):
+        return True
+    # Reject if more than half the non-space characters are digits
+    non_space = line.replace(" ", "")
+    if non_space and sum(c.isdigit() for c in non_space) / len(non_space) > 0.5:
+        return True
+    return False
+
 
 def _extract_supplier(pages: list[ParsedPage]) -> ExtractedField:
     # 1. Labelled "From/Seller"
@@ -231,19 +280,24 @@ def _extract_supplier(pages: list[ParsedPage]) -> ExtractedField:
         m = _SUPPLIER_LABELS.search(text)
         if m:
             name = _norm_ws(m.group(1)).strip().strip(".,;:")
-            if len(name) >= 3:
+            if len(name) >= 3 and not _is_bad_supplier_line(name):
                 evidence = _norm_ws(m.group(0))
                 return _field(name, 0.80, evidence, page.page_no)
 
-    # 2. Top-of-first-page heuristic: first non-empty line that looks like a company
+    # 2. Top-of-first-page heuristic: first safe non-empty line
     for page in pages[:1]:
         lines = [_norm_ws(ln) for ln in page.text.splitlines() if _norm_ws(ln)]
-        for line in lines[:6]:
+        # Prefer a line with a known company suffix
+        for line in lines[:8]:
+            if _is_bad_supplier_line(line):
+                continue
             if _COMPANY_SUFFIXES.search(line):
                 return _field(line, 0.70, line, page.page_no)
-        # Fallback: first non-trivial line
-        for line in lines[:3]:
-            if len(line) >= 4 and not re.match(r"^(invoice|receipt|bill|tax\s*invoice)$", line, re.IGNORECASE):
+        # Fallback: first safe non-trivial line
+        for line in lines[:8]:
+            if _is_bad_supplier_line(line):
+                continue
+            if len(line) >= 4:
                 return _field(line, 0.55, line, page.page_no)
 
     return _empty_field()
@@ -403,14 +457,14 @@ def _apply_consistency_bonuses(
 
         if st is not None and tx is not None and tot is not None:
             if abs(st + tx - tot) <= _ABS_TOL:
-                subtotal = subtotal.model_copy(update={"confidence": min(1.0, subtotal.confidence + 0.1)})
-                tax = tax.model_copy(update={"confidence": min(1.0, tax.confidence + 0.1)})
-                total = total.model_copy(update={"confidence": min(1.0, total.confidence + 0.1)})
+                subtotal = subtotal.model_copy(update={"confidence": _round_conf(min(1.0, subtotal.confidence + 0.1))})
+                tax = tax.model_copy(update={"confidence": _round_conf(min(1.0, tax.confidence + 0.1))})
+                total = total.model_copy(update={"confidence": _round_conf(min(1.0, total.confidence + 0.1))})
 
         if st is not None and line_items:
             item_sum = sum(Decimal(it.amount) for it in line_items if it.amount)
             if abs(item_sum - st) <= _ABS_TOL:
-                subtotal = subtotal.model_copy(update={"confidence": min(1.0, subtotal.confidence + 0.1)})
+                subtotal = subtotal.model_copy(update={"confidence": _round_conf(min(1.0, subtotal.confidence + 0.1))})
 
     except (InvalidOperation, TypeError):
         pass
@@ -452,3 +506,4 @@ def extract_by_rules(pages: list[ParsedPage]) -> ExtractionResult:
         method=ExtractionMethod.RULES,
         notes=notes,
     )
+
