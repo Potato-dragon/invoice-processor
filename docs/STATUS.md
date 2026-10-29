@@ -10,7 +10,7 @@
 | F | tools/datagen, data/ | handoffs/F-test-data.md | lane-f/datagen | IN PROGRESS | Tasks 1-3, 10-12 done: 6 layouts, 32 digital PDFs (22 dev, 10 test), labels, manifest, verify.py pass. Next step: Tasks 4-9 (scanned docs, spreadsheets, errors, multi-page PDFs). |
 >>>>>>> lane-f/datagen
 | B | backend/app/parsing | (not written yet) | lane-b/parsing | NOT STARTED | |
-| C | backend/app/extraction | (not written yet) | lane-c/extraction | NOT STARTED | |
+| C | backend/app/extraction | handoffs/C-extraction.md | lane-c/extraction | IN PROGRESS | Tasks 1-7 in progress: normalizers, rules, LLM client, rate limiter, cache, cascade, tests. |
 | D | backend/app/validation | (not written yet) | lane-d/validation | NOT STARTED | |
 | E | frontend | (not written yet) | lane-e/frontend | NOT STARTED | |
 

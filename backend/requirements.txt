@@ -7,3 +7,8 @@ rq>=2.0,<3
 sqlalchemy>=2.0,<3
 uvicorn[standard]>=0.32,<1
 opencv-python-headless>=4.10,<5
+
+# extraction
+httpx>=0.27,<1
+pymupdf>=1.24,<2
+
