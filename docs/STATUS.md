@@ -9,5 +9,6 @@
 | E | frontend | (built directly) | DONE | Next.js: upload, progress, document and invoice views, inline correction, review queue, search, cross-checks. |
 | F | tools/datagen, data/ | handoffs/F1.md, F2.md | DONE | 108 docs (all file types), 30-page multi-invoice, 1,000-page generator (`--large`). verify.py passes. |
 | Eval | backend/evaluation | (built directly) | DONE | `run_eval.py`; results in docs/EVALUATION.md and docs/eval/. |
+| Real-world | data/public, data/real | (31 Oct review) | DONE | Vision fallback, real-layout rules, 15 public + 2 owner invoices hand-labelled; 86.7% / 93.8% with Gemma. |
 
-Remaining for the human: record the walkthrough; optionally add 10–25 public invoices to `data/real/` with labels.
+Remaining for the human: record the walkthrough (script in docs/WALKTHROUGH.md).

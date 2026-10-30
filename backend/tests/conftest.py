@@ -12,6 +12,10 @@ os.environ["LLM_FAKE"] = "true"
 os.environ["PIPELINE_SYNC"] = "true"
 os.environ.setdefault("API_KEY", "test-key")
 os.environ["STORAGE_DIR"] = "/tmp/invoice-test-storage"
+# Rate limits are per API key and per minute in Redis; uploads from other runs
+# (evaluation, manual use) in the same minute must not make tests flaky.
+os.environ["RATE_LIMIT_UPLOAD_PER_MIN"] = "100000"
+os.environ["RATE_LIMIT_SEARCH_PER_MIN"] = "100000"
 
 import pytest  # noqa: E402
 

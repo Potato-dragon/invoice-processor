@@ -3,7 +3,7 @@
  "split": "all",
  "documents": 15,
  "upload_seconds": 0.1,
- "wall_seconds": 661.4,
+ "wall_seconds": 173.6,
  "llm_fake": "false",
  "llm_models": [
   "gemma-4-31b-it",
@@ -11,9 +11,9 @@
  ],
  "field_accuracy": {
   "invoice_number": {
-   "correct": 13,
+   "correct": 14,
    "total": 15,
-   "pct": 86.7
+   "pct": 93.3
   },
   "invoice_date": {
    "correct": 15,
@@ -26,14 +26,14 @@
    "pct": 53.3
   },
   "customer_name": {
-   "correct": 10,
+   "correct": 13,
    "total": 15,
-   "pct": 66.7
+   "pct": 86.7
   },
   "subtotal": {
-   "correct": 11,
+   "correct": 12,
    "total": 15,
-   "pct": 73.3
+   "pct": 80.0
   },
   "tax": {
    "correct": 15,
@@ -53,17 +53,17 @@
  },
  "group_accuracy": {
   "digital": {
-   "correct": 73,
+   "correct": 75,
    "total": 88,
-   "pct": 83.0
+   "pct": 85.2
   },
   "scan_image": {
-   "correct": 26,
+   "correct": 29,
    "total": 32,
-   "pct": 81.2
+   "pct": 90.6
   }
  },
- "overall_field_accuracy": 82.5,
+ "overall_field_accuracy": 86.7,
  "status": [
   {
    "id": "pub_001",
@@ -207,9 +207,9 @@
  "unexpected_failure_rate": 0.0,
  "failure_rate_all": 0.0,
  "llm_share": {
-  "llm_invoices": 13,
+  "llm_invoices": 14,
   "invoices": 15,
-  "pct": 86.7
+  "pct": 93.3
  },
  "validation": {
   "seeded_recall": {
@@ -223,9 +223,9 @@
    "pct": 53.3
   },
   "validator_false_positive": {
-   "flagged": 1,
-   "clean_and_correct": 4,
-   "pct": 25.0
+   "flagged": 4,
+   "clean_and_correct": 7,
+   "pct": 57.1
   },
   "seeded_detail": [],
   "clean_flagged": [
@@ -259,7 +259,7 @@
      "CURRENCY_AMBIGUOUS",
      "LINE_ITEMS_SUBTOTAL_MISMATCH"
     ],
-    "extraction_correct": false
+    "extraction_correct": true
    },
    {
     "id": "pub_009",
@@ -288,7 +288,8 @@
     "notes": "AmazonWebServices.png (image version): statement-style invoice; currency stated in words ('in US Dollars')",
     "flagged": true,
     "error_codes": [
-     "CURRENCY_AMBIGUOUS"
+     "CURRENCY_AMBIGUOUS",
+     "DUPLICATE_EXACT"
     ],
     "extraction_correct": false
    },
@@ -300,7 +301,7 @@
     "error_codes": [
      "DUPLICATE_EXACT"
     ],
-    "extraction_correct": false
+    "extraction_correct": true
    },
    {
     "id": "pub_014",
@@ -312,7 +313,7 @@
      "DUPLICATE_EXACT",
      "LINE_ITEMS_SUBTOTAL_MISMATCH"
     ],
-    "extraction_correct": false
+    "extraction_correct": true
    }
   ]
  },
@@ -332,32 +333,32 @@
  "timing": {
   "per_document_ms": {
    "n": 15,
-   "mean": 81106.7,
-   "p50": 73376,
-   "p95": 119125,
-   "max": 176509
+   "mean": 22559.3,
+   "p50": 740,
+   "p95": 101439,
+   "max": 120170
   },
   "per_page_ms": {
    "n": 15,
-   "mean": 75981.5,
-   "p50": 69915.0,
-   "p95": 119125.0,
-   "max": 176509.0
+   "mean": 22556.3,
+   "p50": 740.0,
+   "p95": 101439.0,
+   "max": 120170.0
   },
   "by_group_ms": {
    "digital": {
     "n": 11,
-    "mean": 88009.5,
-    "p50": 88866,
-    "p95": 176509,
-    "max": 176509
+    "mean": 26634,
+    "p50": 47,
+    "p95": 120170,
+    "max": 120170
    },
    "scan_image": {
     "n": 4,
-    "mean": 62124,
-    "p50": 71645.5,
-    "p95": 104074,
-    "max": 104074
+    "mean": 11354,
+    "p50": 1341.5,
+    "p95": 41993,
+    "max": 41993
    }
   },
   "rows": [
@@ -367,12 +368,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 23,
-     "extract": 119071,
-     "validate": 7,
-     "index": 24
+     "parse": 14,
+     "extract": 100900,
+     "validate": 6,
+     "index": 519
     },
-    "processing_ms": 119125
+    "processing_ms": 101439
    },
    {
     "id": "pub_002",
@@ -380,12 +381,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 13,
-     "extract": 117626,
-     "validate": 33,
-     "index": 21
+     "parse": 10,
+     "extract": 8,
+     "validate": 9,
+     "index": 24
     },
-    "processing_ms": 117693
+    "processing_ms": 51
    },
    {
     "id": "pub_003",
@@ -393,12 +394,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 12,
-     "extract": 58417,
+     "parse": 10,
+     "extract": 6,
      "validate": 6,
-     "index": 27
+     "index": 25
     },
-    "processing_ms": 58462
+    "processing_ms": 47
    },
    {
     "id": "pub_004",
@@ -406,12 +407,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 11,
-     "extract": 110702,
-     "validate": 8,
-     "index": 24
+     "parse": 17,
+     "extract": 120123,
+     "validate": 12,
+     "index": 18
     },
-    "processing_ms": 110745
+    "processing_ms": 120170
    },
    {
     "id": "pub_005",
@@ -419,12 +420,12 @@
     "kind": "pdf",
     "pages": 2,
     "stage_ms": {
-     "parse": 18,
-     "extract": 64838,
-     "validate": 7,
-     "index": 27
+     "parse": 19,
+     "extract": 7,
+     "validate": 6,
+     "index": 14
     },
-    "processing_ms": 64890
+    "processing_ms": 46
    },
    {
     "id": "pub_006",
@@ -432,12 +433,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 9,
-     "extract": 60009,
-     "validate": 12,
-     "index": 15
+     "parse": 10,
+     "extract": 10,
+     "validate": 8,
+     "index": 11
     },
-    "processing_ms": 60045
+    "processing_ms": 39
    },
    {
     "id": "pub_007",
@@ -445,12 +446,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 9,
-     "extract": 5,
-     "validate": 6,
+     "parse": 8,
+     "extract": 6,
+     "validate": 7,
      "index": 10
     },
-    "processing_ms": 30
+    "processing_ms": 31
    },
    {
     "id": "pub_008",
@@ -458,12 +459,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 18,
-     "extract": 110913,
-     "validate": 7,
-     "index": 41
+     "parse": 9,
+     "extract": 62051,
+     "validate": 9,
+     "index": 25
     },
-    "processing_ms": 110979
+    "processing_ms": 62094
    },
    {
     "id": "pub_009",
@@ -471,12 +472,12 @@
     "kind": "pdf",
     "pages": 2,
     "stage_ms": {
-     "parse": 12,
-     "extract": 88827,
+     "parse": 14,
+     "extract": 10,
      "validate": 8,
-     "index": 19
+     "index": 14
     },
-    "processing_ms": 88866
+    "processing_ms": 46
    },
    {
     "id": "pub_010",
@@ -484,12 +485,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 13,
-     "extract": 60720,
-     "validate": 7,
-     "index": 20
+     "parse": 11,
+     "extract": 7,
+     "validate": 6,
+     "index": 12
     },
-    "processing_ms": 60760
+    "processing_ms": 36
    },
    {
     "id": "pub_011",
@@ -498,11 +499,11 @@
     "pages": 1,
     "stage_ms": {
      "parse": 7,
-     "extract": 176452,
-     "validate": 6,
-     "index": 44
+     "extract": 8938,
+     "validate": 5,
+     "index": 25
     },
-    "processing_ms": 176509
+    "processing_ms": 8975
    },
    {
     "id": "pub_012",
@@ -510,12 +511,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 1100,
-     "extract": 4,
-     "validate": 6,
-     "index": 21
+     "parse": 1188,
+     "extract": 40756,
+     "validate": 7,
+     "index": 42
     },
-    "processing_ms": 1131
+    "processing_ms": 41993
    },
    {
     "id": "pub_013",
@@ -523,12 +524,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 1254,
-     "extract": 68633,
-     "validate": 9,
-     "index": 19
+     "parse": 1312,
+     "extract": 40,
+     "validate": 7,
+     "index": 13
     },
-    "processing_ms": 69915
+    "processing_ms": 1372
    },
    {
     "id": "pub_014",
@@ -536,12 +537,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 566,
-     "extract": 72789,
-     "validate": 8,
-     "index": 13
+     "parse": 589,
+     "extract": 134,
+     "validate": 6,
+     "index": 11
     },
-    "processing_ms": 73376
+    "processing_ms": 740
    },
    {
     "id": "pub_015",
@@ -549,12 +550,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 1025,
-     "extract": 103020,
+     "parse": 991,
+     "extract": 294,
      "validate": 7,
-     "index": 22
+     "index": 19
     },
-    "processing_ms": 104074
+    "processing_ms": 1311
    }
   ]
  },
@@ -602,12 +603,6 @@
    "got": "34.73"
   },
   {
-   "doc": "pub_006",
-   "field": "customer_name",
-   "want": "taylor riddel",
-   "got": "net 30 days"
-  },
-  {
    "doc": "pub_007",
    "field": "customer_name",
    "want": "pino bluebird",
@@ -644,40 +639,16 @@
    "got": null
   },
   {
-   "doc": "pub_011",
-   "field": "customer_name",
-   "want": "strategic corp",
-   "got": "afleveradres"
-  },
-  {
    "doc": "pub_012",
    "field": "supplier_name",
    "want": "amazon web services, inc",
-   "got": "\u201c this is not a vat invoice"
-  },
-  {
-   "doc": "pub_012",
-   "field": "subtotal",
-   "want": "4.11",
-   "got": null
+   "got": "amazon web services"
   },
   {
    "doc": "pub_012",
    "field": "currency",
    "want": "usd",
    "got": null
-  },
-  {
-   "doc": "pub_013",
-   "field": "invoice_number",
-   "want": "blr_wfld20151000982590",
-   "got": "# blr_wfld20151000982590"
-  },
-  {
-   "doc": "pub_014",
-   "field": "customer_name",
-   "want": "taylor riddel",
-   "got": "net 30 days"
   },
   {
    "doc": "pub_015",
@@ -708,35 +679,35 @@
     "NEEDS_REVIEW": 8
    },
    "by_extraction_method": {
-    "llm_fallback": 4,
-    "llm_vision": 3,
-    "llm_primary": 6,
-    "rules": 2
+    "llm_fallback": 3,
+    "llm_vision": 4,
+    "llm_primary": 7,
+    "rules": 1
    }
   },
   "stages": {
    "index": {
     "runs": 15,
-    "avg_ms": 23.1,
-    "max_ms": 44
+    "avg_ms": 52.1,
+    "max_ms": 519
    },
    "validate": {
     "runs": 15,
-    "avg_ms": 9.1,
-    "max_ms": 33
+    "avg_ms": 7.3,
+    "max_ms": 12
    },
    "parse": {
     "runs": 15,
-    "avg_ms": 272.7,
-    "max_ms": 1254
+    "avg_ms": 280.6,
+    "max_ms": 1312
    },
    "extract": {
     "runs": 15,
-    "avg_ms": 80801.7,
-    "max_ms": 176452
+    "avg_ms": 22219.3,
+    "max_ms": 120123
    }
   },
-  "avg_document_processing_ms": 81106.7,
+  "avg_document_processing_ms": 22559.3,
   "issues_by_code": {
    "EVIDENCE_NOT_FOUND": 1,
    "SUBTOTAL_TAX_TOTAL_MISMATCH": 2,
@@ -744,7 +715,7 @@
    "CURRENCY_AMBIGUOUS": 4,
    "LOW_CONFIDENCE": 4,
    "LINE_ITEMS_SUBTOTAL_MISMATCH": 5,
-   "DUPLICATE_EXACT": 2
+   "DUPLICATE_EXACT": 3
   }
  },
  "stats_before": {

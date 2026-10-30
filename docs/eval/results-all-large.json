@@ -2,8 +2,8 @@
  "name": "all-large",
  "split": "all",
  "documents": 108,
- "upload_seconds": 1.4,
- "wall_seconds": 53.6,
+ "upload_seconds": 1.2,
+ "wall_seconds": 45.3,
  "llm_fake": "true",
  "llm_models": [
   "gemma-4-31b-it",
@@ -26,9 +26,9 @@
    "pct": 91.2
   },
   "customer_name": {
-   "correct": 94,
+   "correct": 95,
    "total": 102,
-   "pct": 92.2
+   "pct": 93.1
   },
   "subtotal": {
    "correct": 90,
@@ -53,9 +53,9 @@
  },
  "group_accuracy": {
   "digital": {
-   "correct": 424,
+   "correct": 425,
    "total": 432,
-   "pct": 98.1
+   "pct": 98.4
   },
   "multi_invoice": {
    "correct": 62,
@@ -88,7 +88,7 @@
    "pct": 40.0
   }
  },
- "overall_field_accuracy": 90.4,
+ "overall_field_accuracy": 90.6,
  "status": [
   {
    "id": "syn_001",
@@ -1069,9 +1069,9 @@
  "unexpected_failure_rate": 0.0,
  "failure_rate_all": 8.3,
  "llm_share": {
-  "llm_invoices": 24,
+  "llm_invoices": 25,
   "invoices": 102,
-  "pct": 23.5
+  "pct": 24.5
  },
  "validation": {
   "seeded_recall": {
@@ -1086,7 +1086,7 @@
   },
   "validator_false_positive": {
    "flagged": 0,
-   "clean_and_correct": 49,
+   "clean_and_correct": 50,
    "pct": 0.0
   },
   "seeded_detail": [
@@ -1252,7 +1252,7 @@
     "notes": "seeded=negative_amount",
     "flagged": true,
     "error_codes": [
-     "LINE_ITEMS_SUBTOTAL_MISMATCH"
+     "NEGATIVE_AMOUNT"
     ],
     "extraction_correct": true
    },
@@ -1548,74 +1548,74 @@
  "timing": {
   "per_document_ms": {
    "n": 99,
-   "mean": 949.9,
-   "p50": 134,
-   "p95": 4822,
-   "max": 6364
+   "mean": 814.4,
+   "p50": 92,
+   "p95": 4261,
+   "max": 5043
   },
   "per_page_ms": {
    "n": 95,
-   "mean": 961.3,
-   "p50": 123.0,
-   "p95": 4822.0,
-   "max": 6364.0
+   "mean": 820.8,
+   "p50": 92.0,
+   "p95": 4261.0,
+   "max": 5043.0
   },
   "by_group_ms": {
    "digital": {
     "n": 54,
-    "mean": 164.6,
-    "p50": 81.5,
-    "p95": 207,
-    "max": 2043
+    "mean": 111.3,
+    "p50": 64.0,
+    "p95": 117,
+    "max": 1195
    },
    "multi_invoice": {
     "n": 1,
-    "mean": 1661,
-    "p50": 1661,
-    "p95": 1661,
-    "max": 1661
+    "mean": 1904,
+    "p50": 1904,
+    "p95": 1904,
+    "max": 1904
    },
    "receipt": {
     "n": 6,
-    "mean": 69,
-    "p50": 56.5,
-    "p95": 119,
-    "max": 119
+    "mean": 54.2,
+    "p50": 50.5,
+    "p95": 84,
+    "max": 84
    },
    "receipt_scan": {
     "n": 4,
-    "mean": 522.8,
-    "p50": 520.5,
-    "p95": 587,
-    "max": 587
+    "mean": 419.2,
+    "p50": 417.5,
+    "p95": 450,
+    "max": 450
    },
    "scan_fair": {
     "n": 10,
-    "mean": 2215.9,
-    "p50": 1580.5,
-    "p95": 4822,
-    "max": 4822
+    "mean": 1926.3,
+    "p50": 1301.0,
+    "p95": 4697,
+    "max": 4697
    },
    "scan_good": {
     "n": 10,
-    "mean": 1225.2,
-    "p50": 1188.0,
-    "p95": 1903,
-    "max": 1903
+    "mean": 1119.3,
+    "p50": 1039.0,
+    "p95": 1875,
+    "max": 1875
    },
    "scan_poor": {
     "n": 10,
-    "mean": 4631.5,
-    "p50": 4774.5,
-    "p95": 6364,
-    "max": 6364
+    "mean": 4004.9,
+    "p50": 4148.5,
+    "p95": 5043,
+    "max": 5043
    },
    "spreadsheet": {
     "n": 4,
-    "mean": 66.8,
-    "p50": 22.0,
-    "p95": 209,
-    "max": 209
+    "mean": 52.5,
+    "p50": 25.0,
+    "p95": 145,
+    "max": 145
    }
   },
   "rows": [
@@ -1625,12 +1625,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 402,
-     "extract": 17,
-     "validate": 45,
-     "index": 1579
+     "parse": 351,
+     "extract": 15,
+     "validate": 26,
+     "index": 803
     },
-    "processing_ms": 2043
+    "processing_ms": 1195
    },
    {
     "id": "syn_002",
@@ -1638,12 +1638,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 427,
-     "extract": 14,
-     "validate": 41,
-     "index": 1362
+     "parse": 362,
+     "extract": 13,
+     "validate": 26,
+     "index": 766
     },
-    "processing_ms": 1844
+    "processing_ms": 1167
    },
    {
     "id": "syn_003",
@@ -1651,12 +1651,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 11,
+     "parse": 32,
      "extract": 8,
-     "validate": 11,
-     "index": 93
+     "validate": 7,
+     "index": 47
     },
-    "processing_ms": 123
+    "processing_ms": 94
    },
    {
     "id": "syn_004",
@@ -1664,12 +1664,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 27,
-     "extract": 6,
-     "validate": 9,
-     "index": 110
+     "parse": 13,
+     "extract": 7,
+     "validate": 7,
+     "index": 35
     },
-    "processing_ms": 152
+    "processing_ms": 62
    },
    {
     "id": "syn_005",
@@ -1677,12 +1677,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 12,
-     "extract": 33,
-     "validate": 13,
-     "index": 63
+     "parse": 30,
+     "extract": 7,
+     "validate": 8,
+     "index": 15
     },
-    "processing_ms": 121
+    "processing_ms": 60
    },
    {
     "id": "syn_006",
@@ -1690,12 +1690,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 10,
-     "extract": 12,
-     "validate": 10,
-     "index": 31
+     "parse": 7,
+     "extract": 11,
+     "validate": 9,
+     "index": 32
     },
-    "processing_ms": 63
+    "processing_ms": 59
    },
    {
     "id": "syn_007",
@@ -1703,12 +1703,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 26,
-     "extract": 8,
-     "validate": 13,
-     "index": 40
+     "parse": 35,
+     "extract": 6,
+     "validate": 5,
+     "index": 26
     },
-    "processing_ms": 87
+    "processing_ms": 72
    },
    {
     "id": "syn_008",
@@ -1716,12 +1716,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 10,
-     "extract": 8,
-     "validate": 37,
-     "index": 152
+     "parse": 8,
+     "extract": 10,
+     "validate": 6,
+     "index": 79
     },
-    "processing_ms": 207
+    "processing_ms": 103
    },
    {
     "id": "syn_009",
@@ -1729,12 +1729,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 9,
-     "extract": 10,
-     "validate": 9,
-     "index": 91
+     "parse": 8,
+     "extract": 6,
+     "validate": 10,
+     "index": 21
     },
-    "processing_ms": 119
+    "processing_ms": 45
    },
    {
     "id": "syn_010",
@@ -1742,12 +1742,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 13,
-     "extract": 12,
-     "validate": 8,
-     "index": 77
+     "parse": 34,
+     "extract": 5,
+     "validate": 7,
+     "index": 18
     },
-    "processing_ms": 110
+    "processing_ms": 64
    },
    {
     "id": "syn_011",
@@ -1755,12 +1755,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 36,
-     "extract": 17,
-     "validate": 12,
+     "parse": 9,
+     "extract": 12,
+     "validate": 5,
      "index": 142
     },
-    "processing_ms": 207
+    "processing_ms": 168
    },
    {
     "id": "syn_012",
@@ -1768,12 +1768,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 12,
-     "extract": 17,
-     "validate": 12,
-     "index": 103
+     "parse": 9,
+     "extract": 15,
+     "validate": 7,
+     "index": 64
     },
-    "processing_ms": 144
+    "processing_ms": 95
    },
    {
     "id": "syn_013",
@@ -1782,11 +1782,11 @@
     "pages": 1,
     "stage_ms": {
      "parse": 34,
-     "extract": 13,
-     "validate": 9,
-     "index": 66
+     "extract": 8,
+     "validate": 7,
+     "index": 16
     },
-    "processing_ms": 122
+    "processing_ms": 65
    },
    {
     "id": "syn_014",
@@ -1795,11 +1795,11 @@
     "pages": 1,
     "stage_ms": {
      "parse": 8,
-     "extract": 27,
-     "validate": 10,
-     "index": 52
+     "extract": 5,
+     "validate": 8,
+     "index": 35
     },
-    "processing_ms": 97
+    "processing_ms": 56
    },
    {
     "id": "syn_015",
@@ -1807,12 +1807,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 7,
-     "extract": 4,
-     "validate": 6,
-     "index": 14
+     "parse": 23,
+     "extract": 9,
+     "validate": 10,
+     "index": 33
     },
-    "processing_ms": 31
+    "processing_ms": 75
    },
    {
     "id": "syn_016",
@@ -1820,12 +1820,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 40,
+     "parse": 8,
      "extract": 5,
-     "validate": 8,
-     "index": 60
+     "validate": 7,
+     "index": 21
     },
-    "processing_ms": 113
+    "processing_ms": 41
    },
    {
     "id": "syn_017",
@@ -1833,12 +1833,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 6,
-     "extract": 5,
-     "validate": 6,
-     "index": 31
+     "parse": 8,
+     "extract": 6,
+     "validate": 7,
+     "index": 25
     },
-    "processing_ms": 48
+    "processing_ms": 46
    },
    {
     "id": "syn_018",
@@ -1846,12 +1846,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 8,
-     "extract": 14,
+     "parse": 24,
+     "extract": 4,
      "validate": 7,
-     "index": 45
+     "index": 15
     },
-    "processing_ms": 74
+    "processing_ms": 50
    },
    {
     "id": "syn_019",
@@ -1860,11 +1860,11 @@
     "pages": 1,
     "stage_ms": {
      "parse": 8,
-     "extract": 6,
-     "validate": 7,
-     "index": 86
+     "extract": 7,
+     "validate": 6,
+     "index": 31
     },
-    "processing_ms": 107
+    "processing_ms": 52
    },
    {
     "id": "syn_020",
@@ -1872,12 +1872,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 8,
-     "extract": 12,
-     "validate": 10,
-     "index": 33
+     "parse": 7,
+     "extract": 21,
+     "validate": 5,
+     "index": 75
     },
-    "processing_ms": 63
+    "processing_ms": 108
    },
    {
     "id": "syn_021",
@@ -1885,12 +1885,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 40,
-     "extract": 22,
-     "validate": 6,
-     "index": 92
+     "parse": 7,
+     "extract": 5,
+     "validate": 5,
+     "index": 28
     },
-    "processing_ms": 160
+    "processing_ms": 45
    },
    {
     "id": "syn_022",
@@ -1898,12 +1898,12 @@
     "kind": "pdf",
     "pages": 2,
     "stage_ms": {
-     "parse": 20,
-     "extract": 14,
-     "validate": 7,
-     "index": 130
+     "parse": 11,
+     "extract": 7,
+     "validate": 6,
+     "index": 14
     },
-    "processing_ms": 171
+    "processing_ms": 38
    },
    {
     "id": "syn_023",
@@ -1911,12 +1911,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 35,
-     "extract": 17,
-     "validate": 7,
-     "index": 112
+     "parse": 20,
+     "extract": 8,
+     "validate": 8,
+     "index": 56
     },
-    "processing_ms": 171
+    "processing_ms": 92
    },
    {
     "id": "syn_024",
@@ -1924,12 +1924,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 8,
-     "extract": 15,
+     "parse": 9,
+     "extract": 19,
      "validate": 7,
-     "index": 110
+     "index": 46
     },
-    "processing_ms": 140
+    "processing_ms": 81
    },
    {
     "id": "syn_025",
@@ -1940,9 +1940,9 @@
      "parse": 7,
      "extract": 8,
      "validate": 6,
-     "index": 50
+     "index": 35
     },
-    "processing_ms": 71
+    "processing_ms": 56
    },
    {
     "id": "syn_026",
@@ -1950,12 +1950,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 37,
-     "extract": 12,
-     "validate": 10,
-     "index": 34
+     "parse": 18,
+     "extract": 13,
+     "validate": 4,
+     "index": 25
     },
-    "processing_ms": 93
+    "processing_ms": 60
    },
    {
     "id": "syn_027",
@@ -1963,12 +1963,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 20,
-     "extract": 4,
-     "validate": 21,
-     "index": 140
+     "parse": 10,
+     "extract": 6,
+     "validate": 13,
+     "index": 88
     },
-    "processing_ms": 185
+    "processing_ms": 117
    },
    {
     "id": "syn_028",
@@ -1976,12 +1976,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 13,
-     "extract": 7,
-     "validate": 6,
-     "index": 53
+     "parse": 23,
+     "extract": 23,
+     "validate": 5,
+     "index": 48
     },
-    "processing_ms": 79
+    "processing_ms": 99
    },
    {
     "id": "syn_029",
@@ -1989,12 +1989,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 7,
-     "extract": 7,
+     "parse": 26,
+     "extract": 9,
      "validate": 6,
-     "index": 58
+     "index": 46
     },
-    "processing_ms": 78
+    "processing_ms": 87
    },
    {
     "id": "syn_030",
@@ -2002,12 +2002,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 35,
-     "extract": 12,
-     "validate": 21,
-     "index": 41
+     "parse": 8,
+     "extract": 15,
+     "validate": 6,
+     "index": 26
     },
-    "processing_ms": 109
+    "processing_ms": 55
    },
    {
     "id": "syn_031",
@@ -2015,12 +2015,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 12,
-     "extract": 9,
-     "validate": 10,
-     "index": 122
+     "parse": 7,
+     "extract": 14,
+     "validate": 7,
+     "index": 19
     },
-    "processing_ms": 153
+    "processing_ms": 47
    },
    {
     "id": "syn_032",
@@ -2028,12 +2028,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 9,
-     "extract": 7,
-     "validate": 8,
-     "index": 47
+     "parse": 7,
+     "extract": 15,
+     "validate": 5,
+     "index": 69
     },
-    "processing_ms": 71
+    "processing_ms": 96
    },
    {
     "id": "syn_033",
@@ -2041,12 +2041,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 40,
-     "extract": 9,
-     "validate": 8,
-     "index": 77
+     "parse": 7,
+     "extract": 5,
+     "validate": 7,
+     "index": 16
     },
-    "processing_ms": 134
+    "processing_ms": 35
    },
    {
     "id": "syn_034",
@@ -2054,12 +2054,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 8,
-     "extract": 6,
-     "validate": 6,
-     "index": 58
+     "parse": 24,
+     "extract": 5,
+     "validate": 16,
+     "index": 36
     },
-    "processing_ms": 78
+    "processing_ms": 81
    },
    {
     "id": "syn_035",
@@ -2067,12 +2067,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 9,
+     "parse": 7,
      "extract": 6,
-     "validate": 7,
-     "index": 39
+     "validate": 5,
+     "index": 36
     },
-    "processing_ms": 61
+    "processing_ms": 54
    },
    {
     "id": "syn_036",
@@ -2080,12 +2080,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 43,
-     "extract": 11,
-     "validate": 7,
-     "index": 79
+     "parse": 18,
+     "extract": 10,
+     "validate": 14,
+     "index": 60
     },
-    "processing_ms": 140
+    "processing_ms": 102
    },
    {
     "id": "syn_037",
@@ -2093,12 +2093,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 9,
+     "parse": 8,
      "extract": 7,
-     "validate": 8,
-     "index": 24
+     "validate": 7,
+     "index": 39
     },
-    "processing_ms": 48
+    "processing_ms": 61
    },
    {
     "id": "syn_038",
@@ -2106,12 +2106,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 8,
-     "extract": 7,
-     "validate": 7,
+     "parse": 7,
+     "extract": 35,
+     "validate": 12,
      "index": 59
     },
-    "processing_ms": 81
+    "processing_ms": 113
    },
    {
     "id": "syn_039",
@@ -2119,12 +2119,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 24,
-     "extract": 6,
+     "parse": 7,
+     "extract": 10,
      "validate": 7,
-     "index": 18
+     "index": 25
     },
-    "processing_ms": 55
+    "processing_ms": 49
    },
    {
     "id": "syn_040",
@@ -2132,12 +2132,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 7,
-     "extract": 11,
-     "validate": 18,
-     "index": 16
+     "parse": 30,
+     "extract": 6,
+     "validate": 7,
+     "index": 34
     },
-    "processing_ms": 52
+    "processing_ms": 77
    },
    {
     "id": "syn_041",
@@ -2145,12 +2145,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 13,
-     "extract": 7,
-     "validate": 6,
-     "index": 17
+     "parse": 14,
+     "extract": 4,
+     "validate": 12,
+     "index": 49
     },
-    "processing_ms": 43
+    "processing_ms": 79
    },
    {
     "id": "syn_042",
@@ -2158,12 +2158,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 6,
-     "extract": 5,
-     "validate": 7,
-     "index": 53
+     "parse": 23,
+     "extract": 9,
+     "validate": 6,
+     "index": 26
     },
-    "processing_ms": 71
+    "processing_ms": 64
    },
    {
     "id": "syn_043",
@@ -2171,12 +2171,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 14,
-     "extract": 7,
-     "validate": 7,
-     "index": 21
+     "parse": 28,
+     "extract": 5,
+     "validate": 16,
+     "index": 19
     },
-    "processing_ms": 49
+    "processing_ms": 68
    },
    {
     "id": "syn_044",
@@ -2184,12 +2184,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 36,
-     "extract": 9,
-     "validate": 8,
-     "index": 66
+     "parse": 41,
+     "extract": 7,
+     "validate": 10,
+     "index": 26
     },
-    "processing_ms": 119
+    "processing_ms": 84
    },
    {
     "id": "syn_045",
@@ -2197,12 +2197,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 8,
-     "extract": 8,
+     "parse": 7,
+     "extract": 6,
      "validate": 7,
-     "index": 15
+     "index": 14
     },
-    "processing_ms": 38
+    "processing_ms": 34
    },
    {
     "id": "syn_046",
@@ -2210,12 +2210,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 483,
-     "extract": 6,
+     "parse": 379,
+     "extract": 5,
      "validate": 6,
-     "index": 46
+     "index": 26
     },
-    "processing_ms": 541
+    "processing_ms": 416
    },
    {
     "id": "syn_047",
@@ -2223,12 +2223,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 428,
+     "parse": 409,
      "extract": 4,
-     "validate": 14,
-     "index": 17
+     "validate": 7,
+     "index": 30
     },
-    "processing_ms": 463
+    "processing_ms": 450
    },
    {
     "id": "syn_048",
@@ -2236,12 +2236,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 8,
+     "parse": 15,
      "extract": 5,
-     "validate": 7,
-     "index": 34
+     "validate": 6,
+     "index": 12
     },
-    "processing_ms": 54
+    "processing_ms": 38
    },
    {
     "id": "syn_049",
@@ -2249,12 +2249,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 30,
+     "parse": 7,
      "extract": 5,
-     "validate": 16,
-     "index": 44
+     "validate": 6,
+     "index": 24
     },
-    "processing_ms": 95
+    "processing_ms": 42
    },
    {
     "id": "syn_050",
@@ -2262,10 +2262,10 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 9,
+     "parse": 33,
      "extract": 6,
-     "validate": 9,
-     "index": 35
+     "validate": 7,
+     "index": 13
     },
     "processing_ms": 59
    },
@@ -2275,12 +2275,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 473,
-     "extract": 4,
-     "validate": 7,
-     "index": 103
+     "parse": 366,
+     "extract": 5,
+     "validate": 6,
+     "index": 42
     },
-    "processing_ms": 587
+    "processing_ms": 419
    },
    {
     "id": "syn_052",
@@ -2288,12 +2288,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 458,
-     "extract": 5,
-     "validate": 6,
-     "index": 31
+     "parse": 357,
+     "extract": 10,
+     "validate": 8,
+     "index": 17
     },
-    "processing_ms": 500
+    "processing_ms": 392
    },
    {
     "id": "syn_053",
@@ -2301,12 +2301,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 1850,
+     "parse": 1282,
      "extract": 4,
-     "validate": 6,
-     "index": 43
+     "validate": 5,
+     "index": 27
     },
-    "processing_ms": 1903
+    "processing_ms": 1318
    },
    {
     "id": "syn_054",
@@ -2314,12 +2314,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 1262,
+     "parse": 792,
      "extract": 4,
-     "validate": 6,
-     "index": 28
+     "validate": 4,
+     "index": 26
     },
-    "processing_ms": 1300
+    "processing_ms": 826
    },
    {
     "id": "syn_055",
@@ -2327,12 +2327,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 3738,
-     "extract": 10,
-     "validate": 15,
-     "index": 49
+     "parse": 3352,
+     "extract": 9,
+     "validate": 7,
+     "index": 56
     },
-    "processing_ms": 3812
+    "processing_ms": 3424
    },
    {
     "id": "syn_056",
@@ -2340,12 +2340,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 1722,
-     "extract": 23,
-     "validate": 11,
-     "index": 20
+     "parse": 1560,
+     "extract": 332,
+     "validate": 8,
+     "index": 74
     },
-    "processing_ms": 1776
+    "processing_ms": 1974
    },
    {
     "id": "syn_057",
@@ -2353,12 +2353,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 4342,
-     "extract": 7,
-     "validate": 9,
-     "index": 14
+     "parse": 4160,
+     "extract": 72,
+     "validate": 11,
+     "index": 18
     },
-    "processing_ms": 4372
+    "processing_ms": 4261
    },
    {
     "id": "syn_058",
@@ -2366,12 +2366,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 4556,
-     "extract": 19,
-     "validate": 8,
-     "index": 18
+     "parse": 4851,
+     "extract": 69,
+     "validate": 10,
+     "index": 43
     },
-    "processing_ms": 4601
+    "processing_ms": 4973
    },
    {
     "id": "syn_059",
@@ -2379,12 +2379,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 657,
-     "extract": 4,
+     "parse": 690,
+     "extract": 5,
      "validate": 5,
-     "index": 23
+     "index": 15
     },
-    "processing_ms": 689
+    "processing_ms": 715
    },
    {
     "id": "syn_060",
@@ -2392,12 +2392,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 719,
-     "extract": 4,
-     "validate": 4,
-     "index": 27
+     "parse": 757,
+     "extract": 5,
+     "validate": 5,
+     "index": 24
     },
-    "processing_ms": 754
+    "processing_ms": 791
    },
    {
     "id": "syn_061",
@@ -2405,12 +2405,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 804,
-     "extract": 5,
+     "parse": 826,
+     "extract": 100,
      "validate": 6,
-     "index": 26
+     "index": 16
     },
-    "processing_ms": 841
+    "processing_ms": 948
    },
    {
     "id": "syn_062",
@@ -2418,12 +2418,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 4782,
-     "extract": 4,
-     "validate": 6,
-     "index": 30
+     "parse": 4311,
+     "extract": 360,
+     "validate": 5,
+     "index": 21
     },
-    "processing_ms": 4822
+    "processing_ms": 4697
    },
    {
     "id": "syn_063",
@@ -2431,12 +2431,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 4355,
-     "extract": 14,
-     "validate": 6,
-     "index": 17
+     "parse": 3723,
+     "extract": 90,
+     "validate": 8,
+     "index": 19
     },
-    "processing_ms": 4392
+    "processing_ms": 3840
    },
    {
     "id": "syn_064",
@@ -2444,12 +2444,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 5460,
-     "extract": 6,
-     "validate": 10,
-     "index": 21
+     "parse": 3720,
+     "extract": 58,
+     "validate": 7,
+     "index": 20
     },
-    "processing_ms": 5497
+    "processing_ms": 3805
    },
    {
     "id": "syn_065",
@@ -2457,12 +2457,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 712,
-     "extract": 13,
-     "validate": 10,
-     "index": 69
+     "parse": 680,
+     "extract": 158,
+     "validate": 21,
+     "index": 48
     },
-    "processing_ms": 804
+    "processing_ms": 907
    },
    {
     "id": "syn_066",
@@ -2470,12 +2470,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 1473,
-     "extract": 7,
-     "validate": 7,
-     "index": 24
+     "parse": 1305,
+     "extract": 539,
+     "validate": 5,
+     "index": 26
     },
-    "processing_ms": 1511
+    "processing_ms": 1875
    },
    {
     "id": "syn_067",
@@ -2483,12 +2483,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 4162,
-     "extract": 7,
-     "validate": 15,
-     "index": 89
+     "parse": 2974,
+     "extract": 6,
+     "validate": 6,
+     "index": 35
     },
-    "processing_ms": 4273
+    "processing_ms": 3021
    },
    {
     "id": "syn_068",
@@ -2496,12 +2496,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 1892,
-     "extract": 10,
-     "validate": 7,
-     "index": 64
+     "parse": 1579,
+     "extract": 9,
+     "validate": 5,
+     "index": 61
     },
-    "processing_ms": 1973
+    "processing_ms": 1654
    },
    {
     "id": "syn_069",
@@ -2509,12 +2509,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 4807,
-     "extract": 10,
-     "validate": 9,
-     "index": 67
+     "parse": 3945,
+     "extract": 67,
+     "validate": 7,
+     "index": 17
     },
-    "processing_ms": 4893
+    "processing_ms": 4036
    },
    {
     "id": "syn_070",
@@ -2522,12 +2522,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 6301,
-     "extract": 13,
+     "parse": 4941,
+     "extract": 76,
      "validate": 7,
-     "index": 43
+     "index": 19
     },
-    "processing_ms": 6364
+    "processing_ms": 5043
    },
    {
     "id": "syn_071",
@@ -2535,12 +2535,12 @@
     "kind": "pdf",
     "pages": 2,
     "stage_ms": {
-     "parse": 1429,
+     "parse": 1129,
      "extract": 9,
-     "validate": 7,
-     "index": 91
+     "validate": 6,
+     "index": 27
     },
-    "processing_ms": 1536
+    "processing_ms": 1171
    },
    {
     "id": "syn_072",
@@ -2548,12 +2548,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 802,
-     "extract": 6,
-     "validate": 6,
-     "index": 26
+     "parse": 718,
+     "extract": 599,
+     "validate": 9,
+     "index": 28
     },
-    "processing_ms": 840
+    "processing_ms": 1354
    },
    {
     "id": "syn_073",
@@ -2561,12 +2561,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 1052,
+     "parse": 918,
      "extract": 5,
-     "validate": 7,
-     "index": 65
+     "validate": 5,
+     "index": 14
     },
-    "processing_ms": 1129
+    "processing_ms": 942
    },
    {
     "id": "syn_074",
@@ -2574,12 +2574,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 1036,
-     "extract": 4,
+     "parse": 897,
+     "extract": 6,
      "validate": 7,
-     "index": 30
+     "index": 14
     },
-    "processing_ms": 1077
+    "processing_ms": 924
    },
    {
     "id": "syn_075",
@@ -2587,12 +2587,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 808,
-     "extract": 11,
-     "validate": 7,
-     "index": 23
+     "parse": 790,
+     "extract": 74,
+     "validate": 14,
+     "index": 41
     },
-    "processing_ms": 849
+    "processing_ms": 919
    },
    {
     "id": "syn_076",
@@ -2600,12 +2600,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 4585,
-     "extract": 12,
-     "validate": 13,
-     "index": 46
+     "parse": 3782,
+     "extract": 65,
+     "validate": 6,
+     "index": 14
     },
-    "processing_ms": 4656
+    "processing_ms": 3867
    },
    {
     "id": "syn_077",
@@ -2613,12 +2613,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 1694,
-     "extract": 18,
-     "validate": 27,
-     "index": 100
+     "parse": 710,
+     "extract": 5,
+     "validate": 5,
+     "index": 27
     },
-    "processing_ms": 1839
+    "processing_ms": 747
    },
    {
     "id": "syn_078",
@@ -2626,12 +2626,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 1024,
-     "extract": 4,
+     "parse": 1452,
+     "extract": 6,
      "validate": 5,
-     "index": 43
+     "index": 26
     },
-    "processing_ms": 1076
+    "processing_ms": 1489
    },
    {
     "id": "syn_079",
@@ -2639,12 +2639,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 1324,
-     "extract": 4,
-     "validate": 6,
-     "index": 51
+     "parse": 722,
+     "extract": 5,
+     "validate": 5,
+     "index": 30
     },
-    "processing_ms": 1385
+    "processing_ms": 762
    },
    {
     "id": "syn_080",
@@ -2652,12 +2652,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 1019,
-     "extract": 5,
-     "validate": 9,
-     "index": 38
+     "parse": 876,
+     "extract": 7,
+     "validate": 7,
+     "index": 27
     },
-    "processing_ms": 1071
+    "processing_ms": 917
    },
    {
     "id": "syn_081",
@@ -2665,12 +2665,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 5019,
-     "extract": 6,
-     "validate": 7,
-     "index": 20
+     "parse": 4316,
+     "extract": 67,
+     "validate": 6,
+     "index": 25
     },
-    "processing_ms": 5052
+    "processing_ms": 4414
    },
    {
     "id": "syn_082",
@@ -2678,12 +2678,12 @@
     "kind": "image",
     "pages": 1,
     "stage_ms": {
-     "parse": 5580,
-     "extract": 7,
+     "parse": 4777,
+     "extract": 74,
      "validate": 7,
-     "index": 45
+     "index": 33
     },
-    "processing_ms": 5639
+    "processing_ms": 4891
    },
    {
     "id": "syn_083",
@@ -2691,12 +2691,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 7,
-     "extract": 7,
-     "validate": 7,
-     "index": 38
+     "parse": 19,
+     "extract": 5,
+     "validate": 8,
+     "index": 54
     },
-    "processing_ms": 59
+    "processing_ms": 86
    },
    {
     "id": "syn_084",
@@ -2704,12 +2704,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 13,
+     "parse": 12,
      "extract": 6,
-     "validate": 9,
-     "index": 28
+     "validate": 6,
+     "index": 15
     },
-    "processing_ms": 56
+    "processing_ms": 39
    },
    {
     "id": "syn_085",
@@ -2717,12 +2717,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 13,
-     "extract": 5,
-     "validate": 5,
-     "index": 26
+     "parse": 16,
+     "extract": 6,
+     "validate": 6,
+     "index": 33
     },
-    "processing_ms": 49
+    "processing_ms": 61
    },
    {
     "id": "syn_086",
@@ -2730,12 +2730,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 15,
+     "parse": 16,
      "extract": 5,
      "validate": 6,
-     "index": 35
+     "index": 25
     },
-    "processing_ms": 61
+    "processing_ms": 52
    },
    {
     "id": "syn_087",
@@ -2743,12 +2743,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 15,
-     "extract": 4,
+     "parse": 13,
+     "extract": 5,
      "validate": 6,
-     "index": 36
+     "index": 23
     },
-    "processing_ms": 61
+    "processing_ms": 47
    },
    {
     "id": "syn_088",
@@ -2756,12 +2756,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 12,
-     "extract": 6,
+     "parse": 10,
+     "extract": 4,
      "validate": 7,
-     "index": 42
+     "index": 16
     },
-    "processing_ms": 67
+    "processing_ms": 37
    },
    {
     "id": "syn_089",
@@ -2769,12 +2769,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 11,
-     "extract": 4,
-     "validate": 5,
-     "index": 33
+     "parse": 7,
+     "extract": 6,
+     "validate": 6,
+     "index": 52
     },
-    "processing_ms": 53
+    "processing_ms": 71
    },
    {
     "id": "syn_090",
@@ -2782,12 +2782,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 14,
-     "extract": 4,
+     "parse": 7,
+     "extract": 6,
      "validate": 6,
-     "index": 75
+     "index": 29
     },
-    "processing_ms": 99
+    "processing_ms": 48
    },
    {
     "id": "syn_091",
@@ -2795,12 +2795,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 11,
-     "extract": 6,
+     "parse": 26,
+     "extract": 16,
      "validate": 6,
-     "index": 33
+     "index": 29
     },
-    "processing_ms": 56
+    "processing_ms": 77
    },
    {
     "id": "syn_092",
@@ -2808,12 +2808,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 14,
-     "extract": 5,
-     "validate": 7,
-     "index": 36
+     "parse": 7,
+     "extract": 6,
+     "validate": 4,
+     "index": 78
     },
-    "processing_ms": 62
+    "processing_ms": 95
    },
    {
     "id": "syn_093",
@@ -2821,12 +2821,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 17,
-     "extract": 6,
+     "parse": 7,
+     "extract": 15,
      "validate": 6,
-     "index": 33
+     "index": 24
     },
-    "processing_ms": 62
+    "processing_ms": 52
    },
    {
     "id": "syn_094",
@@ -2834,12 +2834,12 @@
     "kind": "pdf",
     "pages": 1,
     "stage_ms": {
-     "parse": 7,
-     "extract": 8,
-     "validate": 9,
-     "index": 58
+     "parse": 25,
+     "extract": 16,
+     "validate": 6,
+     "index": 32
     },
-    "processing_ms": 82
+    "processing_ms": 79
    },
    {
     "id": "syn_095",
@@ -2847,12 +2847,12 @@
     "kind": "spreadsheet",
     "pages": 0,
     "stage_ms": {
-     "parse": 203,
-     "extract": 2,
-     "validate": 2,
+     "parse": 141,
+     "extract": 1,
+     "validate": 1,
      "index": 2
     },
-    "processing_ms": 209
+    "processing_ms": 145
    },
    {
     "id": "syn_096",
@@ -2860,12 +2860,12 @@
     "kind": "spreadsheet",
     "pages": 0,
     "stage_ms": {
-     "parse": 14,
-     "extract": 2,
+     "parse": 22,
+     "extract": 1,
      "validate": 2,
      "index": 2
     },
-    "processing_ms": 20
+    "processing_ms": 27
    },
    {
     "id": "syn_097",
@@ -2873,12 +2873,12 @@
     "kind": "spreadsheet",
     "pages": 0,
     "stage_ms": {
-     "parse": 8,
+     "parse": 9,
      "extract": 2,
      "validate": 2,
      "index": 2
     },
-    "processing_ms": 14
+    "processing_ms": 15
    },
    {
     "id": "syn_098",
@@ -2886,12 +2886,12 @@
     "kind": "spreadsheet",
     "pages": 0,
     "stage_ms": {
-     "parse": 19,
-     "extract": 1,
-     "validate": 2,
+     "parse": 18,
+     "extract": 2,
+     "validate": 1,
      "index": 2
     },
-    "processing_ms": 24
+    "processing_ms": 23
    },
    {
     "id": "syn_099",
@@ -2899,12 +2899,12 @@
     "kind": "pdf",
     "pages": 30,
     "stage_ms": {
-     "parse": 999,
-     "extract": 234,
-     "validate": 38,
-     "index": 390
+     "parse": 1381,
+     "extract": 172,
+     "validate": 43,
+     "index": 308
     },
-    "processing_ms": 1661
+    "processing_ms": 1904
    }
   ]
  },
@@ -2926,12 +2926,6 @@
    "field": "invoice_date",
    "want": "2026-05-08",
    "got": "2026-08-05"
-  },
-  {
-   "doc": "syn_034",
-   "field": "customer_name",
-   "want": null,
-   "got": "direct / counter sale"
   },
   {
    "doc": "syn_039",
@@ -3021,7 +3015,7 @@
    "doc": "syn_058",
    "field": "customer_name",
    "want": "ironclad security infrastructure",
-   "got": null
+   "got": "tronclad security infrastructure"
   },
   {
    "doc": "syn_058",
@@ -3410,41 +3404,41 @@
     "NEEDS_REVIEW": 36
    },
    "by_extraction_method": {
-    "llm_fallback": 24,
-    "rules": 78
+    "llm_fallback": 9,
+    "rules": 93
    }
   },
   "stages": {
    "index": {
     "runs": 99,
-    "avg_ms": 82.7,
-    "max_ms": 1579
+    "avg_ms": 50.5,
+    "max_ms": 803
    },
    "validate": {
     "runs": 99,
-    "avg_ms": 9.6,
-    "max_ms": 45
+    "avg_ms": 7.7,
+    "max_ms": 43
    },
    "parse": {
     "runs": 99,
-    "avg_ms": 846.8,
-    "max_ms": 6301
+    "avg_ms": 719.5,
+    "max_ms": 4941
    },
    "extract": {
     "runs": 99,
-    "avg_ms": 10.9,
-    "max_ms": 234
+    "avg_ms": 36.7,
+    "max_ms": 599
    }
   },
-  "avg_document_processing_ms": 949.9,
+  "avg_document_processing_ms": 814.4,
   "issues_by_code": {
    "INVALID_DATE": 2,
    "SUBTOTAL_TAX_TOTAL_MISMATCH": 7,
-   "DUPLICATE_FUZZY": 2,
-   "EVIDENCE_NOT_FOUND": 31,
    "DUPLICATE_EXACT": 2,
-   "NEGATIVE_AMOUNT": 1,
+   "NEGATIVE_AMOUNT": 2,
+   "DUPLICATE_FUZZY": 2,
    "LINE_ITEMS_SUBTOTAL_MISMATCH": 12,
+   "EVIDENCE_NOT_FOUND": 9,
    "CURRENCY_AMBIGUOUS": 6,
    "MISSING_FIELD": 43
   }
@@ -3475,15 +3469,15 @@
   "invoices_found": 411,
   "segmentation_precision": 100.0,
   "segmentation_recall": 100.0,
-  "wall_seconds": 56.5,
+  "wall_seconds": 49.8,
   "stage_ms": {
-   "parse": 28560,
-   "extract": 6226,
-   "validate": 1582,
-   "index": 17577
+   "parse": 23668,
+   "extract": 5690,
+   "validate": 1764,
+   "index": 16600
   },
-  "processing_ms": 53945,
-  "pages_per_second": 18.54,
+  "processing_ms": 47722,
+  "pages_per_second": 20.95,
   "field_accuracy": {
    "invoice_number": {
     "correct": 410,

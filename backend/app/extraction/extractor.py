@@ -352,6 +352,8 @@ def extract_invoice(
         logger.warning("Could not render page images for vision: %s", exc)
         images = []
     if images:
+        # Recorded so the evaluation counts vision calls even when they return nothing.
+        result = result.model_copy(update={"notes": [*result.notes, "LLM_VISION_ATTEMPTED"]})
         key = images_key(images)
         for model_env, model_key in (("LLM_FALLBACK_MODEL", "fallback"), ("LLM_PRIMARY_MODEL", "primary")):
             # The 26B model answered faster and more reliably in tests, so it goes first here.

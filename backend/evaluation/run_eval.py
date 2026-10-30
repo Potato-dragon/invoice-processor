@@ -194,7 +194,8 @@ def evaluate(split: str, reset: bool, large: bool, timeout_s: int, name: str, cl
 
         invoices = [c.get(f"/invoices/{i['id']}").json() for i in doc.get("invoices", [])]
         total_invoices += len(invoices)
-        llm_invoices += sum(1 for i in invoices if (i.get("extraction_method") or "").startswith("llm"))
+        llm_invoices += sum(1 for i in invoices if (i.get("extraction_method") or "").startswith("llm")
+                            or "LLM_VISION_ATTEMPTED" in ((i.get("extraction") or {}).get("notes") or []))
         has_error = any(iss["severity"] == "error" and not iss["resolved"] for i in invoices for iss in i["issues"])
         error_codes = sorted({iss["code"] for i in invoices for iss in i["issues"] if iss["severity"] == "error"})
         if label.get("invoice_count", 1) > 1:

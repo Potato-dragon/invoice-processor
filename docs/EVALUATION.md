@@ -15,11 +15,41 @@ All numbers below were **measured** by `backend/evaluation/run_eval.py` on 30 Oc
 - **Field accuracy:** exact match after light normalisation (case and whitespace for text, 2-decimal `Decimal` for money, ISO date). A field that is null in the label must also be null. 8 fields per invoice: number, date, supplier, customer, subtotal, tax, total, currency.
 - **Timing:** the sum of stage durations from `processing_events` (parse + extract + validate + index), per document and per page. Queue waiting time is excluded; "wall time" covers the whole batch.
 
+## 0. Real-world invoices (read this first)
+
+Synthetic data is good for coverage and regression testing, but it flatters a system tuned on it. So the system is also measured on **real invoices it was never tuned on**, labelled by hand:
+- 15 public documents (`data/public/`, from the MIT-licensed invoice2data project): AWS, Odoo, Flipkart, Netpresse (FR), QualityHosting (DE, 2 pages), Coolblue ×2 (NL), Free (FR), OYO receipt (IN), Saeco (NL), Sammy Maystone, plus 4 PNG renderings.
+- 2 of the owner's own invoices (`data/real/`, private, not in git): a 497×706 px PNG screenshot of an Intercloud invoice, and a 2-page Shopify bill.
+
+| Field accuracy | Original pipeline (30 Oct) | Rules only, now | **Rules + Gemma (text + vision), now** |
+|---|---|---|---|
+| 15 public invoices | 45.8% | 70.0% | **86.7%** |
+| 2 owner invoices | 37.5% | 50.0% | **93.8%** |
+| Synthetic digital PDFs (for comparison) | 98.1% | 98.4% | — |
+
+Per field on the public set with the LLM: invoice number 86.7%, date 100%, supplier 53.3%, customer 66.7%, subtotal 73.3%, tax 100%, total 93.3%, currency 86.7% (from the first full LLM run; the final run's per-field table is in `docs/eval/summary-public-llm.md`).
+
+What changed between the columns (DECISIONS 22–27):
+1. PDF text is rebuilt in visual row order. Real PDFs often store a value before its label.
+2. General rules for real layouts: Dutch/French labels, "Bill to Address / ATTN:", "Service Provider", "Account billed", issuers in footers, VAT/TIN numbers no longer read as amounts.
+3. When the LLM is called, it is asked for every weak field, not only the required ones. It is also called when 3+ fields are weak.
+4. **Vision fallback.** For a poor scan, Gemma reads the page image. On the 497 px screenshot, OCR could not read a single amount; vision read 7 of 8 fields correctly. The 8th was the supplier, given as "InterCloud" instead of "InterCloud Limited". These values are marked for a person to confirm.
+5. Bugs found by measuring:
+   - fake LLM answers had been cached and reused by real runs
+   - grounding matched inside words ("Total" inside "Subtotal")
+
+Notes on cost and latency:
+- On real-world documents the LLM is needed far more often: 14 of 15 public invoices and both owner invoices called it, against 17–25% on synthetic data.
+- The free tier answered in 20–120 s per call. The first uncached run over the 15 public documents took 661 s end to end; reruns hit the cache.
+- Remaining misses are mostly party names: who is the supplier on an Odoo template, "OYO" vs its legal entity "Oravel Stays", an issuer printed only inside an image.
+- With 17 documents, one document moves the result by about 6 points; treat these as indicative.
+
 ## Runs
 
 | Run | Documents | LLM | Purpose | Raw results |
 |---|---|---|---|---|
-| `test-real-llm` | 46 (held-out test split) | **real Gemma 4** (31B primary, 26B fallback) | Headline accuracy of the full cascade | `docs/eval/results-test-real-llm.json` |
+| `test-real-llm` | 46 (held-out test split) | **real Gemma 4** (31B primary, 26B fallback) | Accuracy of the text cascade on synthetic data (measured 30 Oct, before the vision fallback was added) | `docs/eval/results-test-real-llm.json` |
+| `public-llm`, `real-llm` | 15 public + 2 owner invoices | real Gemma 4, text + vision | Real-world accuracy (section 0) | `docs/eval/summary-public-llm.md`, `summary-real-llm.md` |
 | `test-fake` | 46 (test split) | fake (no network) | Rules-only, same split | `docs/eval/results-test-fake.json` |
 | `all-large` | 108 (dev + test) + the 1,000-page PDF | fake | Coverage of every document type, throughput | `docs/eval/results-all-large.json` |
 
@@ -54,16 +84,16 @@ With a fake LLM, the "LLM" step still runs, but its answers have no evidence in 
 
 | Field | Accuracy | | Document group | Accuracy |
 |---|---|---|---|---|
-| invoice_number | 90.2% | | Digital PDFs | **98.1%** |
+| invoice_number | 90.2% | | Digital PDFs | **98.4%** |
 | invoice_date | 84.3% | | Multi-invoice PDF (8 invoices) | 96.9% |
 | supplier_name | 91.2% | | Receipts | 100.0% |
-| customer_name | 92.2% | | Receipts, scanned | 90.6% |
+| customer_name | 93.1% | | Receipts, scanned | 90.6% |
 | subtotal | 88.2% | | Scans, good | 90.0% |
 | tax | 92.2% | | Scans, fair | 88.8% |
 | total | 91.2% | | Scans, poor | 40.0% |
-| currency | 94.1% | | **All** | **90.4%** |
+| currency | 94.1% | | **All** | **90.6%** |
 
-**Against the targets:** rules-only accuracy is above 85% for every field on digital documents (98.1% overall), and above 85% for 7 of 8 fields across all documents. Invoice date is the exception at 84.3% (see weak spots). The share of invoices that needed an LLM call is **16.7% on the test split and 23.5% across all documents**, under the 25% target.
+**Against the targets:** rules-only accuracy is above 85% for every field on digital documents (98.4% overall), and above 85% for 7 of 8 fields across all documents. Invoice date is the exception at 84.3% (see weak spots). The share of invoices that needed an LLM call is **16.7% on the test split and 24.5% across all synthetic documents**, under the 25% target. On real-world documents it is far higher (section 0).
 
 For reference, the first version of the rules extractor scored **39.5%** on the 32 digital PDFs, while all 67 of its unit tests passed. The line-aware rewrite (DECISIONS 12) is what moved it to 98%.
 
@@ -76,7 +106,7 @@ For reference, the first version of the rules extractor scored **39.5%** on the 
 | Failure files rejected with the **expected error code** (9 kinds) | 100.0% (9/9) | 100.0% (9/9) |
 | Overall failure rate (all uploads, including the 9 bad files) | 19.6% (9/46) | 8.3% (9/108) |
 | Seeded errors flagged for review (recall) | **100% (8/8)** | 90% (18/20) |
-| Validator false positives: clean, correctly extracted, still flagged | **0% (0/16)** | **0% (0/49)** |
+| Validator false positives: clean, correctly extracted, still flagged | **0% (0/16)** | **0% (0/50)** |
 | Clean documents sent to review end to end (mostly OCR misreads) | 21.4% (6/28) | 24.0% (18/75) |
 | Final status equals the expected status | 87.0% | 81.5% |
 | Invoice segmentation, 30-page PDF (precision / recall) | — | 100% / 100% |
@@ -93,17 +123,17 @@ Sum of stage durations per document, from the `all-large` run (2 workers, fake L
 
 | Group | p50 | mean | max |
 |---|---|---|---|
-| Digital PDF | 82 ms | 165 ms | 2.0 s |
-| Receipt (digital) | 57 ms | 69 ms | 119 ms |
-| Spreadsheet | 22 ms | 67 ms | 209 ms |
-| Scanned receipt | 0.52 s | 0.52 s | 0.59 s |
-| Scan, good | 1.19 s | 1.23 s | 1.9 s |
-| Scan, fair | 1.58 s | 2.22 s | 4.8 s |
-| Scan, poor (second OCR pass) | 4.77 s | 4.63 s | 6.4 s |
-| 30-page multi-invoice PDF | 1.66 s | | |
-| **All documents** | **134 ms** | **950 ms** | 6.4 s |
+| Digital PDF | 64 ms | 111 ms | 1.2 s |
+| Receipt (digital) | 51 ms | 54 ms | 84 ms |
+| Spreadsheet | 25 ms | 53 ms | 145 ms |
+| Scanned receipt | 0.42 s | 0.42 s | 0.45 s |
+| Scan, good | 1.04 s | 1.12 s | 1.9 s |
+| Scan, fair | 1.30 s | 1.93 s | 4.7 s |
+| Scan, poor (second OCR pass) | 4.15 s | 4.00 s | 5.0 s |
+| 30-page multi-invoice PDF | 1.90 s | | |
+| **All documents** | **92 ms** | **814 ms** | 5.0 s |
 
-The whole 108-document batch, from the first upload to the last result, took **53.6 s**.
+The whole 108-document batch, from the first upload to the last result, took **45.3 s**. These times exclude LLM calls (fake mode). With the real free-tier LLM, an invoice that needs it takes 20–120 s more.
 
 **1,000-page PDF** (411 invoices, 17 of them scanned pages; uploaded alone after the batch):
 
@@ -111,7 +141,7 @@ The whole 108-document batch, from the first upload to the last result, took **5
 |---|---|
 | Pages / invoices found | 1,000 / 411 of 411 |
 | Segmentation precision / recall | **100% / 100%** |
-| Processing time | **53.9 s = 18.5 pages/s** (parse 28.6 s, extract 6.2 s, validate 1.6 s, index 17.6 s) |
+| Processing time | **47.7 s = 21.0 pages/s** (parse 23.7 s, extract 5.7 s, validate 1.8 s, index 16.6 s) |
 | Field accuracy over all 411 invoices | **97.7%** |
 | Errors raised | 13 (7 line-item mismatches, 5 missing fields, 1 total mismatch), mostly on the scanned invoices |
 

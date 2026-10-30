@@ -38,21 +38,21 @@ Overall: **90.6%**
 | Validator false positives (clean and correctly extracted, still flagged) | 0/16 = 0.0% |
 | Segmentation precision / recall | None% / None% |
 | PDF-vs-Excel cross-check accuracy | 5/8 = 62.5% |
-| Wall time (upload to last result) | 20.9 s |
+| Wall time (upload to last result) | 16.4 s |
 
 ### Processing time (sum of stage durations)
 
 | Measure | n | mean | p50 | p95 | max |
 |---|---|---|---|---|---|
-| per document (ms) | 37 | 942.2 | 113 | 4670 | 7676 |
-| per page (ms) | 36 | 943.1 | 115.0 | 4670.0 | 7676.0 |
-| digital (ms/doc) | 19 | 214.6 | 90 | 1071 | 1552 |
-| receipt (ms/doc) | 3 | 73 | 69 | 83 | 83 |
-| receipt_scan (ms/doc) | 2 | 498 | 498.0 | 524 | 524 |
-| scan_fair (ms/doc) | 4 | 1038.8 | 1019.5 | 1219 | 1219 |
-| scan_good (ms/doc) | 4 | 1465.2 | 1486.0 | 1850 | 1850 |
-| scan_poor (ms/doc) | 4 | 4878.2 | 5444.0 | 7676 | 7676 |
-| spreadsheet (ms/doc) | 1 | 42 | 42 | 42 | 42 |
+| per document (ms) | 37 | 697.2 | 97 | 3843 | 5210 |
+| per page (ms) | 36 | 697.6 | 103.0 | 3843.0 | 5210.0 |
+| digital (ms/doc) | 19 | 80.9 | 62 | 182 | 223 |
+| receipt (ms/doc) | 3 | 57 | 47 | 83 | 83 |
+| receipt_scan (ms/doc) | 2 | 424.5 | 424.5 | 437 | 437 |
+| scan_fair (ms/doc) | 4 | 908.2 | 893.0 | 997 | 997 |
+| scan_good (ms/doc) | 4 | 1235.5 | 1331.0 | 1363 | 1363 |
+| scan_poor (ms/doc) | 4 | 3659.5 | 4245.5 | 5210 | 5210 |
+| spreadsheet (ms/doc) | 1 | 24 | 24 | 24 | 24 |
 
 ### Documents whose status differed from expected
 

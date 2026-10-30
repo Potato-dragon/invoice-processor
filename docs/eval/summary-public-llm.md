@@ -4,21 +4,21 @@
 
 | Field | Correct | Total | Accuracy |
 |---|---|---|---|
-| invoice_number | 13 | 15 | 86.7% |
+| invoice_number | 14 | 15 | 93.3% |
 | invoice_date | 15 | 15 | 100.0% |
 | supplier_name | 8 | 15 | 53.3% |
-| customer_name | 10 | 15 | 66.7% |
-| subtotal | 11 | 15 | 73.3% |
+| customer_name | 13 | 15 | 86.7% |
+| subtotal | 12 | 15 | 80.0% |
 | tax | 15 | 15 | 100.0% |
 | total | 14 | 15 | 93.3% |
 | currency | 13 | 15 | 86.7% |
 
-Overall: **82.5%**
+Overall: **86.7%**
 
 | Document group | Correct | Total | Accuracy |
 |---|---|---|---|
-| digital | 73 | 88 | 83.0% |
-| scan_image | 26 | 32 | 81.2% |
+| digital | 75 | 88 | 85.2% |
+| scan_image | 29 | 32 | 90.6% |
 
 ### Outcomes
 
@@ -28,22 +28,22 @@ Overall: **82.5%**
 | Success rate (expected-good files that finished) | 100.0% |
 | Unexpected failure rate | 0.0% |
 | Failure files with the expected error code | None% |
-| Invoices that needed an LLM call | 13/15 = 86.7% |
+| Invoices that needed an LLM call | 14/15 = 93.3% |
 | Seeded errors flagged (recall) | 0/0 = None% |
 | Clean documents sent to review (end to end) | 8/15 = 53.3% |
-| Validator false positives (clean and correctly extracted, still flagged) | 1/4 = 25.0% |
+| Validator false positives (clean and correctly extracted, still flagged) | 4/7 = 57.1% |
 | Segmentation precision / recall | None% / None% |
 | PDF-vs-Excel cross-check accuracy | 0/0 = None% |
-| Wall time (upload to last result) | 661.4 s |
+| Wall time (upload to last result) | 173.6 s |
 
 ### Processing time (sum of stage durations)
 
 | Measure | n | mean | p50 | p95 | max |
 |---|---|---|---|---|---|
-| per document (ms) | 15 | 81106.7 | 73376 | 119125 | 176509 |
-| per page (ms) | 15 | 75981.5 | 69915.0 | 119125.0 | 176509.0 |
-| digital (ms/doc) | 11 | 88009.5 | 88866 | 176509 | 176509 |
-| scan_image (ms/doc) | 4 | 62124 | 71645.5 | 104074 | 104074 |
+| per document (ms) | 15 | 22559.3 | 740 | 101439 | 120170 |
+| per page (ms) | 15 | 22556.3 | 740.0 | 101439.0 | 120170.0 |
+| digital (ms/doc) | 11 | 26634 | 47 | 120170 | 120170 |
+| scan_image (ms/doc) | 4 | 11354 | 1341.5 | 41993 | 41993 |
 
 ### Documents whose status differed from expected
 
