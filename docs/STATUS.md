@@ -1,16 +1,13 @@
-# Status board (update your own row when you finish or get blocked)
+# Status board
 
-| Lane | Owner folder | Brief | Branch | State | Notes |
-|---|---|---|---|---|---|
-| A | backend/app (core), docker-compose.yml, infra | handoffs/A1.md, handoffs/A2.md | lane-a/skeleton | IN PROGRESS | A1 (compose, config, DB, migrations, contracts, storage) merged. A2 (API, pipeline, search) next. |
-| F | tools/datagen, data/ | handoffs/F1.md, handoffs/F2.md | lane-f/datagen | IN PROGRESS | F1 merged: 6 layouts, 32 digital PDFs (22 dev, 10 test), labels, manifest, verify.py. F2 (scans, spreadsheets, errors, receipts, multi-invoice) next. |
-| B | backend/app/parsing | handoffs/B-parsing.md | lane-b/parsing | NOT STARTED | |
-| C | backend/app/extraction | handoffs/C-extraction.md | lane-c/extraction | DONE | Merged. Open: Redis limiter check, one real Gemma call, accuracy on dev split. |
-| D | backend/app/validation | handoffs/D-validation.md | lane-d/validation | NOT STARTED | |
-| E | frontend | (not written yet) | lane-e/frontend | NOT STARTED | |
+| Lane | Owner folder | Brief | State | Notes |
+|---|---|---|---|---|
+| A | backend/app (core), docker-compose.yml | handoffs/A1.md, A2.md | DONE | API (upload, list, detail, events, file, pages, ledger, reprocess, invoices, PATCH corrections, issues, search, crosschecks, stats), stage runner, RQ worker, idempotent stages, retries. 15 API tests. |
+| B | backend/app/parsing | handoffs/B-parsing.md | DONE | Text layer + OCR (deskew, Otsu, rescue pass, geometric rows), images incl. multi-frame TIFF, XLSX/XLS/CSV, segmenter. 26 tests. |
+| C | backend/app/extraction | handoffs/C-extraction.md | DONE | Rules rewritten to be line-aware (39.5% → 98.1% on digital PDFs). Redis limiter now atomic and always used when REDIS_URL is set. thinkingBudget removed after a real 400. LLM merge keeps rules values. |
+| D | backend/app/validation | handoffs/D-validation.md | DONE | Field, arithmetic, date, quality and duplicate checks; PDF-PDF / PDF-Excel cross-checks. 20 tests. |
+| E | frontend | (built directly) | DONE | Next.js: upload, progress, document and invoice views, inline correction, review queue, search, cross-checks. |
+| F | tools/datagen, data/ | handoffs/F1.md, F2.md | DONE | 108 docs (all file types), 30-page multi-invoice, 1,000-page generator (`--large`). verify.py passes. |
+| Eval | backend/evaluation | (built directly) | DONE | `run_eval.py`; results in docs/EVALUATION.md and docs/eval/. |
 
-## Gates
-- Day 1: `docker compose up` works, upload via API runs the stub pipeline end to end, 40+ synthetic docs with ground truth exist.
-- Day 2: every file type yields JSON + issues, failures return coded errors, baseline metrics exist.
-- Day 3: all features demoable incl. search and cross-checks; 1,000-page PDF completes; prompts/rules frozen.
-- Day 4: fresh clone runs in 10 minutes, final test run done once, report + walkthrough done.
+Remaining for the human: record the walkthrough; optionally add 10–25 public invoices to `data/real/` with labels.

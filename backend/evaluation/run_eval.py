@@ -61,8 +61,11 @@ def reset_db(clear_cache: bool = False) -> None:
         if clear_cache:
             conn.execute(text("TRUNCATE llm_cache"))
     try:
-        from app.jobs import redis_conn
+        from app.contracts import Stage
+        from app.jobs import queue, redis_conn
 
+        for stage in Stage:
+            queue(stage).empty()  # jobs for documents that no longer exist
         r = redis_conn()
         for key in r.scan_iter("api_rl:*"):
             r.delete(key)
