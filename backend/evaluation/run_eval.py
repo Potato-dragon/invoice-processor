@@ -51,13 +51,15 @@ def client() -> httpx.Client:
     return httpx.Client(base_url=API, headers={"X-API-Key": os.environ["API_KEY"]}, timeout=600)
 
 
-def reset_db() -> None:
+def reset_db(clear_cache: bool = False) -> None:
     from sqlalchemy import text
 
     from app.db import engine
 
     with engine.begin() as conn:
-        conn.execute(text("TRUNCATE documents, crosschecks, llm_cache RESTART IDENTITY CASCADE"))
+        conn.execute(text("TRUNCATE documents, crosschecks RESTART IDENTITY CASCADE"))
+        if clear_cache:
+            conn.execute(text("TRUNCATE llm_cache"))
     try:
         from app.jobs import redis_conn
 
@@ -141,14 +143,14 @@ def compare_fields(truth: dict, inv: dict | None, acc: dict, group: str, misses:
     return all_ok
 
 
-def evaluate(split: str, reset: bool, large: bool, timeout_s: int, name: str) -> dict[str, Any]:
+def evaluate(split: str, reset: bool, large: bool, timeout_s: int, name: str, clear_cache: bool = False) -> dict[str, Any]:
     rows = list(csv.DictReader(open(DATA / "manifest.csv", encoding="utf-8")))
     if split != "all":
         rows = [r for r in rows if r["split"] == split]
     rows.sort(key=lambda r: r["id"])
     c = client()
     if reset:
-        reset_db()
+        reset_db(clear_cache)
     stats_before = c.get("/stats").json()
 
     # 1. Upload in manifest order (batches of 20), as a user would.
@@ -345,11 +347,12 @@ def main() -> None:
     ap.add_argument("--split", default="test", choices=["dev", "test", "all"])
     ap.add_argument("--reset", action="store_true", help="empty the database first")
     ap.add_argument("--large", action="store_true", help="also process data/samples_large/multi_1000.pdf")
+    ap.add_argument("--reset-cache", action="store_true", help="also empty the LLM cache (forces new LLM calls)")
     ap.add_argument("--timeout", type=int, default=3600)
     ap.add_argument("--name", default=None)
     a = ap.parse_args()
     name = a.name or a.split
-    result = evaluate(a.split, a.reset, a.large, a.timeout, name)
+    result = evaluate(a.split, a.reset, a.large, a.timeout, name, a.reset_cache)
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / f"results-{name}.json").write_text(json.dumps(result, indent=1, default=str), encoding="utf-8")
     md = summary_md(result)

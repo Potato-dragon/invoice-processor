@@ -74,18 +74,16 @@ services:
         condition: service_healthy
 
   frontend:
-    build:
-      context: ./frontend
-      args:
-        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+    build: ./frontend
     environment:
+      # The browser talks to the frontend; its server-side proxy adds the key.
       API_KEY: ${API_KEY:-change-me}
+      API_INTERNAL_URL: http://api:8000
     ports:
       - "3000:3000"
     depends_on:
       api:
         condition: service_healthy
-    profiles: ["ui", "full"]
 
 volumes:
   postgres_data:
