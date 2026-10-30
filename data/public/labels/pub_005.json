@@ -1,0 +1,28 @@
+{
+  "invoice_number": {
+    "value": "30064443"
+  },
+  "invoice_date": {
+    "value": "2014-05-07"
+  },
+  "supplier_name": {
+    "value": "QualityHosting AG"
+  },
+  "customer_name": {
+    "value": "iViveLabs Ltd."
+  },
+  "subtotal": {
+    "value": null
+  },
+  "tax": {
+    "value": null
+  },
+  "total": {
+    "value": "34.73"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [],
+  "invoice_count": 1
+}

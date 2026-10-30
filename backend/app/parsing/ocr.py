@@ -78,10 +78,22 @@ def preprocess(img: np.ndarray, mode: str = "fast") -> np.ndarray:
     return gray
 
 
+TARGET_LONG_SIDE = 3000  # px: roughly an A4 page at 250-300 DPI
+
+
 def _upscale_if_small(gray: np.ndarray, dpi_hint: int | None) -> np.ndarray:
-    # Tesseract likes ~300 DPI; upscale low-resolution images.
+    """Tesseract needs text around 20-30 px tall; enlarge low-resolution images.
+
+    Uses the declared DPI when present, otherwise the pixel size: screenshots
+    and phone exports often carry no DPI (a 497 x 706 px invoice was never
+    upscaled before this check).
+    """
+    f = 1.0
     if dpi_hint and dpi_hint < 250:
         f = min(2.0, 300 / dpi_hint)
+    elif not dpi_hint and max(gray.shape) < 0.6 * TARGET_LONG_SIDE:
+        f = min(4.0, TARGET_LONG_SIDE / max(gray.shape))
+    if f > 1.0:
         return cv2.resize(gray, None, fx=f, fy=f, interpolation=cv2.INTER_CUBIC)
     return gray
 
@@ -100,6 +112,15 @@ def _rows_from_words(data: dict) -> list[str]:
         if not text or float(data["conf"][i]) < 0:
             continue
         words.append((data["top"][i], data["left"][i], data["width"][i], data["height"][i], text))
+    return rows_from_boxes(words)
+
+
+def rows_from_boxes(words: list[tuple]) -> list[str]:
+    """Group (top, left, width, height, text) word boxes into tab-separated rows.
+
+    Shared by OCR and the PDF text layer, whose stored text order is
+    arbitrary (a value is often stored before its label).
+    """
     if not words:
         return []
     heights = sorted(w[3] for w in words)

@@ -48,7 +48,7 @@ _FAKE_RESPONSE: dict[str, Any] = {
 
 @runtime_checkable
 class LLMClient(Protocol):
-    def complete(self, model: str, prompt: str) -> dict[str, Any]: ...
+    def complete(self, model: str, prompt: str, images: list[bytes] | None = None) -> dict[str, Any]: ...
 
 
 # ---------------------------------------------------------------------------
@@ -108,11 +108,18 @@ class GeminiHTTPClient:
         self._api_key = api_key
         self._timeout = timeout
 
-    def complete(self, model: str, prompt: str) -> dict[str, Any]:
+    def complete(self, model: str, prompt: str, images: list[bytes] | None = None) -> dict[str, Any]:
+        import base64
+
         url = _BASE_URL.format(model=model)
         headers = {"x-goog-api-key": self._api_key, "Content-Type": "application/json"}
+        # Images (PNG) go first, then the instructions. Sent over HTTPS (TLS).
+        parts: list[dict[str, Any]] = [
+            {"inline_data": {"mime_type": "image/png", "data": base64.b64encode(img).decode()}} for img in images or []
+        ]
+        parts.append({"text": prompt})
         payload: dict[str, Any] = {
-            "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+            "contents": [{"role": "user", "parts": parts}],
             # No thinkingConfig: Gemma 4 rejects thinkingBudget with HTTP 400
             # (verified with a real call on 2026-10-30). Low temperature keeps
             # extraction deterministic.
@@ -170,7 +177,9 @@ class FakeLLMClient:
     def __init__(self, response: dict[str, Any] | None = None) -> None:
         self._response = response or _FAKE_RESPONSE
 
-    def complete(self, model: str, prompt: str) -> dict[str, Any]:  # noqa: ARG002
+    def complete(self, model: str, prompt: str, images: list[bytes] | None = None) -> dict[str, Any]:  # noqa: ARG002
+        if images:
+            return {}  # the fake cannot see images: vision adds nothing in LLM_FAKE mode
         return dict(self._response)
 
 

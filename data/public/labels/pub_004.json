@@ -1,0 +1,28 @@
+{
+  "invoice_number": {
+    "value": "2022089083"
+  },
+  "invoice_date": {
+    "value": "2022-11-28"
+  },
+  "supplier_name": {
+    "value": "NETPRESSE"
+  },
+  "customer_name": {
+    "value": "ALEXINUX"
+  },
+  "subtotal": {
+    "value": "46.68"
+  },
+  "tax": {
+    "value": "9.34"
+  },
+  "total": {
+    "value": "56.02"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [],
+  "invoice_count": 1
+}

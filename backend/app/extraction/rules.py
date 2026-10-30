@@ -152,6 +152,8 @@ def _money_from(text: str, strict: bool) -> str | None:
     m = _MONEY_FULL.match(t)
     if m is None:
         return None
+    if re.fullmatch(r"\d{9,}", m.group("num")):
+        return None  # 9+ digits without separators: an ID (VAT/TIN, account), not an amount
     looks_money = bool(re.search(r"[.,]\d{1,2}\s*\)?\s*(?:" + _CUR_TOKEN + r")?\s*$", t, re.IGNORECASE)) or bool(
         re.search(_CUR_TOKEN, t, re.IGNORECASE)) or bool(re.search(r"\d[,.' ]\d{3}", t))
     if strict and not looks_money:
@@ -161,22 +163,24 @@ def _money_from(text: str, strict: bool) -> str | None:
 
 _SUBTOTAL_LABEL = re.compile(
     r"^(?:sub[\s-]?total(?:\s+amount)?|net\s+(?:amount|total)|total\s+(?:hors\s+taxes?|ht\b|net\b|excl\.?(?:uding)?\s+(?:tax|vat))|"
-    r"montant\s+ht|total\s+before\s+tax|nettobetrag|netto(?:summe)?|zwischensumme|summe\s+netto|base\s+imponible|importe\s+neto)",
+    r"montant\s+ht|total\s+before\s+tax|nettobetrag|netto(?:summe)?|zwischensumme|summe\s+netto|base\s+imponible|importe\s+neto|"
+    r"excl(?:\.|usief)?\s+btw|subtotaal|montant\s+eur\s+ht|amount\s+excl)",
     re.IGNORECASE,
 )
 _TAX_LABEL = re.compile(
     r"^(?:total\s+(?:tax|vat|gst)|(?:sales\s+|value\s+added\s+|estimated\s+|est\.?\s+)?tax(?:es)?|vat|gst|hst|pst|tva|mwst|ust|iva|igv|"
-    r"steuer|umsatzsteuer|mehrwertsteuer|taxe)"
-    r"(?!\s*(?:id\b|reg|ref|no\b|nr\b|number|#|code|date|invoice|identification|registration|intra|point|exempt|ident))",
+    r"steuer|umsatzsteuer|mehrwertsteuer|taxe|btw)"
+    r"(?!\s*(?:id\b|reg|ref|no\b|nr\b|number|nummer|#|code|date|invoice|identification|registration|intra|point|exempt|ident|/\s*tin|tin\b))",
     re.IGNORECASE,
 )
 _TOTAL_STRONG = re.compile(
     r"^(?:grand\s+total|total\s+(?:amount\s+)?due|amount\s+due|balance\s+due|total\s+(?:ttc|toutes\s+taxes)|total\s+payable|"
     r"amount\s+payable|total\s+a\s+pagar|importe\s+total|montant\s+(?:total|ttc|d[uû])|gesamtbetrag|gesamtsumme|endbetrag|"
-    r"rechnungsbetrag|total\s+amount|total\s+incl|total\s+to\s+pay|invoice\s+total)",
+    r"rechnungsbetrag|total\s+amount|total\s+incl|total\s+to\s+pay|invoice\s+total|total\s+for\s+this\s+invoice|"
+    r"factuur\s*totaal|te\s+betalen|somme\s+[àa]\s+payer|total\s+facture|montant\s+eur\s+ttc)",
     re.IGNORECASE,
 )
-_TOTAL_WEAK = re.compile(r"^(?:total|summe|betrag|importe|montant)\b(?!\s*(?:qty|quantity|items?|units?|weight|pages?|discount|savings))", re.IGNORECASE)
+_TOTAL_WEAK = re.compile(r"^(?:total|totaal|summe|betrag|importe|montant)\b(?!\s*(?:qty|quantity|items?|units?|weight|pages?|discount|savings))", re.IGNORECASE)
 
 
 @dataclass
@@ -256,7 +260,8 @@ _INV_LABEL_STRONG = re.compile(
     r"(?:invoice|inv|bill|receipt|facture|factura|fattura|rechnung|recibo|ticket|transaction|txn)\s*"
     r"(?:no\b\.?|n[°ºo]\.?|num(?:ber|ero|éro)?\b\.?|nr\b\.?|#|id\b|ref(?:erence)?\b)|"
     r"rechnungs?-?\s*(?:nr\b\.?|nummer)|rechnungsnummer|n[°º]\s*(?:de\s+)?facture|num[ée]ro\s+(?:de\s+)?facture|"
-    r"n[úu]mero\s+(?:de\s+)?factura|invoice\s*(?=:)"
+    r"n[úu]mero\s+(?:de\s+)?factura|invoice\s*(?=:)|factuurnummer|factuur\s*(?:nr|no)\b\.?|"
+    r"factuur(?=\s*$)|booking\s+(?:id|no|number|ref)\b"
     r")",
     re.IGNORECASE,
 )
@@ -277,6 +282,8 @@ def _inv_token(text: str) -> str | None:
         return None
     if re.fullmatch(r"\d{1,2}[./-]\d{1,2}[./-]\d{2,4}|\d{4}-\d{2}-\d{2}", tok):
         return None  # a date, not a number
+    if re.search(r"[A-Z]", tok) and re.search(r"[a-z]{3,}", tok):
+        return None  # mixed-case word fragments ("1SNowaas") are OCR noise, not an invoice number
     return tok
 
 
@@ -291,12 +298,24 @@ def _extract_invoice_number(all_lines: list[list[_Line]]) -> ExtractedField:
                 tok = _inv_token(rest) if rest else None
                 evidence = line.text
                 if tok is None and not rest:
-                    nxt = _next(page_lines, line)
-                    if nxt is not None:
+                    # Right cell, cell below (table header "Factuur" over its value), next line.
+                    for nxt in _followers(page_lines, line):
                         tok = _inv_token(nxt.text)
-                        evidence = _evidence(line, nxt)
+                        if tok:
+                            evidence = _evidence(line, nxt)
+                            break
                 if tok:
                     return _field(tok, conf, evidence, line.page)
+    # Last resort: an "INVOICE" title directly followed by "# <number>".
+    for page_lines in all_lines[:1]:
+        for line in page_lines:
+            if not _TITLE_LINE.match(line.text.rstrip(". ")):
+                continue
+            for nxt in _followers(page_lines, line):
+                if nxt.text.startswith("#"):
+                    tok = _inv_token(nxt.text)
+                    if tok:
+                        return _field(tok, 0.7, _evidence(line, nxt), line.page)
     return _empty_field()
 
 
@@ -309,17 +328,21 @@ _DATE_TOKEN = re.compile(
     r"(\d{4}[-/.]\d{1,2}[-/.]\d{1,2}"
     rf"|\d{{1,2}}[-/.]\d{{1,2}}[-/.]\d{{2,4}}"
     rf"|\d{{1,2}}(?:st|nd|rd|th)?[\s.\-/]+(?:de\s+)?{_MONTH}[\s.,\-/]+(?:de\s+)?\d{{2,4}}"
-    rf"|{_MONTH}\s+\d{{1,2}}(?:st|nd|rd|th)?,?\s+\d{{4}})",
+    rf"|{_MONTH}\s+\d{{1,2}}(?:st|nd|rd|th)?\s*,?\s+\d{{4}})",  # "August 3 , 2014" occurs in real PDFs
     re.IGNORECASE,
 )
 _DATE_LABEL = re.compile(
     r"(?:^|[\s/|])(?:invoice\s+date|date\s+of\s+(?:issue|invoice)|issue\s+date|date\s+issued|issued(?:\s+on)?|billing\s+date|"
     r"bill\s+date|tax\s+date|tax\s+point|receipt\s+date|transaction\s+date|sale\s+date|"
     r"date\s+d['’]?(?:émission|emission|facture)|date\s+de\s+facture|rechnungsdatum|ausstellungsdatum|"
-    r"fecha(?:\s+de\s+(?:factura|emisi[óo]n))?|datum|date)\b",
+    r"fecha(?:\s+de\s+(?:factura|emisi[óo]n))?|factuurdatum|factuur\s+datum|bill\s+created|datum|date)\b",
     re.IGNORECASE,
 )
-_NOT_INVOICE_DATE = re.compile(r"due|échéance|echeance|fällig|vencimiento|payment|zahlbar|deliver|liefer|ship|order\s+date|period|valid|expir|generated|printed", re.IGNORECASE)
+_NOT_INVOICE_DATE = re.compile(
+    r"due|échéance|echeance|fällig|vencimiento|payment|paiement|limite|prélèvement|prelevement|paid|payé|betaald|zahlbar|"
+    r"deliver|liefer|ship|order\s*date|orderdatum|check[\s-]*(?:in|out)|period|valid|expir|generated|printed|vervaldatum",
+    re.IGNORECASE,
+)
 _US_HINT = re.compile(r"\bUSA\b|United States|\b[A-Z]{2}\s\d{5}(?:-\d{4})?\b|\bUSD\b|US\$")
 
 
@@ -403,27 +426,42 @@ def _extract_invoice_date(all_lines: list[list[_Line]]) -> ExtractedField:
 # Parties: supplier and customer
 # ---------------------------------------------------------------------------
 
-_COMPANY_SUFFIXES = re.compile(
-    r"\b(?:Inc|LLC|L\.L\.C|Ltd|Limited|Corp|Corporation|Co|Company|GmbH|AG|KG|SAS|SARL|SL|S\.?A|SpA|S\.p\.A|Srl|BV|NV|Oy|AB|AS|ApS|"
-    r"PLC|LLP|Pty|Pvt|KK|Group|Holdings|Industries|Solutions|Services|Enterprises)\b\.?",
-    re.IGNORECASE,
-)
 _TITLE_LINE = re.compile(
     r"^(?:(?:tax|commercial|proforma|pro\s*forma|sales|final)?\s*(?:invoice|receipt|bill|statement)(?:\s+statement)?|"
-    r"facture(?:\s*/\s*invoice)?|rechnung|factura|fattura|cash\s+receipt|sales\s+receipt|invoice\s*/\s*facture|original|copy|duplicate)$",
+    r"facture(?:\s*/\s*invoice)?|rechnung|factura|fattura|factuur|cash\s+receipt|sales\s+receipt|payment\s+receipt|"
+    r"invoice\s*/\s*facture|retail\s+invoices?(?:\s*/\s*bill)?|kopie\s+factuur|original|copy|duplicate)\.?$",
     re.IGNORECASE,
 )
 _SUPPLIER_LABEL = re.compile(
-    r"^(?:from|seller|vendor|supplier|supplied\s+by|bill(?:ed)?\s+from|issued\s+by|sold\s+by|merchant|store|"
+    r"^(?:from|seller|vendor|supplier|supplied\s+by|bill(?:ed)?\s+from|issued\s+by|sold\s+by|merchant|store|service\s+provider|"
+    r"(?:all\s+)?payments?\s+(?:to\s+be\s+made\s+)?in\s+favou?r\s+of|"
     r"de(?=\s*:)|émetteur|emetteur|expéditeur|fournisseur|vendeur|absender|verkäufer|lieferant|rechnungssteller|emisor|proveedor|vendedor)\b",
     re.IGNORECASE,
 )
 _CUSTOMER_LABEL = re.compile(
-    r"^(?:[^:/]{0,30}/\s*)?(?:bill(?:ed)?\s+to|invoice\s+to|sold\s+to|client|customer|buyer|purchaser|destinataire|"
+    r"^(?:[^:/]{0,30}/\s*)?(?:bill(?:ed)?\s+to(?:\s+address)?|billing\s+address|invoice\s+to|sold\s+to|account\s+billed|"
+    r"customer\s+name|guest\s+name|client|customer|buyer|purchaser|destinataire|nom\s+de\s+l['’]abonn[ée]|factuuradres|klantnaam|"
     r"factur[ée]\s+[àa]|adress[ée]\s+[àa]|rechnungsempf[äa]nger|kunde|empf[äa]nger|cliente|facturar\s+a|ship(?:ped)?\s+to|deliver\s+to)\b"
-    r"(?!\s*(?:ref|tax|id\b|no\b|nr\b|number|#|information|info\b|details|vat|code|account|since|service|copy))",
+    r"(?!\s*(?:ref|tax|id\b|no\b|nr\b|number|#|information|info\b|details|vat|code|account|since|service|copy|care))",
     re.IGNORECASE,
 )
+_ATTN = re.compile(r"^(?:attn|attention|c/o|z\.?\s*hd\.?|t\.?a\.?v\.?)\s*[:.]?\s*", re.IGNORECASE)
+
+# Legal-form endings that mark a company name. Short forms must match their
+# usual capitalisation ("AS", "Co") so ordinary words ("as", "co-") don't count.
+_SUFFIX_ANY_CASE = {"inc", "llc", "ltd", "limited", "corp", "corporation", "company", "gmbh", "sarl", "spa", "srl", "plc",
+                    "llp", "pty", "pvt", "b.v", "bv", "n.v", "s.a", "s.p.a", "group", "holdings", "industries", "solutions",
+                    "services", "enterprises"}
+_SUFFIX_EXACT = {"AG", "KG", "SAS", "SL", "SA", "NV", "BV", "Oy", "AB", "AS", "ApS", "KK", "Co", "CO"}
+
+
+def _has_company_suffix(text: str) -> bool:
+    words = re.sub(r"[,;:]+$", "", text.strip()).split()
+    if not words:
+        return False
+    last = words[-1].rstrip(".")
+    return last.lower() in _SUFFIX_ANY_CASE or last in _SUFFIX_EXACT or (
+        len(words) > 1 and f"{words[-2]} {words[-1]}".rstrip(".").lower() in {"pvt ltd", "pvt. ltd", "private limited"})
 _NOT_NAME = re.compile(
     r"@|www\.|https?://|\b(?:tel|phone|fax|mobile|email|e-mail|courriel|tél)\b|^\+?\d[\d\s().-]{6,}$|"
     r"\b(?:street|st\.|road|rd\.|avenue|ave\.|boulevard|blvd|suite|floor|lane|drive|way|plot|straße|strasse|rue|calle|"
@@ -433,15 +471,24 @@ _NOT_NAME = re.compile(
 _ANY_LABEL = re.compile(
     r"^(?:invoice|receipt|bill|date|due|tax|vat|gst|tva|total|subtotal|amount|balance|description|qty|quantity|"
     r"unit|price|rate|item|page|terms|payment|po\b|order|ref|client\s+ref|customer\s+tax|account|iban|swift|bank|"
-    r"thank|notes?|generated|valid)\b",
+    r"thank|notes?|generated|valid|address|adresse?|afleveradres|factuuradres|shipping|billing|hotel\s+details|"
+    r"this\s+is|all\s+charges)\b",
     re.IGNORECASE,
 )
 
 
+def _clean_name(text: str) -> str:
+    return _ATTN.sub("", text.strip()).rstrip(",;: ").strip()
+
+
 def _is_name_line(text: str) -> bool:
-    t = text.strip()
-    if len(t) < 3 or len(t) > 80:
+    if text.strip().endswith(":"):
+        return False  # a label, not a value
+    t = _clean_name(text)
+    if len(t) < 3 or len(t) > 80 or t[0] in "(*#[†\"'“‘«":
         return False
+    if re.search(r"\bnet\s*\d+\b|\b\d+\s+days\b|\bdue\s+on\b|\breceipt\b", t, re.IGNORECASE):
+        return False  # payment terms ("Net 30 days"), not a party name
     if _TITLE_LINE.match(t) or _ANY_LABEL.match(t) or _NOT_NAME.search(t):
         return False
     if ":" in t:
@@ -451,7 +498,8 @@ def _is_name_line(text: str) -> bool:
     return letters >= 3 and digits <= letters / 3
 
 
-def _party_from_label(all_lines: list[list[_Line]], pattern: re.Pattern[str], conf: float, pages: int = 2) -> ExtractedField:
+def _party_from_label(all_lines: list[list[_Line]], pattern: re.Pattern[str], conf: float, pages: int = 2,
+                      look_back: bool = False) -> ExtractedField:
     for page_lines in all_lines[:pages]:
         for line in page_lines:
             m = pattern.match(line.text)
@@ -459,20 +507,43 @@ def _party_from_label(all_lines: list[list[_Line]], pattern: re.Pattern[str], co
                 continue
             rest = _remainder(line.text, m.end())
             if rest and _is_name_line(rest):
-                return _field(rest, conf, line.text, line.page)
-            if not rest:
-                # "From: | Client:" on one OCR row: the name sits in the cell below.
-                for nxt in _followers(page_lines, line):
-                    if _is_name_line(nxt.text):
-                        return _field(nxt.text, conf, _evidence(line, nxt), line.page)
+                return _field(_clean_name(rest), conf, line.text, line.page)
+            if rest:
+                continue
+            # "From: | Client:" on one OCR row: the name sits in the cell below.
+            # Real layouts also put a note line between label and name, so look
+            # up to three lines further down.
+            near = _followers(page_lines, line)
+            seq = [s for s in page_lines[line.idx + 1: line.idx + 4] if s not in near]
+            for nxt in near + seq:
+                if pattern.match(nxt.text) or _CUSTOMER_LABEL.match(nxt.text) or _SUPPLIER_LABEL.match(nxt.text):
+                    if nxt in near:
+                        continue  # "From: | Client:" - the neighbouring cell is another label
+                    break  # reached the next labelled block
+                if _is_name_line(nxt.text):
+                    return _field(_clean_name(nxt.text), conf, nxt.text if nxt.idx != line.idx + 1 else _evidence(line, nxt), line.page)
+            # Some PDFs store the value *before* its label ("WS Retail Ltd.," then "Sold By :").
+            if look_back and line.idx > 0 and _is_name_line(page_lines[line.idx - 1].text):
+                prev = page_lines[line.idx - 1]
+                return _field(_clean_name(prev.text), conf - 0.1, prev.text, line.page)
     return _empty_field()
 
 
+def _customer_block(all_lines: list[list[_Line]]) -> set[int]:
+    """Line indexes (first page) that belong to the customer address block."""
+    out: set[int] = set()
+    for line in all_lines[0] if all_lines else []:
+        if _CUSTOMER_LABEL.match(line.text):
+            out.update(range(line.idx, line.idx + 5))
+    return out
+
+
 def _extract_supplier(all_lines: list[list[_Line]]) -> ExtractedField:
-    labelled = _party_from_label(all_lines, _SUPPLIER_LABEL, 0.8)
+    labelled = _party_from_label(all_lines, _SUPPLIER_LABEL, 0.8, look_back=True)
     if labelled.value:
         return labelled
     first = all_lines[0] if all_lines else []
+    customer = _customer_block(all_lines)
     candidates: list[_Line] = []
     for line in first[:12]:
         if _CUSTOMER_LABEL.match(line.text):
@@ -480,16 +551,25 @@ def _extract_supplier(all_lines: list[list[_Line]]) -> ExtractedField:
         if _is_name_line(line.text):
             candidates.append(line)
     for line in candidates:
-        if _COMPANY_SUFFIXES.search(line.text):
-            return _field(line.text, 0.75, line.text, line.page)
+        if _has_company_suffix(line.text):
+            return _field(_clean_name(line.text), 0.75, line.text, line.page)
+    # Issuer blocks are often at the bottom ("Shopify International Limited",
+    # registered-office footers): any company-looking line outside the customer block.
+    for page_lines in all_lines[:2]:
+        for line in page_lines:
+            if first and line.page == first[0].page and line.idx in customer:
+                continue
+            if _is_name_line(line.text) and _has_company_suffix(line.text):
+                return _field(_clean_name(line.text), 0.65, line.text, line.page)
     if candidates:
-        return _field(candidates[0].text, 0.6, candidates[0].text, candidates[0].page)
+        return _field(_clean_name(candidates[0].text), 0.6, candidates[0].text, candidates[0].page)
     return _empty_field()
 
 
 # Printed placeholders that mean "no named customer" (walk-in / counter sales).
 _PLACEHOLDER_CUSTOMER = re.compile(
-    r"^(?:standard|individual|walk[\s-]?in|cash|counter|retail|general|private|one[\s-]?time|guest)\s+(?:customer|client|sale|buyer)s?(?:\s+sale)?$|"
+    r"^(?:standard|individual|walk[\s-]?in|cash|counter|retail|general|private|one[\s-]?time|guest|direct)"
+    r"(?:\s*/\s*counter)?\s+(?:customer|client|sale|buyer)s?(?:\s+sale)?$|"
     r"^(?:n/?a|none|-+)$",
     re.IGNORECASE,
 )
@@ -508,7 +588,8 @@ def _extract_customer(all_lines: list[list[_Line]]) -> ExtractedField:
 
 _SYMBOL_ISO = [("US$", "USD"), ("C$", "CAD"), ("A$", "AUD"), ("€", "EUR"), ("£", "GBP"), ("¥", "JPY"), ("₹", "INR"),
                ("৳", "BDT")]
-_WORD_ISO = [(r"\bRs\.?(?=\s*\d)", "INR"), (r"\bTk\.?(?=\s*\d)", "BDT")]
+_WORD_ISO = [(r"\bRs\.?(?=\s*-?\s*\d)", "INR"), (r"\bTk\.?(?=\s*\d)|\(TK\)|\bTaka\b", "BDT"),
+             (r"\bUS\s+Dollars?\b", "USD"), (r"\bRupees?\b", "INR"), (r"\bEuros?\b", "EUR")]
 
 
 def _currency_in(text: str) -> tuple[str, str] | None:

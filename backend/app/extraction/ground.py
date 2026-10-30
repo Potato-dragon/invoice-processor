@@ -28,8 +28,12 @@ def _evidence_found(evidence: str | None, pages: list[ParsedPage]) -> bool:
     if not evidence:
         return False
     ev_norm = _norm(evidence)
+    if not ev_norm:
+        return False
+    # Whole-word match: "Total: 100.00" must not be found inside "Subtotal: 100.00".
+    pattern = re.compile(r"(?<![0-9a-zà-ÿ])" + re.escape(ev_norm) + r"(?![0-9a-zà-ÿ])")
     for page in pages:
-        if ev_norm in _norm(page.text):
+        if pattern.search(_norm(page.text)):
             return True
     return False
 

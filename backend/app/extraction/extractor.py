@@ -79,6 +79,16 @@ def _needs_llm(result: ExtractionResult) -> list[str]:
     return missing
 
 
+_WEAK_FIELDS_TRIGGER = 3
+_ALL_FIELDS = ["invoice_number", "invoice_date", "supplier_name", "customer_name", "subtotal", "tax", "total", "currency"]
+
+
+def _weak_fields(result: ExtractionResult) -> list[str]:
+    """Every field that is null or below the confidence threshold."""
+    return [f for f in _ALL_FIELDS
+            if getattr(result, f).value is None or getattr(result, f).confidence < _CONFIDENCE_THRESHOLD]
+
+
 def _build_doc_snippet(pages: list[ParsedPage]) -> str:
     """Build trimmed text for the LLM: first page up to 3000 chars + totals area of last page."""
     first = pages[0].text[:_FIRST_PAGE_CHARS] if pages else ""
@@ -96,8 +106,12 @@ def _parse_llm_field(raw: Any, fname: str) -> ExtractedField:
     value = raw.get("value")
     evidence = raw.get("evidence")
     page = raw.get("page")
-    if not isinstance(value, str):
+    if not isinstance(value, (str, int, float)):
         value = None
+    else:
+        from app.extraction.vision import normalize_value  # noqa: PLC0415
+
+        value = normalize_value(fname, value)[0]
     if not isinstance(evidence, str) or not evidence.strip():
         evidence = None
     if not isinstance(page, int):
@@ -195,7 +209,15 @@ def _call_llm_cached(
     doc_text: str,
     client: LLMClient,
     cache: LLMCache,
+    images: list[bytes] | None = None,
 ) -> dict[str, Any]:
+    # Fake answers must never enter the shared cache: a later real run would
+    # reuse them instead of calling the model (this happened on 31 Oct).
+    from app.extraction.llm import FakeLLMClient  # noqa: PLC0415
+
+    if isinstance(client, FakeLLMClient):
+        return client.complete(model, prompt, images) if images else client.complete(model, prompt)
+
     # 1. Cache check
     cached = cache.get(model, prompt, doc_text)
     if cached is not None:
@@ -203,12 +225,12 @@ def _call_llm_cached(
         return cached
 
     # 2. Rate-limit check + reserve
-    tokens = estimate_tokens(prompt)
+    tokens = estimate_tokens(prompt) + 600 * len(images or [])  # ~600 tokens per page image
     limiter = get_rate_limiter(model_key)
     limiter.check_and_reserve(tokens)
 
     # 3. Call LLM
-    response = client.complete(model, prompt)
+    response = client.complete(model, prompt, images) if images else client.complete(model, prompt)
 
     # 4. Store in cache
     cache.set(model, prompt, doc_text, response)
@@ -222,17 +244,18 @@ def _call_with_repair(
     doc_text: str,
     client: LLMClient,
     cache: LLMCache,
+    images: list[bytes] | None = None,
 ) -> dict[str, Any]:
     """Call LLM; on invalid JSON, retry once with a repair prompt (also cached)."""
     try:
-        return _call_llm_cached(model, model_key, prompt, doc_text, client, cache)
+        return _call_llm_cached(model, model_key, prompt, doc_text, client, cache, images)
     except PipelineError as exc:
         if exc.code != ErrorCode.LLM_INVALID_OUTPUT:
             raise
         # Repair retry
         repair_prompt = prompt + REPAIR_SUFFIX
         try:
-            return _call_llm_cached(model, model_key, repair_prompt, doc_text, client, cache)
+            return _call_llm_cached(model, model_key, repair_prompt, doc_text, client, cache, images)
         except PipelineError:
             raise PipelineError(ErrorCode.LLM_INVALID_OUTPUT, "LLM returned invalid JSON after repair retry") from None
 
@@ -241,21 +264,38 @@ def _call_with_repair(
 # Main public function
 # ---------------------------------------------------------------------------
 
+def _cap_by_ocr(result: ExtractionResult, pages: list[ParsedPage]) -> ExtractionResult:
+    """A value read from a poorly OCR'd page cannot be more certain than the OCR."""
+    conf_by_page = {p.page_no: p.ocr_confidence for p in pages if p.ocr_confidence is not None}
+    updates = {}
+    for fname in ("invoice_number", "invoice_date", "supplier_name", "customer_name", "subtotal", "tax", "total", "currency"):
+        f: ExtractedField = getattr(result, fname)
+        ocr = conf_by_page.get(f.page) if f.page else None
+        if f.value is not None and ocr is not None and ocr < 0.8 and f.confidence > ocr:
+            updates[fname] = f.model_copy(update={"confidence": round(ocr, 2)})
+    return result.model_copy(update=updates) if updates else result
+
+
 def extract_invoice(
     pages: list[ParsedPage],
     *,
     llm_client: LLMClient | None = None,
     cache: LLMCache | None = None,
     session_factory: Any = None,
+    page_images: Any = None,
 ) -> ExtractionResult:
     """Extract invoice fields from a list of ParsedPage objects.
 
     Steps:
-    1. Rules-based extraction + grounding.
-    2. LLM primary for missing/low-confidence required fields.
-    3. LLM fallback if primary fails or still leaves required fields empty.
-    4. Returns ExtractionResult with correct method label.
+    1. Rules-based extraction + grounding; confidence capped by OCR confidence.
+    2. LLM primary (text) for missing/low-confidence required fields.
+    3. LLM fallback (text) if the primary fails or leaves required fields empty.
+    4. Vision: for scanned/image pages with poor OCR or missing fields, the LLM
+       reads the page image itself (page_images() returns [(page_no, png)]).
     """
+    from app.extraction.prompts import VISION_PROMPT  # noqa: PLC0415
+    from app.extraction.vision import images_key, merge_vision, vision_needed  # noqa: PLC0415
+
     if llm_client is None:
         llm_client = make_llm_client()
     if cache is None:
@@ -264,36 +304,65 @@ def extract_invoice(
     # ---- Step 1: rules ----
     result = extract_by_rules(pages)
     result = ground_result(result, pages)
+    result = _cap_by_ocr(result, pages)
     method = ExtractionMethod.RULES
 
     missing = _needs_llm(result)
-    if not missing:
+    weak = _weak_fields(result)
+    # Call the LLM when a required field is weak, or when rules found little
+    # at all (3+ weak fields: an unfamiliar layout).
+    needs_text_llm = bool(missing) or len(weak) >= _WEAK_FIELDS_TRIGGER
+    use_vision = page_images is not None and vision_needed(result, pages, missing)
+    if not needs_text_llm and not use_vision:
         return result.model_copy(update={"method": method})
 
-    # ---- Step 2: LLM primary ----
-    doc_snippet = _build_doc_snippet(pages)
-    prompt = build_prompt(missing, doc_snippet)
+    # ---- Step 2/3: text LLM (skipped when the OCR text is the problem) ----
+    if needs_text_llm and not use_vision:
+        doc_snippet = _build_doc_snippet(pages)
+        # One call costs the same whatever it asks for: ask for every weak field.
+        prompt = build_prompt(weak, doc_snippet)
 
-    primary_failed = False
-    try:
-        primary = _get_model("LLM_PRIMARY_MODEL")
-        llm_data = _call_with_repair(primary, "primary", prompt, doc_snippet, llm_client, cache)
-        result = _merge_llm_into_result(result, llm_data, missing, pages)
-        method = ExtractionMethod.LLM_PRIMARY
-    except PipelineError as exc:
-        logger.warning("Primary LLM failed: %s", exc)
-        primary_failed = True
-
-    # ---- Step 3: LLM fallback ----
-    still_missing = _needs_llm(result)
-    if still_missing and (primary_failed or still_missing):
+        primary_failed = False
         try:
-            fallback = _get_model("LLM_FALLBACK_MODEL")
-            fallback_prompt = build_prompt(still_missing, doc_snippet)
-            llm_data = _call_with_repair(fallback, "fallback", fallback_prompt, doc_snippet, llm_client, cache)
-            result = _merge_llm_into_result(result, llm_data, still_missing, pages)
-            method = ExtractionMethod.LLM_FALLBACK
+            primary = _get_model("LLM_PRIMARY_MODEL")
+            llm_data = _call_with_repair(primary, "primary", prompt, doc_snippet, llm_client, cache)
+            result = _merge_llm_into_result(result, llm_data, weak, pages)
+            method = ExtractionMethod.LLM_PRIMARY
         except PipelineError as exc:
-            logger.warning("Fallback LLM also failed: %s", exc)
+            logger.warning("Primary LLM failed: %s", exc)
+            primary_failed = True
 
+        still_missing = _needs_llm(result)
+        if still_missing:
+            try:
+                fallback = _get_model("LLM_FALLBACK_MODEL")
+                still_missing = _weak_fields(result)
+                fallback_prompt = build_prompt(still_missing, doc_snippet)
+                llm_data = _call_with_repair(fallback, "fallback", fallback_prompt, doc_snippet, llm_client, cache)
+                result = _merge_llm_into_result(result, llm_data, still_missing, pages)
+                method = ExtractionMethod.LLM_FALLBACK
+            except PipelineError as exc:
+                logger.warning("Fallback LLM also failed: %s", exc)
+        return result.model_copy(update={"method": method})
+
+    # ---- Step 4: vision ----
+    try:
+        images = page_images()
+    except Exception as exc:  # noqa: BLE001 - no image, no vision; keep the rules result
+        logger.warning("Could not render page images for vision: %s", exc)
+        images = []
+    if images:
+        key = images_key(images)
+        for model_env, model_key in (("LLM_FALLBACK_MODEL", "fallback"), ("LLM_PRIMARY_MODEL", "primary")):
+            # The 26B model answered faster and more reliably in tests, so it goes first here.
+            try:
+                data = _call_with_repair(_get_model(model_env), model_key, VISION_PROMPT, key, llm_client, cache,
+                                         [img for _, img in images])
+            except PipelineError as exc:
+                logger.warning("Vision call with %s failed: %s", model_env, exc)
+                continue
+            if data:
+                result = merge_vision(result, data, pages)
+                method = ExtractionMethod.LLM_VISION
+                break
     return result.model_copy(update={"method": method})

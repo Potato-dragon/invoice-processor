@@ -64,6 +64,7 @@ class ExtractionMethod(StrEnum):
     RULES = "rules"
     LLM_PRIMARY = "llm_primary"
     LLM_FALLBACK = "llm_fallback"
+    LLM_VISION = "llm_vision"  # LLM read the page image (see CONTRACT_CHANGES 8)
     MANUAL = "manual"
 
 

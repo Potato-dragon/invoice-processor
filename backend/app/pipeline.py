@@ -146,13 +146,53 @@ def apply_extraction(session: Session, inv: Invoice, result: ExtractionResult) -
     ])
 
 
+VISION_MAX_PAGES = 2   # first and last page of an invoice (header + totals)
+VISION_MAX_SIDE = 2000  # px; keeps image tokens and upload size small
+VISION_DPI = 150
+
+
+def page_images_for(doc: Document, page_nos: list[int]) -> list[tuple[int, bytes]]:
+    """Render pages of the stored file to PNG for the vision fallback."""
+    import io
+
+    from PIL import Image, ImageSequence
+
+    wanted = sorted({page_nos[0], page_nos[-1]})[:VISION_MAX_PAGES] if page_nos else []
+    path = Path(get_settings().storage_dir) / doc.storage_key
+    out: list[tuple[int, bytes]] = []
+
+    def png(img: Image.Image) -> bytes:
+        img = img.convert("L")
+        if max(img.size) > VISION_MAX_SIDE:
+            img.thumbnail((VISION_MAX_SIDE, VISION_MAX_SIDE))
+        buf = io.BytesIO()
+        img.save(buf, format="PNG", optimize=True)
+        return buf.getvalue()
+
+    if doc.kind == "pdf":
+        import pymupdf
+
+        with pymupdf.open(path) as pdf:
+            for n in wanted:
+                pix = pdf.load_page(n - 1).get_pixmap(dpi=VISION_DPI, colorspace=pymupdf.csGRAY)
+                out.append((n, png(Image.frombytes("L", (pix.width, pix.height), pix.samples))))
+    elif doc.kind == "image":
+        with Image.open(path) as img:
+            for i, frame in enumerate(ImageSequence.Iterator(img), start=1):
+                if i in wanted:
+                    out.append((i, png(frame.copy())))
+    return out
+
+
 def stage_extract(session: Session, doc: Document) -> dict[str, Any]:
     from app.extraction import extract_invoice
 
     pages = load_pages(session, doc.id)
     methods: Counter[str] = Counter()
     for inv in _invoices(session, doc.id):
-        result = extract_invoice(invoice_pages(pages, inv), session_factory=SessionLocal)
+        nos = list(range(inv.page_start, inv.page_end + 1))
+        result = extract_invoice(invoice_pages(pages, inv), session_factory=SessionLocal,
+                                 page_images=lambda nos=nos: page_images_for(doc, nos))
         apply_extraction(session, inv, result)
         methods[inv.extraction_method or "rules"] += 1
     llm = sum(v for k, v in methods.items() if k.startswith("llm"))

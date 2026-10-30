@@ -5,3 +5,11 @@ __pycache__/
 *.pyc
 *.pyo
 .pytest_cache/
+
+# Private real invoices: keep out of git (README stays)
+data/real/*
+!data/real/README.md
+# Raw downloads; data/public/samples holds the copies used
+data/public/raw/
+# Raw results of the private set contain extracted personal data
+docs/eval/results-real-*.json

@@ -353,7 +353,11 @@ def main() -> None:
     ap.add_argument("--reset-cache", action="store_true", help="also empty the LLM cache (forces new LLM calls)")
     ap.add_argument("--timeout", type=int, default=3600)
     ap.add_argument("--name", default=None)
+    ap.add_argument("--root", default="", help="sub-folder of DATA_DIR with its own manifest/samples/labels, e.g. public or real")
     a = ap.parse_args()
+    global DATA
+    if a.root:
+        DATA = DATA / a.root
     name = a.name or a.split
     result = evaluate(a.split, a.reset, a.large, a.timeout, name, a.reset_cache)
     OUT.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,28 @@
+{
+  "invoice_number": {
+    "value": "BLR_WFLD20151000982590"
+  },
+  "invoice_date": {
+    "value": "2015-10-20"
+  },
+  "supplier_name": {
+    "value": "WS Retail Services Pvt. Ltd."
+  },
+  "customer_name": {
+    "value": "Anushrut Singh"
+  },
+  "subtotal": {
+    "value": "278.61"
+  },
+  "tax": {
+    "value": "40.39"
+  },
+  "total": {
+    "value": "319.00"
+  },
+  "currency": {
+    "value": "INR"
+  },
+  "line_items": [],
+  "invoice_count": 1
+}

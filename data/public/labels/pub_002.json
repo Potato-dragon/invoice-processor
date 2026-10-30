@@ -1,0 +1,28 @@
+{
+  "invoice_number": {
+    "value": "INV/2023/03/0008"
+  },
+  "invoice_date": {
+    "value": "2023-03-20"
+  },
+  "supplier_name": {
+    "value": "YourCompany"
+  },
+  "customer_name": {
+    "value": "Azure Interior"
+  },
+  "subtotal": {
+    "value": "262.90"
+  },
+  "tax": {
+    "value": "16.94"
+  },
+  "total": {
+    "value": "279.84"
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [],
+  "invoice_count": 1
+}

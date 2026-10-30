@@ -21,3 +21,9 @@
 19. **Rejected uploads are recorded** as FAILED documents (see CONTRACT_CHANGES 2).
 20. **Generated USD documents print "US$"**. Only the deliberately ambiguous documents print a bare "$". INR/BDT print ISO codes because the PDF font has no ₹/৳ glyph (they came out as "I" in the text layer, so the label could never be grounded).
 21. **SimpleWorker** (no fork per job), so OCR and embedding models stay loaded in memory.
+22. **Vision fallback (31 Oct).** For OCR'd pages with confidence below 0.80, or with required fields missing, the LLM gets the page image (the first and last page of the invoice, grayscale, max 2,000 px) instead of OCR text. Measured on a 510 px invoice: Tesseract 0/7 fields, Gemma 4 vision 7/7. A vision value replaces a rules value only if that value is missing, below 0.7, or came from garbled OCR (below 0.6). Values not confirmed in the OCR text get confidence 0.55 plus a warning. Digital PDFs never use vision, because their text layer is exact.
+23. **Rules first, but ask the LLM for every weak field.** One call costs the same whatever it asks for, so when the LLM is called, it is asked for all null or low-confidence fields (customer, subtotal and tax included). It is also called when 3+ fields are weak (an unfamiliar layout), not only when a required field is missing.
+24. **Confidence capped by OCR confidence.** A field read from a page with OCR confidence c < 0.8 cannot have confidence above c, so poor scans go to the LLM or vision and get review warnings.
+25. **Fake LLM answers are never cached.** An earlier fake-mode run had filled `llm_cache`, and later real runs silently reused those answers.
+26. **Grounding uses whole-word matching.** Evidence "Total: 100.00" was being "found" inside "Subtotal: 100.00".
+27. **Small images are upscaled by pixel size** (to about 3,000 px on the long side, at most 4×) when the file declares no DPI. This is typical of screenshots.

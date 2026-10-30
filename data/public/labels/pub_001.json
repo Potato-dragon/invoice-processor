@@ -1,0 +1,28 @@
+{
+  "invoice_number": {
+    "value": "42183017"
+  },
+  "invoice_date": {
+    "value": "2014-08-03"
+  },
+  "supplier_name": {
+    "value": "Amazon Web Services, Inc."
+  },
+  "customer_name": {
+    "value": "iViveLabs Limited"
+  },
+  "subtotal": {
+    "value": "4.11"
+  },
+  "tax": {
+    "value": "0.00"
+  },
+  "total": {
+    "value": "4.11"
+  },
+  "currency": {
+    "value": "USD"
+  },
+  "line_items": [],
+  "invoice_count": 1
+}

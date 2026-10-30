@@ -140,7 +140,11 @@ def check_quality(ex: ExtractionResult, pages: list[ParsedPage]) -> list[IssueMo
     for name in _SCALARS:
         f = getattr(ex, name)
         if f.value is not None and f.confidence < LOW_CONFIDENCE:
-            issues.append(_issue(IssueCode.LOW_CONFIDENCE, IssueSeverity.WARNING, f"The {_LABELS[name]} was read with low confidence; please check it.", name, confidence=f.confidence))
+            if f"VISION_UNVERIFIED:{name}" in ex.notes:
+                msg = f"The {_LABELS[name]} was read from the page image and could not be confirmed in the scanned text; please check it."
+            else:
+                msg = f"The {_LABELS[name]} was read with low confidence; please check it."
+            issues.append(_issue(IssueCode.LOW_CONFIDENCE, IssueSeverity.WARNING, msg, name, confidence=f.confidence))
     for p in pages:
         if p.ocr_confidence is not None and p.ocr_confidence < LOW_OCR_CONFIDENCE:
             issues.append(_issue(IssueCode.LOW_OCR_CONFIDENCE, IssueSeverity.WARNING, f"Page {p.page_no} was hard to read (scan quality).", None, page=p.page_no, ocr_confidence=p.ocr_confidence))

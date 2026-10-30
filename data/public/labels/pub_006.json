@@ -1,0 +1,28 @@
+{
+  "invoice_number": {
+    "value": "invoice_number_1"
+  },
+  "invoice_date": {
+    "value": "2022-01-01"
+  },
+  "supplier_name": {
+    "value": "Sammy Maystone"
+  },
+  "customer_name": {
+    "value": "Taylor Riddel"
+  },
+  "subtotal": {
+    "value": "127.50"
+  },
+  "tax": {
+    "value": "0.00"
+  },
+  "total": {
+    "value": "127.50"
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [],
+  "invoice_count": 1
+}

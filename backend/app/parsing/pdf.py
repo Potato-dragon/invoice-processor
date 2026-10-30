@@ -10,7 +10,7 @@ import pymupdf as fitz  # PyMuPDF
 import numpy as np
 
 from app.contracts import ErrorCode, PageMethod, ParsedPage, PipelineError
-from app.parsing.ocr import ocr_image
+from app.parsing.ocr import ocr_image, rows_from_boxes
 
 logger = logging.getLogger(__name__)
 
@@ -47,6 +47,18 @@ def open_pdf(file_path: str) -> fitz.Document:
         doc.close()
         raise PipelineError(ErrorCode.PAGE_LIMIT_EXCEEDED, f"PDF has {n} pages; the limit is {_max_pages()}")
     return doc
+
+
+def text_layer_rows(page: fitz.Page) -> str:
+    """Text layer rebuilt in visual order: one line per row, tab between cells.
+
+    The order stored in a PDF is whatever the generator chose; many real
+    invoices store a value before its label ("993548900" then "Factuurnummer:").
+    Rebuilding rows from word positions puts a label and its value side by side.
+    """
+    words = page.get_text("words")  # (x0, y0, x1, y1, word, block, line, word_no)
+    boxes = [(w[1], w[0], w[2] - w[0], w[3] - w[1], w[4]) for w in words if w[4].strip()]
+    return "\n".join(rows_from_boxes(boxes))
 
 
 def _render(page: fitz.Page, dpi: int) -> np.ndarray:
@@ -87,7 +99,8 @@ def parse_pdf_pages(file_path: str, warnings: list[str]) -> list[ParsedPage]:
                     results[page_no] = ParsedPage(page_no=page_no, text="", method=PageMethod.NONE)
                     continue
                 if len("".join(text.split())) >= MIN_TEXT_CHARS:
-                    results[page_no] = ParsedPage(page_no=page_no, text=text, method=PageMethod.TEXT_LAYER, width=w, height=h)
+                    results[page_no] = ParsedPage(page_no=page_no, text=text_layer_rows(page) or text,
+                                                  method=PageMethod.TEXT_LAYER, width=w, height=h)
                     continue
                 try:
                     img = _render(page, dpi)

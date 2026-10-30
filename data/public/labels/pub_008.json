@@ -1,0 +1,28 @@
+{
+  "invoice_number": {
+    "value": "992288600"
+  },
+  "invoice_date": {
+    "value": "2014-03-29"
+  },
+  "supplier_name": {
+    "value": "Coolblue B.V."
+  },
+  "customer_name": {
+    "value": "Pino Bluebird"
+  },
+  "subtotal": {
+    "value": "4053.67"
+  },
+  "tax": {
+    "value": "851.27"
+  },
+  "total": {
+    "value": "4904.94"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [],
+  "invoice_count": 1
+}

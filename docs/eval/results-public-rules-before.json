@@ -1,0 +1,1072 @@
+{
+ "name": "public-rules-before",
+ "split": "all",
+ "documents": 15,
+ "upload_seconds": 0.2,
+ "wall_seconds": 6.5,
+ "llm_fake": "true",
+ "llm_models": [
+  "gemma-4-31b-it",
+  "gemma-4-26b-a4b-it"
+ ],
+ "field_accuracy": {
+  "invoice_number": {
+   "correct": 6,
+   "total": 15,
+   "pct": 40.0
+  },
+  "invoice_date": {
+   "correct": 11,
+   "total": 15,
+   "pct": 73.3
+  },
+  "supplier_name": {
+   "correct": 2,
+   "total": 15,
+   "pct": 13.3
+  },
+  "customer_name": {
+   "correct": 0,
+   "total": 15,
+   "pct": 0.0
+  },
+  "subtotal": {
+   "correct": 6,
+   "total": 15,
+   "pct": 40.0
+  },
+  "tax": {
+   "correct": 9,
+   "total": 15,
+   "pct": 60.0
+  },
+  "total": {
+   "correct": 10,
+   "total": 15,
+   "pct": 66.7
+  },
+  "currency": {
+   "correct": 11,
+   "total": 15,
+   "pct": 73.3
+  }
+ },
+ "group_accuracy": {
+  "digital": {
+   "correct": 41,
+   "total": 88,
+   "pct": 46.6
+  },
+  "scan_image": {
+   "correct": 14,
+   "total": 32,
+   "pct": 43.8
+  }
+ },
+ "overall_field_accuracy": 45.8,
+ "status": [
+  {
+   "id": "pub_001",
+   "group": "digital",
+   "expected": "",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "AmazonWebServices.pdf: statement-style invoice; currency stated in words ('in US Dollars')"
+  },
+  {
+   "id": "pub_002",
+   "group": "digital",
+   "expected": "",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "AzureInterior.pdf: Odoo demo invoice: issuer is 'YourCompany', billed partner is Azure Interior; bare $ -> currency null"
+  },
+  {
+   "id": "pub_003",
+   "group": "digital",
+   "expected": "",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "FlipkartInvoice.pdf: values printed before their labels in the text layer; 'Rs' in the body"
+  },
+  {
+   "id": "pub_004",
+   "group": "digital",
+   "expected": "",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "NetpresseInvoice.pdf: French; issuer only in the footer"
+  },
+  {
+   "id": "pub_005",
+   "group": "digital",
+   "expected": "",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "QualityHosting.pdf: German, 2 pages; only 'Total EUR' printed (no tax line)"
+  },
+  {
+   "id": "pub_006",
+   "group": "digital",
+   "expected": "",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "SammyMaystoneLinesTest.pdf: labels and values in separate columns; bare $ -> currency null"
+  },
+  {
+   "id": "pub_007",
+   "group": "digital",
+   "expected": "",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "coolblue1.pdf: Dutch; 'Subtotaal' is VAT-inclusive, the pre-tax amount is 'Exclusief BTW'"
+  },
+  {
+   "id": "pub_008",
+   "group": "digital",
+   "expected": "",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "coolblue2.pdf: Dutch; as coolblue1"
+  },
+  {
+   "id": "pub_009",
+   "group": "digital",
+   "expected": "",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "free_fiber.pdf: French telecom bill, 2 pages"
+  },
+  {
+   "id": "pub_010",
+   "group": "digital",
+   "expected": "",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "oyo.pdf: hotel payment receipt: booking ID as number (DECISIONS 10); tax included, not shown"
+  },
+  {
+   "id": "pub_011",
+   "group": "digital",
+   "expected": "",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "saeco.pdf: Dutch; supplier name exists only inside an embedded image (text layer cannot find it)"
+  },
+  {
+   "id": "pub_012",
+   "group": "scan_image",
+   "expected": "",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "AmazonWebServices.png (image version): statement-style invoice; currency stated in words ('in US Dollars')"
+  },
+  {
+   "id": "pub_013",
+   "group": "scan_image",
+   "expected": "",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "FlipkartInvoice.png (image version): values printed before their labels in the text layer; 'Rs' in the body"
+  },
+  {
+   "id": "pub_014",
+   "group": "scan_image",
+   "expected": "",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "SammyMaystoneLinesTest.png (image version): labels and values in separate columns; bare $ -> currency null"
+  },
+  {
+   "id": "pub_015",
+   "group": "scan_image",
+   "expected": "",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "oyo.png (image version): hotel payment receipt: booking ID as number (DECISIONS 10); tax included, not shown"
+  }
+ ],
+ "status_agreement": 0.0,
+ "failure_code_agreement": null,
+ "success_rate": 100.0,
+ "unexpected_failure_rate": 0.0,
+ "failure_rate_all": 0.0,
+ "llm_share": {
+  "llm_invoices": 9,
+  "invoices": 15,
+  "pct": 60.0
+ },
+ "validation": {
+  "seeded_recall": {
+   "flagged": 0,
+   "seeded": 0,
+   "pct": null
+  },
+  "clean_false_positive": {
+   "flagged": 12,
+   "clean": 15,
+   "pct": 80.0
+  },
+  "validator_false_positive": {
+   "flagged": 0,
+   "clean_and_correct": 0,
+   "pct": null
+  },
+  "seeded_detail": [],
+  "clean_flagged": [
+   {
+    "id": "pub_001",
+    "group": "digital",
+    "notes": "AmazonWebServices.pdf: statement-style invoice; currency stated in words ('in US Dollars')",
+    "flagged": true,
+    "error_codes": [
+     "CURRENCY_AMBIGUOUS",
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "pub_002",
+    "group": "digital",
+    "notes": "AzureInterior.pdf: Odoo demo invoice: issuer is 'YourCompany', billed partner is Azure Interior; bare $ -> currency null",
+    "flagged": true,
+    "error_codes": [
+     "CURRENCY_AMBIGUOUS",
+     "SUBTOTAL_TAX_TOTAL_MISMATCH"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "pub_004",
+    "group": "digital",
+    "notes": "NetpresseInvoice.pdf: French; issuer only in the footer",
+    "flagged": true,
+    "error_codes": [
+     "LINE_ITEMS_SUBTOTAL_MISMATCH"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "pub_006",
+    "group": "digital",
+    "notes": "SammyMaystoneLinesTest.pdf: labels and values in separate columns; bare $ -> currency null",
+    "flagged": true,
+    "error_codes": [
+     "CURRENCY_AMBIGUOUS",
+     "LINE_ITEMS_SUBTOTAL_MISMATCH",
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "pub_007",
+    "group": "digital",
+    "notes": "coolblue1.pdf: Dutch; 'Subtotaal' is VAT-inclusive, the pre-tax amount is 'Exclusief BTW'",
+    "flagged": true,
+    "error_codes": [
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "pub_008",
+    "group": "digital",
+    "notes": "coolblue2.pdf: Dutch; as coolblue1",
+    "flagged": true,
+    "error_codes": [
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "pub_010",
+    "group": "digital",
+    "notes": "oyo.pdf: hotel payment receipt: booking ID as number (DECISIONS 10); tax included, not shown",
+    "flagged": true,
+    "error_codes": [
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "pub_011",
+    "group": "digital",
+    "notes": "saeco.pdf: Dutch; supplier name exists only inside an embedded image (text layer cannot find it)",
+    "flagged": true,
+    "error_codes": [
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "pub_012",
+    "group": "scan_image",
+    "notes": "AmazonWebServices.png (image version): statement-style invoice; currency stated in words ('in US Dollars')",
+    "flagged": true,
+    "error_codes": [
+     "CURRENCY_AMBIGUOUS",
+     "DUPLICATE_EXACT",
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "pub_013",
+    "group": "scan_image",
+    "notes": "FlipkartInvoice.png (image version): values printed before their labels in the text layer; 'Rs' in the body",
+    "flagged": true,
+    "error_codes": [
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "pub_014",
+    "group": "scan_image",
+    "notes": "SammyMaystoneLinesTest.png (image version): labels and values in separate columns; bare $ -> currency null",
+    "flagged": true,
+    "error_codes": [
+     "CURRENCY_AMBIGUOUS",
+     "LINE_ITEMS_SUBTOTAL_MISMATCH",
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "pub_015",
+    "group": "scan_image",
+    "notes": "oyo.png (image version): hotel payment receipt: booking ID as number (DECISIONS 10); tax included, not shown",
+    "flagged": true,
+    "error_codes": [
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   }
+  ]
+ },
+ "segmentation": {
+  "true": 0,
+  "found": 0,
+  "correct": 0,
+  "precision": null,
+  "recall": null
+ },
+ "crosscheck": {
+  "rows": 0,
+  "correct": 0,
+  "details": [],
+  "accuracy": null
+ },
+ "timing": {
+  "per_document_ms": {
+   "n": 15,
+   "mean": 589.3,
+   "p50": 78,
+   "p95": 1550,
+   "max": 1788
+  },
+  "per_page_ms": {
+   "n": 15,
+   "mean": 584.2,
+   "p50": 57.0,
+   "p95": 1550.0,
+   "max": 1788.0
+  },
+  "by_group_ms": {
+   "digital": {
+    "n": 11,
+    "mean": 303.4,
+    "p50": 56,
+    "p95": 1550,
+    "max": 1550
+   },
+   "scan_image": {
+    "n": 4,
+    "mean": 1375.5,
+    "p50": 1470.0,
+    "p95": 1788,
+    "max": 1788
+   }
+  },
+  "rows": [
+   {
+    "id": "pub_001",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 313,
+     "extract": 30,
+     "validate": 106,
+     "index": 830
+    },
+    "processing_ms": 1279
+   },
+   {
+    "id": "pub_002",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 358,
+     "extract": 25,
+     "validate": 59,
+     "index": 1108
+    },
+    "processing_ms": 1550
+   },
+   {
+    "id": "pub_003",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 13,
+     "extract": 7,
+     "validate": 9,
+     "index": 28
+    },
+    "processing_ms": 57
+   },
+   {
+    "id": "pub_004",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 13,
+     "extract": 12,
+     "validate": 11,
+     "index": 20
+    },
+    "processing_ms": 56
+   },
+   {
+    "id": "pub_005",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 2,
+    "stage_ms": {
+     "parse": 19,
+     "extract": 6,
+     "validate": 8,
+     "index": 15
+    },
+    "processing_ms": 48
+   },
+   {
+    "id": "pub_006",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 9,
+     "extract": 11,
+     "validate": 10,
+     "index": 15
+    },
+    "processing_ms": 45
+   },
+   {
+    "id": "pub_007",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 20,
+     "extract": 13,
+     "validate": 11,
+     "index": 34
+    },
+    "processing_ms": 78
+   },
+   {
+    "id": "pub_008",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 9,
+     "extract": 14,
+     "validate": 10,
+     "index": 16
+    },
+    "processing_ms": 49
+   },
+   {
+    "id": "pub_009",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 2,
+    "stage_ms": {
+     "parse": 45,
+     "extract": 13,
+     "validate": 14,
+     "index": 31
+    },
+    "processing_ms": 103
+   },
+   {
+    "id": "pub_010",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 12,
+     "extract": 10,
+     "validate": 8,
+     "index": 9
+    },
+    "processing_ms": 39
+   },
+   {
+    "id": "pub_011",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 7,
+     "extract": 11,
+     "validate": 6,
+     "index": 9
+    },
+    "processing_ms": 33
+   },
+   {
+    "id": "pub_012",
+    "group": "scan_image",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 1361,
+     "extract": 402,
+     "validate": 7,
+     "index": 18
+    },
+    "processing_ms": 1788
+   },
+   {
+    "id": "pub_013",
+    "group": "scan_image",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 1467,
+     "extract": 43,
+     "validate": 4,
+     "index": 17
+    },
+    "processing_ms": 1531
+   },
+   {
+    "id": "pub_014",
+    "group": "scan_image",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 607,
+     "extract": 142,
+     "validate": 7,
+     "index": 18
+    },
+    "processing_ms": 774
+   },
+   {
+    "id": "pub_015",
+    "group": "scan_image",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 1077,
+     "extract": 307,
+     "validate": 8,
+     "index": 17
+    },
+    "processing_ms": 1409
+   }
+  ]
+ },
+ "field_misses": [
+  {
+   "doc": "pub_001",
+   "field": "invoice_date",
+   "want": "2014-08-03",
+   "got": null
+  },
+  {
+   "doc": "pub_001",
+   "field": "supplier_name",
+   "want": "amazon web services, inc",
+   "got": "amazon web services invoice"
+  },
+  {
+   "doc": "pub_001",
+   "field": "customer_name",
+   "want": "ivivelabs limited",
+   "got": null
+  },
+  {
+   "doc": "pub_001",
+   "field": "subtotal",
+   "want": "4.11",
+   "got": null
+  },
+  {
+   "doc": "pub_001",
+   "field": "currency",
+   "want": "usd",
+   "got": null
+  },
+  {
+   "doc": "pub_002",
+   "field": "invoice_number",
+   "want": "inv/2023/03/0008",
+   "got": "custref123"
+  },
+  {
+   "doc": "pub_002",
+   "field": "supplier_name",
+   "want": "yourcompany",
+   "got": "global wholesaler"
+  },
+  {
+   "doc": "pub_002",
+   "field": "customer_name",
+   "want": "azure interior",
+   "got": null
+  },
+  {
+   "doc": "pub_002",
+   "field": "subtotal",
+   "want": "262.90",
+   "got": "112.00"
+  },
+  {
+   "doc": "pub_002",
+   "field": "tax",
+   "want": "16.94",
+   "got": null
+  },
+  {
+   "doc": "pub_003",
+   "field": "supplier_name",
+   "want": "ws retail services pvt. ltd",
+   "got": "ws retail services pvt. ltd.,"
+  },
+  {
+   "doc": "pub_003",
+   "field": "customer_name",
+   "want": "anushrut singh",
+   "got": null
+  },
+  {
+   "doc": "pub_003",
+   "field": "subtotal",
+   "want": "278.61",
+   "got": null
+  },
+  {
+   "doc": "pub_003",
+   "field": "tax",
+   "want": "40.39",
+   "got": "29670869006.00"
+  },
+  {
+   "doc": "pub_003",
+   "field": "currency",
+   "want": "inr",
+   "got": null
+  },
+  {
+   "doc": "pub_004",
+   "field": "supplier_name",
+   "want": "netpresse",
+   "got": "alexinux"
+  },
+  {
+   "doc": "pub_004",
+   "field": "customer_name",
+   "want": "alexinux",
+   "got": null
+  },
+  {
+   "doc": "pub_005",
+   "field": "supplier_name",
+   "want": "qualityhosting ag",
+   "got": "ivivelabs ltd"
+  },
+  {
+   "doc": "pub_005",
+   "field": "customer_name",
+   "want": "ivivelabs ltd",
+   "got": null
+  },
+  {
+   "doc": "pub_006",
+   "field": "invoice_number",
+   "want": "invoice_number_1",
+   "got": null
+  },
+  {
+   "doc": "pub_006",
+   "field": "customer_name",
+   "want": "taylor riddel",
+   "got": "net 30 days"
+  },
+  {
+   "doc": "pub_007",
+   "field": "invoice_number",
+   "want": "993548900",
+   "got": null
+  },
+  {
+   "doc": "pub_007",
+   "field": "supplier_name",
+   "want": "coolblue b.v",
+   "got": "factuur"
+  },
+  {
+   "doc": "pub_007",
+   "field": "customer_name",
+   "want": "pino bluebird",
+   "got": null
+  },
+  {
+   "doc": "pub_007",
+   "field": "subtotal",
+   "want": "593.36",
+   "got": null
+  },
+  {
+   "doc": "pub_007",
+   "field": "tax",
+   "want": "124.61",
+   "got": null
+  },
+  {
+   "doc": "pub_007",
+   "field": "total",
+   "want": "717.97",
+   "got": null
+  },
+  {
+   "doc": "pub_008",
+   "field": "invoice_number",
+   "want": "992288600",
+   "got": null
+  },
+  {
+   "doc": "pub_008",
+   "field": "invoice_date",
+   "want": "2014-03-29",
+   "got": null
+  },
+  {
+   "doc": "pub_008",
+   "field": "supplier_name",
+   "want": "coolblue b.v",
+   "got": "factuur"
+  },
+  {
+   "doc": "pub_008",
+   "field": "customer_name",
+   "want": "pino bluebird",
+   "got": null
+  },
+  {
+   "doc": "pub_008",
+   "field": "subtotal",
+   "want": "4053.67",
+   "got": null
+  },
+  {
+   "doc": "pub_008",
+   "field": "tax",
+   "want": "851.27",
+   "got": null
+  },
+  {
+   "doc": "pub_008",
+   "field": "total",
+   "want": "4904.94",
+   "got": null
+  },
+  {
+   "doc": "pub_009",
+   "field": "invoice_date",
+   "want": "2015-07-02",
+   "got": "2015-07-05"
+  },
+  {
+   "doc": "pub_009",
+   "field": "customer_name",
+   "want": "de lattre alexis",
+   "got": null
+  },
+  {
+   "doc": "pub_009",
+   "field": "subtotal",
+   "want": "24.99",
+   "got": null
+  },
+  {
+   "doc": "pub_009",
+   "field": "total",
+   "want": "29.99",
+   "got": "24.99"
+  },
+  {
+   "doc": "pub_010",
+   "field": "invoice_number",
+   "want": "ibzy2087",
+   "got": null
+  },
+  {
+   "doc": "pub_010",
+   "field": "supplier_name",
+   "want": "oravel stays private limited",
+   "got": "hotel details"
+  },
+  {
+   "doc": "pub_010",
+   "field": "customer_name",
+   "want": "sanjay",
+   "got": null
+  },
+  {
+   "doc": "pub_011",
+   "field": "invoice_number",
+   "want": "vf1005193039",
+   "got": null
+  },
+  {
+   "doc": "pub_011",
+   "field": "supplier_name",
+   "want": "e-luscious nederland b.v",
+   "got": "strategic corp"
+  },
+  {
+   "doc": "pub_011",
+   "field": "customer_name",
+   "want": "strategic corp",
+   "got": null
+  },
+  {
+   "doc": "pub_011",
+   "field": "subtotal",
+   "want": "41.31",
+   "got": null
+  },
+  {
+   "doc": "pub_011",
+   "field": "tax",
+   "want": "8.68",
+   "got": null
+  },
+  {
+   "doc": "pub_011",
+   "field": "total",
+   "want": "49.99",
+   "got": null
+  },
+  {
+   "doc": "pub_012",
+   "field": "invoice_date",
+   "want": "2014-08-03",
+   "got": null
+  },
+  {
+   "doc": "pub_012",
+   "field": "supplier_name",
+   "want": "amazon web services, inc",
+   "got": "amazon web services invoice"
+  },
+  {
+   "doc": "pub_012",
+   "field": "customer_name",
+   "want": "ivivelabs limited",
+   "got": null
+  },
+  {
+   "doc": "pub_012",
+   "field": "subtotal",
+   "want": "4.11",
+   "got": null
+  },
+  {
+   "doc": "pub_012",
+   "field": "currency",
+   "want": "usd",
+   "got": null
+  },
+  {
+   "doc": "pub_013",
+   "field": "invoice_number",
+   "want": "blr_wfld20151000982590",
+   "got": null
+  },
+  {
+   "doc": "pub_013",
+   "field": "supplier_name",
+   "want": "ws retail services pvt. ltd",
+   "got": "ws retail services pvt. ltd.,"
+  },
+  {
+   "doc": "pub_013",
+   "field": "customer_name",
+   "want": "anushrut singh",
+   "got": null
+  },
+  {
+   "doc": "pub_013",
+   "field": "subtotal",
+   "want": "278.61",
+   "got": null
+  },
+  {
+   "doc": "pub_013",
+   "field": "tax",
+   "want": "40.39",
+   "got": "29670869006.00"
+  },
+  {
+   "doc": "pub_013",
+   "field": "total",
+   "want": "319.00",
+   "got": null
+  },
+  {
+   "doc": "pub_013",
+   "field": "currency",
+   "want": "inr",
+   "got": null
+  },
+  {
+   "doc": "pub_014",
+   "field": "invoice_number",
+   "want": "invoice_number_1",
+   "got": null
+  },
+  {
+   "doc": "pub_014",
+   "field": "supplier_name",
+   "want": "sammy maystone",
+   "got": "# invoice_number_1"
+  },
+  {
+   "doc": "pub_014",
+   "field": "customer_name",
+   "want": "taylor riddel",
+   "got": null
+  },
+  {
+   "doc": "pub_015",
+   "field": "invoice_number",
+   "want": "ibzy2087",
+   "got": null
+  },
+  {
+   "doc": "pub_015",
+   "field": "supplier_name",
+   "want": "oravel stays private limited",
+   "got": "ove"
+  },
+  {
+   "doc": "pub_015",
+   "field": "customer_name",
+   "want": "sanjay",
+   "got": null
+  }
+ ],
+ "stats_api": {
+  "documents": {
+   "total": 15,
+   "by_status": {
+    "COMPLETED": 3,
+    "NEEDS_REVIEW": 12
+   },
+   "by_error_code": {},
+   "by_kind": {
+    "image": 4,
+    "pdf": 11
+   },
+   "success_rate": 1.0,
+   "failure_rate": 0.0
+  },
+  "invoices": {
+   "total": 15,
+   "by_review_status": {
+    "AUTO_OK": 3,
+    "NEEDS_REVIEW": 12
+   },
+   "by_extraction_method": {
+    "llm_fallback": 9,
+    "rules": 6
+   }
+  },
+  "stages": {
+   "index": {
+    "runs": 15,
+    "avg_ms": 145.7,
+    "max_ms": 1108
+   },
+   "validate": {
+    "runs": 15,
+    "avg_ms": 18.5,
+    "max_ms": 106
+   },
+   "parse": {
+    "runs": 15,
+    "avg_ms": 355.3,
+    "max_ms": 1467
+   },
+   "extract": {
+    "runs": 15,
+    "avg_ms": 69.7,
+    "max_ms": 402
+   }
+  },
+  "avg_document_processing_ms": 589.3,
+  "issues_by_code": {
+   "SUBTOTAL_TAX_TOTAL_MISMATCH": 1,
+   "DUPLICATE_EXACT": 1,
+   "LINE_ITEMS_SUBTOTAL_MISMATCH": 4,
+   "EVIDENCE_NOT_FOUND": 20,
+   "CURRENCY_AMBIGUOUS": 5,
+   "MISSING_FIELD": 36
+  }
+ },
+ "stats_before": {
+  "documents": {
+   "total": 0,
+   "by_status": {},
+   "by_error_code": {},
+   "by_kind": {},
+   "success_rate": null,
+   "failure_rate": null
+  },
+  "invoices": {
+   "total": 0,
+   "by_review_status": {},
+   "by_extraction_method": {}
+  },
+  "stages": {},
+  "avg_document_processing_ms": null,
+  "issues_by_code": {}
+ }
+}

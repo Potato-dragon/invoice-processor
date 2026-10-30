@@ -1,0 +1,28 @@
+{
+  "invoice_number": {
+    "value": "VF1005193039"
+  },
+  "invoice_date": {
+    "value": "2022-09-08"
+  },
+  "supplier_name": {
+    "value": "e-Luscious Nederland B.V."
+  },
+  "customer_name": {
+    "value": "Strategic Corp"
+  },
+  "subtotal": {
+    "value": "41.31"
+  },
+  "tax": {
+    "value": "8.68"
+  },
+  "total": {
+    "value": "49.99"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [],
+  "invoice_count": 1
+}

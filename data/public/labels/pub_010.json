@@ -1,0 +1,28 @@
+{
+  "invoice_number": {
+    "value": "IBZY2087"
+  },
+  "invoice_date": {
+    "value": "2017-12-31"
+  },
+  "supplier_name": {
+    "value": "Oravel Stays Private Limited"
+  },
+  "customer_name": {
+    "value": "Sanjay"
+  },
+  "subtotal": {
+    "value": null
+  },
+  "tax": {
+    "value": null
+  },
+  "total": {
+    "value": "1939.00"
+  },
+  "currency": {
+    "value": "INR"
+  },
+  "line_items": [],
+  "invoice_count": 1
+}

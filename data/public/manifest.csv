@@ -1,0 +1,16 @@
+id,filename,kind,layout,supplier,locale,currency,quality,split,expected_status,expected_error_code,notes
+pub_001,pub_001.pdf,pdf,real,"Amazon Web Services, Inc.",,USD,digital,test,,,AmazonWebServices.pdf: statement-style invoice; currency stated in words ('in US Dollars')
+pub_002,pub_002.pdf,pdf,real,YourCompany,,,digital,test,,,"AzureInterior.pdf: Odoo demo invoice: issuer is 'YourCompany', billed partner is Azure Interior; bare $ -> currency null"
+pub_003,pub_003.pdf,pdf,real,WS Retail Services Pvt. Ltd.,,INR,digital,test,,,FlipkartInvoice.pdf: values printed before their labels in the text layer; 'Rs' in the body
+pub_004,pub_004.pdf,pdf,real,NETPRESSE,,EUR,digital,test,,,NetpresseInvoice.pdf: French; issuer only in the footer
+pub_005,pub_005.pdf,pdf,real,QualityHosting AG,,EUR,digital,test,,,"QualityHosting.pdf: German, 2 pages; only 'Total EUR' printed (no tax line)"
+pub_006,pub_006.pdf,pdf,real,Sammy Maystone,,,digital,test,,,SammyMaystoneLinesTest.pdf: labels and values in separate columns; bare $ -> currency null
+pub_007,pub_007.pdf,pdf,real,Coolblue B.V.,,EUR,digital,test,,,"coolblue1.pdf: Dutch; 'Subtotaal' is VAT-inclusive, the pre-tax amount is 'Exclusief BTW'"
+pub_008,pub_008.pdf,pdf,real,Coolblue B.V.,,EUR,digital,test,,,coolblue2.pdf: Dutch; as coolblue1
+pub_009,pub_009.pdf,pdf,real,Free Service Abonné,,EUR,digital,test,,,"free_fiber.pdf: French telecom bill, 2 pages"
+pub_010,pub_010.pdf,pdf,real,Oravel Stays Private Limited,,INR,digital,test,,,"oyo.pdf: hotel payment receipt: booking ID as number (DECISIONS 10); tax included, not shown"
+pub_011,pub_011.pdf,pdf,real,e-Luscious Nederland B.V.,,EUR,digital,test,,,saeco.pdf: Dutch; supplier name exists only inside an embedded image (text layer cannot find it)
+pub_012,pub_012.png,image,real,"Amazon Web Services, Inc.",,USD,image,test,,,AmazonWebServices.png (image version): statement-style invoice; currency stated in words ('in US Dollars')
+pub_013,pub_013.png,image,real,WS Retail Services Pvt. Ltd.,,INR,image,test,,,FlipkartInvoice.png (image version): values printed before their labels in the text layer; 'Rs' in the body
+pub_014,pub_014.png,image,real,Sammy Maystone,,,image,test,,,SammyMaystoneLinesTest.png (image version): labels and values in separate columns; bare $ -> currency null
+pub_015,pub_015.png,image,real,Oravel Stays Private Limited,,INR,image,test,,,"oyo.png (image version): hotel payment receipt: booking ID as number (DECISIONS 10); tax included, not shown"

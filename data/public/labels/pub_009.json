@@ -1,0 +1,28 @@
+{
+  "invoice_number": {
+    "value": "562044387"
+  },
+  "invoice_date": {
+    "value": "2015-07-02"
+  },
+  "supplier_name": {
+    "value": "Free Service Abonné"
+  },
+  "customer_name": {
+    "value": "de Lattre Alexis"
+  },
+  "subtotal": {
+    "value": "24.99"
+  },
+  "tax": {
+    "value": "5.00"
+  },
+  "total": {
+    "value": "29.99"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [],
+  "invoice_count": 1
+}
