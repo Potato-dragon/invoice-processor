@@ -1,0 +1,59 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D036"
+  },
+  "invoice_date": {
+    "value": "2026-03-02"
+  },
+  "supplier_name": {
+    "value": "Jupiter Nordic Software Oy"
+  },
+  "customer_name": {
+    "value": "Evergreen Global Retailers Ltd"
+  },
+  "subtotal": {
+    "value": "5170.00"
+  },
+  "tax": {
+    "value": null
+  },
+  "total": {
+    "value": "5170.00"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [
+    {
+      "description": "Solid State NVMe Drive Enterprise 2TB",
+      "quantity": "4",
+      "unit_price": "220.00",
+      "amount": "880.00"
+    },
+    {
+      "description": "Emergency Server Maintenance SLA",
+      "quantity": "1",
+      "unit_price": "900.00",
+      "amount": "900.00"
+    },
+    {
+      "description": "Warehouse Staging & Inventory Tagging",
+      "quantity": "2",
+      "unit_price": "290.00",
+      "amount": "580.00"
+    },
+    {
+      "description": "API Integration & Webhook Setup",
+      "quantity": "3",
+      "unit_price": "850.00",
+      "amount": "2550.00"
+    },
+    {
+      "description": "Fiber Optic Transceiver SFP+ 10G",
+      "quantity": "4",
+      "unit_price": "65.00",
+      "amount": "260.00"
+    }
+  ],
+  "invoice_count": 1
+}

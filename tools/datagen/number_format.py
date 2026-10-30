@@ -91,3 +91,17 @@ def _format_indian_numbering(int_str: str) -> str:
         res = f"{','.join(parts)},{last_three}"
 
     return f"-{res}" if is_neg else res
+
+
+def display_symbol(symbol: str, ambiguous: bool) -> str:
+    """Symbol as printed on the PDF.
+
+    - A plain "$" is printed only for deliberately ambiguous documents
+      (DECISIONS 11: bare $ -> currency null + CURRENCY_AMBIGUOUS). Normal USD
+      documents print "US$" so the currency is actually on the page.
+    - Helvetica has no rupee or taka glyph (they rendered as "I" in the text
+      layer), so INR/BDT print their ISO code, as many real invoices do.
+    """
+    if symbol == "$" and not ambiguous:
+        return "US$"
+    return {"₹": "INR", "৳": "BDT"}.get(symbol, symbol)

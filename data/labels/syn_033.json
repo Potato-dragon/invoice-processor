@@ -1,0 +1,41 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D033"
+  },
+  "invoice_date": {
+    "value": "2026-01-19"
+  },
+  "supplier_name": {
+    "value": "Apex Pinnacle Solutions Ltd."
+  },
+  "customer_name": {
+    "value": null
+  },
+  "subtotal": {
+    "value": "6525.00"
+  },
+  "tax": {
+    "value": "652.50"
+  },
+  "total": {
+    "value": "7177.50"
+  },
+  "currency": {
+    "value": "USD"
+  },
+  "line_items": [
+    {
+      "description": "Cloud Architecture Consultation (hrs)",
+      "quantity": "1",
+      "unit_price": "125.00",
+      "amount": "125.00"
+    },
+    {
+      "description": "Machine Learning Model Tuning Service",
+      "quantity": "2",
+      "unit_price": "3200.00",
+      "amount": "6400.00"
+    }
+  ],
+  "invoice_count": 1
+}

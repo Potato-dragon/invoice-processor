@@ -1,0 +1,41 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-U077"
+  },
+  "invoice_date": {
+    "value": "2026-04-21"
+  },
+  "supplier_name": {
+    "value": "Orion Precision Optics Ltd"
+  },
+  "customer_name": {
+    "value": "Zenith Wholesale & Distribution"
+  },
+  "subtotal": {
+    "value": "996000.00"
+  },
+  "tax": {
+    "value": "99600.00"
+  },
+  "total": {
+    "value": "1095600.00"
+  },
+  "currency": {
+    "value": "JPY"
+  },
+  "line_items": [
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "2",
+      "unit_price": "93000.00",
+      "amount": "186000.00"
+    },
+    {
+      "description": "Database Migration & Optimization",
+      "quantity": "3",
+      "unit_price": "270000.00",
+      "amount": "810000.00"
+    }
+  ],
+  "invoice_count": 1
+}

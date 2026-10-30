@@ -1,0 +1,53 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D035"
+  },
+  "invoice_date": {
+    "value": "2026-02-17"
+  },
+  "supplier_name": {
+    "value": "Greenfield Environmental Engineering"
+  },
+  "customer_name": {
+    "value": "Delta Stream Solutions GmbH"
+  },
+  "subtotal": {
+    "value": "7535.00"
+  },
+  "tax": {
+    "value": null
+  },
+  "total": {
+    "value": "7535.00"
+  },
+  "currency": {
+    "value": "GBP"
+  },
+  "line_items": [
+    {
+      "description": "Gigabit Managed Switch 48-Port",
+      "quantity": "3",
+      "unit_price": "450.00",
+      "amount": "1350.00"
+    },
+    {
+      "description": "Hydraulic Flow Meter Digital Sensor",
+      "quantity": "4",
+      "unit_price": "310.00",
+      "amount": "1240.00"
+    },
+    {
+      "description": "Data Storage Volume Allocation (TB/mo)",
+      "quantity": "1",
+      "unit_price": "45.00",
+      "amount": "45.00"
+    },
+    {
+      "description": "Enterprise Security Penetration Test",
+      "quantity": "2",
+      "unit_price": "2450.00",
+      "amount": "4900.00"
+    }
+  ],
+  "invoice_count": 1
+}

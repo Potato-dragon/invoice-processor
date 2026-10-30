@@ -74,6 +74,7 @@ def verify_dataset(data_dir: Path) -> bool:
     test_suppliers = set()
 
     counts_kind = Counter()
+    counts_ext = Counter()
     counts_quality = Counter()
     counts_split = Counter()
     counts_status = Counter()
@@ -110,9 +111,13 @@ def verify_dataset(data_dir: Path) -> bool:
             errors.append(f"[{doc_id}] Sample file missing: {sample_file}")
         else:
             size = sample_file.stat().st_size
-            if size == 0:
+            counts_ext[filename.rsplit(".", 1)[-1].lower()] += 1
+            failing = row["expected_status"] == "FAILED"
+            if failing and not row["expected_error_code"]:
+                errors.append(f"[{doc_id}] FAILED document needs an expected_error_code")
+            if size == 0 and not failing:
                 errors.append(f"[{doc_id}] Sample file is empty (0 bytes): {filename}")
-            if filename.endswith(".pdf"):
+            if filename.endswith(".pdf") and not failing:
                 with open(sample_file, "rb") as pf:
                     header = pf.read(5)
                     if header != b"%PDF-":
@@ -179,6 +184,23 @@ def verify_dataset(data_dir: Path) -> bool:
 
         if "invoice_count" not in label_data or not isinstance(label_data["invoice_count"], int):
             errors.append(f"[{doc_id}] Label missing int 'invoice_count'")
+        elif label_data["invoice_count"] > 1:
+            invs = label_data.get("invoices", [])
+            if len(invs) != label_data["invoice_count"]:
+                errors.append(f"[{doc_id}] multi-invoice label must list every invoice")
+            expected_start = 1
+            for inv in invs:
+                if inv.get("page_start") != expected_start or inv.get("page_end", 0) < inv.get("page_start", 1):
+                    errors.append(f"[{doc_id}] invoice page ranges must be ordered with no gaps")
+                    break
+                expected_start = inv["page_end"] + 1
+                for key in ("subtotal", "tax", "total"):
+                    v = inv[key]["value"]
+                    if v is not None and not money_regex.match(v):
+                        errors.append(f"[{doc_id}] multi-invoice money '{key}' invalid: {v}")
+        if row["kind"] == "spreadsheet" and row["expected_status"] != "FAILED":
+            if not isinstance(label_data.get("ledger_rows"), list) or not label_data["ledger_rows"]:
+                errors.append(f"[{doc_id}] spreadsheet label needs a non-empty 'ledger_rows' list")
 
     # 4. Check for orphaned files in samples and labels
     if samples_dir.exists():
@@ -209,6 +231,15 @@ def verify_dataset(data_dir: Path) -> bool:
     print("\nCounts by Kind:")
     for k, v in sorted(counts_kind.items()):
         print(f"  {k:15}: {v}")
+
+    print("\nCounts by file type:")
+    for k, v in sorted(counts_ext.items()):
+        print(f"  {k:15}: {v}")
+    missing_types = {"pdf", "jpg", "png", "tif", "xlsx", "xls", "csv"} - set(counts_ext)
+    if missing_types:
+        errors.append(f"Missing file types: {sorted(missing_types)}")
+    if len(manifest_rows) < 80:
+        errors.append(f"Only {len(manifest_rows)} documents; at least 80 expected")
 
     print("\nCounts by Quality:")
     for q, v in sorted(counts_quality.items()):

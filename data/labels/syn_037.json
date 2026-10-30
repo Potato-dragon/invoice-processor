@@ -1,0 +1,65 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-T037"
+  },
+  "invoice_date": {
+    "value": "2026-03-23"
+  },
+  "supplier_name": {
+    "value": "Meridian Healthcare Diagnostics"
+  },
+  "customer_name": {
+    "value": null
+  },
+  "subtotal": {
+    "value": "11807.00"
+  },
+  "tax": {
+    "value": "2361.40"
+  },
+  "total": {
+    "value": "14168.40"
+  },
+  "currency": {
+    "value": "GBP"
+  },
+  "line_items": [
+    {
+      "description": "Annual Enterprise Software License",
+      "quantity": "1",
+      "unit_price": "4999.00",
+      "amount": "4999.00"
+    },
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "2",
+      "unit_price": "680.00",
+      "amount": "1360.00"
+    },
+    {
+      "description": "UX/UI Design Sprint Review",
+      "quantity": "3",
+      "unit_price": "1200.00",
+      "amount": "3600.00"
+    },
+    {
+      "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+      "quantity": "4",
+      "unit_price": "145.00",
+      "amount": "580.00"
+    },
+    {
+      "description": "Heavy Duty Timber Pallet (Treated)",
+      "quantity": "1",
+      "unit_price": "28.00",
+      "amount": "28.00"
+    },
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "2",
+      "unit_price": "620.00",
+      "amount": "1240.00"
+    }
+  ],
+  "invoice_count": 1
+}

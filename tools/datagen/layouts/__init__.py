@@ -8,6 +8,7 @@ from tools.datagen.layouts.compact_slip import render_compact_slip
 from tools.datagen.layouts.bold_banner import render_bold_banner
 from tools.datagen.layouts.minimalist_sidebar import render_minimalist_sidebar
 from tools.datagen.layouts.international_multilingual import render_international_multilingual
+from tools.datagen.layouts.receipts import render_receipt_retail, render_receipt_thermal
 
 LAYOUT_RENDERERS: dict[str, Callable[[InvoiceData, str], None]] = {
     "modern_clean": render_modern_clean,
@@ -16,6 +17,8 @@ LAYOUT_RENDERERS: dict[str, Callable[[InvoiceData, str], None]] = {
     "bold_banner": render_bold_banner,
     "minimalist_sidebar": render_minimalist_sidebar,
     "international_multilingual": render_international_multilingual,
+    "receipt_thermal": render_receipt_thermal,
+    "receipt_retail": render_receipt_retail,
 }
 
 

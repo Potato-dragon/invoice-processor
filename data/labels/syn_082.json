@@ -1,0 +1,41 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-U082"
+  },
+  "invoice_date": {
+    "value": "2026-03-02"
+  },
+  "supplier_name": {
+    "value": "Pacific Crest Supplies Co."
+  },
+  "customer_name": {
+    "value": "Evergreen Global Retailers Ltd"
+  },
+  "subtotal": {
+    "value": "3140.00"
+  },
+  "tax": {
+    "value": "565.20"
+  },
+  "total": {
+    "value": "3705.20"
+  },
+  "currency": {
+    "value": "INR"
+  },
+  "line_items": [
+    {
+      "description": "Solid State NVMe Drive Enterprise 2TB",
+      "quantity": "2",
+      "unit_price": "220.00",
+      "amount": "440.00"
+    },
+    {
+      "description": "Emergency Server Maintenance SLA",
+      "quantity": "3",
+      "unit_price": "900.00",
+      "amount": "2700.00"
+    }
+  ],
+  "invoice_count": 1
+}

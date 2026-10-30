@@ -14,6 +14,7 @@ from tools.datagen.config import (
     CATALOG_ITEMS,
 )
 from tools.datagen.models import InvoiceData, LineItem
+from tools.datagen.number_format import display_symbol
 
 
 def round_money(val: Decimal) -> Decimal:
@@ -159,13 +160,13 @@ def build_digital_pdf_dataset(rng: random.Random) -> List[InvoiceData]:
                 tax=tax,
                 total=total,
                 currency=curr,
-                currency_symbol=supplier["currency_symbol"],
+                currency_symbol=display_symbol(supplier["currency_symbol"], is_ambiguous),
                 currency_position=supplier["currency_position"],
                 locale=supplier["locale"],
                 layout=layout,
                 split="dev",
                 quality="digital",
-                expected_status="COMPLETED",
+                expected_status="COMPLETED" if curr else "NEEDS_REVIEW",
                 expected_error_code="",
                 notes=notes,
                 invoice_count=1,
@@ -264,13 +265,13 @@ def build_digital_pdf_dataset(rng: random.Random) -> List[InvoiceData]:
                 tax=tax,
                 total=total,
                 currency=curr,
-                currency_symbol=supplier["currency_symbol"],
+                currency_symbol=display_symbol(supplier["currency_symbol"], is_ambiguous),
                 currency_position=supplier["currency_position"],
                 locale=supplier["locale"],
                 layout=layout,
                 split="test",
                 quality="digital",
-                expected_status="COMPLETED",
+                expected_status="COMPLETED" if curr else "NEEDS_REVIEW",
                 expected_error_code="",
                 notes=notes,
                 invoice_count=1,

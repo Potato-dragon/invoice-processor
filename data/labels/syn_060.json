@@ -1,0 +1,47 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-S060"
+  },
+  "invoice_date": {
+    "value": "2026-05-12"
+  },
+  "supplier_name": {
+    "value": "Horizon Peak Dynamics Corp"
+  },
+  "customer_name": {
+    "value": "Nordic Alpine Holdings AB"
+  },
+  "subtotal": {
+    "value": "3390.00"
+  },
+  "tax": {
+    "value": "288.15"
+  },
+  "total": {
+    "value": "3678.15"
+  },
+  "currency": {
+    "value": "USD"
+  },
+  "line_items": [
+    {
+      "description": "Warehouse Staging & Inventory Tagging",
+      "quantity": "2",
+      "unit_price": "290.00",
+      "amount": "580.00"
+    },
+    {
+      "description": "API Integration & Webhook Setup",
+      "quantity": "3",
+      "unit_price": "850.00",
+      "amount": "2550.00"
+    },
+    {
+      "description": "Fiber Optic Transceiver SFP+ 10G",
+      "quantity": "4",
+      "unit_price": "65.00",
+      "amount": "260.00"
+    }
+  ],
+  "invoice_count": 1
+}

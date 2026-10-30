@@ -1,0 +1,53 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D004"
+  },
+  "invoice_date": {
+    "value": "2026-03-05"
+  },
+  "supplier_name": {
+    "value": "BluWave Cloud Logistics Inc."
+  },
+  "customer_name": {
+    "value": "Evergreen Global Retailers Ltd"
+  },
+  "subtotal": {
+    "value": "18941.00"
+  },
+  "tax": {
+    "value": "1562.63"
+  },
+  "total": {
+    "value": "20503.63"
+  },
+  "currency": {
+    "value": "USD"
+  },
+  "line_items": [
+    {
+      "description": "Site Reliability Audit & Report",
+      "quantity": "3",
+      "unit_price": "1650.00",
+      "amount": "4950.00"
+    },
+    {
+      "description": "Industrial Rackmount Server Unit 2U",
+      "quantity": "4",
+      "unit_price": "2899.00",
+      "amount": "11596.00"
+    },
+    {
+      "description": "Gigabit Managed Switch 48-Port",
+      "quantity": "5",
+      "unit_price": "450.00",
+      "amount": "2250.00"
+    },
+    {
+      "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+      "quantity": "1",
+      "unit_price": "145.00",
+      "amount": "145.00"
+    }
+  ],
+  "invoice_count": 1
+}

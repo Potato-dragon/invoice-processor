@@ -1,0 +1,53 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-S056"
+  },
+  "invoice_date": {
+    "value": "2026-03-02"
+  },
+  "supplier_name": {
+    "value": "Datastream Systems GmbH"
+  },
+  "customer_name": {
+    "value": "Glacier Ridge Capital Partners"
+  },
+  "subtotal": {
+    "value": "19047.00"
+  },
+  "tax": {
+    "value": "3618.93"
+  },
+  "total": {
+    "value": "22665.93"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [
+    {
+      "description": "Fiber Optic Transceiver SFP+ 10G",
+      "quantity": "2",
+      "unit_price": "65.00",
+      "amount": "130.00"
+    },
+    {
+      "description": "Annual Enterprise Software License",
+      "quantity": "3",
+      "unit_price": "4999.00",
+      "amount": "14997.00"
+    },
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "4",
+      "unit_price": "680.00",
+      "amount": "2720.00"
+    },
+    {
+      "description": "UX/UI Design Sprint Review",
+      "quantity": "1",
+      "unit_price": "1200.00",
+      "amount": "1200.00"
+    }
+  ],
+  "invoice_count": 1
+}

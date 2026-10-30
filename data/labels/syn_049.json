@@ -1,0 +1,47 @@
+{
+  "invoice_number": {
+    "value": "RT-40259"
+  },
+  "invoice_date": {
+    "value": "2026-02-17"
+  },
+  "supplier_name": {
+    "value": "Nordwind Elektronik GmbH"
+  },
+  "customer_name": {
+    "value": null
+  },
+  "subtotal": {
+    "value": "22.75"
+  },
+  "tax": {
+    "value": "4.32"
+  },
+  "total": {
+    "value": "27.07"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [
+    {
+      "description": "Sparkling Water",
+      "quantity": "3",
+      "unit_price": "1.90",
+      "amount": "5.70"
+    },
+    {
+      "description": "Cafe creme",
+      "quantity": "4",
+      "unit_price": "3.20",
+      "amount": "12.80"
+    },
+    {
+      "description": "Notebook A5",
+      "quantity": "1",
+      "unit_price": "4.25",
+      "amount": "4.25"
+    }
+  ],
+  "invoice_count": 1
+}

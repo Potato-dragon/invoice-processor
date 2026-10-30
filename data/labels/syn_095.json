@@ -1,0 +1,177 @@
+{
+  "invoice_number": {
+    "value": null
+  },
+  "invoice_date": {
+    "value": null
+  },
+  "supplier_name": {
+    "value": null
+  },
+  "customer_name": {
+    "value": null
+  },
+  "subtotal": {
+    "value": null
+  },
+  "tax": {
+    "value": null
+  },
+  "total": {
+    "value": null
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [],
+  "invoice_count": 0,
+  "ledger_rows": [
+    {
+      "invoice_number": "INV-2026-D001",
+      "invoice_date": "2026-01-15",
+      "supplier_name": "Apex Pinnacle Solutions Ltd.",
+      "customer_name": "Beacon Innovations Inc.",
+      "subtotal": "125.00",
+      "tax": "12.50",
+      "total": "137.50",
+      "currency": "USD"
+    },
+    {
+      "invoice_number": "INV-2026-D002",
+      "invoice_date": "2026-02-22",
+      "supplier_name": "Apex Pinnacle Solutions Ltd.",
+      "customer_name": "Delta Stream Solutions GmbH",
+      "subtotal": "5550.00",
+      "tax": "555.00",
+      "total": "6105.00",
+      "currency": "USD"
+    },
+    {
+      "invoice_number": "INV-2026-D003",
+      "invoice_date": "2026-01-28",
+      "supplier_name": "BlueWave Cloud Logistics Inc.",
+      "customer_name": "Cobalt Dynamics Group",
+      "subtotal": "3790.00",
+      "tax": "312.68",
+      "total": "4127.68",
+      "currency": "USD"
+    },
+    {
+      "invoice_number": "INV-2026-D004",
+      "invoice_date": "2026-03-05",
+      "supplier_name": "BlueWave Cloud Logistics Inc.",
+      "customer_name": "Evergreen Global Retailers Ltd",
+      "subtotal": "18941.00",
+      "tax": "1562.63",
+      "total": "20503.63",
+      "currency": "USD"
+    },
+    {
+      "invoice_number": "INV-2026-D007",
+      "invoice_date": "2026-02-22",
+      "supplier_name": "Datastream Systems GmbH",
+      "customer_name": "Evergreen Global Retailers Ltd",
+      "subtotal": "11596.00",
+      "tax": "2203.24",
+      "total": "13799.24",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-D008",
+      "invoice_date": "2026-03-29",
+      "supplier_name": "Datastream Systems GmbH",
+      "customer_name": "Glacier Ridge Capital Partners",
+      "subtotal": "10838.50",
+      "tax": "2059.32",
+      "total": "12897.82",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-D009",
+      "invoice_date": "2026-03-05",
+      "supplier_name": "EchoForge Creative Media SAS",
+      "customer_name": "Falcon Ridge Enterprises LLC",
+      "subtotal": "5674.50",
+      "tax": "1134.90",
+      "total": "6809.40",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-D010",
+      "invoice_date": "2026-04-12",
+      "supplier_name": "EchoForge Creative Media SAS",
+      "customer_name": "Helios Clean Power Corp",
+      "subtotal": "30545.50",
+      "tax": "6109.10",
+      "total": "36653.60",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-D011",
+      "invoice_date": "2026-03-14",
+      "supplier_name": "Frontline Biotech Labs LLC",
+      "customer_name": "Glacier Ridge Capital Partners",
+      "subtotal": "13643.50",
+      "tax": "2728.70",
+      "total": "16372.20",
+      "currency": "GBP"
+    },
+    {
+      "invoice_number": "INV-2026-D012",
+      "invoice_date": "2026-04-25",
+      "supplier_name": "Frontline Biotech Labs LLC",
+      "customer_name": "Ironclad Security Infrastructure",
+      "subtotal": "42883.00",
+      "tax": "8576.60",
+      "total": "51459.60",
+      "currency": "GBP"
+    },
+    {
+      "invoice_number": "INV-2026-D013",
+      "invoice_date": "2026-03-29",
+      "supplier_name": "Greenfield Environmental Engineering",
+      "customer_name": "Helios Clean Power Corp",
+      "subtotal": "45845.50",
+      "tax": "9169.10",
+      "total": "55014.60",
+      "currency": "GBP"
+    },
+    {
+      "invoice_number": "INV-2026-D014",
+      "invoice_date": "2026-05-08",
+      "supplier_name": "Greenfield Environmental Engineering",
+      "customer_name": "Zenith Wholesale & Distribution",
+      "subtotal": "525.00",
+      "tax": "105.00",
+      "total": "630.00",
+      "currency": "GBP"
+    },
+    {
+      "invoice_number": "INV-2026-X095",
+      "invoice_date": "2026-03-01",
+      "supplier_name": "Unlisted Vendor Ltd",
+      "customer_name": null,
+      "subtotal": "100.00",
+      "tax": "0.00",
+      "total": "100.00",
+      "currency": "GBP"
+    }
+  ],
+  "crosscheck_expected": {
+    "INV-2026-D001": "MATCH",
+    "INV-2026-D002": "MATCH",
+    "INV-2026-D003": "MISMATCH",
+    "INV-2026-D004": "MATCH",
+    "INV-2026-D007": "MATCH",
+    "INV-2026-D008": "MATCH",
+    "INV-2026-D009": "MATCH",
+    "INV-2026-D010": "MISMATCH",
+    "INV-2026-D011": "MATCH",
+    "INV-2026-D012": "MATCH",
+    "INV-2026-D013": "MATCH",
+    "INV-2026-D014": "MATCH"
+  },
+  "sheets_with_rows": [
+    "AP Ledger 2026"
+  ]
+}

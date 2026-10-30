@@ -1,0 +1,53 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-S066"
+  },
+  "invoice_date": {
+    "value": "2026-04-07"
+  },
+  "supplier_name": {
+    "value": "Crestline Industrial Hardware"
+  },
+  "customer_name": {
+    "value": "Glacier Ridge Capital Partners"
+  },
+  "subtotal": {
+    "value": "13905.00"
+  },
+  "tax": {
+    "value": "1042.88"
+  },
+  "total": {
+    "value": "14947.88"
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [
+    {
+      "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+      "quantity": "2",
+      "unit_price": "175.00",
+      "amount": "350.00"
+    },
+    {
+      "description": "Cloud Architecture Consultation (hrs)",
+      "quantity": "3",
+      "unit_price": "125.00",
+      "amount": "375.00"
+    },
+    {
+      "description": "Machine Learning Model Tuning Service",
+      "quantity": "4",
+      "unit_price": "3200.00",
+      "amount": "12800.00"
+    },
+    {
+      "description": "Backup Battery UPS Module 1500VA",
+      "quantity": "1",
+      "unit_price": "380.00",
+      "amount": "380.00"
+    }
+  ],
+  "invoice_count": 1
+}

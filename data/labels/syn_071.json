@@ -1,0 +1,137 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-U071"
+  },
+  "invoice_date": {
+    "value": "2026-01-19"
+  },
+  "supplier_name": {
+    "value": "Meridian Healthcare Diagnostics"
+  },
+  "customer_name": {
+    "value": "Delta Stream Solutions GmbH"
+  },
+  "subtotal": {
+    "value": "45088.00"
+  },
+  "tax": {
+    "value": "9017.60"
+  },
+  "total": {
+    "value": "54105.60"
+  },
+  "currency": {
+    "value": "GBP"
+  },
+  "line_items": [
+    {
+      "description": "Enterprise Security Penetration Test",
+      "quantity": "2",
+      "unit_price": "2450.00",
+      "amount": "4900.00"
+    },
+    {
+      "description": "Site Reliability Audit & Report",
+      "quantity": "3",
+      "unit_price": "1650.00",
+      "amount": "4950.00"
+    },
+    {
+      "description": "Solid State NVMe Drive Enterprise 2TB",
+      "quantity": "4",
+      "unit_price": "220.00",
+      "amount": "880.00"
+    },
+    {
+      "description": "Emergency Server Maintenance SLA",
+      "quantity": "1",
+      "unit_price": "900.00",
+      "amount": "900.00"
+    },
+    {
+      "description": "Warehouse Staging & Inventory Tagging",
+      "quantity": "2",
+      "unit_price": "290.00",
+      "amount": "580.00"
+    },
+    {
+      "description": "API Integration & Webhook Setup",
+      "quantity": "3",
+      "unit_price": "850.00",
+      "amount": "2550.00"
+    },
+    {
+      "description": "Fiber Optic Transceiver SFP+ 10G",
+      "quantity": "4",
+      "unit_price": "65.00",
+      "amount": "260.00"
+    },
+    {
+      "description": "Annual Enterprise Software License",
+      "quantity": "1",
+      "unit_price": "4999.00",
+      "amount": "4999.00"
+    },
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "2",
+      "unit_price": "680.00",
+      "amount": "1360.00"
+    },
+    {
+      "description": "UX/UI Design Sprint Review",
+      "quantity": "3",
+      "unit_price": "1200.00",
+      "amount": "3600.00"
+    },
+    {
+      "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+      "quantity": "4",
+      "unit_price": "145.00",
+      "amount": "580.00"
+    },
+    {
+      "description": "Heavy Duty Timber Pallet (Treated)",
+      "quantity": "1",
+      "unit_price": "28.00",
+      "amount": "28.00"
+    },
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "2",
+      "unit_price": "620.00",
+      "amount": "1240.00"
+    },
+    {
+      "description": "Database Migration & Optimization",
+      "quantity": "3",
+      "unit_price": "1800.00",
+      "amount": "5400.00"
+    },
+    {
+      "description": "Industrial Rackmount Server Unit 2U",
+      "quantity": "4",
+      "unit_price": "2899.00",
+      "amount": "11596.00"
+    },
+    {
+      "description": "Precision Optical Collimator Lens",
+      "quantity": "1",
+      "unit_price": "540.00",
+      "amount": "540.00"
+    },
+    {
+      "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+      "quantity": "2",
+      "unit_price": "175.00",
+      "amount": "350.00"
+    },
+    {
+      "description": "Cloud Architecture Consultation (hrs)",
+      "quantity": "3",
+      "unit_price": "125.00",
+      "amount": "375.00"
+    }
+  ],
+  "invoice_count": 1
+}

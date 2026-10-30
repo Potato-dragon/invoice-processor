@@ -1,0 +1,35 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-U081"
+  },
+  "invoice_date": {
+    "value": "2026-02-17"
+  },
+  "supplier_name": {
+    "value": "Orion Precision Optics Ltd"
+  },
+  "customer_name": {
+    "value": "Delta Stream Solutions GmbH"
+  },
+  "subtotal": {
+    "value": "43500.00"
+  },
+  "tax": {
+    "value": "4350.00"
+  },
+  "total": {
+    "value": "47850.00"
+  },
+  "currency": {
+    "value": "JPY"
+  },
+  "line_items": [
+    {
+      "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+      "quantity": "2",
+      "unit_price": "21750.00",
+      "amount": "43500.00"
+    }
+  ],
+  "invoice_count": 1
+}

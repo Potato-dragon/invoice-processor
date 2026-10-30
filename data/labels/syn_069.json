@@ -1,0 +1,41 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-S069"
+  },
+  "invoice_date": {
+    "value": "2026-01-19"
+  },
+  "supplier_name": {
+    "value": "Frontline Biotech Labs LLC"
+  },
+  "customer_name": {
+    "value": "Zenith Wholesale & Distribution"
+  },
+  "subtotal": {
+    "value": "3247.50"
+  },
+  "tax": {
+    "value": "649.50"
+  },
+  "total": {
+    "value": "3897.00"
+  },
+  "currency": {
+    "value": "GBP"
+  },
+  "line_items": [
+    {
+      "description": "DevOps CI/CD Pipeline Automation",
+      "quantity": "2",
+      "unit_price": "1500.00",
+      "amount": "3000.00"
+    },
+    {
+      "description": "High-Performance Thermal Sensor Probe",
+      "quantity": "3",
+      "unit_price": "82.50",
+      "amount": "247.50"
+    }
+  ],
+  "invoice_count": 1
+}

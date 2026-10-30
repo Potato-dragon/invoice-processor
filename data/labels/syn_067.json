@@ -1,0 +1,59 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-S067"
+  },
+  "invoice_date": {
+    "value": "2026-04-21"
+  },
+  "supplier_name": {
+    "value": "Datastream Systems GmbH"
+  },
+  "customer_name": {
+    "value": "Helios Clean Power Corp"
+  },
+  "subtotal": {
+    "value": "6808.00"
+  },
+  "tax": {
+    "value": "1293.52"
+  },
+  "total": {
+    "value": "8101.52"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [
+    {
+      "description": "Ocean Container Handling & Port Surcharge",
+      "quantity": "2",
+      "unit_price": "680.00",
+      "amount": "1360.00"
+    },
+    {
+      "description": "UX/UI Design Sprint Review",
+      "quantity": "3",
+      "unit_price": "1200.00",
+      "amount": "3600.00"
+    },
+    {
+      "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+      "quantity": "4",
+      "unit_price": "145.00",
+      "amount": "580.00"
+    },
+    {
+      "description": "Heavy Duty Timber Pallet (Treated)",
+      "quantity": "1",
+      "unit_price": "28.00",
+      "amount": "28.00"
+    },
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "2",
+      "unit_price": "620.00",
+      "amount": "1240.00"
+    }
+  ],
+  "invoice_count": 1
+}

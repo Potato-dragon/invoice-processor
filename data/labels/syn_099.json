@@ -1,0 +1,5179 @@
+{
+  "invoice_number": {
+    "value": null
+  },
+  "invoice_date": {
+    "value": null
+  },
+  "supplier_name": {
+    "value": null
+  },
+  "customer_name": {
+    "value": null
+  },
+  "subtotal": {
+    "value": null
+  },
+  "tax": {
+    "value": null
+  },
+  "total": {
+    "value": null
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [],
+  "invoice_count": 8,
+  "page_count": 30,
+  "invoices": [
+    {
+      "page_start": 1,
+      "page_end": 2,
+      "invoice_number": {
+        "value": "INV-2026-K0001"
+      },
+      "invoice_date": {
+        "value": "2026-01-01"
+      },
+      "supplier_name": {
+        "value": "Apex Pinnacle Solutions Ltd."
+      },
+      "customer_name": {
+        "value": "Beacon Innovations Inc."
+      },
+      "subtotal": {
+        "value": "98020.00"
+      },
+      "tax": {
+        "value": "9802.00"
+      },
+      "total": {
+        "value": "107822.00"
+      },
+      "currency": {
+        "value": "USD"
+      },
+      "line_items": [
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        }
+      ]
+    },
+    {
+      "page_start": 3,
+      "page_end": 7,
+      "invoice_number": {
+        "value": "INV-2026-K0002"
+      },
+      "invoice_date": {
+        "value": "2026-01-06"
+      },
+      "supplier_name": {
+        "value": "BlueWave Cloud Logistics Inc."
+      },
+      "customer_name": {
+        "value": "Cobalt Dynamics Group"
+      },
+      "subtotal": {
+        "value": "319282.00"
+      },
+      "tax": {
+        "value": "26340.77"
+      },
+      "total": {
+        "value": "345622.77"
+      },
+      "currency": {
+        "value": "USD"
+      },
+      "line_items": [
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "1",
+          "unit_price": "850.00",
+          "amount": "850.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "2",
+          "unit_price": "65.00",
+          "amount": "130.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "3",
+          "unit_price": "4999.00",
+          "amount": "14997.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "4",
+          "unit_price": "680.00",
+          "amount": "2720.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "1",
+          "unit_price": "1200.00",
+          "amount": "1200.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "2",
+          "unit_price": "145.00",
+          "amount": "290.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "1",
+          "unit_price": "850.00",
+          "amount": "850.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "2",
+          "unit_price": "65.00",
+          "amount": "130.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "3",
+          "unit_price": "4999.00",
+          "amount": "14997.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "4",
+          "unit_price": "680.00",
+          "amount": "2720.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "1",
+          "unit_price": "1200.00",
+          "amount": "1200.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "2",
+          "unit_price": "145.00",
+          "amount": "290.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "1",
+          "unit_price": "850.00",
+          "amount": "850.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "2",
+          "unit_price": "65.00",
+          "amount": "130.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "3",
+          "unit_price": "4999.00",
+          "amount": "14997.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "4",
+          "unit_price": "680.00",
+          "amount": "2720.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "1",
+          "unit_price": "1200.00",
+          "amount": "1200.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "2",
+          "unit_price": "145.00",
+          "amount": "290.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        }
+      ]
+    },
+    {
+      "page_start": 8,
+      "page_end": 9,
+      "invoice_number": {
+        "value": "INV-2026-K0003"
+      },
+      "invoice_date": {
+        "value": "2026-01-11"
+      },
+      "supplier_name": {
+        "value": "Crestline Industrial Hardware"
+      },
+      "customer_name": {
+        "value": "Delta Stream Solutions GmbH"
+      },
+      "subtotal": {
+        "value": "134989.00"
+      },
+      "tax": {
+        "value": "10124.18"
+      },
+      "total": {
+        "value": "145113.18"
+      },
+      "currency": {
+        "value": null
+      },
+      "line_items": [
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "1",
+          "unit_price": "850.00",
+          "amount": "850.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "2",
+          "unit_price": "65.00",
+          "amount": "130.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "3",
+          "unit_price": "4999.00",
+          "amount": "14997.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "4",
+          "unit_price": "680.00",
+          "amount": "2720.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "1",
+          "unit_price": "1200.00",
+          "amount": "1200.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "2",
+          "unit_price": "145.00",
+          "amount": "290.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        }
+      ]
+    },
+    {
+      "page_start": 10,
+      "page_end": 16,
+      "invoice_number": {
+        "value": "INV-2026-K0004"
+      },
+      "invoice_date": {
+        "value": "2026-01-16"
+      },
+      "supplier_name": {
+        "value": "Datastream Systems GmbH"
+      },
+      "customer_name": {
+        "value": "Evergreen Global Retailers Ltd"
+      },
+      "subtotal": {
+        "value": "427337.50"
+      },
+      "tax": {
+        "value": "81194.13"
+      },
+      "total": {
+        "value": "508531.63"
+      },
+      "currency": {
+        "value": "EUR"
+      },
+      "line_items": [
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "1",
+          "unit_price": "850.00",
+          "amount": "850.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "2",
+          "unit_price": "65.00",
+          "amount": "130.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "3",
+          "unit_price": "4999.00",
+          "amount": "14997.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "4",
+          "unit_price": "680.00",
+          "amount": "2720.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "1",
+          "unit_price": "1200.00",
+          "amount": "1200.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "2",
+          "unit_price": "145.00",
+          "amount": "290.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "1",
+          "unit_price": "850.00",
+          "amount": "850.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "2",
+          "unit_price": "65.00",
+          "amount": "130.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "3",
+          "unit_price": "4999.00",
+          "amount": "14997.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "4",
+          "unit_price": "680.00",
+          "amount": "2720.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "1",
+          "unit_price": "1200.00",
+          "amount": "1200.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "2",
+          "unit_price": "145.00",
+          "amount": "290.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "1",
+          "unit_price": "850.00",
+          "amount": "850.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "2",
+          "unit_price": "65.00",
+          "amount": "130.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "3",
+          "unit_price": "4999.00",
+          "amount": "14997.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "4",
+          "unit_price": "680.00",
+          "amount": "2720.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "1",
+          "unit_price": "1200.00",
+          "amount": "1200.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "2",
+          "unit_price": "145.00",
+          "amount": "290.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        }
+      ]
+    },
+    {
+      "page_start": 17,
+      "page_end": 17,
+      "invoice_number": {
+        "value": "INV-2026-K0005"
+      },
+      "invoice_date": {
+        "value": "2026-01-21"
+      },
+      "supplier_name": {
+        "value": "EchoForge Creative Media SAS"
+      },
+      "customer_name": {
+        "value": "Falcon Ridge Enterprises LLC"
+      },
+      "subtotal": {
+        "value": "12196.50"
+      },
+      "tax": {
+        "value": "2439.30"
+      },
+      "total": {
+        "value": "14635.80"
+      },
+      "currency": {
+        "value": "EUR"
+      },
+      "line_items": [
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        }
+      ]
+    },
+    {
+      "page_start": 18,
+      "page_end": 21,
+      "invoice_number": {
+        "value": "INV-2026-K0006"
+      },
+      "invoice_date": {
+        "value": "2026-01-26"
+      },
+      "supplier_name": {
+        "value": "Frontline Biotech Labs LLC"
+      },
+      "customer_name": {
+        "value": "Glacier Ridge Capital Partners"
+      },
+      "subtotal": {
+        "value": "205773.50"
+      },
+      "tax": {
+        "value": null
+      },
+      "total": {
+        "value": "205773.50"
+      },
+      "currency": {
+        "value": "GBP"
+      },
+      "line_items": [
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "1",
+          "unit_price": "850.00",
+          "amount": "850.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "2",
+          "unit_price": "65.00",
+          "amount": "130.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "3",
+          "unit_price": "4999.00",
+          "amount": "14997.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "4",
+          "unit_price": "680.00",
+          "amount": "2720.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "1",
+          "unit_price": "1200.00",
+          "amount": "1200.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "2",
+          "unit_price": "145.00",
+          "amount": "290.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        }
+      ]
+    },
+    {
+      "page_start": 22,
+      "page_end": 25,
+      "invoice_number": {
+        "value": "INV-2026-K0007"
+      },
+      "invoice_date": {
+        "value": "2026-01-31"
+      },
+      "supplier_name": {
+        "value": "Greenfield Environmental Engineering"
+      },
+      "customer_name": {
+        "value": "Helios Clean Power Corp"
+      },
+      "subtotal": {
+        "value": "325404.50"
+      },
+      "tax": {
+        "value": "65080.90"
+      },
+      "total": {
+        "value": "390485.40"
+      },
+      "currency": {
+        "value": "GBP"
+      },
+      "line_items": [
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "1",
+          "unit_price": "850.00",
+          "amount": "850.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "2",
+          "unit_price": "65.00",
+          "amount": "130.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "3",
+          "unit_price": "4999.00",
+          "amount": "14997.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "4",
+          "unit_price": "680.00",
+          "amount": "2720.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "1",
+          "unit_price": "1200.00",
+          "amount": "1200.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "2",
+          "unit_price": "145.00",
+          "amount": "290.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "1",
+          "unit_price": "850.00",
+          "amount": "850.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "2",
+          "unit_price": "65.00",
+          "amount": "130.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "3",
+          "unit_price": "4999.00",
+          "amount": "14997.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "4",
+          "unit_price": "680.00",
+          "amount": "2720.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "1",
+          "unit_price": "1200.00",
+          "amount": "1200.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "2",
+          "unit_price": "145.00",
+          "amount": "290.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        }
+      ]
+    },
+    {
+      "page_start": 26,
+      "page_end": 30,
+      "invoice_number": {
+        "value": "INV-2026-K0008"
+      },
+      "invoice_date": {
+        "value": "2026-02-05"
+      },
+      "supplier_name": {
+        "value": "Horizon Peak Dynamics Corp"
+      },
+      "customer_name": {
+        "value": "Ironclad Security Infrastructure"
+      },
+      "subtotal": {
+        "value": "296644.50"
+      },
+      "tax": {
+        "value": "25214.78"
+      },
+      "total": {
+        "value": "321859.28"
+      },
+      "currency": {
+        "value": "USD"
+      },
+      "line_items": [
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "1",
+          "unit_price": "850.00",
+          "amount": "850.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "2",
+          "unit_price": "65.00",
+          "amount": "130.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "3",
+          "unit_price": "4999.00",
+          "amount": "14997.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "4",
+          "unit_price": "680.00",
+          "amount": "2720.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "1",
+          "unit_price": "1200.00",
+          "amount": "1200.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "2",
+          "unit_price": "145.00",
+          "amount": "290.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "1",
+          "unit_price": "850.00",
+          "amount": "850.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "2",
+          "unit_price": "65.00",
+          "amount": "130.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "3",
+          "unit_price": "4999.00",
+          "amount": "14997.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "4",
+          "unit_price": "680.00",
+          "amount": "2720.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "1",
+          "unit_price": "1200.00",
+          "amount": "1200.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "2",
+          "unit_price": "145.00",
+          "amount": "290.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "3",
+          "unit_price": "28.00",
+          "amount": "84.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "4",
+          "unit_price": "620.00",
+          "amount": "2480.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "1",
+          "unit_price": "1800.00",
+          "amount": "1800.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "2",
+          "unit_price": "2899.00",
+          "amount": "5798.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "3",
+          "unit_price": "540.00",
+          "amount": "1620.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "4",
+          "unit_price": "175.00",
+          "amount": "700.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "1",
+          "unit_price": "125.00",
+          "amount": "125.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "2",
+          "unit_price": "3200.00",
+          "amount": "6400.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "3",
+          "unit_price": "380.00",
+          "amount": "1140.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "4",
+          "unit_price": "750.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "1",
+          "unit_price": "340.00",
+          "amount": "340.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "2",
+          "unit_price": "1500.00",
+          "amount": "3000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "3",
+          "unit_price": "82.50",
+          "amount": "247.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "4",
+          "unit_price": "19.50",
+          "amount": "78.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "1",
+          "unit_price": "230.00",
+          "amount": "230.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "2",
+          "unit_price": "95.00",
+          "amount": "190.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "3",
+          "unit_price": "450.00",
+          "amount": "1350.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "4",
+          "unit_price": "310.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "1",
+          "unit_price": "45.00",
+          "amount": "45.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "2",
+          "unit_price": "2450.00",
+          "amount": "4900.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "3",
+          "unit_price": "1650.00",
+          "amount": "4950.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "4",
+          "unit_price": "220.00",
+          "amount": "880.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "1",
+          "unit_price": "900.00",
+          "amount": "900.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "2",
+          "unit_price": "290.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "API Integration & Webhook Setup",
+          "quantity": "3",
+          "unit_price": "850.00",
+          "amount": "2550.00"
+        },
+        {
+          "description": "Fiber Optic Transceiver SFP+ 10G",
+          "quantity": "4",
+          "unit_price": "65.00",
+          "amount": "260.00"
+        },
+        {
+          "description": "Annual Enterprise Software License",
+          "quantity": "1",
+          "unit_price": "4999.00",
+          "amount": "4999.00"
+        },
+        {
+          "description": "Ocean Container Handling & Port Surcharge",
+          "quantity": "2",
+          "unit_price": "680.00",
+          "amount": "1360.00"
+        },
+        {
+          "description": "UX/UI Design Sprint Review",
+          "quantity": "3",
+          "unit_price": "1200.00",
+          "amount": "3600.00"
+        },
+        {
+          "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+          "quantity": "4",
+          "unit_price": "145.00",
+          "amount": "580.00"
+        },
+        {
+          "description": "Heavy Duty Timber Pallet (Treated)",
+          "quantity": "1",
+          "unit_price": "28.00",
+          "amount": "28.00"
+        },
+        {
+          "description": "Disaster Recovery Replication Node",
+          "quantity": "2",
+          "unit_price": "620.00",
+          "amount": "1240.00"
+        },
+        {
+          "description": "Database Migration & Optimization",
+          "quantity": "3",
+          "unit_price": "1800.00",
+          "amount": "5400.00"
+        },
+        {
+          "description": "Industrial Rackmount Server Unit 2U",
+          "quantity": "4",
+          "unit_price": "2899.00",
+          "amount": "11596.00"
+        },
+        {
+          "description": "Precision Optical Collimator Lens",
+          "quantity": "1",
+          "unit_price": "540.00",
+          "amount": "540.00"
+        },
+        {
+          "description": "SSL/TLS Wildcard Certificate (2-Yr)",
+          "quantity": "2",
+          "unit_price": "175.00",
+          "amount": "350.00"
+        },
+        {
+          "description": "Cloud Architecture Consultation (hrs)",
+          "quantity": "3",
+          "unit_price": "125.00",
+          "amount": "375.00"
+        },
+        {
+          "description": "Machine Learning Model Tuning Service",
+          "quantity": "4",
+          "unit_price": "3200.00",
+          "amount": "12800.00"
+        },
+        {
+          "description": "Backup Battery UPS Module 1500VA",
+          "quantity": "1",
+          "unit_price": "380.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Monthly Cloud Infrastructure Retainer",
+          "quantity": "2",
+          "unit_price": "750.00",
+          "amount": "1500.00"
+        },
+        {
+          "description": "Customs Clearing & Import Documentation",
+          "quantity": "3",
+          "unit_price": "340.00",
+          "amount": "1020.00"
+        },
+        {
+          "description": "DevOps CI/CD Pipeline Automation",
+          "quantity": "4",
+          "unit_price": "1500.00",
+          "amount": "6000.00"
+        },
+        {
+          "description": "High-Performance Thermal Sensor Probe",
+          "quantity": "1",
+          "unit_price": "82.50",
+          "amount": "82.50"
+        },
+        {
+          "description": "Stainless Steel Hex Fasteners M8 (Box 100)",
+          "quantity": "2",
+          "unit_price": "19.50",
+          "amount": "39.00"
+        },
+        {
+          "description": "Express Air Freight Courier Delivery",
+          "quantity": "3",
+          "unit_price": "230.00",
+          "amount": "690.00"
+        },
+        {
+          "description": "Full-Stack Software Development (hrs)",
+          "quantity": "4",
+          "unit_price": "95.00",
+          "amount": "380.00"
+        },
+        {
+          "description": "Gigabit Managed Switch 48-Port",
+          "quantity": "1",
+          "unit_price": "450.00",
+          "amount": "450.00"
+        },
+        {
+          "description": "Hydraulic Flow Meter Digital Sensor",
+          "quantity": "2",
+          "unit_price": "310.00",
+          "amount": "620.00"
+        },
+        {
+          "description": "Data Storage Volume Allocation (TB/mo)",
+          "quantity": "3",
+          "unit_price": "45.00",
+          "amount": "135.00"
+        },
+        {
+          "description": "Enterprise Security Penetration Test",
+          "quantity": "4",
+          "unit_price": "2450.00",
+          "amount": "9800.00"
+        },
+        {
+          "description": "Site Reliability Audit & Report",
+          "quantity": "1",
+          "unit_price": "1650.00",
+          "amount": "1650.00"
+        },
+        {
+          "description": "Solid State NVMe Drive Enterprise 2TB",
+          "quantity": "2",
+          "unit_price": "220.00",
+          "amount": "440.00"
+        },
+        {
+          "description": "Emergency Server Maintenance SLA",
+          "quantity": "3",
+          "unit_price": "900.00",
+          "amount": "2700.00"
+        },
+        {
+          "description": "Warehouse Staging & Inventory Tagging",
+          "quantity": "4",
+          "unit_price": "290.00",
+          "amount": "1160.00"
+        }
+      ]
+    }
+  ]
+}

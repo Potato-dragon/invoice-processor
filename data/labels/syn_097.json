@@ -1,0 +1,133 @@
+{
+  "invoice_number": {
+    "value": null
+  },
+  "invoice_date": {
+    "value": null
+  },
+  "supplier_name": {
+    "value": null
+  },
+  "customer_name": {
+    "value": null
+  },
+  "subtotal": {
+    "value": null
+  },
+  "tax": {
+    "value": null
+  },
+  "total": {
+    "value": null
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [],
+  "invoice_count": 0,
+  "ledger_rows": [
+    {
+      "invoice_number": "INV-2026-D007",
+      "invoice_date": "2026-02-22",
+      "supplier_name": "Datastream Systems GmbH",
+      "customer_name": "Evergreen Global Retailers Ltd",
+      "subtotal": "11596.00",
+      "tax": "2203.24",
+      "total": "13799.24",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-D008",
+      "invoice_date": "2026-03-29",
+      "supplier_name": "Datastream Systems GmbH",
+      "customer_name": "Glacier Ridge Capital Partners",
+      "subtotal": "10838.50",
+      "tax": "2059.32",
+      "total": "12897.82",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-D009",
+      "invoice_date": "2026-03-05",
+      "supplier_name": "EchoForge Creative Media SAS",
+      "customer_name": "Falcon Ridge Enterprises LLC",
+      "subtotal": "5674.50",
+      "tax": "1134.90",
+      "total": "6809.40",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-D010",
+      "invoice_date": "2026-04-12",
+      "supplier_name": "EchoForge Creative Media SAS",
+      "customer_name": "Helios Clean Power Corp",
+      "subtotal": "30545.50",
+      "tax": "6109.10",
+      "total": "36654.60",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-D019",
+      "invoice_date": "2026-05-08",
+      "supplier_name": "Jupiter Nordic Software Oy",
+      "customer_name": "Nordic Alpine Holdings AB",
+      "subtotal": "4695.00",
+      "tax": "1126.80",
+      "total": "5821.80",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-D020",
+      "invoice_date": "2026-02-10",
+      "supplier_name": "Jupiter Nordic Software Oy",
+      "customer_name": "Cobalt Dynamics Group",
+      "subtotal": "1990.00",
+      "tax": null,
+      "total": "1990.00",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-T027",
+      "invoice_date": "2026-03-05",
+      "supplier_name": "NovaStar Robotics SpA",
+      "customer_name": "Helios Clean Power Corp",
+      "subtotal": "5161.00",
+      "tax": "1135.42",
+      "total": "6296.42",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-T028",
+      "invoice_date": "2026-04-25",
+      "supplier_name": "NovaStar Robotics SpA",
+      "customer_name": "Nordic Alpine Holdings AB",
+      "subtotal": "8455.00",
+      "tax": "1860.10",
+      "total": "10315.10",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-X097",
+      "invoice_date": "2026-03-01",
+      "supplier_name": "Unlisted Vendor Ltd",
+      "customer_name": null,
+      "subtotal": "100.00",
+      "tax": "0.00",
+      "total": "100.00",
+      "currency": "GBP"
+    }
+  ],
+  "crosscheck_expected": {
+    "INV-2026-D007": "MATCH",
+    "INV-2026-D008": "MATCH",
+    "INV-2026-D009": "MATCH",
+    "INV-2026-D010": "MATCH",
+    "INV-2026-D019": "MATCH",
+    "INV-2026-D020": "MATCH",
+    "INV-2026-T027": "MATCH",
+    "INV-2026-T028": "MATCH"
+  },
+  "sheets_with_rows": [
+    "syn_097"
+  ]
+}

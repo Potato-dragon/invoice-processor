@@ -1,0 +1,28 @@
+{
+  "invoice_number": {
+    "value": null
+  },
+  "invoice_date": {
+    "value": null
+  },
+  "supplier_name": {
+    "value": null
+  },
+  "customer_name": {
+    "value": null
+  },
+  "subtotal": {
+    "value": null
+  },
+  "tax": {
+    "value": null
+  },
+  "total": {
+    "value": null
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [],
+  "invoice_count": 0
+}

@@ -1,0 +1,41 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-S059"
+  },
+  "invoice_date": {
+    "value": "2026-04-21"
+  },
+  "supplier_name": {
+    "value": "Greenfield Environmental Engineering"
+  },
+  "customer_name": {
+    "value": "Zenith Wholesale & Distribution"
+  },
+  "subtotal": {
+    "value": "6640.00"
+  },
+  "tax": {
+    "value": "1328.00"
+  },
+  "total": {
+    "value": "7968.00"
+  },
+  "currency": {
+    "value": "GBP"
+  },
+  "line_items": [
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "2",
+      "unit_price": "620.00",
+      "amount": "1240.00"
+    },
+    {
+      "description": "Database Migration & Optimization",
+      "quantity": "3",
+      "unit_price": "1800.00",
+      "amount": "5400.00"
+    }
+  ],
+  "invoice_count": 1
+}

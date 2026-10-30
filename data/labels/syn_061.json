@@ -1,0 +1,53 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-S061"
+  },
+  "invoice_date": {
+    "value": "2026-01-19"
+  },
+  "supplier_name": {
+    "value": "Ironwood Timber & Materials Ltd"
+  },
+  "customer_name": {
+    "value": "Beacon Innovations Inc."
+  },
+  "subtotal": {
+    "value": "2825.00"
+  },
+  "tax": {
+    "value": "423.75"
+  },
+  "total": {
+    "value": "3248.75"
+  },
+  "currency": {
+    "value": "BDT"
+  },
+  "line_items": [
+    {
+      "description": "Full-Stack Software Development (hrs)",
+      "quantity": "2",
+      "unit_price": "95.00",
+      "amount": "190.00"
+    },
+    {
+      "description": "Gigabit Managed Switch 48-Port",
+      "quantity": "3",
+      "unit_price": "450.00",
+      "amount": "1350.00"
+    },
+    {
+      "description": "Hydraulic Flow Meter Digital Sensor",
+      "quantity": "4",
+      "unit_price": "310.00",
+      "amount": "1240.00"
+    },
+    {
+      "description": "Data Storage Volume Allocation (TB/mo)",
+      "quantity": "1",
+      "unit_price": "45.00",
+      "amount": "45.00"
+    }
+  ],
+  "invoice_count": 1
+}

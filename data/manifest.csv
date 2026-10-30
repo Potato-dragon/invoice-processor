@@ -3,8 +3,8 @@ syn_001,syn_001.pdf,pdf,modern_clean,Apex Pinnacle Solutions Ltd.,en_US,USD,digi
 syn_002,syn_002.pdf,pdf,classic_corporate,Apex Pinnacle Solutions Ltd.,en_US,USD,digital,dev,COMPLETED,,Digital PDF classic_corporate layout
 syn_003,syn_003.pdf,pdf,compact_slip,BlueWave Cloud Logistics Inc.,en_US,USD,digital,dev,COMPLETED,,Digital PDF compact_slip layout
 syn_004,syn_004.pdf,pdf,bold_banner,BlueWave Cloud Logistics Inc.,en_US,USD,digital,dev,COMPLETED,,Digital PDF bold_banner layout
-syn_005,syn_005.pdf,pdf,modern_clean,Crestline Industrial Hardware,en_US,,digital,dev,COMPLETED,,Ambiguous currency symbol bare $
-syn_006,syn_006.pdf,pdf,classic_corporate,Crestline Industrial Hardware,en_US,,digital,dev,COMPLETED,,Digital PDF classic_corporate layout
+syn_005,syn_005.pdf,pdf,modern_clean,Crestline Industrial Hardware,en_US,,digital,dev,NEEDS_REVIEW,,Ambiguous currency symbol bare $
+syn_006,syn_006.pdf,pdf,classic_corporate,Crestline Industrial Hardware,en_US,,digital,dev,NEEDS_REVIEW,,Digital PDF classic_corporate layout
 syn_007,syn_007.pdf,pdf,compact_slip,Datastream Systems GmbH,de_DE,EUR,digital,dev,COMPLETED,,Single line item European number formatting
 syn_008,syn_008.pdf,pdf,bold_banner,Datastream Systems GmbH,de_DE,EUR,digital,dev,COMPLETED,,Digital PDF bold_banner layout
 syn_009,syn_009.pdf,pdf,modern_clean,EchoForge Creative Media SAS,fr_FR,EUR,digital,dev,COMPLETED,,Digital PDF modern_clean layout
@@ -21,8 +21,8 @@ syn_019,syn_019.pdf,pdf,compact_slip,Jupiter Nordic Software Oy,de_DE,EUR,digita
 syn_020,syn_020.pdf,pdf,bold_banner,Jupiter Nordic Software Oy,de_DE,EUR,digital,dev,COMPLETED,,Tax exempt / omitted tax
 syn_021,syn_021.pdf,pdf,modern_clean,Kestrel Global Freight Solutions,en_US,USD,digital,dev,COMPLETED,,Digital PDF modern_clean layout
 syn_022,syn_022.pdf,pdf,classic_corporate,Kestrel Global Freight Solutions,en_US,USD,digital,dev,COMPLETED,,Multi-page digital PDF test (25 line items)
-syn_023,syn_023.pdf,pdf,minimalist_sidebar,Lumina Sensor Technologies Inc,en_US,,digital,test,COMPLETED,,Test split ambiguous currency bare $
-syn_024,syn_024.pdf,pdf,international_multilingual,Lumina Sensor Technologies Inc,en_US,,digital,test,COMPLETED,,Test split multi-page invoice (20 line items)
+syn_023,syn_023.pdf,pdf,minimalist_sidebar,Lumina Sensor Technologies Inc,en_US,,digital,test,NEEDS_REVIEW,,Test split ambiguous currency bare $
+syn_024,syn_024.pdf,pdf,international_multilingual,Lumina Sensor Technologies Inc,en_US,,digital,test,NEEDS_REVIEW,,Test split multi-page invoice (20 line items)
 syn_025,syn_025.pdf,pdf,international_multilingual,Meridian Healthcare Diagnostics,en_GB,GBP,digital,test,COMPLETED,,Test split international_multilingual layout
 syn_026,syn_026.pdf,pdf,minimalist_sidebar,Meridian Healthcare Diagnostics,en_GB,GBP,digital,test,COMPLETED,,Test split minimalist_sidebar layout
 syn_027,syn_027.pdf,pdf,minimalist_sidebar,NovaStar Robotics SpA,de_DE,EUR,digital,test,COMPLETED,,Test split minimalist_sidebar layout
@@ -31,3 +31,79 @@ syn_029,syn_029.pdf,pdf,international_multilingual,Orion Precision Optics Ltd,en
 syn_030,syn_030.pdf,pdf,minimalist_sidebar,Orion Precision Optics Ltd,en_US,JPY,digital,test,COMPLETED,,Test split JPY currency
 syn_031,syn_031.pdf,pdf,minimalist_sidebar,Pacific Crest Supplies Co.,hi_IN,INR,digital,test,COMPLETED,,Test split INR currency Indian number formatting
 syn_032,syn_032.pdf,pdf,international_multilingual,Pacific Crest Supplies Co.,hi_IN,INR,digital,test,COMPLETED,,Test split INR currency Indian number formatting
+syn_033,syn_033.pdf,pdf,modern_clean,Apex Pinnacle Solutions Ltd.,en_US,USD,digital,dev,COMPLETED,,Missing optional field: no customer
+syn_034,syn_034.pdf,pdf,classic_corporate,Datastream Systems GmbH,de_DE,EUR,digital,dev,COMPLETED,,Missing optional field: no customer
+syn_035,syn_035.pdf,pdf,compact_slip,Greenfield Environmental Engineering,en_GB,GBP,digital,dev,COMPLETED,,Missing optional field: no tax
+syn_036,syn_036.pdf,pdf,bold_banner,Jupiter Nordic Software Oy,de_DE,EUR,digital,dev,COMPLETED,,Missing optional field: no tax
+syn_037,syn_037.pdf,pdf,minimalist_sidebar,Meridian Healthcare Diagnostics,en_GB,GBP,digital,test,COMPLETED,,Missing optional field: no customer
+syn_038,syn_038.pdf,pdf,international_multilingual,Pacific Crest Supplies Co.,hi_IN,INR,digital,test,COMPLETED,,Missing optional field: no customer and tax
+syn_039,syn_039.pdf,pdf,classic_corporate,BlueWave Cloud Logistics Inc.,en_US,,digital,dev,NEEDS_REVIEW,,Bare $ only: currency must be null (CURRENCY_AMBIGUOUS)
+syn_040,syn_040.pdf,pdf,compact_slip,Apex Pinnacle Solutions Ltd.,en_US,,digital,dev,NEEDS_REVIEW,,Bare $ only: currency must be null (CURRENCY_AMBIGUOUS)
+syn_041,syn_041.pdf,pdf,modern_clean,EchoForge Creative Media SAS,fr_FR,EUR,digital,dev,COMPLETED,,Adversarial: prompt-injection text in a line item
+syn_042,syn_042.pdf,pdf,minimalist_sidebar,Meridian Healthcare Diagnostics,en_GB,GBP,digital,test,COMPLETED,,Adversarial: prompt-injection text in a line item
+syn_043,syn_043.pdf,pdf,receipt_thermal,Brew & Bean Coffee House Ltd,en_GB,GBP,digital,dev,COMPLETED,,doc_type=receipt
+syn_044,syn_044.pdf,pdf,receipt_thermal,QuickMart Express Ltd,en_GB,GBP,digital,dev,COMPLETED,,doc_type=receipt
+syn_045,syn_045.pdf,pdf,receipt_thermal,Brew & Bean Coffee House Ltd,en_GB,GBP,digital,dev,COMPLETED,,doc_type=receipt
+syn_046,syn_046.jpg,image,receipt_thermal,QuickMart Express Ltd,en_GB,GBP,fair,dev,COMPLETED,,doc_type=receipt scanned
+syn_047,syn_047.png,image,receipt_thermal,Brew & Bean Coffee House Ltd,en_GB,GBP,fair,dev,COMPLETED,,doc_type=receipt scanned
+syn_048,syn_048.pdf,pdf,receipt_retail,Bistro Lumiere SARL,fr_FR,EUR,digital,test,COMPLETED,,doc_type=receipt
+syn_049,syn_049.pdf,pdf,receipt_retail,Nordwind Elektronik GmbH,de_DE,EUR,digital,test,COMPLETED,,doc_type=receipt
+syn_050,syn_050.pdf,pdf,receipt_retail,Bistro Lumiere SARL,fr_FR,EUR,digital,test,COMPLETED,,doc_type=receipt
+syn_051,syn_051.jpg,image,receipt_retail,Nordwind Elektronik GmbH,de_DE,EUR,fair,test,COMPLETED,,doc_type=receipt scanned
+syn_052,syn_052.png,image,receipt_retail,Bistro Lumiere SARL,fr_FR,EUR,fair,test,COMPLETED,,doc_type=receipt scanned
+syn_053,syn_053.pdf,pdf,modern_clean,Apex Pinnacle Solutions Ltd.,en_US,USD,good,dev,COMPLETED,,Scanned PDF (good)
+syn_054,syn_054.jpg,image,classic_corporate,BlueWave Cloud Logistics Inc.,en_US,USD,good,dev,COMPLETED,,Scanned JPG (good)
+syn_055,syn_055.png,image,compact_slip,Crestline Industrial Hardware,en_US,,fair,dev,NEEDS_REVIEW,,Scanned PNG (fair)
+syn_056,syn_056.tif,image,bold_banner,Datastream Systems GmbH,de_DE,EUR,fair,dev,COMPLETED,,Scanned TIFF (fair)
+syn_057,syn_057.pdf,pdf,modern_clean,EchoForge Creative Media SAS,fr_FR,EUR,poor,dev,COMPLETED,,Scanned PDF (poor)
+syn_058,syn_058.jpg,image,classic_corporate,Frontline Biotech Labs LLC,en_GB,GBP,poor,dev,COMPLETED,,Scanned JPG (poor)
+syn_059,syn_059.png,image,compact_slip,Greenfield Environmental Engineering,en_GB,GBP,good,dev,COMPLETED,,Scanned PNG (good)
+syn_060,syn_060.tif,image,bold_banner,Horizon Peak Dynamics Corp,en_US,USD,good,dev,COMPLETED,,Scanned TIFF (good)
+syn_061,syn_061.pdf,pdf,modern_clean,Ironwood Timber & Materials Ltd,bn_BD,BDT,fair,dev,COMPLETED,,Scanned PDF (fair)
+syn_062,syn_062.jpg,image,classic_corporate,Jupiter Nordic Software Oy,de_DE,EUR,fair,dev,COMPLETED,,Scanned JPG (fair)
+syn_063,syn_063.png,image,compact_slip,Kestrel Global Freight Solutions,en_US,USD,poor,dev,COMPLETED,,Scanned PNG (poor)
+syn_064,syn_064.tif,image,bold_banner,Apex Pinnacle Solutions Ltd.,en_US,USD,poor,dev,COMPLETED,,Scanned TIFF (poor)
+syn_065,syn_065.pdf,pdf,modern_clean,BlueWave Cloud Logistics Inc.,en_US,USD,good,dev,COMPLETED,,Scanned PDF (good)
+syn_066,syn_066.jpg,image,classic_corporate,Crestline Industrial Hardware,en_US,,good,dev,NEEDS_REVIEW,,Scanned JPG (good)
+syn_067,syn_067.png,image,compact_slip,Datastream Systems GmbH,de_DE,EUR,fair,dev,COMPLETED,,Scanned PNG (fair)
+syn_068,syn_068.tif,image,bold_banner,EchoForge Creative Media SAS,fr_FR,EUR,fair,dev,COMPLETED,,Scanned TIFF (fair)
+syn_069,syn_069.pdf,pdf,modern_clean,Frontline Biotech Labs LLC,en_GB,GBP,poor,dev,COMPLETED,,Scanned PDF (poor)
+syn_070,syn_070.jpg,image,classic_corporate,Greenfield Environmental Engineering,en_GB,GBP,poor,dev,COMPLETED,,Scanned JPG (poor)
+syn_071,syn_071.pdf,pdf,minimalist_sidebar,Meridian Healthcare Diagnostics,en_GB,GBP,good,test,COMPLETED,,Scanned PDF (good)
+syn_072,syn_072.jpg,image,international_multilingual,NovaStar Robotics SpA,de_DE,EUR,good,test,COMPLETED,,Scanned JPG (good)
+syn_073,syn_073.png,image,minimalist_sidebar,Orion Precision Optics Ltd,en_US,JPY,fair,test,COMPLETED,,Scanned PNG (fair)
+syn_074,syn_074.tif,image,international_multilingual,Pacific Crest Supplies Co.,hi_IN,INR,fair,test,COMPLETED,,Scanned TIFF (fair)
+syn_075,syn_075.pdf,pdf,minimalist_sidebar,Meridian Healthcare Diagnostics,en_GB,GBP,poor,test,COMPLETED,,Scanned PDF (poor)
+syn_076,syn_076.jpg,image,international_multilingual,NovaStar Robotics SpA,de_DE,EUR,poor,test,COMPLETED,,Scanned JPG (poor)
+syn_077,syn_077.png,image,minimalist_sidebar,Orion Precision Optics Ltd,en_US,JPY,good,test,COMPLETED,,Scanned PNG (good)
+syn_078,syn_078.tif,image,international_multilingual,Pacific Crest Supplies Co.,hi_IN,INR,good,test,COMPLETED,,Scanned TIFF (good)
+syn_079,syn_079.pdf,pdf,minimalist_sidebar,Meridian Healthcare Diagnostics,en_GB,GBP,fair,test,COMPLETED,,Scanned PDF (fair)
+syn_080,syn_080.jpg,image,international_multilingual,NovaStar Robotics SpA,de_DE,EUR,fair,test,COMPLETED,,Scanned JPG (fair)
+syn_081,syn_081.png,image,minimalist_sidebar,Orion Precision Optics Ltd,en_US,JPY,poor,test,COMPLETED,,Scanned PNG (poor)
+syn_082,syn_082.tif,image,international_multilingual,Pacific Crest Supplies Co.,hi_IN,INR,poor,test,COMPLETED,,Scanned TIFF (poor)
+syn_083,syn_083.pdf,pdf,classic_corporate,Crestline Industrial Hardware,en_US,,digital,dev,NEEDS_REVIEW,,seeded=wrong_total
+syn_084,syn_084.pdf,pdf,compact_slip,EchoForge Creative Media SAS,fr_FR,EUR,digital,dev,NEEDS_REVIEW,,seeded=lines_vs_subtotal
+syn_085,syn_085.pdf,pdf,bold_banner,Greenfield Environmental Engineering,en_GB,GBP,digital,dev,NEEDS_REVIEW,,seeded=negative_amount
+syn_086,syn_086.pdf,pdf,modern_clean,Ironwood Timber & Materials Ltd,bn_BD,BDT,digital,dev,NEEDS_REVIEW,,seeded=invalid_date
+syn_087,syn_087.pdf,pdf,classic_corporate,Apex Pinnacle Solutions Ltd.,en_US,USD,digital,dev,NEEDS_REVIEW,,seeded=exact_duplicate of syn_002
+syn_088,syn_088.pdf,pdf,bold_banner,BluWave Cloud Logistics Inc.,en_US,USD,digital,dev,NEEDS_REVIEW,,seeded=near_duplicate of syn_004 (supplier typo)
+syn_089,syn_089.pdf,pdf,international_multilingual,Orion Precision Optics Ltd,en_US,JPY,digital,test,NEEDS_REVIEW,,seeded=wrong_total
+syn_090,syn_090.pdf,pdf,minimalist_sidebar,Meridian Healthcare Diagnostics,en_GB,GBP,digital,test,NEEDS_REVIEW,,seeded=lines_vs_subtotal
+syn_091,syn_091.pdf,pdf,international_multilingual,Orion Precision Optics Ltd,en_US,JPY,digital,test,NEEDS_REVIEW,,seeded=negative_amount
+syn_092,syn_092.pdf,pdf,minimalist_sidebar,Meridian Healthcare Diagnostics,en_GB,GBP,digital,test,NEEDS_REVIEW,,seeded=invalid_date
+syn_093,syn_093.pdf,pdf,minimalist_sidebar,Meridian Healthcare Diagnostics,en_GB,GBP,digital,test,NEEDS_REVIEW,,seeded=exact_duplicate of syn_026
+syn_094,syn_094.pdf,pdf,international_multilingual,NovStar Robotics SpA,de_DE,EUR,digital,test,NEEDS_REVIEW,,seeded=near_duplicate of syn_028 (supplier typo)
+syn_095,syn_095.xlsx,spreadsheet,ledger_xlsx_dev,,,,digital,dev,COMPLETED,,"XLSX ledger: notes sheet, header on row 4, summary and empty sheets"
+syn_096,syn_096.csv,spreadsheet,ledger_csv_test,,,,digital,test,COMPLETED,,"CSV ledger, comma, UTF-8"
+syn_097,syn_097.csv,spreadsheet,ledger_csv_dev,,,,digital,dev,COMPLETED,,"CSV ledger, semicolon, latin-1, European numbers, French headers"
+syn_098,syn_098.xls,spreadsheet,ledger_xls_dev,,,,digital,dev,COMPLETED,,"Legacy XLS ledger, German headers"
+syn_099,syn_099.pdf,pdf,multi_mixed,,,,digital,dev,COMPLETED,,"Multi-invoice PDF: 8 invoices, one scanned"
+syn_100,syn_100.pdf,pdf,,,,,digital,test,FAILED,FILE_CORRUPT,Truncated PDF (first 400 bytes)
+syn_101,syn_101.pdf,pdf,,,,,digital,test,FAILED,FILE_ENCRYPTED,Password-protected PDF
+syn_102,syn_102.pdf,pdf,,,,,digital,test,FAILED,FILE_EMPTY,Empty file (0 bytes)
+syn_103,syn_103.docx,other,,,,,digital,test,FAILED,FILE_TYPE_UNSUPPORTED,Word document (unsupported type)
+syn_104,syn_104.pdf,pdf,,,,,digital,test,FAILED,FILE_TYPE_UNSUPPORTED,Text file renamed to .pdf
+syn_105,syn_105.pdf,pdf,,,,,digital,test,FAILED,PAGE_LIMIT_EXCEEDED,"PDF with 1,600 pages (limit 1,500)"
+syn_106,syn_106.png,image,,,,,digital,test,FAILED,FILE_CORRUPT,Truncated PNG image
+syn_107,syn_107.xlsx,spreadsheet,,,,,digital,test,FAILED,SPREADSHEET_PARSE_FAILED,Corrupt XLSX (bad zip)
+syn_108,syn_108.png,image,,,,,digital,test,FAILED,OCR_FAILED,"Blank white scan, no text"

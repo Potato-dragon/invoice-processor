@@ -1,0 +1,47 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-E086"
+  },
+  "invoice_date": {
+    "value": "2026-02-30"
+  },
+  "supplier_name": {
+    "value": "Ironwood Timber & Materials Ltd"
+  },
+  "customer_name": {
+    "value": "Glacier Ridge Capital Partners"
+  },
+  "subtotal": {
+    "value": "15977.00"
+  },
+  "tax": {
+    "value": "2396.55"
+  },
+  "total": {
+    "value": "18373.55"
+  },
+  "currency": {
+    "value": "BDT"
+  },
+  "line_items": [
+    {
+      "description": "API Integration & Webhook Setup",
+      "quantity": "1",
+      "unit_price": "850.00",
+      "amount": "850.00"
+    },
+    {
+      "description": "Fiber Optic Transceiver SFP+ 10G",
+      "quantity": "2",
+      "unit_price": "65.00",
+      "amount": "130.00"
+    },
+    {
+      "description": "Annual Enterprise Software License",
+      "quantity": "3",
+      "unit_price": "4999.00",
+      "amount": "14997.00"
+    }
+  ],
+  "invoice_count": 1
+}

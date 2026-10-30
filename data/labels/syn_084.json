@@ -1,0 +1,47 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-E084"
+  },
+  "invoice_date": {
+    "value": "2026-02-17"
+  },
+  "supplier_name": {
+    "value": "EchoForge Creative Media SAS"
+  },
+  "customer_name": {
+    "value": "Evergreen Global Retailers Ltd"
+  },
+  "subtotal": {
+    "value": "4414.00"
+  },
+  "tax": {
+    "value": "882.80"
+  },
+  "total": {
+    "value": "5296.80"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [
+    {
+      "description": "Heavy Duty Timber Pallet (Treated)",
+      "quantity": "3",
+      "unit_price": "28.00",
+      "amount": "84.00"
+    },
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "4",
+      "unit_price": "620.00",
+      "amount": "2480.00"
+    },
+    {
+      "description": "Database Migration & Optimization",
+      "quantity": "1",
+      "unit_price": "1800.00",
+      "amount": "1800.00"
+    }
+  ],
+  "invoice_count": 1
+}

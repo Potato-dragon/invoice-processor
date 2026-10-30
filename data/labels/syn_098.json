@@ -1,0 +1,133 @@
+{
+  "invoice_number": {
+    "value": null
+  },
+  "invoice_date": {
+    "value": null
+  },
+  "supplier_name": {
+    "value": null
+  },
+  "customer_name": {
+    "value": null
+  },
+  "subtotal": {
+    "value": null
+  },
+  "tax": {
+    "value": null
+  },
+  "total": {
+    "value": null
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [],
+  "invoice_count": 0,
+  "ledger_rows": [
+    {
+      "invoice_number": "INV-2026-D015",
+      "invoice_date": "2026-04-12",
+      "supplier_name": "Horizon Peak Dynamics Corp",
+      "customer_name": "Ironclad Security Infrastructure",
+      "subtotal": "2250.00",
+      "tax": "191.25",
+      "total": "2441.25",
+      "currency": "USD"
+    },
+    {
+      "invoice_number": "INV-2026-D016",
+      "invoice_date": "2026-01-15",
+      "supplier_name": "Horizon Peak Dynamics Corp",
+      "customer_name": null,
+      "subtotal": "4320.00",
+      "tax": "367.20",
+      "total": "4687.20",
+      "currency": "USD"
+    },
+    {
+      "invoice_number": "INV-2026-D017",
+      "invoice_date": "2026-04-25",
+      "supplier_name": "Ironwood Timber & Materials Ltd",
+      "customer_name": "Zenith Wholesale & Distribution",
+      "subtotal": "3280.00",
+      "tax": "492.00",
+      "total": "3772.00",
+      "currency": "BDT"
+    },
+    {
+      "invoice_number": "INV-2026-D018",
+      "invoice_date": "2026-01-28",
+      "supplier_name": "Ironwood Timber & Materials Ltd",
+      "customer_name": "Beacon Innovations Inc.",
+      "subtotal": "11875.00",
+      "tax": "1781.25",
+      "total": "13656.25",
+      "currency": "BDT"
+    },
+    {
+      "invoice_number": "INV-2026-D019",
+      "invoice_date": "2026-05-08",
+      "supplier_name": "Jupiter Nordic Software Oy",
+      "customer_name": "Nordic Alpine Holdings AB",
+      "subtotal": "4695.00",
+      "tax": "1126.80",
+      "total": "5821.80",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-D020",
+      "invoice_date": "2026-02-10",
+      "supplier_name": "Jupiter Nordic Software Oy",
+      "customer_name": "Cobalt Dynamics Group",
+      "subtotal": "1990.00",
+      "tax": null,
+      "total": "1990.00",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-D021",
+      "invoice_date": "2026-01-15",
+      "supplier_name": "Kestrel Global Freight Solutions",
+      "customer_name": "Beacon Innovations Inc.",
+      "subtotal": "18305.00",
+      "tax": "1189.83",
+      "total": "19494.83",
+      "currency": "USD"
+    },
+    {
+      "invoice_number": "INV-2026-D022",
+      "invoice_date": "2026-02-22",
+      "supplier_name": "Kestrel Global Freight Solutions",
+      "customer_name": "Delta Stream Solutions GmbH",
+      "subtotal": "58736.50",
+      "tax": "3817.87",
+      "total": "62554.37",
+      "currency": "USD"
+    },
+    {
+      "invoice_number": "INV-2026-X098",
+      "invoice_date": "2026-03-01",
+      "supplier_name": "Unlisted Vendor Ltd",
+      "customer_name": null,
+      "subtotal": "100.00",
+      "tax": "0.00",
+      "total": "100.00",
+      "currency": "GBP"
+    }
+  ],
+  "crosscheck_expected": {
+    "INV-2026-D015": "MATCH",
+    "INV-2026-D016": "MATCH",
+    "INV-2026-D017": "MATCH",
+    "INV-2026-D018": "MATCH",
+    "INV-2026-D019": "MATCH",
+    "INV-2026-D020": "MATCH",
+    "INV-2026-D021": "MATCH",
+    "INV-2026-D022": "MATCH"
+  },
+  "sheets_with_rows": [
+    "Rechnungen"
+  ]
+}

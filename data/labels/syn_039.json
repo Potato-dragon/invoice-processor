@@ -1,0 +1,47 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-D039"
+  },
+  "invoice_date": {
+    "value": "2026-03-02"
+  },
+  "supplier_name": {
+    "value": "BlueWave Cloud Logistics Inc."
+  },
+  "customer_name": {
+    "value": "Evergreen Global Retailers Ltd"
+  },
+  "subtotal": {
+    "value": "1848.00"
+  },
+  "tax": {
+    "value": "152.46"
+  },
+  "total": {
+    "value": "2000.46"
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [
+    {
+      "description": "Cat6e Ethernet Cable Bulk Reel 305m",
+      "quantity": "4",
+      "unit_price": "145.00",
+      "amount": "580.00"
+    },
+    {
+      "description": "Heavy Duty Timber Pallet (Treated)",
+      "quantity": "1",
+      "unit_price": "28.00",
+      "amount": "28.00"
+    },
+    {
+      "description": "Disaster Recovery Replication Node",
+      "quantity": "2",
+      "unit_price": "620.00",
+      "amount": "1240.00"
+    }
+  ],
+  "invoice_count": 1
+}

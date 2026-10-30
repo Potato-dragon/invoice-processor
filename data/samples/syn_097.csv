@@ -1,0 +1,10 @@
+N° facture;Date facture;Fournisseur;Client;Montant HT;TVA;Montant TTC;Devise
+INV-2026-D007;22/02/2026;Datastream Systems GmbH;Evergreen Global Retailers Ltd;11.596,00;2.203,24;13.799,24;EUR
+INV-2026-D008;29/03/2026;Datastream Systems GmbH;Glacier Ridge Capital Partners;10.838,50;2.059,32;12.897,82;EUR
+INV-2026-D009;05/03/2026;EchoForge Creative Media SAS;Falcon Ridge Enterprises LLC;5.674,50;1.134,90;6.809,40;EUR
+INV-2026-D010;12/04/2026;EchoForge Creative Media SAS;Helios Clean Power Corp;30.545,50;6.109,10;36.654,60;EUR
+INV-2026-D019;08/05/2026;Jupiter Nordic Software Oy;Nordic Alpine Holdings AB;4.695,00;1.126,80;5.821,80;EUR
+INV-2026-D020;10/02/2026;Jupiter Nordic Software Oy;Cobalt Dynamics Group;1.990,00;;1.990,00;EUR
+INV-2026-T027;05/03/2026;NovaStar Robotics SpA;Helios Clean Power Corp;5.161,00;1.135,42;6.296,42;EUR
+INV-2026-T028;25/04/2026;NovaStar Robotics SpA;Nordic Alpine Holdings AB;8.455,00;1.860,10;10.315,10;EUR
+INV-2026-X097;01/03/2026;Unlisted Vendor Ltd;;100,00;0,00;100,00;GBP

@@ -1,0 +1,133 @@
+{
+  "invoice_number": {
+    "value": null
+  },
+  "invoice_date": {
+    "value": null
+  },
+  "supplier_name": {
+    "value": null
+  },
+  "customer_name": {
+    "value": null
+  },
+  "subtotal": {
+    "value": null
+  },
+  "tax": {
+    "value": null
+  },
+  "total": {
+    "value": null
+  },
+  "currency": {
+    "value": null
+  },
+  "line_items": [],
+  "invoice_count": 0,
+  "ledger_rows": [
+    {
+      "invoice_number": "INV-2026-T025",
+      "invoice_date": "2026-02-22",
+      "supplier_name": "Meridian Healthcare Diagnostics",
+      "customer_name": "Glacier Ridge Capital Partners",
+      "subtotal": "3580.00",
+      "tax": "716.00",
+      "total": "8592.00",
+      "currency": "GBP"
+    },
+    {
+      "invoice_number": "INV-2026-T026",
+      "invoice_date": "2026-04-12",
+      "supplier_name": "Meridian Healthcare Diagnostics",
+      "customer_name": "Zenith Wholesale & Distribution",
+      "subtotal": "17084.50",
+      "tax": "3416.90",
+      "total": "20501.40",
+      "currency": "GBP"
+    },
+    {
+      "invoice_number": "INV-2026-T027",
+      "invoice_date": "2026-03-05",
+      "supplier_name": "NovaStar Robotics SpA",
+      "customer_name": "Helios Clean Power Corp",
+      "subtotal": "5161.00",
+      "tax": "1135.42",
+      "total": "6296.42",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-T028",
+      "invoice_date": "2026-04-25",
+      "supplier_name": "NovaStar Robotics SpA",
+      "customer_name": "Nordic Alpine Holdings AB",
+      "subtotal": "8455.00",
+      "tax": "1860.10",
+      "total": "10315.10",
+      "currency": "EUR"
+    },
+    {
+      "invoice_number": "INV-2026-T029",
+      "invoice_date": "2026-03-14",
+      "supplier_name": "Orion Precision Optics Ltd",
+      "customer_name": "Ironclad Security Infrastructure",
+      "subtotal": "566250.00",
+      "tax": "56625.00",
+      "total": "622875.00",
+      "currency": "JPY"
+    },
+    {
+      "invoice_number": "INV-2026-T030",
+      "invoice_date": "2026-05-08",
+      "supplier_name": "Orion Precision Optics Ltd",
+      "customer_name": null,
+      "subtotal": "715500.00",
+      "tax": "71550.00",
+      "total": "787050.00",
+      "currency": "JPY"
+    },
+    {
+      "invoice_number": "INV-2026-T031",
+      "invoice_date": "2026-03-29",
+      "supplier_name": "Pacific Crest Supplies Co.",
+      "customer_name": "Zenith Wholesale & Distribution",
+      "subtotal": "3770.00",
+      "tax": "678.60",
+      "total": "4448.60",
+      "currency": "INR"
+    },
+    {
+      "invoice_number": "INV-2026-T032",
+      "invoice_date": "2026-01-15",
+      "supplier_name": "Pacific Crest Supplies Co.",
+      "customer_name": "Cobalt Dynamics Group",
+      "subtotal": "12555.00",
+      "tax": "2259.90",
+      "total": "14814.90",
+      "currency": "INR"
+    },
+    {
+      "invoice_number": "INV-2026-X096",
+      "invoice_date": "2026-03-01",
+      "supplier_name": "Unlisted Vendor Ltd",
+      "customer_name": null,
+      "subtotal": "100.00",
+      "tax": "0.00",
+      "total": "100.00",
+      "currency": "GBP"
+    }
+  ],
+  "crosscheck_expected": {
+    "INV-2026-T025": "MISMATCH",
+    "INV-2026-T026": "MATCH",
+    "INV-2026-T027": "MATCH",
+    "INV-2026-T028": "MATCH",
+    "INV-2026-T029": "MATCH",
+    "INV-2026-T030": "MATCH",
+    "INV-2026-T031": "MATCH",
+    "INV-2026-T032": "MATCH"
+  },
+  "sheets_with_rows": [
+    "syn_096"
+  ]
+}

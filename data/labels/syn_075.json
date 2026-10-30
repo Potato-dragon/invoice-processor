@@ -1,0 +1,59 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-U075"
+  },
+  "invoice_date": {
+    "value": "2026-03-23"
+  },
+  "supplier_name": {
+    "value": "Meridian Healthcare Diagnostics"
+  },
+  "customer_name": {
+    "value": "Helios Clean Power Corp"
+  },
+  "subtotal": {
+    "value": "12645.00"
+  },
+  "tax": {
+    "value": "2529.00"
+  },
+  "total": {
+    "value": "15174.00"
+  },
+  "currency": {
+    "value": "GBP"
+  },
+  "line_items": [
+    {
+      "description": "Hydraulic Flow Meter Digital Sensor",
+      "quantity": "2",
+      "unit_price": "310.00",
+      "amount": "620.00"
+    },
+    {
+      "description": "Data Storage Volume Allocation (TB/mo)",
+      "quantity": "3",
+      "unit_price": "45.00",
+      "amount": "135.00"
+    },
+    {
+      "description": "Enterprise Security Penetration Test",
+      "quantity": "4",
+      "unit_price": "2450.00",
+      "amount": "9800.00"
+    },
+    {
+      "description": "Site Reliability Audit & Report",
+      "quantity": "1",
+      "unit_price": "1650.00",
+      "amount": "1650.00"
+    },
+    {
+      "description": "Solid State NVMe Drive Enterprise 2TB",
+      "quantity": "2",
+      "unit_price": "220.00",
+      "amount": "440.00"
+    }
+  ],
+  "invoice_count": 1
+}

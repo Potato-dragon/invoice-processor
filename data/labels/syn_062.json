@@ -1,0 +1,59 @@
+{
+  "invoice_number": {
+    "value": "INV-2026-S062"
+  },
+  "invoice_date": {
+    "value": "2026-02-03"
+  },
+  "supplier_name": {
+    "value": "Jupiter Nordic Software Oy"
+  },
+  "customer_name": {
+    "value": "Cobalt Dynamics Group"
+  },
+  "subtotal": {
+    "value": "13880.00"
+  },
+  "tax": {
+    "value": "3331.20"
+  },
+  "total": {
+    "value": "17211.20"
+  },
+  "currency": {
+    "value": "EUR"
+  },
+  "line_items": [
+    {
+      "description": "Machine Learning Model Tuning Service",
+      "quantity": "2",
+      "unit_price": "3200.00",
+      "amount": "6400.00"
+    },
+    {
+      "description": "Backup Battery UPS Module 1500VA",
+      "quantity": "3",
+      "unit_price": "380.00",
+      "amount": "1140.00"
+    },
+    {
+      "description": "Monthly Cloud Infrastructure Retainer",
+      "quantity": "4",
+      "unit_price": "750.00",
+      "amount": "3000.00"
+    },
+    {
+      "description": "Customs Clearing & Import Documentation",
+      "quantity": "1",
+      "unit_price": "340.00",
+      "amount": "340.00"
+    },
+    {
+      "description": "DevOps CI/CD Pipeline Automation",
+      "quantity": "2",
+      "unit_price": "1500.00",
+      "amount": "3000.00"
+    }
+  ],
+  "invoice_count": 1
+}
