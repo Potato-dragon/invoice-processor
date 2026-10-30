@@ -54,15 +54,26 @@ def _rotate(gray: np.ndarray, angle: float) -> np.ndarray:
     return cv2.warpAffine(gray, m, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE)
 
 
-def preprocess(img: np.ndarray) -> np.ndarray:
-    """Grayscale, deskew, light denoise, then binarise with Otsu."""
+def deskew(img: np.ndarray) -> np.ndarray:
     gray = _to_gray(img)
     angle = estimate_skew(gray)
-    if abs(angle) >= 0.3:
-        gray = _rotate(gray, angle)
+    return _rotate(gray, angle) if abs(angle) >= 0.3 else gray
+
+
+def preprocess(img: np.ndarray, mode: str = "fast") -> np.ndarray:
+    """Deskewed grayscale page, cleaned for Tesseract.
+
+    fast:   median denoise + global Otsu threshold. Good for clean and fair scans.
+    rescue: contrast stretch + non-local-means denoise, no threshold. For faded,
+            noisy scans where Otsu drops light-grey text (used as a retry).
+    """
+    gray = deskew(img)
+    if mode == "rescue":
+        lo, hi = np.percentile(gray, 1), np.percentile(gray, 99.5)
+        gray = np.clip((gray.astype(np.float32) - lo) * 255 / max(1.0, hi - lo), 0, 255).astype(np.uint8)
+        return cv2.fastNlMeansDenoising(gray, None, 15, 7, 21)
     gray = cv2.medianBlur(gray, 3)
-    # Global Otsu threshold: picks the ink/paper split per page, so it also
-    # handles faded scans. (CLAHE before Otsu amplified noise in tests.)
+    # (CLAHE before Otsu amplified noise in tests, so it is not used.)
     _, gray = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
     return gray
 
@@ -75,30 +86,68 @@ def _upscale_if_small(gray: np.ndarray, dpi_hint: int | None) -> np.ndarray:
     return gray
 
 
-def ocr_image(img: np.ndarray, dpi_hint: int | None = None) -> tuple[str, float]:
-    """Return (text, confidence 0..1). Raises on Tesseract failure/timeout."""
-    gray = _upscale_if_small(preprocess(img), dpi_hint)
+def _rows_from_words(data: dict) -> list[str]:
+    """Rebuild reading order from word boxes.
+
+    Tesseract's own blocks follow columns, which separates a label ("Total:")
+    from its right-aligned value. Here words on the same visual row form one
+    line; a wide horizontal gap starts a new cell, and cells are joined with a
+    tab so the extractor can tell "label | value" and two-column headers apart.
+    """
+    words = []
+    for i, text in enumerate(data["text"]):
+        text = (text or "").strip()
+        if not text or float(data["conf"][i]) < 0:
+            continue
+        words.append((data["top"][i], data["left"][i], data["width"][i], data["height"][i], text))
+    if not words:
+        return []
+    heights = sorted(w[3] for w in words)
+    h = max(1, heights[len(heights) // 2])
+    rows: list[list[tuple]] = []
+    for w in sorted(words, key=lambda w: (w[0] + w[3] / 2, w[1])):
+        cy = w[0] + w[3] / 2
+        if rows and abs(cy - rows[-1][0][0]) <= 0.6 * h:
+            rows[-1][1].append(w)
+        else:
+            rows.append([(cy,), [w]])
+    out = []
+    for _, row in rows:
+        row.sort(key=lambda w: w[1])
+        cells, cell, prev_right = [], [], None
+        for top, left, width, height, text in row:
+            if prev_right is not None and left - prev_right > 1.8 * h:
+                cells.append(" ".join(cell))
+                cell = []
+            cell.append(text)
+            prev_right = left + width
+        cells.append(" ".join(cell))
+        out.append("\t".join(cells))
+    return out
+
+
+RESCUE_BELOW = 0.75
+
+
+def _run(gray: np.ndarray) -> tuple[str, float]:
     data = pytesseract.image_to_data(
         gray, lang=_LANGS, config="--psm 3", output_type=pytesseract.Output.DICT, timeout=_TIMEOUT_S
     )
-    lines: list[str] = []
-    current: tuple[int, int, int] | None = None
-    words: list[str] = []
-    confs: list[float] = []
-    for i, word in enumerate(data["text"]):
-        key = (data["block_num"][i], data["par_num"][i], data["line_num"][i])
-        if key != current:
-            if words:
-                lines.append(" ".join(words))
-            words, current = [], key
-        word = (word or "").strip()
-        if not word:
-            continue
-        words.append(word)
-        conf = float(data["conf"][i])
-        if conf >= 0:
-            confs.append(conf)
-    if words:
-        lines.append(" ".join(words))
+    confs = [float(c) for c, t in zip(data["conf"], data["text"]) if float(c) >= 0 and (t or "").strip()]
     confidence = round(sum(confs) / len(confs) / 100, 3) if confs else 0.0
-    return "\n".join(lines), confidence
+    return "\n".join(_rows_from_words(data)), confidence
+
+
+def ocr_image(img: np.ndarray, dpi_hint: int | None = None) -> tuple[str, float]:
+    """Return (text, confidence 0..1). Raises on Tesseract failure/timeout.
+
+    A fast pass first; if its confidence is low, a slower rescue pass, and the
+    better of the two (by mean word confidence) is kept.
+    """
+    img = _upscale_if_small(_to_gray(img), dpi_hint)
+    text, conf = _run(preprocess(img, "fast"))
+    if conf < RESCUE_BELOW:
+        text2, conf2 = _run(preprocess(img, "rescue"))
+        if conf2 > conf:
+            return text2, conf2
+    return text, conf
