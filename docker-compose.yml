@@ -1,3 +1,17 @@
+x-backend-env: &backend-env
+  API_KEY: ${API_KEY:-change-me}
+  DATABASE_URL: postgresql+psycopg://invoice:invoice@db:5432/invoice
+  REDIS_URL: redis://redis:6379/0
+  STORAGE_DIR: /data/storage
+  DATA_DIR: /data/repo
+  GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+  LLM_PRIMARY_MODEL: ${LLM_PRIMARY_MODEL:-gemma-4-31b-it}
+  LLM_FALLBACK_MODEL: ${LLM_FALLBACK_MODEL:-gemma-4-26b-a4b-it}
+  LLM_FAKE: ${LLM_FAKE:-true}
+  MAX_UPLOAD_MB: ${MAX_UPLOAD_MB:-50}
+  MAX_PAGES: ${MAX_PAGES:-1500}
+  OCR_DPI: ${OCR_DPI:-300}
+
 services:
   db:
     image: pgvector/pgvector:pg16
@@ -23,15 +37,12 @@ services:
 
   api:
     build: ./backend
-    environment:
-      API_KEY: ${API_KEY:-change-me}
-      DATABASE_URL: postgresql+psycopg://invoice:invoice@db:5432/invoice
-      REDIS_URL: redis://redis:6379/0
-      STORAGE_DIR: /data/storage
+    environment: *backend-env
     ports:
       - "8000:8000"
     volumes:
       - storage_data:/data/storage
+      - ./data:/data/repo:ro
     command: sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"
     healthcheck:
       test: ["CMD", "python", "-c", "from urllib.request import urlopen; assert urlopen('http://127.0.0.1:8000/api/health').status == 200"]
@@ -46,14 +57,13 @@ services:
 
   worker:
     build: ./backend
-    environment:
-      API_KEY: ${API_KEY:-change-me}
-      DATABASE_URL: postgresql+psycopg://invoice:invoice@db:5432/invoice
-      REDIS_URL: redis://redis:6379/0
-      STORAGE_DIR: /data/storage
+    environment: *backend-env
     volumes:
       - storage_data:/data/storage
-    command: rq worker --url redis://redis:6379/0 parse extract validate index
+      - ./data:/data/repo:ro
+    command: python -m app.worker
+    deploy:
+      replicas: ${WORKER_REPLICAS:-2}
     depends_on:
       db:
         condition: service_healthy
@@ -61,6 +71,20 @@ services:
         condition: service_healthy
       api:
         condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+    environment:
+      API_KEY: ${API_KEY:-change-me}
+    ports:
+      - "3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+    profiles: ["ui", "full"]
 
 volumes:
   postgres_data:

@@ -8,7 +8,7 @@ Design:
 - Client is injectable for tests.
 - Parses JSON from the last complete JSON object in Gemma response text
   (Gemma 4 may emit reasoning/thinking tokens before the JSON).
-- Thinking set to its lowest budget (0 tokens budget) via thinkingConfig.
+- No thinkingConfig: Gemma 4 returns HTTP 400 for thinkingBudget.
 """
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ import json
 import logging
 import os
 import re
+import time
 from typing import Any, Protocol, runtime_checkable
 
 import httpx
@@ -103,7 +104,7 @@ _BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:gen
 class GeminiHTTPClient:
     """Thin httpx wrapper for the Gemini generateContent REST endpoint."""
 
-    def __init__(self, api_key: str, timeout: float = 60.0) -> None:
+    def __init__(self, api_key: str, timeout: float = 120.0) -> None:
         self._api_key = api_key
         self._timeout = timeout
 
@@ -112,30 +113,51 @@ class GeminiHTTPClient:
         headers = {"x-goog-api-key": self._api_key, "Content-Type": "application/json"}
         payload: dict[str, Any] = {
             "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-            # Keep thinking at lowest budget (Gemma 4)
-            "generationConfig": {"thinkingConfig": {"thinkingBudget": 0}},
+            # No thinkingConfig: Gemma 4 rejects thinkingBudget with HTTP 400
+            # (verified with a real call on 2026-10-30). Low temperature keeps
+            # extraction deterministic.
+            "generationConfig": {"temperature": 0},
         }
-        try:
-            resp = httpx.post(url, headers=headers, json=payload, timeout=self._timeout)
-        except httpx.TimeoutException as exc:
-            raise PipelineError(ErrorCode.LLM_UNAVAILABLE, f"Request timed out: {exc}") from exc
-        except httpx.RequestError as exc:
-            raise PipelineError(ErrorCode.LLM_UNAVAILABLE, f"Network error: {exc}") from exc
-
-        if resp.status_code == 429:
-            raise PipelineError(ErrorCode.LLM_RATE_LIMITED, "HTTP 429 from LLM API")
-        if resp.status_code >= 500:
-            raise PipelineError(ErrorCode.LLM_UNAVAILABLE, f"HTTP {resp.status_code} from LLM API")
-        if not resp.is_success:
-            raise PipelineError(ErrorCode.LLM_UNAVAILABLE, f"HTTP {resp.status_code}: {resp.text[:200]}")
-
+        resp = self._post_with_retry(url, headers, payload)
         data = resp.json()
         try:
-            text = data["candidates"][0]["content"]["parts"][0]["text"]
-        except (KeyError, IndexError) as exc:
+            parts = data["candidates"][0]["content"]["parts"]
+            # Gemma 4 may return "thought" parts before the answer; use the answer.
+            answer = [p["text"] for p in parts if "text" in p and not p.get("thought")]
+            text = answer[-1] if answer else parts[-1]["text"]
+        except (KeyError, IndexError, TypeError) as exc:
             raise PipelineError(ErrorCode.LLM_INVALID_OUTPUT, f"Unexpected LLM response shape: {exc}") from exc
 
         return extract_json_from_text(text)
+
+    def _post_with_retry(self, url: str, headers: dict[str, str], payload: dict[str, Any]) -> httpx.Response:
+        """POST with backoff on transient errors (timeouts, network, HTTP 5xx).
+
+        429 is not retried here: the shared rate limiter owns waiting for quota.
+        """
+        attempts = max(1, int(os.getenv("LLM_RETRIES", "3")))
+        last: PipelineError | None = None
+        for attempt in range(attempts):
+            if attempt:
+                time.sleep(2 ** attempt)
+            try:
+                resp = httpx.post(url, headers=headers, json=payload, timeout=self._timeout)
+            except httpx.TimeoutException as exc:
+                last = PipelineError(ErrorCode.LLM_UNAVAILABLE, f"Request timed out: {exc}")
+                continue
+            except httpx.RequestError as exc:
+                last = PipelineError(ErrorCode.LLM_UNAVAILABLE, f"Network error: {exc}")
+                continue
+            if resp.status_code == 429:
+                raise PipelineError(ErrorCode.LLM_RATE_LIMITED, "HTTP 429 from LLM API")
+            if resp.status_code >= 500:
+                last = PipelineError(ErrorCode.LLM_UNAVAILABLE, f"HTTP {resp.status_code} from LLM API")
+                continue
+            if not resp.is_success:
+                raise PipelineError(ErrorCode.LLM_UNAVAILABLE, f"HTTP {resp.status_code}: {resp.text[:200]}")
+            return resp
+        assert last is not None
+        raise last
 
 
 # ---------------------------------------------------------------------------
@@ -163,4 +185,5 @@ def make_llm_client() -> LLMClient:
     api_key = os.getenv("GEMINI_API_KEY", "")
     if not api_key:
         raise PipelineError(ErrorCode.LLM_UNAVAILABLE, "GEMINI_API_KEY not set")
-    return GeminiHTTPClient(api_key=api_key)
+    # Gemma 4 31B can take 20-60 s per call on the free tier.
+    return GeminiHTTPClient(api_key=api_key, timeout=float(os.getenv("LLM_TIMEOUT_S", "120")))

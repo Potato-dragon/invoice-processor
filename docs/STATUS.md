@@ -2,16 +2,11 @@
 
 | Lane | Owner folder | Brief | Branch | State | Notes |
 |---|---|---|---|---|---|
-<<<<<<< HEAD
-| A | backend/app (core), docker-compose.yml, infra | handoffs/A-backend-skeleton.md | lane-a/skeleton | IN PROGRESS | Tasks 1-5 complete; Next step: implement tasks 6-10 (API, pipeline, tests, README). |
-| F | tools/datagen, data/ | handoffs/F-test-data.md | lane-f/datagen | NOT STARTED | |
-=======
-| A | backend/app (core), docker-compose.yml, infra | handoffs/A-backend-skeleton.md | lane-a/skeleton | NOT STARTED | |
-| F | tools/datagen, data/ | handoffs/F-test-data.md | lane-f/datagen | IN PROGRESS | Tasks 1-3, 10-12 done: 6 layouts, 32 digital PDFs (22 dev, 10 test), labels, manifest, verify.py pass. Next step: Tasks 4-9 (scanned docs, spreadsheets, errors, multi-page PDFs). |
->>>>>>> lane-f/datagen
-| B | backend/app/parsing | (not written yet) | lane-b/parsing | NOT STARTED | |
-| C | backend/app/extraction | handoffs/C-extraction.md | lane-c/extraction | DONE | Tasks 1-7 complete: normalizers, rules, grounding, LLM client, limiter, cache, cascade, tests. Bug fixes: invoice number digit requirement, European date labels and period-day parsing, supplier line filtering, 2-decimal confidence rounding, plus regression tests. Run: docker compose -p invoice-ai-a exec api python -m pytest tests/extraction -v |
-| D | backend/app/validation | (not written yet) | lane-d/validation | NOT STARTED | |
+| A | backend/app (core), docker-compose.yml, infra | handoffs/A1.md, handoffs/A2.md | lane-a/skeleton | IN PROGRESS | A1 (compose, config, DB, migrations, contracts, storage) merged. A2 (API, pipeline, search) next. |
+| F | tools/datagen, data/ | handoffs/F1.md, handoffs/F2.md | lane-f/datagen | IN PROGRESS | F1 merged: 6 layouts, 32 digital PDFs (22 dev, 10 test), labels, manifest, verify.py. F2 (scans, spreadsheets, errors, receipts, multi-invoice) next. |
+| B | backend/app/parsing | handoffs/B-parsing.md | lane-b/parsing | NOT STARTED | |
+| C | backend/app/extraction | handoffs/C-extraction.md | lane-c/extraction | DONE | Merged. Open: Redis limiter check, one real Gemma call, accuracy on dev split. |
+| D | backend/app/validation | handoffs/D-validation.md | lane-d/validation | NOT STARTED | |
 | E | frontend | (not written yet) | lane-e/frontend | NOT STARTED | |
 
 ## Gates

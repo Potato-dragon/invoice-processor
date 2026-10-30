@@ -13,8 +13,8 @@ class Settings(BaseSettings):
     redis_url: str = "redis://redis:6379/0"
     storage_dir: str = "/data/storage"
     gemini_api_key: str | None = None
-    llm_primary_model: str = "Gemma 4"
-    llm_fallback_model: str = "Gemini Flash-Lite"
+    llm_primary_model: str = "gemma-4-31b-it"
+    llm_fallback_model: str = "gemma-4-26b-a4b-it"
     llm_fake: bool = False
     max_upload_mb: int = Field(default=50, gt=0)
     max_pages: int = Field(default=1500, gt=0)
