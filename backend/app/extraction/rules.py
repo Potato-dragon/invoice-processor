@@ -61,6 +61,7 @@ class _Line:
     text: str
     right: "_Line | None" = None  # next cell on the same visual row (OCR rows are tab-separated)
     below: "_Line | None" = None  # cell in the same column on the next row
+    row_text: str = ""  # the whole visual row (set on its first cell only)
 
 
 def _lines(pages: list[ParsedPage]) -> list[list[_Line]]:
@@ -84,6 +85,7 @@ def _lines(pages: list[ParsedPage]) -> list[list[_Line]]:
                 row.append(ln)
             for a, b in zip(row, row[1:]):
                 a.right = b
+            row[0].row_text = " ".join(cells)
             grid.append(row)
         for upper, lower in zip(grid, grid[1:]):
             if len(upper) > 1 and len(upper) == len(lower):
@@ -643,9 +645,12 @@ def _parse_line_items(all_lines: list[list[_Line]]) -> list[ExtractedLineItem]:
             items.extend(col)
             continue
         for line in page_lines:
-            if _SUBTOTAL_LABEL.match(line.text) or _TAX_LABEL.match(line.text) or _TOTAL_STRONG.match(line.text) or _TOTAL_WEAK.match(line.text):
+            if not line.row_text:
+                continue  # not the first cell of a row; rows are matched whole
+            text = line.row_text
+            if _SUBTOTAL_LABEL.match(text) or _TAX_LABEL.match(text) or _TOTAL_STRONG.match(text) or _TOTAL_WEAK.match(text):
                 continue
-            m = _SAME_LINE_ITEM.match(line.text)
+            m = _SAME_LINE_ITEM.match(text)
             if not m:
                 continue
             amt = _money_from(m.group("amt"), strict=False)
@@ -654,7 +659,7 @@ def _parse_line_items(all_lines: list[list[_Line]]) -> list[ExtractedLineItem]:
             items.append(ExtractedLineItem(
                 description=m.group("desc").strip(), quantity=parse_decimal(m.group("qty")),
                 unit_price=_money_from(m.group("unit"), strict=False), amount=amt,
-                confidence=0.75, evidence=line.text, page=line.page,
+                confidence=0.75, evidence=text, page=line.page,
             ))
     return items
 

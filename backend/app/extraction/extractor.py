@@ -105,9 +105,10 @@ def _parse_llm_field(raw: Any, fname: str) -> ExtractedField:
             page = int(page) if page is not None else None
         except (TypeError, ValueError):
             page = None
-    if value is None:
+    if value is None or evidence is None:
+        # A value without evidence cannot be checked against the page: drop it.
         return ExtractedField(value=None, confidence=0.0, evidence=None, page=None)
-    return ExtractedField(value=value, confidence=0.80, evidence=evidence, page=page)
+    return ExtractedField(value=value, confidence=0.80, evidence=evidence, page=page if page and page > 0 else None)
 
 
 def _parse_llm_line_items(raw: Any) -> list[ExtractedLineItem]:
@@ -164,12 +165,19 @@ def _merge_llm_into_result(
             if not _evidence_found(llm_field.evidence, pages):
                 notes.append(f"EVIDENCE_NOT_FOUND:{fname}")
                 llm_field = ExtractedField(value=None, confidence=0.0, evidence=None, page=None)
+        if llm_field.value is None:
+            continue  # keep the (low-confidence) rules value rather than erase it
+        if base_field.value is not None and str(base_field.value).strip().lower() == str(llm_field.value).strip().lower():
+            # Rules and LLM agree: keep the rules evidence, raise confidence.
+            llm_field = base_field.model_copy(update={"confidence": max(0.85, base_field.confidence)})
         updates[fname] = llm_field
 
     # Line items: only add from LLM if rules found none
     if "line_items" in missing_fields or not base.line_items:
+        from app.extraction.ground import _evidence_found  # noqa: PLC0415
+
         raw_items = llm_data.get("line_items", [])
-        llm_items = _parse_llm_line_items(raw_items)
+        llm_items = [li for li in _parse_llm_line_items(raw_items) if _evidence_found(li.evidence, pages)]
         if llm_items:
             updates["line_items"] = llm_items
 

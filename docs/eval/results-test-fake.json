@@ -1,0 +1,1535 @@
+{
+ "name": "test-fake",
+ "split": "test",
+ "documents": 46,
+ "upload_seconds": 0.5,
+ "wall_seconds": 20.9,
+ "llm_fake": "true",
+ "llm_models": [
+  "gemma-4-31b-it",
+  "gemma-4-26b-a4b-it"
+ ],
+ "field_accuracy": {
+  "invoice_number": {
+   "correct": 32,
+   "total": 36,
+   "pct": 88.9
+  },
+  "invoice_date": {
+   "correct": 30,
+   "total": 36,
+   "pct": 83.3
+  },
+  "supplier_name": {
+   "correct": 32,
+   "total": 36,
+   "pct": 88.9
+  },
+  "customer_name": {
+   "correct": 34,
+   "total": 36,
+   "pct": 94.4
+  },
+  "subtotal": {
+   "correct": 31,
+   "total": 36,
+   "pct": 86.1
+  },
+  "tax": {
+   "correct": 33,
+   "total": 36,
+   "pct": 91.7
+  },
+  "total": {
+   "correct": 33,
+   "total": 36,
+   "pct": 91.7
+  },
+  "currency": {
+   "correct": 36,
+   "total": 36,
+   "pct": 100.0
+  }
+ },
+ "group_accuracy": {
+  "digital": {
+   "correct": 148,
+   "total": 152,
+   "pct": 97.4
+  },
+  "receipt": {
+   "correct": 24,
+   "total": 24,
+   "pct": 100.0
+  },
+  "receipt_scan": {
+   "correct": 16,
+   "total": 16,
+   "pct": 100.0
+  },
+  "scan_fair": {
+   "correct": 29,
+   "total": 32,
+   "pct": 90.6
+  },
+  "scan_good": {
+   "correct": 29,
+   "total": 32,
+   "pct": 90.6
+  },
+  "scan_poor": {
+   "correct": 15,
+   "total": 32,
+   "pct": 46.9
+  }
+ },
+ "overall_field_accuracy": 90.6,
+ "status": [
+  {
+   "id": "syn_023",
+   "group": "digital",
+   "expected": "NEEDS_REVIEW",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Test split ambiguous currency bare $"
+  },
+  {
+   "id": "syn_024",
+   "group": "digital",
+   "expected": "NEEDS_REVIEW",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Test split multi-page invoice (20 line items)"
+  },
+  {
+   "id": "syn_025",
+   "group": "digital",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Test split international_multilingual layout"
+  },
+  {
+   "id": "syn_026",
+   "group": "digital",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Test split minimalist_sidebar layout"
+  },
+  {
+   "id": "syn_027",
+   "group": "digital",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Test split minimalist_sidebar layout"
+  },
+  {
+   "id": "syn_028",
+   "group": "digital",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Test split international_multilingual layout"
+  },
+  {
+   "id": "syn_029",
+   "group": "digital",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Test split JPY currency"
+  },
+  {
+   "id": "syn_030",
+   "group": "digital",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Test split JPY currency"
+  },
+  {
+   "id": "syn_031",
+   "group": "digital",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Test split INR currency Indian number formatting"
+  },
+  {
+   "id": "syn_032",
+   "group": "digital",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Test split INR currency Indian number formatting"
+  },
+  {
+   "id": "syn_037",
+   "group": "digital",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Missing optional field: no customer"
+  },
+  {
+   "id": "syn_038",
+   "group": "digital",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Missing optional field: no customer and tax"
+  },
+  {
+   "id": "syn_042",
+   "group": "digital",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Adversarial: prompt-injection text in a line item"
+  },
+  {
+   "id": "syn_048",
+   "group": "receipt",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "doc_type=receipt"
+  },
+  {
+   "id": "syn_049",
+   "group": "receipt",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "doc_type=receipt"
+  },
+  {
+   "id": "syn_050",
+   "group": "receipt",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "doc_type=receipt"
+  },
+  {
+   "id": "syn_051",
+   "group": "receipt_scan",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "doc_type=receipt scanned"
+  },
+  {
+   "id": "syn_052",
+   "group": "receipt_scan",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "doc_type=receipt scanned"
+  },
+  {
+   "id": "syn_071",
+   "group": "scan_good",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Scanned PDF (good)"
+  },
+  {
+   "id": "syn_072",
+   "group": "scan_good",
+   "expected": "COMPLETED",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Scanned JPG (good)"
+  },
+  {
+   "id": "syn_073",
+   "group": "scan_fair",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Scanned PNG (fair)"
+  },
+  {
+   "id": "syn_074",
+   "group": "scan_fair",
+   "expected": "COMPLETED",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Scanned TIFF (fair)"
+  },
+  {
+   "id": "syn_075",
+   "group": "scan_poor",
+   "expected": "COMPLETED",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Scanned PDF (poor)"
+  },
+  {
+   "id": "syn_076",
+   "group": "scan_poor",
+   "expected": "COMPLETED",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Scanned JPG (poor)"
+  },
+  {
+   "id": "syn_077",
+   "group": "scan_good",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Scanned PNG (good)"
+  },
+  {
+   "id": "syn_078",
+   "group": "scan_good",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Scanned TIFF (good)"
+  },
+  {
+   "id": "syn_079",
+   "group": "scan_fair",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Scanned PDF (fair)"
+  },
+  {
+   "id": "syn_080",
+   "group": "scan_fair",
+   "expected": "COMPLETED",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Scanned JPG (fair)"
+  },
+  {
+   "id": "syn_081",
+   "group": "scan_poor",
+   "expected": "COMPLETED",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Scanned PNG (poor)"
+  },
+  {
+   "id": "syn_082",
+   "group": "scan_poor",
+   "expected": "COMPLETED",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "Scanned TIFF (poor)"
+  },
+  {
+   "id": "syn_089",
+   "group": "digital",
+   "expected": "NEEDS_REVIEW",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "seeded=wrong_total"
+  },
+  {
+   "id": "syn_090",
+   "group": "digital",
+   "expected": "NEEDS_REVIEW",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "seeded=lines_vs_subtotal"
+  },
+  {
+   "id": "syn_091",
+   "group": "digital",
+   "expected": "NEEDS_REVIEW",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "seeded=negative_amount"
+  },
+  {
+   "id": "syn_092",
+   "group": "digital",
+   "expected": "NEEDS_REVIEW",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "seeded=invalid_date"
+  },
+  {
+   "id": "syn_093",
+   "group": "digital",
+   "expected": "NEEDS_REVIEW",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "seeded=exact_duplicate of syn_026"
+  },
+  {
+   "id": "syn_094",
+   "group": "digital",
+   "expected": "NEEDS_REVIEW",
+   "actual": "NEEDS_REVIEW",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "seeded=near_duplicate of syn_028 (supplier typo)"
+  },
+  {
+   "id": "syn_096",
+   "group": "spreadsheet",
+   "expected": "COMPLETED",
+   "actual": "COMPLETED",
+   "expected_code": null,
+   "actual_code": null,
+   "notes": "CSV ledger, comma, UTF-8"
+  },
+  {
+   "id": "syn_100",
+   "group": "failure_file",
+   "expected": "FAILED",
+   "actual": "FAILED",
+   "expected_code": "FILE_CORRUPT",
+   "actual_code": "FILE_CORRUPT",
+   "notes": "Truncated PDF (first 400 bytes)"
+  },
+  {
+   "id": "syn_101",
+   "group": "failure_file",
+   "expected": "FAILED",
+   "actual": "FAILED",
+   "expected_code": "FILE_ENCRYPTED",
+   "actual_code": "FILE_ENCRYPTED",
+   "notes": "Password-protected PDF"
+  },
+  {
+   "id": "syn_102",
+   "group": "failure_file",
+   "expected": "FAILED",
+   "actual": "FAILED",
+   "expected_code": "FILE_EMPTY",
+   "actual_code": "FILE_EMPTY",
+   "notes": "Empty file (0 bytes)"
+  },
+  {
+   "id": "syn_103",
+   "group": "failure_file",
+   "expected": "FAILED",
+   "actual": "FAILED",
+   "expected_code": "FILE_TYPE_UNSUPPORTED",
+   "actual_code": "FILE_TYPE_UNSUPPORTED",
+   "notes": "Word document (unsupported type)"
+  },
+  {
+   "id": "syn_104",
+   "group": "failure_file",
+   "expected": "FAILED",
+   "actual": "FAILED",
+   "expected_code": "FILE_TYPE_UNSUPPORTED",
+   "actual_code": "FILE_TYPE_UNSUPPORTED",
+   "notes": "Text file renamed to .pdf"
+  },
+  {
+   "id": "syn_105",
+   "group": "failure_file",
+   "expected": "FAILED",
+   "actual": "FAILED",
+   "expected_code": "PAGE_LIMIT_EXCEEDED",
+   "actual_code": "PAGE_LIMIT_EXCEEDED",
+   "notes": "PDF with 1,600 pages (limit 1,500)"
+  },
+  {
+   "id": "syn_106",
+   "group": "failure_file",
+   "expected": "FAILED",
+   "actual": "FAILED",
+   "expected_code": "FILE_CORRUPT",
+   "actual_code": "FILE_CORRUPT",
+   "notes": "Truncated PNG image"
+  },
+  {
+   "id": "syn_107",
+   "group": "failure_file",
+   "expected": "FAILED",
+   "actual": "FAILED",
+   "expected_code": "SPREADSHEET_PARSE_FAILED",
+   "actual_code": "SPREADSHEET_PARSE_FAILED",
+   "notes": "Corrupt XLSX (bad zip)"
+  },
+  {
+   "id": "syn_108",
+   "group": "failure_file",
+   "expected": "FAILED",
+   "actual": "FAILED",
+   "expected_code": "OCR_FAILED",
+   "actual_code": "OCR_FAILED",
+   "notes": "Blank white scan, no text"
+  }
+ ],
+ "status_agreement": 84.8,
+ "failure_code_agreement": 100.0,
+ "success_rate": 100.0,
+ "unexpected_failure_rate": 0.0,
+ "failure_rate_all": 19.6,
+ "llm_share": {
+  "llm_invoices": 6,
+  "invoices": 36,
+  "pct": 16.7
+ },
+ "validation": {
+  "seeded_recall": {
+   "flagged": 8,
+   "seeded": 8,
+   "pct": 100.0
+  },
+  "clean_false_positive": {
+   "flagged": 7,
+   "clean": 28,
+   "pct": 25.0
+  },
+  "validator_false_positive": {
+   "flagged": 0,
+   "clean_and_correct": 16,
+   "pct": 0.0
+  },
+  "seeded_detail": [
+   {
+    "id": "syn_023",
+    "group": "digital",
+    "notes": "Test split ambiguous currency bare $",
+    "flagged": true,
+    "error_codes": [
+     "CURRENCY_AMBIGUOUS"
+    ],
+    "extraction_correct": true
+   },
+   {
+    "id": "syn_024",
+    "group": "digital",
+    "notes": "Test split multi-page invoice (20 line items)",
+    "flagged": true,
+    "error_codes": [
+     "CURRENCY_AMBIGUOUS"
+    ],
+    "extraction_correct": true
+   },
+   {
+    "id": "syn_089",
+    "group": "digital",
+    "notes": "seeded=wrong_total",
+    "flagged": true,
+    "error_codes": [
+     "SUBTOTAL_TAX_TOTAL_MISMATCH"
+    ],
+    "extraction_correct": true
+   },
+   {
+    "id": "syn_090",
+    "group": "digital",
+    "notes": "seeded=lines_vs_subtotal",
+    "flagged": true,
+    "error_codes": [
+     "LINE_ITEMS_SUBTOTAL_MISMATCH"
+    ],
+    "extraction_correct": true
+   },
+   {
+    "id": "syn_091",
+    "group": "digital",
+    "notes": "seeded=negative_amount",
+    "flagged": true,
+    "error_codes": [
+     "LINE_ITEMS_SUBTOTAL_MISMATCH"
+    ],
+    "extraction_correct": true
+   },
+   {
+    "id": "syn_092",
+    "group": "digital",
+    "notes": "seeded=invalid_date",
+    "flagged": true,
+    "error_codes": [
+     "INVALID_DATE"
+    ],
+    "extraction_correct": true
+   },
+   {
+    "id": "syn_093",
+    "group": "digital",
+    "notes": "seeded=exact_duplicate of syn_026",
+    "flagged": true,
+    "error_codes": [
+     "DUPLICATE_EXACT"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "syn_094",
+    "group": "digital",
+    "notes": "seeded=near_duplicate of syn_028 (supplier typo)",
+    "flagged": true,
+    "error_codes": [
+     "DUPLICATE_FUZZY"
+    ],
+    "extraction_correct": true
+   }
+  ],
+  "clean_flagged": [
+   {
+    "id": "syn_072",
+    "group": "scan_good",
+    "notes": "Scanned JPG (good)",
+    "flagged": true,
+    "error_codes": [
+     "LINE_ITEMS_SUBTOTAL_MISMATCH",
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "syn_074",
+    "group": "scan_fair",
+    "notes": "Scanned TIFF (fair)",
+    "flagged": true,
+    "error_codes": [
+     "LINE_ITEMS_SUBTOTAL_MISMATCH",
+     "SUBTOTAL_TAX_TOTAL_MISMATCH"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "syn_075",
+    "group": "scan_poor",
+    "notes": "Scanned PDF (poor)",
+    "flagged": true,
+    "error_codes": [
+     "LINE_ITEMS_SUBTOTAL_MISMATCH",
+     "MISSING_FIELD",
+     "SUBTOTAL_TAX_TOTAL_MISMATCH"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "syn_076",
+    "group": "scan_poor",
+    "notes": "Scanned JPG (poor)",
+    "flagged": true,
+    "error_codes": [
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "syn_080",
+    "group": "scan_fair",
+    "notes": "Scanned JPG (fair)",
+    "flagged": true,
+    "error_codes": [
+     "LINE_ITEMS_SUBTOTAL_MISMATCH",
+     "SUBTOTAL_TAX_TOTAL_MISMATCH"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "syn_081",
+    "group": "scan_poor",
+    "notes": "Scanned PNG (poor)",
+    "flagged": true,
+    "error_codes": [
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   },
+   {
+    "id": "syn_082",
+    "group": "scan_poor",
+    "notes": "Scanned TIFF (poor)",
+    "flagged": true,
+    "error_codes": [
+     "MISSING_FIELD"
+    ],
+    "extraction_correct": false
+   }
+  ]
+ },
+ "segmentation": {
+  "true": 0,
+  "found": 0,
+  "correct": 0,
+  "precision": null,
+  "recall": null
+ },
+ "crosscheck": {
+  "rows": 8,
+  "correct": 5,
+  "details": [
+   {
+    "ledger": "syn_096",
+    "invoice_number": "INV-2026-T026",
+    "expected": "MATCH",
+    "got": "MISMATCH"
+   },
+   {
+    "ledger": "syn_096",
+    "invoice_number": "INV-2026-T027",
+    "expected": "MATCH",
+    "got": "MISMATCH"
+   },
+   {
+    "ledger": "syn_096",
+    "invoice_number": "INV-2026-T030",
+    "expected": "MATCH",
+    "got": "MISMATCH"
+   },
+   {
+    "ledger": "syn_096",
+    "rows_parsed": 9,
+    "rows_expected": 9,
+    "unmatched_right": 1
+   },
+   {
+    "ledger": "syn_107",
+    "rows_parsed": 0,
+    "rows_expected": 0,
+    "unmatched_right": 0
+   }
+  ],
+  "accuracy": 62.5
+ },
+ "timing": {
+  "per_document_ms": {
+   "n": 37,
+   "mean": 942.2,
+   "p50": 113,
+   "p95": 4670,
+   "max": 7676
+  },
+  "per_page_ms": {
+   "n": 36,
+   "mean": 943.1,
+   "p50": 115.0,
+   "p95": 4670.0,
+   "max": 7676.0
+  },
+  "by_group_ms": {
+   "digital": {
+    "n": 19,
+    "mean": 214.6,
+    "p50": 90,
+    "p95": 1071,
+    "max": 1552
+   },
+   "receipt": {
+    "n": 3,
+    "mean": 73,
+    "p50": 69,
+    "p95": 83,
+    "max": 83
+   },
+   "receipt_scan": {
+    "n": 2,
+    "mean": 498,
+    "p50": 498.0,
+    "p95": 524,
+    "max": 524
+   },
+   "scan_fair": {
+    "n": 4,
+    "mean": 1038.8,
+    "p50": 1019.5,
+    "p95": 1219,
+    "max": 1219
+   },
+   "scan_good": {
+    "n": 4,
+    "mean": 1465.2,
+    "p50": 1486.0,
+    "p95": 1850,
+    "max": 1850
+   },
+   "scan_poor": {
+    "n": 4,
+    "mean": 4878.2,
+    "p50": 5444.0,
+    "p95": 7676,
+    "max": 7676
+   },
+   "spreadsheet": {
+    "n": 1,
+    "mean": 42,
+    "p50": 42,
+    "p95": 42,
+    "max": 42
+   }
+  },
+  "rows": [
+   {
+    "id": "syn_023",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 354,
+     "extract": 11,
+     "validate": 28,
+     "index": 678
+    },
+    "processing_ms": 1071
+   },
+   {
+    "id": "syn_024",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 362,
+     "extract": 16,
+     "validate": 30,
+     "index": 1144
+    },
+    "processing_ms": 1552
+   },
+   {
+    "id": "syn_025",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 7,
+     "extract": 33,
+     "validate": 9,
+     "index": 24
+    },
+    "processing_ms": 73
+   },
+   {
+    "id": "syn_026",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 8,
+     "extract": 7,
+     "validate": 7,
+     "index": 59
+    },
+    "processing_ms": 81
+   },
+   {
+    "id": "syn_027",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 10,
+     "extract": 7,
+     "validate": 9,
+     "index": 35
+    },
+    "processing_ms": 61
+   },
+   {
+    "id": "syn_028",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 8,
+     "extract": 30,
+     "validate": 14,
+     "index": 85
+    },
+    "processing_ms": 137
+   },
+   {
+    "id": "syn_029",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 8,
+     "extract": 5,
+     "validate": 7,
+     "index": 27
+    },
+    "processing_ms": 47
+   },
+   {
+    "id": "syn_030",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 9,
+     "extract": 7,
+     "validate": 10,
+     "index": 56
+    },
+    "processing_ms": 82
+   },
+   {
+    "id": "syn_031",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 36,
+     "extract": 7,
+     "validate": 8,
+     "index": 39
+    },
+    "processing_ms": 90
+   },
+   {
+    "id": "syn_032",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 8,
+     "extract": 7,
+     "validate": 7,
+     "index": 33
+    },
+    "processing_ms": 55
+   },
+   {
+    "id": "syn_037",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 42,
+     "extract": 8,
+     "validate": 10,
+     "index": 33
+    },
+    "processing_ms": 93
+   },
+   {
+    "id": "syn_038",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 8,
+     "extract": 7,
+     "validate": 8,
+     "index": 35
+    },
+    "processing_ms": 58
+   },
+   {
+    "id": "syn_042",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 39,
+     "extract": 7,
+     "validate": 8,
+     "index": 59
+    },
+    "processing_ms": 113
+   },
+   {
+    "id": "syn_048",
+    "group": "receipt",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 14,
+     "extract": 7,
+     "validate": 12,
+     "index": 50
+    },
+    "processing_ms": 83
+   },
+   {
+    "id": "syn_049",
+    "group": "receipt",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 8,
+     "extract": 6,
+     "validate": 9,
+     "index": 44
+    },
+    "processing_ms": 67
+   },
+   {
+    "id": "syn_050",
+    "group": "receipt",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 15,
+     "extract": 11,
+     "validate": 9,
+     "index": 34
+    },
+    "processing_ms": 69
+   },
+   {
+    "id": "syn_051",
+    "group": "receipt_scan",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 478,
+     "extract": 5,
+     "validate": 9,
+     "index": 32
+    },
+    "processing_ms": 524
+   },
+   {
+    "id": "syn_052",
+    "group": "receipt_scan",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 424,
+     "extract": 5,
+     "validate": 8,
+     "index": 35
+    },
+    "processing_ms": 472
+   },
+   {
+    "id": "syn_071",
+    "group": "scan_good",
+    "kind": "pdf",
+    "pages": 2,
+    "stage_ms": {
+     "parse": 1583,
+     "extract": 9,
+     "validate": 8,
+     "index": 140
+    },
+    "processing_ms": 1740
+   },
+   {
+    "id": "syn_072",
+    "group": "scan_good",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 968,
+     "extract": 16,
+     "validate": 15,
+     "index": 40
+    },
+    "processing_ms": 1039
+   },
+   {
+    "id": "syn_073",
+    "group": "scan_fair",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 1177,
+     "extract": 4,
+     "validate": 6,
+     "index": 32
+    },
+    "processing_ms": 1219
+   },
+   {
+    "id": "syn_074",
+    "group": "scan_fair",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 1045,
+     "extract": 5,
+     "validate": 10,
+     "index": 44
+    },
+    "processing_ms": 1104
+   },
+   {
+    "id": "syn_075",
+    "group": "scan_poor",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 888,
+     "extract": 13,
+     "validate": 11,
+     "index": 37
+    },
+    "processing_ms": 949
+   },
+   {
+    "id": "syn_076",
+    "group": "scan_poor",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 4620,
+     "extract": 23,
+     "validate": 9,
+     "index": 18
+    },
+    "processing_ms": 4670
+   },
+   {
+    "id": "syn_077",
+    "group": "scan_good",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 1749,
+     "extract": 15,
+     "validate": 21,
+     "index": 65
+    },
+    "processing_ms": 1850
+   },
+   {
+    "id": "syn_078",
+    "group": "scan_good",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 1191,
+     "extract": 5,
+     "validate": 5,
+     "index": 31
+    },
+    "processing_ms": 1232
+   },
+   {
+    "id": "syn_079",
+    "group": "scan_fair",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 868,
+     "extract": 5,
+     "validate": 5,
+     "index": 19
+    },
+    "processing_ms": 897
+   },
+   {
+    "id": "syn_080",
+    "group": "scan_fair",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 887,
+     "extract": 5,
+     "validate": 7,
+     "index": 36
+    },
+    "processing_ms": 935
+   },
+   {
+    "id": "syn_081",
+    "group": "scan_poor",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 6167,
+     "extract": 11,
+     "validate": 9,
+     "index": 31
+    },
+    "processing_ms": 6218
+   },
+   {
+    "id": "syn_082",
+    "group": "scan_poor",
+    "kind": "image",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 7602,
+     "extract": 14,
+     "validate": 17,
+     "index": 43
+    },
+    "processing_ms": 7676
+   },
+   {
+    "id": "syn_089",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 18,
+     "extract": 5,
+     "validate": 6,
+     "index": 64
+    },
+    "processing_ms": 93
+   },
+   {
+    "id": "syn_090",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 20,
+     "extract": 7,
+     "validate": 10,
+     "index": 44
+    },
+    "processing_ms": 81
+   },
+   {
+    "id": "syn_091",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 18,
+     "extract": 5,
+     "validate": 9,
+     "index": 44
+    },
+    "processing_ms": 76
+   },
+   {
+    "id": "syn_092",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 14,
+     "extract": 7,
+     "validate": 10,
+     "index": 86
+    },
+    "processing_ms": 117
+   },
+   {
+    "id": "syn_093",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 10,
+     "extract": 10,
+     "validate": 10,
+     "index": 76
+    },
+    "processing_ms": 106
+   },
+   {
+    "id": "syn_094",
+    "group": "digital",
+    "kind": "pdf",
+    "pages": 1,
+    "stage_ms": {
+     "parse": 9,
+     "extract": 9,
+     "validate": 9,
+     "index": 64
+    },
+    "processing_ms": 91
+   },
+   {
+    "id": "syn_096",
+    "group": "spreadsheet",
+    "kind": "spreadsheet",
+    "pages": 0,
+    "stage_ms": {
+     "parse": 31,
+     "extract": 3,
+     "validate": 3,
+     "index": 5
+    },
+    "processing_ms": 42
+   }
+  ]
+ },
+ "field_misses": [
+  {
+   "doc": "syn_026",
+   "field": "invoice_date",
+   "want": "2026-04-12",
+   "got": "2026-12-04"
+  },
+  {
+   "doc": "syn_027",
+   "field": "invoice_date",
+   "want": "2026-03-05",
+   "got": "2026-05-03"
+  },
+  {
+   "doc": "syn_030",
+   "field": "invoice_date",
+   "want": "2026-05-08",
+   "got": "2026-08-05"
+  },
+  {
+   "doc": "syn_072",
+   "field": "subtotal",
+   "want": "3247.50",
+   "got": "3000.00"
+  },
+  {
+   "doc": "syn_072",
+   "field": "total",
+   "want": "3961.95",
+   "got": null
+  },
+  {
+   "doc": "syn_073",
+   "field": "supplier_name",
+   "want": "orion precision optics ltd",
+   "got": "precision"
+  },
+  {
+   "doc": "syn_074",
+   "field": "subtotal",
+   "want": "19047.00",
+   "got": "130.00"
+  },
+  {
+   "doc": "syn_075",
+   "field": "invoice_number",
+   "want": "inv-2026-u075",
+   "got": null
+  },
+  {
+   "doc": "syn_075",
+   "field": "invoice_date",
+   "want": "2026-03-23",
+   "got": null
+  },
+  {
+   "doc": "syn_075",
+   "field": "supplier_name",
+   "want": "meridian healthcare diagnostics",
+   "got": "meridian healthcare"
+  },
+  {
+   "doc": "syn_075",
+   "field": "tax",
+   "want": "2529.00",
+   "got": null
+  },
+  {
+   "doc": "syn_075",
+   "field": "total",
+   "want": "15174.00",
+   "got": "620.90"
+  },
+  {
+   "doc": "syn_076",
+   "field": "invoice_number",
+   "want": "inv-2026-u076",
+   "got": null
+  },
+  {
+   "doc": "syn_076",
+   "field": "invoice_date",
+   "want": "2026-04-07",
+   "got": null
+  },
+  {
+   "doc": "syn_076",
+   "field": "customer_name",
+   "want": "ironclad security infrastructure",
+   "got": "tronciad security infrastructure"
+  },
+  {
+   "doc": "syn_077",
+   "field": "supplier_name",
+   "want": "orion precision optics ltd",
+   "got": "orion precision"
+  },
+  {
+   "doc": "syn_080",
+   "field": "subtotal",
+   "want": "13880.00",
+   "got": "6400.00"
+  },
+  {
+   "doc": "syn_081",
+   "field": "invoice_number",
+   "want": "inv-2026-u081",
+   "got": null
+  },
+  {
+   "doc": "syn_081",
+   "field": "supplier_name",
+   "want": "orion precision optics ltd",
+   "got": "orion precision"
+  },
+  {
+   "doc": "syn_081",
+   "field": "subtotal",
+   "want": "43500.00",
+   "got": null
+  },
+  {
+   "doc": "syn_081",
+   "field": "tax",
+   "want": "4350.00",
+   "got": null
+  },
+  {
+   "doc": "syn_082",
+   "field": "invoice_number",
+   "want": "inv-2026-u082",
+   "got": "inv-2026-082"
+  },
+  {
+   "doc": "syn_082",
+   "field": "customer_name",
+   "want": "evergreen global retailers ltd",
+   "got": "evergreen global retaiters lid"
+  },
+  {
+   "doc": "syn_082",
+   "field": "subtotal",
+   "want": "3140.00",
+   "got": "440.60"
+  },
+  {
+   "doc": "syn_082",
+   "field": "tax",
+   "want": "565.20",
+   "got": null
+  },
+  {
+   "doc": "syn_082",
+   "field": "total",
+   "want": "3705.20",
+   "got": null
+  },
+  {
+   "doc": "syn_093",
+   "field": "invoice_date",
+   "want": "2026-04-12",
+   "got": "2026-12-04"
+  }
+ ],
+ "stats_api": {
+  "documents": {
+   "total": 46,
+   "by_status": {
+    "FAILED": 9,
+    "COMPLETED": 5,
+    "NEEDS_REVIEW": 32
+   },
+   "by_error_code": {
+    "FILE_TYPE_UNSUPPORTED": 2,
+    "PAGE_LIMIT_EXCEEDED": 1,
+    "OCR_FAILED": 1,
+    "FILE_ENCRYPTED": 1,
+    "FILE_CORRUPT": 2,
+    "SPREADSHEET_PARSE_FAILED": 1,
+    "FILE_EMPTY": 1
+   },
+   "by_kind": {
+    "image": 13,
+    "pdf": 31,
+    "spreadsheet": 2
+   },
+   "success_rate": 0.8043,
+   "failure_rate": 0.1957
+  },
+  "invoices": {
+   "total": 36,
+   "by_review_status": {
+    "NEEDS_REVIEW": 36
+   },
+   "by_extraction_method": {
+    "llm_fallback": 6,
+    "rules": 30
+   }
+  },
+  "stages": {
+   "index": {
+    "runs": 37,
+    "avg_ms": 92.5,
+    "max_ms": 1144
+   },
+   "validate": {
+    "runs": 37,
+    "avg_ms": 10.3,
+    "max_ms": 30
+   },
+   "parse": {
+    "runs": 37,
+    "avg_ms": 829.8,
+    "max_ms": 7602
+   },
+   "extract": {
+    "runs": 37,
+    "avg_ms": 9.6,
+    "max_ms": 33
+   }
+  },
+  "avg_document_processing_ms": 942.2,
+  "issues_by_code": {
+   "INVALID_DATE": 1,
+   "SUBTOTAL_TAX_TOTAL_MISMATCH": 4,
+   "CROSS_NO_MATCH": 33,
+   "DUPLICATE_FUZZY": 1,
+   "LINE_ITEMS_SUBTOTAL_MISMATCH": 9,
+   "MISSING_FIELD": 18,
+   "EVIDENCE_NOT_FOUND": 8,
+   "DUPLICATE_EXACT": 1,
+   "CURRENCY_AMBIGUOUS": 2
+  }
+ },
+ "stats_before": {
+  "documents": {
+   "total": 0,
+   "by_status": {},
+   "by_error_code": {},
+   "by_kind": {},
+   "success_rate": null,
+   "failure_rate": null
+  },
+  "invoices": {
+   "total": 0,
+   "by_review_status": {},
+   "by_extraction_method": {}
+  },
+  "stages": {},
+  "avg_document_processing_ms": null,
+  "issues_by_code": {}
+ }
+}
