@@ -204,3 +204,14 @@ def test_no_float_in_validation_package():
     root = pathlib.Path(__file__).resolve().parents[2] / "app" / "validation"
     for path in root.glob("*.py"):
         assert not re.search(r"\bfloat\(", path.read_text(encoding="utf-8")), path
+
+
+def test_image_read_values_force_review():
+    ex = make(notes=["VISION_UNVERIFIED:invoice_number", "VISION_UNVERIFIED:total"], confs={"invoice_number": 0.55, "total": 0.55})
+    issues = validate_invoice(ex, PAGE, None)
+    errors = [i for i in issues if i.severity == IssueSeverity.ERROR]
+    assert len(errors) == 1 and errors[0].code == IssueCode.LOW_CONFIDENCE
+    assert errors[0].details["fields"] == ["invoice_number", "total"]
+    assert needs_review(issues)
+    # Once a person corrected those fields the notes are gone and so is the error.
+    assert not needs_review(validate_invoice(make(), PAGE, None))

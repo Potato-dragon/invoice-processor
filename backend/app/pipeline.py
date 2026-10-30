@@ -313,7 +313,21 @@ STAGES: dict[Stage, Callable[[Session, Document], dict[str, Any]]] = {
 }
 
 
+def refresh_document_status(session: Session, doc: Document) -> None:
+    """After a reviewer action: lock the document, then recompute its status if
+    processing has finished. If a stage is still running, it waits for this
+    commit and sees the change when it finalizes."""
+    session.flush()
+    session.refresh(doc, with_for_update=True)
+    if doc.status in (DocumentStatus.COMPLETED.value, DocumentStatus.NEEDS_REVIEW.value):
+        finalize_status(session, doc)
+
+
 def finalize_status(session: Session, doc: Document) -> None:
+    # Lock the document row and re-read it, so a reviewer's action and the end of
+    # the index stage cannot overwrite each other's result (lost update).
+    session.flush()
+    session.refresh(doc, with_for_update=True)
     review = session.execute(
         select(Invoice.id).where(Invoice.document_id == doc.id, Invoice.review_status == ReviewStatus.NEEDS_REVIEW.value).limit(1)
     ).first()

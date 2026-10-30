@@ -14,7 +14,7 @@ from app.api.documents import invoice_summary
 from app.contracts import CrosscheckKind, CrosscheckOutcome, DocumentStatus, ErrorCode
 from app.db import get_session
 from app.models import Crosscheck, Document, Invoice, LedgerEntry, ProcessingEvent, ValidationIssue
-from app.pipeline import _issue_rows, finalize_status, refresh_review_status
+from app.pipeline import _issue_rows, refresh_document_status, refresh_review_status
 
 router = APIRouter()
 _RRF_K = 60
@@ -190,8 +190,7 @@ def run_crosschecks(body: dict[str, Any] = Body(...), session: Session = Depends
         refresh_review_status(session, inv)
         touched_docs.add(inv.document_id)
     for doc in session.execute(select(Document).where(Document.id.in_(touched_docs))).scalars() if touched_docs else []:
-        if doc.status in (DocumentStatus.COMPLETED.value, DocumentStatus.NEEDS_REVIEW.value):
-            finalize_status(session, doc)
+        refresh_document_status(session, doc)
     session.commit()
     return {"kind": kind.value, "summary": counts, "unmatched_right": out["unmatched_right"][:500],
             "unmatched_right_count": len(out["unmatched_right"]), "items": results[:1000]}

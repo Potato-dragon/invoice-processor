@@ -26,10 +26,10 @@ from app.models import Correction, Document, Invoice, InvoiceLineItem, Validatio
 from app.pipeline import (
     SCALAR_FIELDS,
     apply_extraction,
-    finalize_status,
     index_invoices,
     invoice_pages,
     load_pages,
+    refresh_document_status,
     refresh_review_status,
     validate_one,
 )
@@ -143,7 +143,8 @@ def correct_invoice(inv_id: str, body: dict[str, Any] = Body(...), session: Sess
         session.add(Correction(invoice_id=inv.id, field=field, old_value=old, new_value=new))
         updates[field] = ExtractedField(value=new, confidence=1.0 if new is not None else 0.0,
                                         evidence="manual correction" if new is not None else None)
-        notes = [n for n in notes if n != f"EVIDENCE_NOT_FOUND:{field}" and not (field == "currency" and n == "CURRENCY_AMBIGUOUS")]
+        notes = [n for n in notes if n not in (f"EVIDENCE_NOT_FOUND:{field}", f"VISION_UNVERIFIED:{field}")
+                 and not (field == "currency" and n == "CURRENCY_AMBIGUOUS")]
     if not updates:
         return invoice_detail(session, inv)
     ex = ex.model_copy(update={**updates, "notes": notes, "method": ExtractionMethod.MANUAL})
@@ -153,8 +154,7 @@ def correct_invoice(inv_id: str, body: dict[str, Any] = Body(...), session: Sess
     pages = load_pages(session, doc.id)
     validate_one(session, doc, inv, invoice_pages(pages, inv))
     index_invoices(session, [inv], pages)
-    if doc.status in (DocumentStatus.COMPLETED.value, DocumentStatus.NEEDS_REVIEW.value):
-        finalize_status(session, doc)
+    refresh_document_status(session, doc)
     session.commit()
     return invoice_detail(session, inv)
 
@@ -195,7 +195,6 @@ def resolve_issue(issue_id: str, body: dict[str, Any] = Body(default={}), sessio
         inv = session.get(Invoice, issue.invoice_id)
         refresh_review_status(session, inv)
         doc = session.get(Document, inv.document_id)
-        if doc.status in (DocumentStatus.COMPLETED.value, DocumentStatus.NEEDS_REVIEW.value):
-            finalize_status(session, doc)
+        refresh_document_status(session, doc)
     session.commit()
     return issue_dict(issue)

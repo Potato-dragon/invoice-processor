@@ -27,3 +27,5 @@
 25. **Fake LLM answers are never cached.** An earlier fake-mode run had filled `llm_cache`, and later real runs silently reused those answers.
 26. **Grounding uses whole-word matching.** Evidence "Total: 100.00" was being "found" inside "Subtotal: 100.00".
 27. **Small images are upscaled by pixel size** (to about 3,000 px on the long side, at most 4×) when the file declares no DPI. This is typical of screenshots.
+28. **Image-read invoices always go to review (owner's decision, 31 Oct).** If any field came from the vision fallback and could not be confirmed in the OCR text, validation raises one `LOW_CONFIDENCE` *error* listing those fields, so the invoice becomes NEEDS_REVIEW even when its numbers add up. Correcting those fields, or marking the error checked, clears it. Reason: these values have no text evidence at all, so a person must confirm them before they count as data.
+29. **Document status is computed under a row lock.** A reviewer clicking "Mark checked" while the index stage was finishing could have their change overwritten (lost update). Both paths now lock the document row, and recompute from fresh data, before writing its status.

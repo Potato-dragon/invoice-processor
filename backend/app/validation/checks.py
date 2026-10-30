@@ -148,6 +148,16 @@ def check_quality(ex: ExtractionResult, pages: list[ParsedPage]) -> list[IssueMo
     for p in pages:
         if p.ocr_confidence is not None and p.ocr_confidence < LOW_OCR_CONFIDENCE:
             issues.append(_issue(IssueCode.LOW_OCR_CONFIDENCE, IssueSeverity.WARNING, f"Page {p.page_no} was hard to read (scan quality).", None, page=p.page_no, ocr_confidence=p.ocr_confidence))
+    # Values read only from the page image could not be checked against any text:
+    # one error per invoice so a person confirms them (DECISIONS 28). Marking it
+    # checked, or correcting the fields, clears it.
+    unverified = [n.split(":", 1)[1] for n in dict.fromkeys(ex.notes) if n.startswith("VISION_UNVERIFIED:")]
+    unverified = [f for f in unverified if getattr(ex, f, None) is not None and getattr(ex, f).value is not None]
+    if unverified:
+        labels = ", ".join(_LABELS.get(f, f) for f in unverified)
+        issues.append(_issue(IssueCode.LOW_CONFIDENCE, IssueSeverity.ERROR,
+                             f"These values were read from the page image and could not be checked against the scanned text: {labels}. Please confirm them.",
+                             None, fields=unverified, source="vision"))
     seen: set[str] = set()
     for note in ex.notes:
         if note in seen:
