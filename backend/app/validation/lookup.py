@@ -64,17 +64,22 @@ class DbDuplicateLookup:
     """Queries the invoices table using its indexes; never returns the invoice itself.
 
     Pre-filters in SQL (same invoice number, or same total) and leaves the
-    fuzzy supplier comparison to Python.
+    fuzzy supplier comparison to Python. `older_than` / `newer_than` take an
+    order key (document created_at, document id, page_start) so an invoice is
+    only flagged against invoices received before it.
     """
 
-    def __init__(self, session: Any, exclude_invoice_id: str | uuid.UUID | None = None) -> None:
+    def __init__(self, session: Any, exclude_invoice_id: str | uuid.UUID | None = None, *,
+                 older_than: tuple | None = None, newer_than: tuple | None = None) -> None:
         self._session = session
         self._exclude = exclude_invoice_id
+        self._older_than = older_than
+        self._newer_than = newer_than
 
     def find_candidates(self, supplier_name, invoice_number, total, invoice_date) -> list[ExistingInvoice]:  # noqa: ANN001
-        from sqlalchemy import or_, select
+        from sqlalchemy import or_, select, tuple_
 
-        from app.models import Invoice
+        from app.models import Document, Invoice
 
         conds = []
         if invoice_number:
@@ -83,9 +88,15 @@ class DbDuplicateLookup:
             conds.append(Invoice.total == total)
         if not conds:
             return []
-        stmt = select(Invoice.id, Invoice.supplier_name, Invoice.invoice_number, Invoice.total, Invoice.invoice_date).where(or_(*conds))
+        stmt = (select(Invoice.id, Invoice.supplier_name, Invoice.invoice_number, Invoice.total, Invoice.invoice_date)
+                .join(Document, Document.id == Invoice.document_id).where(or_(*conds)))
         if self._exclude is not None:
             stmt = stmt.where(Invoice.id != self._exclude)
+        order_key = tuple_(Document.created_at, Invoice.document_id, Invoice.page_start)
+        if self._older_than is not None:
+            stmt = stmt.where(order_key < tuple_(*self._older_than))
+        if self._newer_than is not None:
+            stmt = stmt.where(order_key > tuple_(*self._newer_than))
         stmt = stmt.limit(200)
         return [
             ExistingInvoice(id=str(r.id), supplier_name=r.supplier_name, invoice_number=r.invoice_number,

@@ -22,6 +22,20 @@ class Vector(UserDefinedType):
     def get_col_spec(self, **_: Any) -> str:
         return f"vector({self.dimensions})"
 
+    def bind_processor(self, dialect: Any):  # noqa: ANN201
+        def process(value: Any) -> Any:
+            if value is None or isinstance(value, str):
+                return value
+            return "[" + ",".join(f"{float(x):.6f}" for x in value) + "]"
+        return process
+
+    def result_processor(self, dialect: Any, coltype: Any):  # noqa: ANN201
+        def process(value: Any) -> Any:
+            if value is None or not isinstance(value, str):
+                return value
+            return [float(x) for x in value.strip("[]").split(",") if x]
+        return process
+
 
 def id_column() -> Mapped[uuid.UUID]:
     return mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
