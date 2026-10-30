@@ -242,6 +242,19 @@ def test_xlsx_junk_sheet_and_header_on_row_5(tmp_path):
     assert any("Notes" in w for w in doc.warnings)
 
 
+def test_spreadsheets_without_file_extension(tmp_path):
+    """Uploads are stored under random keys with no extension."""
+    import openpyxl
+
+    wb = openpyxl.Workbook()
+    wb.active.append(["Invoice No", "Supplier", "Total"])
+    wb.active.append(["INV-9", "Acme", 10])
+    p = tmp_path / "a" / "0f3c9e"
+    p.parent.mkdir()
+    wb.save(p)
+    assert parse_document(str(p), "spreadsheet").ledger_rows[0].total == "10.00"
+
+
 def test_semicolon_latin1_csv(tmp_path):
     content = "Numéro facture;Date facture;Fournisseur;Montant TTC\nF-001;14/03/2026;Société Générale;1 234,56 EUR\nF-002;15/03/2026;Café Dupont;99,90 EUR\n"
     p = tmp_path / "f.csv"

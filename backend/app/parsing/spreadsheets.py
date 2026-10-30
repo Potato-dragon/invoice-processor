@@ -165,12 +165,15 @@ def _rows_to_ledger(sheet_name: str, rows: list[list[Any]]) -> list[LedgerRow]:
 def _xlsx_sheets(file_path: str) -> Iterable[tuple[str, list[list[Any]]]]:
     import openpyxl
 
-    wb = openpyxl.load_workbook(file_path, read_only=True, data_only=True)
-    try:
-        for ws in wb.worksheets:
-            yield ws.title, [list(r) for r in ws.iter_rows(values_only=True)]
-    finally:
-        wb.close()
+    # Open via a file handle: openpyxl rejects paths without an .xlsx
+    # extension, and stored uploads are saved under random keys.
+    with open(file_path, "rb") as fh:
+        wb = openpyxl.load_workbook(fh, read_only=True, data_only=True)
+        try:
+            for ws in wb.worksheets:
+                yield ws.title, [list(r) for r in ws.iter_rows(values_only=True)]
+        finally:
+            wb.close()
 
 
 def _xls_sheets(file_path: str) -> Iterable[tuple[str, list[list[Any]]]]:

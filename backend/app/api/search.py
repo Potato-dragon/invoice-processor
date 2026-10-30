@@ -11,7 +11,7 @@ from sqlalchemy.orm import Session
 
 from app.api.deps import ApiError, iso, money, rate_limit
 from app.api.documents import invoice_summary
-from app.contracts import CrosscheckKind, DocumentStatus, ErrorCode
+from app.contracts import CrosscheckKind, CrosscheckOutcome, DocumentStatus, ErrorCode
 from app.db import get_session
 from app.models import Crosscheck, Document, Invoice, LedgerEntry, ProcessingEvent, ValidationIssue
 from app.pipeline import _issue_rows, finalize_status, refresh_review_status
@@ -178,7 +178,10 @@ def run_crosschecks(body: dict[str, Any] = Body(...), session: Session = Depends
                          result=res.result.value if hasattr(res.result, "value") else res.result, details=res.details)
         session.add(row)
         inv = by_id.get(res.left_ref.get("id"))
-        if inv is not None:
+        # "Not in the other file" is only a problem for invoices the user chose
+        # to check; with left_ids empty (all invoices) most are simply absent.
+        flag = res.result != CrosscheckOutcome.MATCH and (left_ids or res.result == CrosscheckOutcome.MISMATCH)
+        if inv is not None and flag:
             session.add_all(_issue_rows(inv.document_id, inv.id, crosscheck_issues(res), set()))
         results.append({"left_ref": res.left_ref, "right_ref": res.right_ref, "result": row.result, "details": res.details})
     session.flush()
