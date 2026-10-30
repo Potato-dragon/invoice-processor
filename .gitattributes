@@ -1,1 +1,3 @@
 * text=auto eol=lf
+# Sample files must stay byte-for-byte as generated (CRLF CSVs, latin-1, etc.)
+data/samples/** -text
