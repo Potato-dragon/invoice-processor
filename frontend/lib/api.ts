@@ -24,6 +24,20 @@ export type InvoiceDetail = InvoiceSummary & {
   corrections: { field: string; old_value: string | null; new_value: string | null; created_at: string }[];
 };
 export type Page<T> = { items: T[]; total: number; limit: number; offset: number };
+export type Stats = {
+  documents: {
+    total: number; by_status: Record<string, number>; by_error_code: Record<string, number>; by_kind: Record<string, number>;
+    success_rate: number | null; failure_rate: number | null;
+  };
+  invoices: { total: number; by_review_status: Record<string, number>; by_extraction_method: Record<string, number> };
+  stages: Record<string, { runs: number; avg_ms: number; max_ms: number | null }>;
+  avg_document_processing_ms: number | null;
+  issues_by_code: Record<string, number>;
+};
+export type DocEvent = {
+  id: string; stage: string; event: string; error_code: string | null; detail: Record<string, unknown>;
+  duration_ms: number | null; invoice_id: string | null; created_at: string;
+};
 export type ApiErr = { code: string; message: string };
 
 export class ApiError extends Error {
@@ -74,11 +88,3 @@ export const api = {
 export const IN_FLIGHT = new Set(["UPLOADED", "PARSING", "EXTRACTING", "VALIDATING", "INDEXING"]);
 export const STAGES = ["parse", "extract", "validate", "index"];
 
-export function fmtMoney(v: string | null, cur: string | null): string {
-  if (v === null || v === undefined) return "—";
-  return cur ? `${v} ${cur}` : v;
-}
-
-export function fmtTime(iso: string): string {
-  return new Date(iso).toLocaleString();
-}
