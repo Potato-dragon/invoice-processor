@@ -110,7 +110,7 @@ docker compose exec api python -m evaluation.run_eval --root public --split all 
 
 The runner uploads the labeled files through the real API, waits for the workers, and compares the results with ground truth. `--reset` empties the database first. `--root public` uses the hand-labelled real-world invoices in `data/public/`, and `--root real` uses your own invoices in `data/real/` (git-ignored). Results go to `docs/eval/`. The numbers are in [docs/EVALUATION.md](docs/EVALUATION.md).
 
-Headline numbers: digital synthetic PDFs 98.4% field accuracy (rules only); real public invoices 70.0% rules only and **86.7% with Gemma**; 1,000 pages in 48 s. A presenter's guide is in [docs/WALKTHROUGH.md](docs/WALKTHROUGH.md).
+Headline numbers: digital synthetic PDFs 98.4% field accuracy (rules only); real public invoices 70.0% rules only and **86.7% with Gemma**; 1,000 pages in 48 s.
 
 ## Project layout
 

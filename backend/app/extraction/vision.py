@@ -2,7 +2,7 @@
 
 Why: the text-only cascade can never do better than the OCR it is given. On a
 510 px wide invoice image Tesseract read 0 of 7 key fields while Gemma 4,
-given the image, read 7 of 7 (measured 31 Oct 2026, docs/REVIEW_2026-10-31.md).
+given the image, read 7 of 7 (measured 31 Oct 2026).
 
 Trust rules (values cannot be grounded in unreadable OCR text):
 - A vision value replaces the rules value only if the rules value is missing,

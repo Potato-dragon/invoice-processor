@@ -1,0 +1,240 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" width="1600" height="1060" role="img" aria-label="Invoice AI architecture: a Next.js proxy calls FastAPI, which saves uploads and queues jobs in Redis; stateless workers run parse, extract, validate and index, write to PostgreSQL with pgvector, and call Gemma in Google AI Studio only for uncertain fields, through a shared Redis rate limiter.">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52606d"/>
+    </marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c2410c"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1060" fill="#ffffff"/>
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#1f2933">
+
+    <!-- title -->
+    <text x="40" y="52" font-size="26" font-weight="700">Invoice AI: system architecture</text>
+    <text x="40" y="80" font-size="14" fill="#52606d">Docker Compose: frontend · api · worker × N · redis · db. Everything runs on your machine except the dashed orange box.</text>
+
+    <!-- ============ client ============ -->
+    <rect x="40" y="120" width="280" height="80" rx="10" fill="#f5f7fa" stroke="#9aa5b1"/>
+    <text x="180" y="153" font-size="17" font-weight="700" text-anchor="middle">Browser</text>
+    <text x="180" y="177" font-size="13" fill="#52606d" text-anchor="middle">upload · review · search</text>
+
+    <line x1="180" y1="200" x2="180" y2="248" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+    <text x="190" y="229" font-size="12" fill="#52606d">HTTPS, no key</text>
+
+    <rect x="40" y="250" width="280" height="110" rx="10" fill="#f5f7fa" stroke="#9aa5b1"/>
+    <text x="180" y="282" font-size="17" font-weight="700" text-anchor="middle">Next.js 14 web app</text>
+    <text x="180" y="306" font-size="13" fill="#52606d" text-anchor="middle">server-side proxy adds X-API-Key,</text>
+    <text x="180" y="325" font-size="13" fill="#52606d" text-anchor="middle">so the browser never holds it</text>
+    <text x="180" y="344" font-size="13" fill="#52606d" text-anchor="middle">:3000</text>
+
+    <line x1="320" y1="305" x2="378" y2="305" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+    <text x="349" y="296" font-size="12" fill="#52606d" text-anchor="middle">REST</text>
+
+    <!-- ============ api ============ -->
+    <rect x="380" y="120" width="300" height="340" rx="10" fill="#f5f7fa" stroke="#9aa5b1"/>
+    <text x="400" y="151" font-size="17" font-weight="700">FastAPI  <tspan font-size="13" font-weight="400" fill="#52606d">:8000 · migrations on start</tspan></text>
+    <g font-size="13">
+      <text x="400" y="186" font-weight="700">Upload guard</text>
+      <text x="400" y="206" fill="#52606d">magic bytes · size · page limit</text>
+      <text x="400" y="225" fill="#52606d">encrypted / corrupt / image bomb</text>
+      <text x="400" y="244" fill="#52606d">rejects still recorded as FAILED</text>
+      <text x="400" y="278" font-weight="700">Endpoints</text>
+      <text x="400" y="298" fill="#52606d">documents · pages · events · reprocess</text>
+      <text x="400" y="317" fill="#52606d">invoices: detail, PATCH corrections</text>
+      <text x="400" y="336" fill="#52606d">issues: list, mark checked</text>
+      <text x="400" y="355" fill="#52606d">search: keyword · semantic · hybrid</text>
+      <text x="400" y="374" fill="#52606d">cross-checks (PDF↔PDF, PDF↔Excel)</text>
+      <text x="400" y="408" font-weight="700">Guards</text>
+      <text x="400" y="428" fill="#52606d">API key, constant-time compare</text>
+      <text x="400" y="447" fill="#52606d">per-key rate limits (in Redis)</text>
+    </g>
+
+    <line x1="680" y1="203" x2="728" y2="203" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+    <text x="705" y="195" font-size="12" fill="#52606d" text-anchor="middle">enqueue</text>
+
+    <!-- ============ redis ============ -->
+    <rect x="730" y="120" width="200" height="340" rx="10" fill="#f5f7fa" stroke="#9aa5b1"/>
+    <text x="830" y="151" font-size="17" font-weight="700" text-anchor="middle">Redis 7</text>
+    <text x="830" y="170" font-size="12" fill="#52606d" text-anchor="middle">RQ queues + shared counters</text>
+    <g font-size="13" text-anchor="middle">
+      <rect x="750" y="186" width="160" height="28" rx="5" fill="#fff" stroke="#9aa5b1"/>
+      <text x="830" y="205">parse</text>
+      <rect x="750" y="220" width="160" height="28" rx="5" fill="#fff" stroke="#9aa5b1"/>
+      <text x="830" y="239">extract</text>
+      <rect x="750" y="254" width="160" height="28" rx="5" fill="#fff" stroke="#9aa5b1"/>
+      <text x="830" y="273">validate</text>
+      <rect x="750" y="288" width="160" height="28" rx="5" fill="#fff" stroke="#9aa5b1"/>
+      <text x="830" y="307">index</text>
+      <text x="830" y="338" font-size="12" fill="#52606d">later stages served first,</text>
+      <text x="830" y="354" font-size="12" fill="#52606d">so in-flight files finish</text>
+      <rect x="750" y="370" width="160" height="72" rx="5" fill="#fff7ed" stroke="#c2410c" stroke-width="1.4"/>
+      <text x="830" y="392" font-size="13" font-weight="700" fill="#c2410c">LLM rate limiter</text>
+      <text x="830" y="411" font-size="12" fill="#52606d">one atomic Lua script</text>
+      <text x="830" y="429" font-size="12" fill="#52606d">req/min · tokens/min · day</text>
+    </g>
+
+    <!-- ============ external LLM ============ -->
+    <rect x="1000" y="120" width="560" height="220" rx="12" fill="#fffaf5" stroke="#c2410c" stroke-width="1.6" stroke-dasharray="8 6"/>
+    <text x="1022" y="148" font-size="13" font-weight="700" fill="#c2410c">GOOGLE AI STUDIO · FREE TIER · LEAVES YOUR MACHINE</text>
+    <rect x="1022" y="166" width="240" height="72" rx="8" fill="#fff" stroke="#c2410c"/>
+    <text x="1142" y="196" font-size="16" font-weight="700" text-anchor="middle">Gemma 4 31B</text>
+    <text x="1142" y="219" font-size="13" fill="#52606d" text-anchor="middle">primary · text fields</text>
+    <line x1="1262" y1="202" x2="1304" y2="202" stroke="#c2410c" stroke-width="1.6" marker-end="url(#arrO)"/>
+    <text x="1283" y="193" font-size="11" fill="#c2410c" text-anchor="middle">fails</text>
+    <rect x="1306" y="166" width="232" height="72" rx="8" fill="#fff" stroke="#c2410c"/>
+    <text x="1422" y="196" font-size="16" font-weight="700" text-anchor="middle">Gemma 4 26B</text>
+    <text x="1422" y="219" font-size="13" fill="#52606d" text-anchor="middle">fallback · first for page images</text>
+    <g font-size="13" fill="#52606d">
+      <text x="1022" y="266">Asked only for the fields the rules missed or are unsure of.</text>
+      <text x="1022" y="287">Trimmed snippet; document text is wrapped as untrusted data.</text>
+      <text x="1022" y="308">Answers cached in llm_cache; every value is grounded again.</text>
+      <text x="1022" y="329">If both models fail, the rules values are kept.</text>
+    </g>
+
+    <!-- extract <-> LLM path through the gutter, and limiter check -->
+    <path d="M960,566 L960,230 L998,230" fill="none" stroke="#c2410c" stroke-width="2" marker-start="url(#arrO)" marker-end="url(#arrO)"/>
+    <line x1="910" y1="406" x2="958" y2="406" stroke="#c2410c" stroke-width="1.4" stroke-dasharray="4 4"/>
+    <text transform="translate(978 498) rotate(-90)" font-size="12" fill="#c2410c">uncertain fields ⇄ values + evidence</text>
+
+    <!-- redis -> workers -->
+    <line x1="830" y1="460" x2="830" y2="518" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+    <text x="840" y="494" font-size="12" fill="#52606d">pull jobs</text>
+
+    <!-- ============ workers ============ -->
+    <rect x="430" y="520" width="1130" height="276" rx="12" fill="#f5f7fa" stroke="#9aa5b1"/>
+    <text x="450" y="549" font-size="17" font-weight="700">Worker × N  <tspan font-size="13" font-weight="400" fill="#52606d">RQ SimpleWorker · stateless · OCR + embedding models stay loaded · each stage enqueues the next</tspan></text>
+
+    <g font-size="12.5" fill="#52606d">
+      <!-- parse -->
+      <rect x="450" y="566" width="250" height="196" rx="8" fill="#fff" stroke="#9aa5b1"/>
+      <text x="466" y="592" font-size="15" font-weight="700" fill="#1f2933">1 · parse</text>
+      <text x="466" y="616">PDF text layer if ≥ 25 chars/page</text>
+      <text x="466" y="635">else OCR at 300 DPI (Tesseract)</text>
+      <text x="466" y="654">deskew · denoise · Otsu threshold</text>
+      <text x="466" y="673">rescue pass if confidence &lt; 0.75</text>
+      <text x="466" y="692">words → visual rows + tab cells</text>
+      <text x="466" y="711">split long PDFs into invoices</text>
+      <text x="466" y="730">spreadsheets → ledger rows</text>
+      <text x="466" y="749">(no LLM reads spreadsheets)</text>
+
+      <line x1="700" y1="664" x2="728" y2="664" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+
+      <!-- extract -->
+      <rect x="730" y="566" width="250" height="196" rx="8" fill="#fff" stroke="#9aa5b1"/>
+      <text x="746" y="592" font-size="15" font-weight="700" fill="#1f2933">2 · extract</text>
+      <text x="746" y="616">rules first: multilingual labels,</text>
+      <text x="746" y="635">same line / next line / next cell</text>
+      <text x="746" y="654">grounding: evidence must be in</text>
+      <text x="746" y="673">the page text, or value dropped</text>
+      <text x="746" y="692" fill="#c2410c">Gemma only for missing/weak fields</text>
+      <text x="746" y="711" fill="#c2410c">page images if the scan is garbled</text>
+      <text x="746" y="730">every field: value · confidence ·</text>
+      <text x="746" y="749">evidence · page</text>
+
+      <line x1="980" y1="664" x2="1008" y2="664" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+
+      <!-- validate -->
+      <rect x="1010" y="566" width="250" height="196" rx="8" fill="#fff" stroke="#9aa5b1"/>
+      <text x="1026" y="592" font-size="15" font-weight="700" fill="#1f2933">3 · validate</text>
+      <text x="1026" y="616">required fields present</text>
+      <text x="1026" y="635">line items = subtotal (± 0.02)</text>
+      <text x="1026" y="654">subtotal + tax = total</text>
+      <text x="1026" y="673">dates · negatives · currency</text>
+      <text x="1026" y="692">duplicates: exact + fuzzy</text>
+      <text x="1026" y="711">image-read values → review</text>
+      <text x="1026" y="730">Decimal money, no floats</text>
+      <text x="1026" y="749" fill="#1f2933" font-weight="600">any error → NEEDS_REVIEW</text>
+
+      <line x1="1260" y1="664" x2="1288" y2="664" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+
+      <!-- index -->
+      <rect x="1290" y="566" width="250" height="196" rx="8" fill="#fff" stroke="#9aa5b1"/>
+      <text x="1306" y="592" font-size="15" font-weight="700" fill="#1f2933">4 · index</text>
+      <text x="1306" y="616">weighted tsvector (GIN index)</text>
+      <text x="1306" y="635">384-d embedding: bge-small</text>
+      <text x="1306" y="654">local ONNX, no API quota</text>
+      <text x="1306" y="673">HNSW vector index</text>
+      <text x="1306" y="692">hybrid search = rank fusion</text>
+      <text x="1306" y="711">of keyword + semantic</text>
+      <text x="1306" y="749" fill="#1f2933" font-weight="600">→ COMPLETED / NEEDS_REVIEW</text>
+    </g>
+    <text x="450" y="785" font-size="12" fill="#52606d">Each stage is idempotent (rewrites its own output) and logs STARTED / SUCCEEDED / FAILED with duration. Unexpected errors retry 3× (10 s, 30 s, 90 s); known errors fail at once with a code.</text>
+
+    <!-- ============ storage ============ -->
+    <rect x="430" y="846" width="1130" height="174" rx="12" fill="#f5f7fa" stroke="#9aa5b1"/>
+    <rect x="450" y="880" width="250" height="122" rx="8" fill="#fff" stroke="#9aa5b1"/>
+    <text x="466" y="908" font-size="15" font-weight="700">File volume</text>
+    <g font-size="12.5" fill="#52606d">
+      <text x="466" y="932">original uploads</text>
+      <text x="466" y="951">generated keys, never user paths</text>
+      <text x="466" y="970">behind a Storage interface</text>
+      <text x="466" y="989">(S3 can replace it)</text>
+    </g>
+
+    <rect x="730" y="880" width="810" height="122" rx="8" fill="#fff" stroke="#9aa5b1"/>
+    <text x="750" y="908" font-size="15" font-weight="700">PostgreSQL 16 + pgvector  <tspan font-size="12.5" font-weight="400" fill="#52606d">one database for rows, full-text and vectors · money is numeric(18,4)</tspan></text>
+    <g font-size="12.5" text-anchor="middle">
+      <rect x="750" y="922" width="148" height="28" rx="5" fill="#f5f7fa" stroke="#cbd2d9"/><text x="824" y="941">documents</text>
+      <rect x="906" y="922" width="148" height="28" rx="5" fill="#f5f7fa" stroke="#cbd2d9"/><text x="980" y="941">pages</text>
+      <rect x="1062" y="922" width="148" height="28" rx="5" fill="#f5f7fa" stroke="#1f2933"/><text x="1136" y="941" font-weight="600">invoices</text>
+      <rect x="1218" y="922" width="148" height="28" rx="5" fill="#f5f7fa" stroke="#cbd2d9"/><text x="1292" y="941">invoice_line_items</text>
+      <rect x="1374" y="922" width="148" height="28" rx="5" fill="#f5f7fa" stroke="#cbd2d9"/><text x="1448" y="941">validation_issues</text>
+      <rect x="750" y="958" width="148" height="28" rx="5" fill="#f5f7fa" stroke="#cbd2d9"/><text x="824" y="977">processing_events</text>
+      <rect x="906" y="958" width="148" height="28" rx="5" fill="#f5f7fa" stroke="#cbd2d9"/><text x="980" y="977">corrections</text>
+      <rect x="1062" y="958" width="148" height="28" rx="5" fill="#f5f7fa" stroke="#cbd2d9"/><text x="1136" y="977">ledger_entries</text>
+      <rect x="1218" y="958" width="148" height="28" rx="5" fill="#f5f7fa" stroke="#cbd2d9"/><text x="1292" y="977">crosschecks</text>
+      <rect x="1374" y="958" width="148" height="28" rx="5" fill="#fff7ed" stroke="#c2410c"/><text x="1448" y="977" fill="#c2410c">llm_cache</text>
+    </g>
+
+    <!-- workers -> storage (drawn after the storage band so the arrowheads show) -->
+    <line x1="575" y1="796" x2="575" y2="878" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+    <text x="585" y="832" font-size="12" fill="#52606d">read original</text>
+    <line x1="1135" y1="796" x2="1135" y2="878" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+    <text x="1145" y="832" font-size="12" fill="#52606d">pages · invoices · issues · events · vectors</text>
+
+    <!-- api -> storage through the left gutter -->
+    <path d="M400,460 L400,940 L448,940" fill="none" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+    <text transform="translate(392 790) rotate(-90)" font-size="12" fill="#52606d" text-anchor="middle">saves uploads · reads + writes rows</text>
+
+    <!-- ============ status lane ============ -->
+    <rect x="40" y="520" width="280" height="500" rx="12" fill="#f5f7fa" stroke="#9aa5b1"/>
+    <text x="60" y="549" font-size="17" font-weight="700">Document status</text>
+    <g font-size="12.5" text-anchor="middle">
+      <rect x="70" y="566" width="220" height="30" rx="15" fill="#fff" stroke="#52606d"/>
+      <text x="180" y="586" font-weight="600">UPLOADED</text>
+      <line x1="180" y1="596" x2="180" y2="614" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+      <rect x="70" y="616" width="220" height="50" rx="10" fill="#fff" stroke="#52606d"/>
+      <text x="180" y="637" font-weight="600">PARSING → EXTRACTING</text>
+      <text x="180" y="656" font-weight="600">→ VALIDATING → INDEXING</text>
+
+      <line x1="125" y1="666" x2="125" y2="698" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+      <line x1="250" y1="666" x2="250" y2="698" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+      <rect x="70" y="700" width="110" height="30" rx="15" fill="#ecfdf3" stroke="#15803d"/>
+      <text x="125" y="720" font-weight="700" fill="#15803d">COMPLETED</text>
+      <rect x="190" y="700" width="120" height="30" rx="15" fill="#fffbeb" stroke="#b45309"/>
+      <text x="250" y="720" font-weight="700" fill="#b45309">NEEDS_REVIEW</text>
+
+      <line x1="250" y1="730" x2="250" y2="764" stroke="#52606d" stroke-width="1.6" marker-end="url(#arr)"/>
+      <rect x="170" y="766" width="140" height="74" rx="8" fill="#fff" stroke="#b45309"/>
+      <text x="240" y="787" fill="#1f2933">person corrects</text>
+      <text x="240" y="805" fill="#1f2933">or marks checked</text>
+      <text x="240" y="828" font-size="11.5" fill="#52606d">re-validate + re-index</text>
+      <path d="M170,803 L125,803 L125,732" fill="none" stroke="#15803d" stroke-width="1.6" marker-end="url(#arr)"/>
+      <text x="80" y="768" font-size="11" fill="#15803d" text-anchor="start">no</text>
+      <text x="80" y="782" font-size="11" fill="#15803d" text-anchor="start">errors</text>
+      <text x="80" y="796" font-size="11" fill="#15803d" text-anchor="start">left</text>
+
+      <path d="M70,641 L54,641 L54,887 L68,887" fill="none" stroke="#b91c1c" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+      <rect x="70" y="872" width="220" height="30" rx="15" fill="#fef2f2" stroke="#b91c1c"/>
+      <text x="180" y="892" font-weight="700" fill="#b91c1c">FAILED + error code</text>
+    </g>
+    <g font-size="12.5" fill="#52606d">
+      <text x="70" y="928">bad file, or retries used up.</text>
+      <text x="70" y="947">One bad page does not fail</text>
+      <text x="70" y="966">the document. Reprocess from</text>
+      <text x="70" y="985">the failed stage (or any stage).</text>
+    </g>
+  </g>
+</svg>

@@ -13,3 +13,7 @@ data/real/*
 data/public/raw/
 # Raw results of the private set contain extracted personal data
 docs/eval/results-real-*.json
+# Personal notes: presenting script, gap review, session log (not part of the submission)
+docs/WALKTHROUGH.md
+docs/REVIEW_*.md
+docs/prompts/claude-code-session.md

@@ -11,4 +11,4 @@
 | Eval | backend/evaluation | (built directly) | DONE | `run_eval.py`; results in docs/EVALUATION.md and docs/eval/. |
 | Real-world | data/public, data/real | (31 Oct review) | DONE | Vision fallback, real-layout rules, 15 public + 2 owner invoices hand-labelled; 86.7% / 93.8% with Gemma. |
 
-Remaining for the human: record the walkthrough (script in docs/WALKTHROUGH.md).
+Remaining for the human: record the walkthrough.

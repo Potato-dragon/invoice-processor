@@ -4,24 +4,9 @@
 Users upload invoices (PDF, JPG, PNG, TIFF, XLSX, XLS, CSV). The system reads them (text layer, OCR, or spreadsheet parsing), extracts the key fields, checks the numbers, flags problems, stores everything, and lets people search, review and correct results. It can also cross-check documents against each other (PDF vs PDF, PDF vs Excel).
 
 ## Big picture
-```mermaid
-flowchart LR
-  B[Browser] --> UI[Next.js web app :3000]
-  UI -->|server-side proxy adds X-API-Key| API[FastAPI :8000]
-  API --> DB[(Postgres 16 + pgvector)]
-  API --> FS[(File storage volume)]
-  API -->|enqueue stage job| Q[(Redis: RQ queues + rate limiter)]
-  Q --> W1[Worker 1]
-  Q --> W2[Worker N]
-  subgraph Worker pipeline per document
-    P1[parse] --> P2[extract] --> P3[validate] --> P4[index]
-  end
-  W1 --- P1
-  W1 --> DB
-  W1 --> FS
-  P2 -->|only if rules unsure, rate-limited via Redis, cached in llm_cache| LLM[Gemma 4 31B → Gemma 4 26B]
-  P4 -->|local ONNX model| EMB[fastembed bge-small 384d]
-```
+![Invoice AI architecture: Next.js proxy, FastAPI, Redis queues and LLM limiter, workers running parse → extract → validate → index, PostgreSQL + pgvector, and Gemma in Google AI Studio for uncertain fields only](architecture.svg)
+
+The orange path is the only traffic that leaves the machine. A high-resolution PNG for slides is in [`architecture.png`](architecture.png).
 
 Containers (`docker-compose.yml`): `db` (pgvector/pg16), `redis`, `api` (runs Alembic migrations, then uvicorn), `worker` (2 replicas by default, each listening on all four stage queues), `frontend`.
 

@@ -6,10 +6,10 @@ This project was built with heavy use of AI tools, directed and checked by a hum
 
 | Role | Who | What |
 |---|---|---|
-| Coordinator, reviewer, merger | The human candidate | Set the goals and constraints, ran the acceptance checks, merged branches, records the walkthrough. |
-| Architect | Claude (chat) | Wrote the architecture, frozen contracts, decisions, and one brief per "lane" (`docs/handoffs/`). Reviewed agent reports. |
+| Coordinator, reviewer, merger | Shahreear | Set the goals and constraints, ran the acceptance checks, merged branches, records the walkthrough. |
+| Architect | Shahreear | Wrote the architecture, frozen contracts, decisions, and one brief per "lane" (`docs/handoffs/`). Reviewed agent reports. |
 | Implementers (28–29 Oct) | OpenAI Codex and Google Antigravity agents, one lane per git worktree, accounts used one after another | Lane A1 (compose, DB, contracts, storage), lane C (first extraction version), lane F1 (digital-PDF generator). Rules for agents: `AGENTS.md`. |
-| Integrator and implementer (30 Oct) | Claude Code (Claude Opus 5.5) | Verified and consolidated main. Built lanes B (parsing/OCR), D (validation), A2 (API, pipeline, search), F2 (dataset), E (frontend), the evaluation runner and the docs. Rewrote the rules extractor after measuring 39.5% accuracy, and fixed the lane C items. See `docs/prompts/claude-code-session.md`. |
+| Integrator and implementer (30 Oct) | Claude Code (Claude Opus 5.5) | Verified and consolidated main. Built lanes B (parsing/OCR), D (validation), A2 (API, pipeline, search), F2 (dataset), E (frontend), the evaluation runner and the docs. Rewrote the rules extractor after measuring 39.5% accuracy, and fixed the lane C items. |
 
 All code was run and tested inside Docker. Every number in `docs/EVALUATION.md` comes from an actual run of `backend/evaluation/run_eval.py`; the raw JSON is in `docs/eval/`.
 
@@ -17,7 +17,6 @@ All code was run and tested inside Docker. Every number in `docs/EVALUATION.md` 
 
 - `docs/handoffs/*.md`: the briefs given to the coding agents (these are the prompts).
 - `AGENTS.md`: the standing rules and resume protocol given to every agent.
-- `docs/prompts/claude-code-session.md`: the prompts and main decisions of the Claude Code session.
 - `docs/prompts/extraction.md`: the runtime LLM prompt (below).
 
 ## AI at runtime
