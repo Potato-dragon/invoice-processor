@@ -234,6 +234,20 @@ def _pick_money(hits: dict[str, list[_MoneyHit]]) -> tuple[ExtractedField, Extra
     tax = hits["tax"][0] if hits["tax"] else None
     totals = hits["total"]
     total = None
+    # Several subtotal or tax candidates (e.g. a "Montant HT" column header picks up
+    # the first row's amount, before the real "Total HT" line): prefer the pair whose
+    # sum is one of the totals.
+    if totals and (len(hits["subtotal"]) > 1 or len(hits["tax"]) > 1):
+        combos = []
+        for s in hits["subtotal"]:
+            for t in hits["tax"] or [None]:
+                expected = Decimal(s.value) + (Decimal(t.value) if t else Decimal("0"))
+                for tot in totals:
+                    if abs(Decimal(tot.value) - expected) <= _ABS_TOL:
+                        combos.append((tot.strength, tot.order, s, t, tot))
+        if combos:
+            _, _, sub, tax, total = max(combos, key=lambda c: (c[0], c[1]))
+            return as_field(sub), as_field(tax), as_field(total)
     if totals:
         # Prefer a total that equals subtotal + tax; else strongest label, last one.
         if sub is not None:

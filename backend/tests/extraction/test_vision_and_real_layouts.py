@@ -144,3 +144,16 @@ def test_aws_style_attn_and_service_provider():
     assert r.customer_name.value == "iViveLabs Limited"
     assert r.invoice_date.value == "2014-08-03"
     assert r.currency.value == "USD"
+
+
+def test_column_header_does_not_win_over_real_subtotal():
+    # "Montant HT / Total" is a column header: the amount under it is the first
+    # row, not the subtotal. The real subtotal is the one that adds up with tax.
+    r = extract_by_rules(_rows(
+        "NovaStar Robotics SpA\tFACTURE / INVOICE", "Facture N° / Invoice No: INV-2026-U080",
+        "Designation / Description\tQte / Qty\tPrix Unit. / Rate\tMontant HT / Total",
+        "Machine Learning Model Tuning Service\t2\t3.200,00 €\t6.400,00 €",
+        "Backup Battery UPS Module 1500VA\t3\t380,00 €\t1.140,00 €",
+        "Total Hors Taxes (HT):\t7.540,00 €", "TVA / Tax (22%):\t1.658,80 €", "Total Toutes Taxes Comprises (TTC):\t9.198,80 €",
+    ))
+    assert (r.subtotal.value, r.tax.value, r.total.value) == ("7540.00", "1658.80", "9198.80")
