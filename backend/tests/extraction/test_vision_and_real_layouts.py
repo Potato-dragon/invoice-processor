@@ -157,3 +157,16 @@ def test_column_header_does_not_win_over_real_subtotal():
         "Total Hors Taxes (HT):\t7.540,00 €", "TVA / Tax (22%):\t1.658,80 €", "Total Toutes Taxes Comprises (TTC):\t9.198,80 €",
     ))
     assert (r.subtotal.value, r.tax.value, r.total.value) == ("7540.00", "1658.80", "9198.80")
+
+
+def test_line_items_with_detail_rows_underneath():
+    # Each item has one-cell detail rows under it ("Description: ...", "Tax: 0.2%");
+    # they must not end the table.
+    r = extract_by_rules(_rows(
+        "Item\tQuantity\tRate\tAmount",
+        "Service A\t12\t$10.00\t$120.00", "Description: Repair", "Parts: 1 x cap_a", "Tax: 0.2%",
+        "Service B\t5\t$1.50\t$7.50", "Description: Cleaning", "Tax: 0.4%",
+        "Subtotal:\t$127.50", "Tax (0%):\t$0.00", "Total:\t$127.50",
+    ))
+    assert [(li.description, li.amount) for li in r.line_items] == [("Service A", "120.00"), ("Service B", "7.50")]
+    assert (r.subtotal.value, r.tax.value, r.total.value) == ("127.50", "0.00", "127.50")

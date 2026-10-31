@@ -701,35 +701,59 @@ def _column_items(page_lines: list[_Line]) -> list[ExtractedLineItem]:
     items: list[ExtractedLineItem] = []
     i = j
     while i + k <= len(page_lines):
-        group = page_lines[i: i + k]
-        if any(_SUBTOTAL_LABEL.match(g.text) or _TAX_LABEL.match(g.text) or _TOTAL_STRONG.match(g.text) or _TOTAL_WEAK.match(g.text) for g in group):
+        item = _column_item(cols, page_lines[i: i + k])
+        if item is None and items:
+            # Detail rows under an item ("Description: Repair", "Tax: 0.2%") are
+            # one-cell rows without an amount: skip them and look for the next item.
+            n = i
+            while n < len(page_lines) and n - i < 8 and _detail_row(page_lines[n]):
+                n += 1
+            if n > i and n + k <= len(page_lines):
+                item = _column_item(cols, page_lines[n: n + k])
+                if item is not None:
+                    i = n
+        if item is None:
             break
-        vals: dict[str, str | None] = {}
-        ok = True
-        for col, cell in zip(cols, group):
-            if col == "desc":
-                ok = bool(re.search(r"[A-Za-zÀ-ÿ]{2}", cell.text))
-                vals["description"] = cell.text
-            elif col == "index":
-                ok = bool(re.fullmatch(r"\d{1,3}\.?", cell.text))
-            elif col == "qty":
-                vals["quantity"] = _num(cell.text, money=False)
-                ok = vals["quantity"] is not None
-            elif col == "unit":
-                vals["unit_price"] = _num(cell.text, money=True)
-                ok = vals["unit_price"] is not None
-            else:
-                vals["amount"] = _num(cell.text, money=True)
-                ok = vals["amount"] is not None
-            if not ok:
-                break
-        if not ok:
-            break
-        items.append(ExtractedLineItem(confidence=0.8, evidence=" ".join(g.text for g in group), page=group[0].page,
-                                       description=vals.get("description"), quantity=vals.get("quantity"),
-                                       unit_price=vals.get("unit_price"), amount=vals.get("amount")))
+        items.append(item)
         i += k
     return items
+
+
+def _detail_row(line: _Line) -> bool:
+    """A one-cell row with no money amount in it."""
+    return bool(line.row_text) and line.right is None and _money_in(line.text) is None
+
+
+def _money_in(text: str) -> str | None:
+    """A money amount anywhere in the text (percentages ignored)."""
+    m = _MONEY_TOKEN.search(_PERCENT.sub(" ", text))
+    return m.group(0) if m and re.search(r"[.,]\d{2}\b|" + _CUR_TOKEN, m.group(0), re.IGNORECASE) else None
+
+
+def _column_item(cols: list[str], group: list[_Line]) -> ExtractedLineItem | None:
+    if any(_SUBTOTAL_LABEL.match(g.text) or _TAX_LABEL.match(g.text) or _TOTAL_STRONG.match(g.text) or _TOTAL_WEAK.match(g.text) for g in group):
+        return None
+    vals: dict[str, str | None] = {}
+    for col, cell in zip(cols, group):
+        if col == "desc":
+            ok = bool(re.search(r"[A-Za-zÀ-ÿ]{2}", cell.text))
+            vals["description"] = cell.text
+        elif col == "index":
+            ok = bool(re.fullmatch(r"\d{1,3}\.?", cell.text))
+        elif col == "qty":
+            vals["quantity"] = _num(cell.text, money=False)
+            ok = vals["quantity"] is not None
+        elif col == "unit":
+            vals["unit_price"] = _num(cell.text, money=True)
+            ok = vals["unit_price"] is not None
+        else:
+            vals["amount"] = _num(cell.text, money=True)
+            ok = vals["amount"] is not None
+        if not ok:
+            return None
+    return ExtractedLineItem(confidence=0.8, evidence=" ".join(g.text for g in group), page=group[0].page,
+                             description=vals.get("description"), quantity=vals.get("quantity"),
+                             unit_price=vals.get("unit_price"), amount=vals.get("amount"))
 
 
 def _parse_line_items(all_lines: list[list[_Line]]) -> list[ExtractedLineItem]:
